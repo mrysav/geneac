@@ -2,6 +2,7 @@
   "name": "geneac",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0",
     "@rails/webpacker": "3.5",
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",

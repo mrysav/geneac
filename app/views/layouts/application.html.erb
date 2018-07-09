@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geneac</title>
+    <title>Geneac - Genealogy for Maniacs</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'bootstrap' %>
     <%= stylesheet_pack_tag 'bootstrap' %>
+
+    <%= javascript_pack_tag 'fontawesome' %>
+    <%= stylesheet_pack_tag 'fontawesome' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">geneac</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <%= link_to 'Admin', '/', class: 'nav-link' %>
+                </li>
+            </ul>   
+                    
+            <form class="form-inline my-2 my-lg-0" action="/search">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="s" id="s" value="<%= params[:s] %>"></input>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav> 
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
