@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">geneac</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <%= link_to 'Home', '/', class: 'nav-link' %>
+    </li>
+  </ul>
+
+  <% if show_search_bar %>  
+  <form class="form-inline my-2 my-lg-0" action="/search">
+    <div class="input-group">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="s" id="s" value="<%= params[:s] %>"></input>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+    </div>
+    </div>
+  </form>
+  <% end %>
+
+  <ul class="navbar-nav">
+    <% if current_user %>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.name || current_user.email %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Profile', '/', class: 'dropdown-item' %>
+            <% if current_user.admin? %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Admin Console', admin_root_path, class: 'dropdown-item' %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Sign Out', destroy_user_session_path, class: 'dropdown-item' %>
+        </div>
+    </li>
+    <% else %>
+    <li class="nav-item">
+        <%= link_to 'Sign In or Register', new_user_session_path, class: 'nav-link' %>
+    </li>
+    <% end %>
+  </ul>
+
+  </div>
+</nav>

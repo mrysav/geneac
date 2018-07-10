@@ -15,36 +15,11 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">geneac</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-      <%= link_to 'Admin', '/', class: 'nav-link' %>
-      </li>
-    </ul>   
-      
-    <form class="form-inline my-2 my-lg-0" action="/search">
-      <div class="input-group">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="s" id="s" value="<%= params[:s] %>"></input>
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-      </div>
-      </div>
-    </form>
+    <%= render 'shared/navbar', show_search_bar: true %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
     </div>
-  </nav> 
-
-
-  <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
-
   </body>
 </html>
