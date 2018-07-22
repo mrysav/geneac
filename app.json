@@ -1,0 +1,43 @@
+{
+  "name": "Geneac",
+  "description": "Genealogy for Brainiacs!",
+  "keywords": [
+    "genealogy", "rails", "facebook", "family", "history"
+  ],
+  "repository": "https://github.com/mrysav/geneac",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "MAILER_HOSTNAME": {
+      "description": "Host to link to in password reset or confirmation emails."
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  }
+}
