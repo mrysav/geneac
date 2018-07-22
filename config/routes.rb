@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   devise_for :users
-  get '/users/:id' => 'users#show', as: :user
+  get '/u/:id' => 'users#show', as: :user
 
   namespace :admin do
     resources :users
