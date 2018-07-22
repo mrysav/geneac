@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
-class UserPolicy < ApplicationPolicy
+class PhotoPolicy < ApplicationPolicy
   def index?
+    user.admin?
+  end
+
+  def create?
     user.admin?
   end
 

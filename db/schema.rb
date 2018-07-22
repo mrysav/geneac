@@ -10,10 +10,99 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_195452) do
+ActiveRecord::Schema.define(version: 2018_07_21_145605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "commentable_id"
+    t.string "commentable_type"
+    t.integer "owner_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_id"], name: "index_comments_on_commentable_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.string "date"
+    t.text "content"
+    t.string "tag_list"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "alternate_names"
+    t.string "gender"
+    t.string "date_of_birth"
+    t.string "date_of_death"
+    t.string "birthplace"
+    t.string "burialplace"
+    t.integer "father_id"
+    t.integer "mother_id"
+    t.integer "current_spouse_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", id: :serial, force: :cascade do |t|
+    t.integer "tag_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.string "tagger_type"
+    t.integer "tagger_id"
+    t.string "context", limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+  end
+
+  create_table "tags", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

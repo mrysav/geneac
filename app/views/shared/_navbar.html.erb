@@ -29,7 +29,7 @@
             <%= current_user.name || current_user.email %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'Profile', '/', class: 'dropdown-item' %>
+            <%= link_to 'Profile', user_path(current_user.id), class: 'dropdown-item' %>
             <% if current_user.admin? %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Admin Console', admin_root_path, class: 'dropdown-item' %>

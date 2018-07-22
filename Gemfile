@@ -73,3 +73,6 @@ gem 'country_select'
 
 # administrate for content management
 gem 'administrate'
+
+# For content tagging
+gem 'acts-as-taggable-on', '~> 6.0'
