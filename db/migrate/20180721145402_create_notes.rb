@@ -4,7 +4,6 @@ class CreateNotes < ActiveRecord::Migration[5.2]
       t.string  :title
       t.string  :date
       t.text    :content
-      t.string  :tag_list
 
       t.timestamps null: false
     end

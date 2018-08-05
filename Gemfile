@@ -76,3 +76,6 @@ gem 'administrate'
 
 # For content tagging
 gem 'acts-as-taggable-on', '~> 6.0'
+
+# For job processing
+gem 'delayed_job_active_record'

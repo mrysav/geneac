@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   devise_for :users
   get '/u/:id' => 'users#show', as: :user
 
+  get  '/data' => 'data#index', as: :data
+  post '/data/import' => 'data#import', as: :imports
+  get  '/data/export/:id' => 'data#download', as: :export
+  post '/data/export' => 'data#export'
+
   namespace :admin do
     resources :users
     resources :people
