@@ -16,7 +16,7 @@ By default, the input is a text field for the image's URL.
 </div>
 
 <div class="field-unit__field">
-  <%= image_tag field.data, class: 'img-thumbnail img-preview', id: "#{field.attribute}-preview" %>
+  <%= image_tag (field.data.attached? ? field.data : '' ), class: 'img-thumbnail img-preview', id: "#{field.attribute}-preview" %>
 
   <%= f.file_field field.attribute, class: 'img-form-file', data: { preview: "#{field.attribute}-preview" }, onchange: 'window.readImagePreview(this)' %>
 </div>
