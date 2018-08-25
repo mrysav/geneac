@@ -82,3 +82,8 @@ gem 'delayed_job_active_record'
 
 # Rendering markdown
 gem 'commonmarker'
+
+group :production do
+  # For S3
+  gem "aws-sdk-s3"
+end
