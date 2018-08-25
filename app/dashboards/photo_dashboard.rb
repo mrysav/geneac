@@ -11,7 +11,8 @@ class PhotoDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::String,
-    date: Field::String,
+    date: Field::DateTime,
+    image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,6 +24,7 @@ class PhotoDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :image,
     :title,
     :description,
     :date,
@@ -37,6 +39,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :date,
     :created_at,
     :updated_at,
+    :image,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -46,6 +49,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :title,
     :description,
     :date,
+    :image,
   ].freeze
 
   # Overwrite this method to customize how photos are displayed

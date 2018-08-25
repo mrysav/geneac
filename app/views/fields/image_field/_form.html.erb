@@ -1,0 +1,22 @@
+<%#
+# Image Form Partial
+This partial renders an input element for image attributes.
+By default, the input is a text field for the image's URL.
+## Local variables:
+- `f`:
+  A Rails form generator, used to help create the appropriate input fields.
+- `field`:
+  An instance of [Administrate::Field::Image][1].
+  A wrapper around the image url pulled from the database.
+[1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Image
+%>
+
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+
+<div class="field-unit__field">
+  <%= image_tag field.data, class: 'img-thumbnail img-preview', id: "#{field.attribute}-preview" %>
+
+  <%= f.file_field field.attribute, class: 'img-form-file', data: { preview: "#{field.attribute}-preview" }, onchange: 'window.readImagePreview(this)' %>
+</div>
