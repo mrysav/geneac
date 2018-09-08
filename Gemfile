@@ -87,3 +87,6 @@ group :production do
   # For S3
   gem "aws-sdk-s3"
 end
+
+# Date parsing
+gem 'edtf'
