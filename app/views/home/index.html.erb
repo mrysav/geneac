@@ -11,7 +11,7 @@
     <div class="carousel-inner">
       <% @recent_photos.each.with_index do |photo, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
-          <a href="<%= 'hello' %>">
+          <a href="<%= photo_path(photo) %>">
             <%= image_tag photo.image, class: 'img-fluid' %>
           </a>
           <div class="carousel-caption d-none d-md-block">

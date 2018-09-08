@@ -5,6 +5,10 @@ class PersonPolicy < ApplicationPolicy
     user.admin?
   end
 
+  def show?
+    super && (user.admin? || record.probably_dead?)
+  end
+
   def create?
     user.admin?
   end
