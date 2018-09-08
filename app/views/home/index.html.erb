@@ -1,1 +1,32 @@
-<p>Hello world!</p>
+<div class="text-center">  
+  <h1 class="display-4">geneac</h1>
+  <i class="lead">Genealogy for brainiacs!<i>
+  <hr class="my-4">
+  <div id="recentPhotosCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @recent_photos.each.with_index do |photo, index| %>
+        <li data-target="#recentPhotosCarousel" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% @recent_photos.each.with_index do |photo, index| %>
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <a href="<%= 'hello' %>">
+            <%= image_tag photo.image, class: 'img-fluid' %>
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%= photo.title %></h5>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#recentPhotosCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#recentPhotosCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
