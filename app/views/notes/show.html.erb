@@ -1,0 +1,16 @@
+<% @title = @note.title %>
+
+<div class="row">
+  <div class="col-lg-8 offset-lg-2 col-md-12">
+    <h2 class="text-center pt-4"><%= @note.title %></h2>
+    <hr>
+    <div class="note_content serif">
+      <%= @note.render_html.html_safe %>
+    </div>
+    <div class="note_tags py-2">
+      <% @note.tag_list.each do |t| %>
+        <a class="tag p-2" href="#"><%= t %></a>
+      <% end %>
+    </div>
+  </div>
+</div>

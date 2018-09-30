@@ -6,7 +6,7 @@ require 'commonmarker'
 class Note < ApplicationRecord
   acts_as_taggable
 
-  def render
+  def render_html
     CommonMarker.render_html(content)
   end
 end

@@ -1,4 +1,28 @@
+$font-primary: black;
+$secondary: #c9c9c9;
+
 #recentPhotosCarousel {
   width: 400px;
   margin: 0 auto;
+}
+
+.serif {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a.tag {
+  text-decoration: none;
+  color: $font-primary;
+  background-color: $secondary;
+  font-size: small;
+
+  &:hover {
+    text-decoration: none;
+    color: $font-primary;
+    opacity: 0.8;
+  }
+
+  &:visited {
+    color: $font-primary;
+  }
 }
