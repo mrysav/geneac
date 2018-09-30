@@ -16,6 +16,18 @@
     },
     "MAILER_HOSTNAME": {
       "description": "Host to link to in password reset or confirmation emails."
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "Access key ID for AWS Account for S3 file storage."
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "Secret access key for AWS Account for S3 file storage."
+    },
+    "AWS_BUCKET_NAME": {
+      "description": "S3 bucket name for file storage."
+    },
+    "AWS_REGION": {
+      "description": "Region that S3 bucket is located in."
     }
   },
   "formation": {
@@ -31,6 +43,9 @@
   "buildpacks": [
     {
       "url": "heroku/ruby"
+    },
+    {
+      "url": "heroku/heroku-buildpack-activestorage-preview"
     }
   ],
   "environments": {
