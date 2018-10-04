@@ -10,7 +10,7 @@ If you already have a [Heroku](https://heroku.com) account you can click this to
 
 ## Requirements
 
-If you want to run your own instance of Familiar, you must be familiar with Ruby on Rails web applications. This is the stack I used for development:
+If you want to run your own instance of Geneac, you must be familiar with Ruby on Rails web applications. This is the stack I used for development:
 
 * Ruby & Bundler (see `.ruby-version` for version info) (installing with [rbenv](https://github.com/sstephenson/rbenv) is highly recommended)
 * [foreman](https://github.com/ddollar/foreman)-compatible launcher for Procfile-based launch
