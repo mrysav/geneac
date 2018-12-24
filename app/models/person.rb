@@ -29,6 +29,10 @@ class Person < ApplicationRecord
     EDTF.parse(date_of_death)
   end
 
+  def full_name
+    first_name + ' ' + last_name
+  end
+
   # TODO: maybe account for which generation eventually as well
   # also, obviously a person can live to be older than 90,
   # but the US census releases records after 70 years

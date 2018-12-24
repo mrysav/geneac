@@ -32,3 +32,6 @@ yarn-debug.log*
 
 # Ignore Visual Studio Code workspace settings
 /.vscode/
+
+# Ignore vagrant working dir
+/.vagrant/
