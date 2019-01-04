@@ -9,7 +9,7 @@
     </div>
     <div class="note_tags py-2">
       <% @note.tag_list.each do |t| %>
-        <a class="tag p-2" href="#"><%= t %></a>
+        <a class="tag p-2" href="<%= tagged_path(t) %>"><%= t %></a>
       <% end %>
     </div>
   </div>

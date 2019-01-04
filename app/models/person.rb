@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'commonmarker'
+
 # Model for people
 class Person < ApplicationRecord
   # Unfortunately can't get associations to work so
@@ -45,5 +47,27 @@ class Person < ApplicationRecord
 
   def probably_alive?
     !probably_dead?
+  end
+
+  def events
+    events = []
+
+    unless date_of_birth.blank?
+      events.push(title: 'Birth', date: birth_date,
+                  location: birthplace || 'Unknown',
+                  note: '')
+    end
+
+    unless date_of_death.blank?
+      events.push(title: 'Burial', date: death_date,
+                  location: burialplace || 'Unknown',
+                  note: '')
+    end
+
+    events
+  end
+
+  def render_bio
+    CommonMarker.render_html(bio || '')
   end
 end

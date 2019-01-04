@@ -17,6 +17,7 @@ class PersonDashboard < Administrate::BaseDashboard
     date_of_death: Field::String,
     birthplace: Field::String,
     burialplace: Field::String,
+    bio: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     father: Field::BelongsTo.with_options(
@@ -60,6 +61,7 @@ class PersonDashboard < Administrate::BaseDashboard
     :date_of_death,
     :birthplace,
     :burialplace,
+    :bio,
     :created_at,
     :updated_at,
     :father,
@@ -80,6 +82,7 @@ class PersonDashboard < Administrate::BaseDashboard
     :date_of_death,
     :birthplace,
     :burialplace,
+    :bio,
     :father,
     :mother,
     :current_spouse,

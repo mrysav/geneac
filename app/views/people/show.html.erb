@@ -1,0 +1,48 @@
+<% @title = @person.full_name %>
+
+<row class="text-center m-2">
+  <h2><%=@person.full_name %></h2>
+</row>
+
+<% show_picture = true %>
+<% show_bio = !@person.bio.blank? %>
+
+<div class="row">
+  <div class="col-md-4 <%= 'd-none' if !show_picture %>">
+    <% # Left nav stuff here %>
+    <img src="<%= url_for(Photo.find(1).image) %>" class="img-fluid mx-auto mb-3">
+  </div>
+
+  <div class="col-md-8 <%= 'offset-md-2' if !show_picture %>">
+    <nav>
+      <div class="nav nav-pills" id="nav-tab" role="tablist">
+        <% if show_bio %>
+        <a class="nav-item nav-link active" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="true">Bio</a>
+        <% end %>
+        <a class="nav-item nav-link <%= 'active' if !show_bio %>" id="nav-timeline-tab" data-toggle="tab" href="#nav-timeline" role="tab" aria-controls="nav-timeline" aria-selected="false">Timeline</a>
+      </div>
+    </nav>
+    <div class="tab-content py-2" id="nav-tabContent">
+      <% if show_bio %>
+      <div class="tab-pane fade border rounded p-2 active show" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab">
+        <%= @person.render_bio.html_safe %>
+      </div>
+      <% end %>
+
+      <div class="tab-pane fade <%= 'active show' if !show_bio %>" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+        <table class="table table-borderless table-hover table-striped">
+          <% for event in @person.events %>
+          <tr>
+            <td class="w-25"><%= event[:date] %></td>
+            <td>
+              <div class="person-event-title"><%= event[:title] %></div>
+              <div class="person-event-location"><%= event[:location] %></div>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
