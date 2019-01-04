@@ -42,7 +42,6 @@ Geneac 0.2 Roadmap:
 * [ ] Data import/export to own format via rake task
 * [ ] Search and identification of people mentioned in notes
 
-Contributing
----
+## Contributing
 
 If you have an idea for a feature or suggestion, feel free submit a pull request or send me an email! [mitchell.rysavy@gmail.com](mailto:mitchell.rysavy@gmail.com)
