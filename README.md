@@ -16,7 +16,7 @@ If you want to run your own instance of Geneac, you must be familiar with Ruby o
 * [foreman](https://github.com/ddollar/foreman)-compatible launcher for Procfile-based launch
 * PostgreSQL
 
-If this is your first time running familiar, you need to configure the database:
+If this is your first time running geneac, you need to configure the database:
 
     rails db:create db:migrate
 
@@ -26,17 +26,21 @@ And to start:
 
 ## Roadmap
 
-Upcoming features:
+Geneac 0.1 Roadmap:
 
-* [ ] Data import and export
-* [ ] Facebook login
-* [ ] Image uploads
-* [ ] Note posting
-* [ ] Edit history
-* [ ] Homepage: blog
-* [ ] Homepage: Recent edits
+* [x] Admin console
+* [x] Image uploads
+* [x] Note posting
 * [ ] Tags
 * [ ] Full text search
+* [ ] Configurable privacy settings
+* [ ] Sensibly designed views
+
+Geneac 0.2 Roadmap:
+
+* [ ] Facebook login
+* [ ] Data import/export to own format via rake task
+* [ ] Search and identification of people mentioned in notes
 
 Contributing
 ---
