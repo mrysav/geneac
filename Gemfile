@@ -87,3 +87,6 @@ end
 
 # Date parsing
 gem 'edtf'
+
+# Searching
+gem 'pg_search'

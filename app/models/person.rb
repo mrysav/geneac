@@ -4,6 +4,16 @@ require 'commonmarker'
 
 # Model for people
 class Person < ApplicationRecord
+  include PgSearch
+  multisearchable against: %i[first_name last_name alternate_names
+                              date_of_birth date_of_death birthplace
+                              burialplace]
+
+  # title is used when this shows up in search results
+  def title
+    [full_name, lifespan].reject(&:empty?).join(' ')
+  end
+
   # Unfortunately can't get associations to work so
   # relationships are defined by helper functions here.
 
@@ -24,15 +34,25 @@ class Person < ApplicationRecord
   end
 
   def birth_date
-    EDTF.parse(date_of_birth)
+    Date.edtf(date_of_birth)
   end
 
   def death_date
-    EDTF.parse(date_of_death)
+    Date.edtf(date_of_death)
   end
 
   def full_name
-    first_name + ' ' + last_name
+    [first_name, last_name].reject(&:empty?).join(' ')
+  end
+
+  def lifespan
+    bday = date_of_birth.presence || '?'
+    dday = date_of_death.presence || (probably_dead? ? '?' : 'Present')
+    if bday == '?' && dday == '?'
+      ''
+    else
+      '(' + bday + ' - ' + dday + ')'
+    end
   end
 
   # TODO: maybe account for which generation eventually as well
@@ -40,8 +60,8 @@ class Person < ApplicationRecord
   # but the US census releases records after 70 years
   # so I figure I'm good here
   def probably_dead?
-    date_of_death.present? ||
-      (date_of_birth.present? &&
+    death_date.present? ||
+      (birth_date.present? &&
        Date.today.year - birth_date.year > 90)
   end
 

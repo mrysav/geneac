@@ -1,0 +1,9 @@
+<div class="search-results my-2">
+  <% @results.each do |d| %>
+    <%= render partial: 'shared/search_doc', locals: { doc: d.searchable }  %>
+  <% end %>
+  <br/>
+  <div class="total-results">
+    <i>Total results: <%= @results.count %></i>
+  </div>
+</div>
