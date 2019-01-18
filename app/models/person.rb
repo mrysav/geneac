@@ -33,26 +33,43 @@ class Person < ApplicationRecord
     Person.where(father_id: id).or(Person.where(mother_id: id))
   end
 
-  def birth_date
-    Date.edtf(date_of_birth)
+  def siblings
+    Person.where('id != ? AND ((father_id > 0 AND father_id = ?)'\
+                 ' OR (mother_id > 0 AND mother_id = ?))',
+                 id, father_id, mother_id)
   end
 
-  def death_date
-    Date.edtf(date_of_death)
+  def date_of_birth
+    Date.edtf(super)
+  end
+
+  def date_of_birth=(value)
+    parsed_date = Date.edtf(value).edtf
+    super(parsed_date)
+  end
+
+  def date_of_death
+    Date.edtf(super)
+  end
+
+  def date_of_death=(value)
+    parsed_date = Date.edtf(value).edtf
+    super(parsed_date)
   end
 
   def full_name
-    [first_name, last_name].reject(&:empty?).join(' ')
+    [first_name || '', last_name || ''].reject(&:empty?).join(' ')
   end
 
   def lifespan
-    bday = date_of_birth.presence || '?'
-    dday = date_of_death.presence || (probably_dead? ? '?' : 'Present')
-    if bday == '?' && dday == '?'
-      ''
-    else
-      '(' + bday + ' - ' + dday + ')'
-    end
+    birth_year = date_of_birth&.year
+    death_year = date_of_death&.year
+
+    birth = birth_year || '?'
+    death = death_year || (probably_dead? ? '?' : 'Present')
+    return "(#{birth} - #{death})" if birth_year || death_year
+
+    ''
   end
 
   # TODO: maybe account for which generation eventually as well
@@ -60,9 +77,10 @@ class Person < ApplicationRecord
   # but the US census releases records after 70 years
   # so I figure I'm good here
   def probably_dead?
-    death_date.present? ||
-      (birth_date.present? &&
-       Date.today.year - birth_date.year > 90)
+    definitely_dead = !date_of_death.nil?
+    no_record = !definitely_dead && date_of_birth.nil?
+    age = Date.today.year - (date_of_birth&.year || 0)
+    definitely_dead || no_record || age > 90
   end
 
   def probably_alive?
@@ -73,13 +91,13 @@ class Person < ApplicationRecord
     events = []
 
     unless date_of_birth.blank?
-      events.push(title: 'Birth', date: birth_date,
+      events.push(title: 'Birth', date: date_of_birth,
                   location: birthplace || 'Unknown',
                   note: '')
     end
 
     unless date_of_death.blank?
-      events.push(title: 'Burial', date: death_date,
+      events.push(title: 'Burial', date: date_of_death,
                   location: burialplace || 'Unknown',
                   note: '')
     end
