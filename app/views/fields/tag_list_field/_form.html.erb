@@ -1,0 +1,12 @@
+<%
+# Tag list partial
+# For use with acts_as_taggable
+%>
+
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+
+<div class="field-unit__field">
+  <%= f.text_field field.attribute, value: field.data.join(', ') %>
+</div>

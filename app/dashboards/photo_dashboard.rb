@@ -13,6 +13,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     description: Field::String,
     date: Field::DateTime,
     image: ImageField,
+    tag_list: TagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,8 +26,9 @@ class PhotoDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :image,
     :title,
-    :description,
     :date,
+    :tag_list,
+    :description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,6 +38,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :title,
     :description,
     :date,
+    :tag_list,
     :created_at,
     :updated_at,
     :image,
@@ -48,6 +51,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :title,
     :description,
     :date,
+    :tag_list,
     :image,
   ].freeze
 

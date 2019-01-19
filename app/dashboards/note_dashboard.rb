@@ -12,7 +12,7 @@ class NoteDashboard < Administrate::BaseDashboard
     title: Field::String,
     date: Field::String,
     content: Field::Text,
-    tag_list: Field::String,
+    tag_list: TagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,6 +25,7 @@ class NoteDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :title,
     :date,
+    :tag_list,
     :content,
   ].freeze
 
