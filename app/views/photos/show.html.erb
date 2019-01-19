@@ -1,15 +1,16 @@
 <% @title = @photo.title %>
 
 <div class="row">
-  <div class="border rounded my-3 mx-1">
-    <div class="col-lg-8 offset-lg-2 col-md-12 py-3">
-      <%= image_tag @photo.image, class: 'img-fluid' %>
-    </div>
+  <div class="col-lg-8 offset-lg-2 col-md-12 py-3">
+    <a target="_blank" href="<%= url_for(@photo.image) %>">
+      <%= image_tag @photo.image, class: 'img-fluid border rounded p-1' %>
+    </a>
+  </div>
 
-    <div class="col-lg-8 offset-lg-2 col-md-12 py-2">
-      <h3 class="text-center"><%= @photo.title %></h3>
-      <hr>
-      <p><%= @photo.description %></p>
-    </div>
+  <div class="col-lg-8 offset-lg-2 col-md-12 py-2">
+    <h3 class="text-center"><%= @photo.title %></h3>
+    <hr>
+    <p><%= @photo.render_html.html_safe %></p>
+    <%= render partial: 'shared/tag_list', locals: { list: @photo.tag_list, class_list: "mt-5" } %>
   </div>
 </div>

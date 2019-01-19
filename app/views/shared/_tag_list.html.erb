@@ -1,0 +1,5 @@
+<div class="tag_list <%= class_list %>">
+  <% list.each do |tag| %>
+    <a class="tag p-2" href="<%= tagged_path(tag) %>"><%= tag %></a>
+  <% end %>
+</div>

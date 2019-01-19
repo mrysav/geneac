@@ -4,13 +4,9 @@
   <div class="col-lg-8 offset-lg-2 col-md-12">
     <h2 class="text-center pt-4"><%= @note.title %></h2>
     <hr>
-    <div class="note_content serif">
+    <div class="note_content serif mb-2">
       <%= @note.render_html.html_safe %>
     </div>
-    <div class="note_tags py-2">
-      <% @note.tag_list.each do |t| %>
-        <a class="tag p-2" href="<%= tagged_path(t) %>"><%= t %></a>
-      <% end %>
-    </div>
+    <%= render partial: 'shared/tag_list', locals: { list: @note.tag_list, class_list: "mt-5" } %>
   </div>
 </div>
