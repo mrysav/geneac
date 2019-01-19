@@ -8,10 +8,7 @@
     <div class="recent-updates mt-5">
       <h2 class="text-center">Recent Updates</h2>
       <% @recent_updates.each do |recent_update| %>
-        <div class="update mb-1">
-          <b><%= link_to recent_update[:title], recent_update[:model] %></b><br/>
-          <em><%= recent_update[:updated_at] %></em>
-        </div>
+        <%= render partial: 'shared/search_doc', locals: { doc: recent_update }  %>
       <% end %>
     </div>
   </div>

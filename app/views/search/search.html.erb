@@ -1,6 +1,6 @@
 <div class="search-results my-2">
   <% @results.each do |d| %>
-    <%= render partial: 'shared/search_doc', locals: { doc: d.searchable }  %>
+    <%= render partial: 'shared/search_doc', locals: { doc: d }  %>
   <% end %>
   <br/>
   <div class="total-results">
