@@ -44,7 +44,7 @@ class Person < ApplicationRecord
   end
 
   def date_of_birth=(value)
-    parsed_date = Date.edtf(value).edtf
+    parsed_date = Date.edtf(value)&.edtf
     super(parsed_date)
   end
 
@@ -53,7 +53,7 @@ class Person < ApplicationRecord
   end
 
   def date_of_death=(value)
-    parsed_date = Date.edtf(value).edtf
+    parsed_date = Date.edtf(value)&.edtf
     super(parsed_date)
   end
 
