@@ -1,11 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+markdown:
+  title: Lorem Ipsum
+  date: 1999-10-1
+  content: "*Lorem Ipsum*"
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+no_date:
+  title: No-Date Note
+  content: Testing no date
