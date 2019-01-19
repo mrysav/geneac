@@ -33,8 +33,8 @@ Geneac 0.1 Roadmap:
 * [x] Admin console
 * [x] Image uploads
 * [x] Note posting
-* [ ] Tags
-* [ ] Full text search
+* [x] Tags
+* [x] Full text search
 * [ ] Configurable privacy settings
 * [ ] Sensibly designed views
 
