@@ -38,16 +38,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_042255) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer "commentable_id"
-    t.string "commentable_type"
-    t.integer "owner_id"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commentable_id"], name: "index_comments_on_commentable_id"
-  end
-
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.string "date"
