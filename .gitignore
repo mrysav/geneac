@@ -35,3 +35,6 @@ yarn-debug.log*
 
 # Ignore vagrant working dir
 /.vagrant/
+
+# Ignore SimpleCov dir
+/coverage/
