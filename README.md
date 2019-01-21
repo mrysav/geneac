@@ -1,6 +1,7 @@
 # Geneac
 
 [![Build Status](https://travis-ci.com/mrysav/geneac.svg?branch=master)](https://travis-ci.com/mrysav/geneac)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4f02be904a9d52414167/test_coverage)](https://codeclimate.com/github/mrysav/geneac/test_coverage)
 
 Geneac is a follow-up to my previous genealogy app [familiar](https://github.com/mrysav/familiar). I am abandoning familiar since I mostly created all the features myself and I am sick of fixing a million little problems when I just want to work on the site. With Geneac, I hope to leverage better, more Rails-like technologies like Devise and Administrate to avoid writing line upon line of boilerplate code.
 
