@@ -1,4 +1,4 @@
-<div class="search-results md-2 mt-4">
+<div class="col-6 offset-3 search-results md-2 mt-4">
   <% @results.each do |d| %>
     <%= render partial: 'shared/search_doc', locals: { doc: d }  %>
   <% end %>
