@@ -10,7 +10,7 @@
   <div class="col-lg-8 offset-lg-2 col-md-12 py-2">
     <h3 class="text-center"><%= @photo.title %></h3>
     <hr>
-    <p><%= @photo.render_html.html_safe %></p>
+    <p><%= markdown @photo.description %></p>
     <%= render partial: 'shared/tag_list', locals: { list: @photo.tag_list, class_list: "mt-5" } %>
   </div>
 </div>

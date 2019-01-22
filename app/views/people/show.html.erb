@@ -25,7 +25,7 @@
     <div class="tab-content py-2" id="nav-tabContent">
       <% if show_bio %>
       <div class="tab-pane fade border rounded p-2 active show" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab">
-        <%= @person.render_bio.html_safe %>
+        <%= markdown @person.bio %>
       </div>
       <% end %>
 

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'commonmarker'
-
 # Model for people
 class Person < ApplicationRecord
   include PgSearch
@@ -103,9 +101,5 @@ class Person < ApplicationRecord
     end
 
     events
-  end
-
-  def render_bio
-    CommonMarker.render_html(bio || '')
   end
 end
