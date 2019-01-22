@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'open-uri'
 require 'faker'
 
 case Rails.env
@@ -19,6 +20,8 @@ when 'development'
                admin: false)
 
   p 'Created test user account'
+
+  sample_tags = Faker::Lorem.words(10)
 
   Person.all.each(&:destroy!)
   ActiveRecord::Base.connection.reset_pk_sequence!(Person.table_name)
@@ -80,10 +83,38 @@ when 'development'
 
     person.save!
   end
-
   p "Created #{Person.count} people"
   ## For debugging
   # p "Single females: #{single_females.count}"
   # p "Single males: #{single_males.count}"
   # p "Available sets of parents: #{parents.count}"
+
+  Photo.all.each(&:destroy!)
+  ActiveRecord::Base.connection.reset_pk_sequence!(Photo.table_name)
+
+  20.times do |_index|
+    has_date = [true, false].sample
+    date = has_date ? Faker::Date.between(100.years.ago, Date.today).strftime('%F') : ''
+    tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
+    photo = Photo.create!(title: Faker::BackToTheFuture.character,
+                          description: Faker::BackToTheFuture.quote,
+                          date: date, tag_list: tags)
+    downloaded_img = open(Faker::LoremFlickr.image)
+    photo.image.attach(io: downloaded_img, filename: "photo_#{photo.id}.jpg")
+  end
+  p "Created #{Photo.count} photos"
+
+
+  Note.all.each(&:destroy!)
+  ActiveRecord::Base.connection.reset_pk_sequence!(Note.table_name)
+
+  50.times do |_index|
+    has_date = [true, false].sample
+    date = has_date ? Faker::Date.between(100.years.ago, Date.today).strftime('%F') : ''
+    tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
+    Note.create!(title: Faker::LordOfTheRings.character,
+                 content: Faker::Lorem.paragraphs(10).join("\n\n"),
+                 date: date, tag_list: tags)
+  end
+  p "Created #{Note.count} notes"
 end
