@@ -101,22 +101,4 @@ class Person < ApplicationRecord
   def main_photo
     Photo.tagged_with(id.to_s, on: :tagged_people)[0]
   end
-
-  def events
-    events = []
-
-    unless date_of_birth.blank?
-      events.push(title: 'Birth', date: date_of_birth,
-                  location: birthplace || 'Unknown',
-                  note: '')
-    end
-
-    unless date_of_death.blank?
-      events.push(title: 'Burial', date: date_of_death,
-                  location: burialplace || 'Unknown',
-                  note: '')
-    end
-
-    events
-  end
 end

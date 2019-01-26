@@ -32,14 +32,8 @@
 
       <div class="tab-pane fade <%= 'active show' if !show_bio %>" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
         <table class="table table-borderless table-hover table-striped">
-          <% for event in @person.events %>
-          <tr>
-            <td class="w-25"><%= event[:date] %></td>
-            <td>
-              <div class="person-event-title"><%= event[:title] %></div>
-              <div class="person-event-location"><%= event[:location] %></div>
-            </td>
-          </tr>
+          <% for event in @events %>
+            <%= render partial: 'event', locals: { event: event } %>
           <% end %>
         </table>
       </div>
