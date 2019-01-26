@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   # TODO: reenable this
   # after_action :verify_authorized
 
+  helper MarkdownHelper
+
   protect_from_forgery prepend: true
 
   before_action :configure_permitted_parameters, if: :devise_controller?

@@ -8,5 +8,6 @@
       <%= markdown @note.content %>
     </div>
     <%= render partial: 'shared/tag_list', locals: { list: @note.tag_list, class_list: "mt-5" } %>
+    <%= render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: "mt-3" } %>
   </div>
 </div>

@@ -5,7 +5,7 @@ class Photo < ApplicationRecord
   include PgSearch
   multisearchable against: %i[title description date]
 
-  acts_as_taggable
+  acts_as_taggable_on :tags, :tagged_people
 
   has_one_attached :image
 

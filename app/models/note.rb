@@ -5,7 +5,7 @@ class Note < ApplicationRecord
   include PgSearch
   multisearchable against: %i[title content date]
 
-  acts_as_taggable
+  acts_as_taggable_on :tags, :tagged_people
 
   def date
     Date.edtf(super)
