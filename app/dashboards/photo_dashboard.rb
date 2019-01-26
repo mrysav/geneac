@@ -14,6 +14,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     date: Field::DateTime,
     image: ImageField,
     tag_list: TagListField,
+    tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -34,11 +35,11 @@ class PhotoDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :title,
     :description,
     :date,
     :tag_list,
+    :tagged_person_list,
     :created_at,
     :updated_at,
     :image,
@@ -52,6 +53,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :description,
     :date,
     :tag_list,
+    :tagged_person_list,
     :image,
   ].freeze
 

@@ -1,3 +1,4 @@
+import './tag_list_field'
 import '../src/administrate.scss'
 
 window.readImagePreview = function (input) {

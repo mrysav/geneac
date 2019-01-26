@@ -1,0 +1,12 @@
+<%
+# Tag list partial
+# For use with acts_as_taggable
+%>
+
+<% if field.data.present? %>
+<div class="taglist">
+  <% field.names.each do |tag| %>
+    <span class="tag"><%= tag %></span>
+  <% end %>
+</div>
+<% end %>

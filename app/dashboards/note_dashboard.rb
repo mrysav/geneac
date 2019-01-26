@@ -13,6 +13,7 @@ class NoteDashboard < Administrate::BaseDashboard
     date: Field::String,
     content: Field::Text,
     tag_list: TagListField,
+    tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -32,11 +33,11 @@ class NoteDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
     :title,
     :date,
     :content,
     :tag_list,
+    :tagged_person_list,
     :created_at,
     :updated_at,
   ].freeze
@@ -49,6 +50,7 @@ class NoteDashboard < Administrate::BaseDashboard
     :date,
     :content,
     :tag_list,
+    :tagged_person_list,
   ].freeze
 
   # Overwrite this method to customize how notes are displayed
