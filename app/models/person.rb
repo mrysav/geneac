@@ -98,6 +98,10 @@ class Person < ApplicationRecord
     !probably_dead?
   end
 
+  def main_photo
+    Photo.tagged_with(id.to_s, on: :tagged_people)[0]
+  end
+
   def events
     events = []
 

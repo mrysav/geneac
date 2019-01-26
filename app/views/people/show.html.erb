@@ -1,16 +1,19 @@
 <% @title = @person.full_name %>
 
-<% show_picture = true %>
+<% show_picture = !@person.main_photo.nil? %>
 <% show_bio = !@person.bio.blank? %>
 
-<h2 class="mt-3"><%=@person.full_name %></h2>
+<h2 class="col-lg-8 offset-lg-2 col-md-12 mt-3"><%=@person.full_name %></h2>
+
 <div class="row mt-3">
 
-  <div class="col-md-3 col-sm-12 mb-2">
-    <%= image_tag url_for(Photo.find(1).image), class: 'img-fluid' %>
+  <% if show_picture %>
+  <div class="offset-lg-2 col-lg-2 col-md-12 mb-2">
+    <%= image_tag url_for(@person.main_photo.image), class: 'img-fluid' %>
   </div>
+  <% end %>
   
-  <div class="<%= show_picture ? 'col-md-9' : 'col-md-12' %> col-sm-12">
+  <div class="<%= show_picture ? 'col-lg-6' : 'offset-lg-2 col-lg-8' %>  col-md-12">
     <nav>
       <div class="nav nav-pills" id="nav-tab" role="tablist">
         <% if show_bio %>
