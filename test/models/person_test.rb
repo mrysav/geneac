@@ -4,8 +4,22 @@ require 'test_helper'
 
 class PersonTest < ActiveSupport::TestCase
   test 'current spouse' do
-    spouse = people(:chandler).current_spouse
-    assert_equal people(:monica).id, spouse.id
+    spouse = people(:monica).current_spouse
+    assert_equal people(:chandler).id, spouse.id
+    spouse.current_spouse = people(:ross)
+    assert_equal people(:ross).id, spouse.current_spouse.id
+  end
+
+  test 'mother' do
+    child = people(:chandler)
+    child.mother = people(:grandma)
+    assert_equal people(:grandma).id, child.mother.id
+  end
+
+  test 'father' do
+    child = people(:jack)
+    child.father = people(:ross)
+    assert_equal people(:ross).id, child.father.id
   end
 
   test 'full name' do

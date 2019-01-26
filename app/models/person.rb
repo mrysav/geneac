@@ -19,12 +19,25 @@ class Person < ApplicationRecord
     Person.find(father_id) if father_id && Person.exists?(father_id)
   end
 
+  def father=(value)
+    self.father_id = value.id if value.id && Person.exists?(value.id)
+  end
+
   def mother
     Person.find(mother_id) if mother_id && Person.exists?(mother_id)
   end
 
+  def mother=(value)
+    self.mother_id = value.id if value.id && Person.exists?(value.id)
+  end
+
   def current_spouse
-    Person.find(current_spouse_id) if current_spouse_id && Person.exists?(current_spouse_id)
+    Person.find(current_spouse_id) if current_spouse_id &&
+                                      Person.exists?(current_spouse_id)
+  end
+
+  def current_spouse=(value)
+    self.current_spouse_id = value.id if value.id && Person.exists?(value.id)
   end
 
   def children
