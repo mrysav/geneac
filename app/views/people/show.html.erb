@@ -1,6 +1,6 @@
 <% @title = @person.full_name %>
 
-<% show_picture = !@person.main_photo.nil? %>
+<% show_picture = @photos.count > 0 %>
 <% show_bio = !@person.bio.blank? %>
 
 <h2 class="col-lg-8 offset-lg-2 col-md-12 mt-3"><%=@person.full_name %></h2>
@@ -9,7 +9,7 @@
 
   <% if show_picture %>
   <div class="offset-lg-2 col-lg-2 col-md-12 mb-2">
-    <%= image_tag url_for(@person.main_photo.image), class: 'img-fluid' %>
+    <%= image_tag url_for(@photos[0].image), class: 'img-fluid' %>
   </div>
   <% end %>
   
@@ -20,6 +20,14 @@
         <a class="nav-item nav-link active" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="true">Bio</a>
         <% end %>
         <a class="nav-item nav-link <%= 'active' if !show_bio %>" id="nav-timeline-tab" data-toggle="tab" href="#nav-timeline" role="tab" aria-controls="nav-timeline" aria-selected="false">Timeline</a>
+        
+        <% if @notes.count > 0 %>
+        <a class="nav-item nav-link" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab" aria-controls="nav-notes" aria-selected="false">Notes</a>
+        <% end %>
+
+        <% if @photos.count > 0 %>
+        <a class="nav-item nav-link" id="nav-photos-tab" data-toggle="tab" href="#nav-photos" role="tab" aria-controls="nav-photos" aria-selected="false">Photos</a>
+        <% end %>
       </div>
     </nav>
 
@@ -37,6 +45,20 @@
           <% end %>
         </table>
       </div>
+
+      <% if @notes.count > 0%>
+      <div class="tab-pane fade border rounded p-2 show" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
+        <% for note in @notes %>
+          <%= render partial: 'shared/search_doc', locals: { doc: note } %>
+        <% end %>
+      </div>
+      <% end %>
+
+      <% if @photos.count > 0 %>
+      <div class="tab-pane fade border rounded p-2 show" id="nav-photos" role="tabpanel" aria-labelledby="nav-photos-tab">
+        <%= render partial: 'photos/thumbnail_grid', locals: { photos: @photos } %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

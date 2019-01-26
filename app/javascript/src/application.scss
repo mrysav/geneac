@@ -21,3 +21,9 @@ a.tag {
     color: $font-primary;
   }
 }
+
+.thumbnail-grid {
+  .thumbnail {
+    max-width: 31%;
+  }
+}
