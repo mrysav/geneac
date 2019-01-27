@@ -45,6 +45,7 @@ Geneac 0.2 Roadmap:
 * [ ] Facebook login
 * [ ] Data import/export via rake task
 * [ ] Search and identification of people mentioned in notes
+* [ ] Multiple language support (I18n)
 
 ## Contributing
 
