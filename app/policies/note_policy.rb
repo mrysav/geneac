@@ -3,6 +3,6 @@
 class NotePolicy < ApplicationPolicy
   def show?
     # TODO: deeper dive in permissions here
-    super && record.tagged_person_list.empty?
+    user&.admin? || record.tagged_person_list.empty?
   end
 end
