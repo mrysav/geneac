@@ -38,11 +38,12 @@ Geneac 0.1 Roadmap:
 * [x] Full text search
 * [ ] Configurable privacy settings
 * [ ] Sensibly designed views
+* [ ] Basic family tree view
 
 Geneac 0.2 Roadmap:
 
 * [ ] Facebook login
-* [ ] Data import/export to own format via rake task
+* [ ] Data import/export via rake task
 * [ ] Search and identification of people mentioned in notes
 
 ## Contributing
