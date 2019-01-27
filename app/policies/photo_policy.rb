@@ -1,19 +1,8 @@
 # frozen_string_literal: true
 
 class PhotoPolicy < ApplicationPolicy
-  def index?
-    user.admin?
-  end
-
-  def create?
-    user.admin?
-  end
-
-  def update?
-    user.admin?
-  end
-
-  def destroy?
-    user.admin?
+  def show?
+    # TODO: deeper dive into permissions here
+    super && record.tagged_person_list.empty?
   end
 end

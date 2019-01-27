@@ -1,23 +1,7 @@
 # frozen_string_literal: true
 
 class PersonPolicy < ApplicationPolicy
-  def index?
-    user.admin?
-  end
-
   def show?
-    super && (user.admin? || record.probably_dead?)
-  end
-
-  def create?
-    user.admin?
-  end
-
-  def update?
-    user.admin?
-  end
-
-  def destroy?
-    user.admin?
+    user&.admin? || record.probably_dead?
   end
 end

@@ -3,8 +3,8 @@
 # Parent controller
 class ApplicationController < ActionController::Base
   include Pundit
-  # TODO: reenable this
-  # after_action :verify_authorized
+  # TODO: disable this if necessary
+  after_action :verify_authorized, unless: :devise_controller?
 
   helper MarkdownHelper
 
@@ -18,5 +18,14 @@ class ApplicationController < ActionController::Base
     devise_params = [:name]
     devise_parameter_sanitizer.permit(:sign_up, keys: devise_params)
     devise_parameter_sanitizer.permit(:account_update, keys: devise_params)
+  end
+
+  def authorize_list(list, action = :show?)
+    skip_authorization if list.empty?
+    list.select! do |s|
+      authorize s, action
+    rescue Pundit::NotAuthorizedError => e
+      false
+    end
   end
 end

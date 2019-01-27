@@ -1,5 +1,5 @@
 <div class="tag_list <%= class_list %>">
   <% list.each do |tag| %>
-    <a class="tag p-2" href="<%= person_path(tag.id) %>"><%= tag.title %></a>
+    <a class="tag p-2 m-1" href="<%= person_path(tag.id) %>"><%= tag.title %></a>
   <% end %>
 </div>

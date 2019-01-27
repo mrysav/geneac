@@ -8,7 +8,9 @@ class PhotosController < ApplicationController
 
     @tagged_people = @photo.tagged_people.map do |p|
       id = p.name.to_i
-      Person.find(id) if Person.exists?(id)
+      person = Person.find(id) if Person.exists?(id)
+      authorize person
+      person
     end
   end
 end

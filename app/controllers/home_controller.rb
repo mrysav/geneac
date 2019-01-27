@@ -12,6 +12,7 @@ class HomeController < ApplicationController
          .each { |p| @recent_updates.push(p) }
 
     @recent_updates.sort_by!(&:updated_at).reverse!
+    authorize_list @recent_updates
     @recent_updates = @recent_updates[0..4]
   end
 end

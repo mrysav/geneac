@@ -68,6 +68,7 @@ let PersonTagInput = function (element) {
     li.classList.add('tag-' + value)
 
     li.querySelector('a').addEventListener('click', function (event) {
+      event.preventDefault()
       deleteTag(value)
     })
 

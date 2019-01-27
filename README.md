@@ -29,7 +29,7 @@ And to start:
 
 ## Roadmap
 
-Geneac 0.1 Roadmap:
+0.1 Roadmap:
 
 * [x] Admin console
 * [x] Image uploads
@@ -37,15 +37,20 @@ Geneac 0.1 Roadmap:
 * [x] Tags
 * [x] Full text search
 * [ ] Configurable privacy settings
-* [ ] Sensibly designed views
-* [ ] Basic family tree view
+* [ ] Personal timelines
+* [ ] 50% test coverage
 
-Geneac 0.2 Roadmap:
+0.2 Roadmap:
 
 * [ ] Facebook login
 * [ ] Data import/export via rake task
 * [ ] Search and identification of people mentioned in notes
 * [ ] Multiple language support (I18n)
+* [ ] Map views for location-based data
+
+0.3 Roadmap:
+
+* [ ] Family tree view
 
 ## Contributing
 

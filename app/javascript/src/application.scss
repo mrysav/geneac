@@ -10,6 +10,7 @@ a.tag {
   color: $font-primary;
   background-color: $secondary;
   font-size: small;
+  display: inline-block;
 
   &:hover {
     text-decoration: none;
