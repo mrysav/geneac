@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   get '/search'      => 'search#search', as: :search
   get '/tagged/:tag' => 'search#tagged', as: :tagged
 
-  get '/ajax/tags' => 'ajax#tags'
-  get '/ajax/people_tags' => 'ajax#people_tags'
-  get '/ajax/people_tag/:id' => 'ajax#people_tag', as: :ajax_people_tag
+  namespace :ajax do
+    get 'tags' => 'ajax#tags'
+    get 'people_tags' => 'ajax#people_tags'
+    get 'people_tag/:id' => 'ajax#people_tag', as: :people_tag
+  end
 
   namespace :admin do
     resources :users
