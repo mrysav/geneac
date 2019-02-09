@@ -18,5 +18,8 @@ module Geneac
 
     # Set this to an actual job adapter
     # config.active_job.queue_adapter = :delayed_job
+
+    config.generators.assets = false
+    config.generators.helper = false
   end
 end
