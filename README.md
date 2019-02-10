@@ -36,7 +36,7 @@ And to start:
 * [x] Note posting
 * [x] Tags
 * [x] Full text search
-* [ ] Configurable privacy settings
+* [x] Configurable privacy settings
 * [ ] Personal timelines
 * [ ] 50% test coverage
 
