@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     get 'people_tag/:id' => 'ajax#people_tag', as: :people_tag
   end
 
+  mount RailsSettingsUi::Engine, at: 'settings'
+
   namespace :admin do
     resources :users
     resources :people

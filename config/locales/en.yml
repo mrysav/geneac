@@ -30,4 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  settings:
+    attributes:
+      show_recent_updates:
+        name: 'Show "Recent Updates" on home page'
+      require_login:
+        name: 'Require users to be signed in to view all data'
+      restrict_living_info:
+        name: 'Require admin privileges to see details of living people'
+    index:
+      # Fix translation
+      settings_saved: Settings saved successfully!
+

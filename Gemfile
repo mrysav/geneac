@@ -96,3 +96,7 @@ gem 'edtf'
 
 # Searching
 gem 'pg_search'
+
+# Settings
+gem 'rails-settings-cached'
+gem 'rails-settings-ui'
