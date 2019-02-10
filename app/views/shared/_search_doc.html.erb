@@ -1,4 +1,7 @@
+<% hide_type = hide_type || false %>
 <div class="mb-3">
 <b><%= link_to doc.title, doc %></b><br/>
+<% if !hide_type %>
 <i>Type: <%= doc.class.to_s %></i>
+<% end %>
 </div>
