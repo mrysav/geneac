@@ -5,11 +5,13 @@
 
 <div class="row">
   <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+  <% if @recent_updates %>
     <div class="recent-updates mt-5">
       <h2 class="text-center">Recent Updates</h2>
       <% @recent_updates.each do |recent_update| %>
         <%= render partial: 'shared/search_doc', locals: { doc: recent_update }  %>
       <% end %>
     </div>
+  <% end %>
   </div>
 </div>
