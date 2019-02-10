@@ -3,6 +3,6 @@
 # Policy for settings
 class SettingsPolicy < ApplicationPolicy
   def use?
-    user&.admin?
+    admin?
   end
 end

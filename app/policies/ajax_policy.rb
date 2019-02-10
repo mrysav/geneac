@@ -13,10 +13,4 @@ class AjaxPolicy < ApplicationPolicy
   def people_tag?
     admin?
   end
-
-  private
-
-  def admin?
-    !user.nil? && user.admin?
-  end
 end

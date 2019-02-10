@@ -2,7 +2,9 @@
 
 class PhotoPolicy < ApplicationPolicy
   def show?
-    # TODO: deeper dive into permissions here
-    user&.admin? || record.tagged_person_list.empty?
+    return true if admin?
+
+    (logged_in? || !Setting.require_login) &&
+      (record.tagged_person_list.empty? || !Setting.restrict_living_info)
   end
 end
