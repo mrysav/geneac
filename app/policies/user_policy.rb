@@ -6,7 +6,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    user.admin? || user.id == record.id
   end
 
   def destroy?
