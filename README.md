@@ -36,9 +36,9 @@ And to start:
 * [x] Note posting
 * [x] Tags
 * [x] Full text search
-* [ ] Configurable privacy settings
-* [ ] Personal timelines
-* [ ] 50% test coverage
+* [x] Configurable privacy settings
+* [x] Personal timelines
+* [x] 50% test coverage
 
 0.2 Roadmap:
 
