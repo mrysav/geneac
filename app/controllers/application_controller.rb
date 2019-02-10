@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   protected
 
   def configure_permitted_parameters
@@ -27,5 +29,11 @@ class ApplicationController < ActionController::Base
     rescue Pundit::NotAuthorizedError => e
       false
     end
+  end
+
+  private
+
+  def user_not_authorized
+    render file: 'public/404.html', status: :forbidden, layout: false
   end
 end
