@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.1.0",
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "^4.0.2",
     "awesomplete": "^1.1.4",
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
@@ -16,6 +16,6 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "^3.2.1"
   }
 }
