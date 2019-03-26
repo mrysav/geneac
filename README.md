@@ -29,7 +29,7 @@ And to start:
 
 ## Roadmap
 
-0.1 Roadmap:
+0.1 Enter the Dragon:
 
 * [x] Admin console
 * [x] Image uploads
@@ -40,16 +40,16 @@ And to start:
 * [x] Personal timelines
 * [x] 50% test coverage
 
-0.2 Roadmap:
+0.2 The Data Update:
 
-* [ ] Facebook login
-* [ ] Data import/export via rake task
-* [ ] Search and identification of people mentioned in notes
+* [ ] Data import/export to JSON via rake task
+* [ ] GEDCOM import/export (possibly separate tool)
 * [ ] Multiple language support (I18n)
+
+0.3 Social Animal:
+
 * [ ] Map views for location-based data
-
-0.3 Roadmap:
-
+* [ ] Facebook login
 * [ ] Family tree view
 
 ## Contributing
