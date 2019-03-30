@@ -10,7 +10,7 @@ class PhotoDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    description: Field::String,
+    description: Field::Text,
     date: Field::DateTime,
     image: ImageField,
     tag_list: TagListField,
