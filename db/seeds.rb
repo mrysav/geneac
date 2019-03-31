@@ -35,7 +35,7 @@ when 'development'
     person = Person.create!(first_name: is_female ? Faker::Name.female_first_name : Faker::Name.male_first_name,
                             last_name: Faker::Name.last_name,
                             gender: is_female ? 'Female' : 'Male',
-                            bio: Faker::FamousLastWords.last_words
+                            bio: Faker::Quote.famous_last_words
                            )
 
     is_new_branch = rand(7) <= 1
@@ -99,9 +99,9 @@ when 'development'
     date = has_date ? Faker::Date.between(100.years.ago, Date.today).strftime('%F') : ''
     tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
     people_tags = person_ids.sample(rand(5)).join(', ')
-    photo = Photo.create!(title: Faker::BackToTheFuture.character,
-                          description: Faker::BackToTheFuture.quote,
-                          date: date, tag_list: tags, tagged_person_list: people_tags)
+    photo = Photo.create!(title: Faker::Movies::BackToTheFuture.character,
+                          description: Faker::Movies::BackToTheFuture.quote,
+                          date_string: date, tag_list: tags, tagged_person_list: people_tags)
     downloaded_img = open(Faker::LoremFlickr.image)
     photo.image.attach(io: downloaded_img, filename: "photo_#{photo.id}.jpg")
   end
@@ -115,9 +115,9 @@ when 'development'
     date = has_date ? Faker::Date.between(100.years.ago, Date.today).strftime('%F') : ''
     tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
     people_tags = person_ids.sample(rand(5)).join(', ')
-    Note.create!(title: Faker::LordOfTheRings.character,
+    Note.create!(title: Faker::Movies::LordOfTheRings.character,
                  content: Faker::Lorem.paragraphs(10).join("\n\n"),
-                 date: date, tag_list: tags, tagged_person_list: people_tags)
+                 date_string: date, tag_list: tags, tagged_person_list: people_tags)
   end
   puts "Created #{Note.count} notes"
 end
