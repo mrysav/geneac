@@ -21,12 +21,8 @@ By default, it renders:
   <title>
     <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
   </title>
-  <%= javascript_pack_tag 'bootstrap' %>
-  <%= stylesheet_pack_tag 'bootstrap' %>
-  <%= javascript_pack_tag 'fontawesome' %>
-  <%= stylesheet_pack_tag 'fontawesome' %>
   <%= javascript_pack_tag 'administrate' %>
-  <%= stylesheet_pack_tag 'administrate' %>
+  <%= stylesheet_pack_tag 'administrate_stylesheet' %>
   
   <%= render "stylesheet" %>
   <%= csrf_meta_tags %>

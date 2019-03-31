@@ -1,5 +1,4 @@
 import Awesomplete from 'awesomplete'
-import '../src/tag_list_field.scss'
 
 const ALL_TAGS = '/ajax/tags'
 const ALL_PEOPLE_TAGS = '/ajax/people_tags'

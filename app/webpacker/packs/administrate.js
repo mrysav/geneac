@@ -1,5 +1,7 @@
-import './tag_list_field'
-import '../src/administrate.scss'
+import 'bootstrap'
+
+import '../src/javascript/tag_list_field'
+import '../src/javascript/advanced_date_field'
 
 window.readImagePreview = function (input) {
   var preview = document.querySelector('#' + input.dataset.preview)

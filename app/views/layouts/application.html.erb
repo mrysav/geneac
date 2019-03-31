@@ -5,14 +5,8 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= javascript_pack_tag 'bootstrap' %>
-  <%= stylesheet_pack_tag 'bootstrap' %>
-
-  <%= javascript_pack_tag 'fontawesome' %>
-  <%= stylesheet_pack_tag 'fontawesome' %>
-
-  <%= javascript_pack_tag 'application' %>
-  <%= stylesheet_pack_tag 'application' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application_stylesheet' %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
