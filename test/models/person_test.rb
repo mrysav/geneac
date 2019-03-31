@@ -59,21 +59,21 @@ class PersonTest < ActiveSupport::TestCase
     assert_equal 'Ross Geller', people(:ross).title
   end
 
-  test 'edtf birth date' do
+  test 'parse birth date' do
     ross = people(:ross)
-    assert_nil ross.date_of_birth
-    ross.date_of_birth = '2010-10-31'
-    assert_equal 2010, ross.date_of_birth.year
-    ross.date_of_birth = '10/31/2010'
-    assert_nil ross.date_of_birth
+    assert_nil ross.birth_date_string
+    ross.birth_date_string = '2010-10-31'
+    assert_equal 2010, ross.birth_date.year
+    ross.birth_date_string = '10/31/2010'
+    assert_equal 2010, ross.birth_date.year
   end
 
-  test 'edtf death date' do
+  test 'parse death date' do
     ross = people(:ross)
-    assert_nil ross.date_of_death
-    ross.date_of_death = '2010-10-31'
-    assert_equal 2010, ross.date_of_death.year
-    ross.date_of_death = '10/31/2010'
-    assert_nil ross.date_of_death
+    assert_nil ross.death_date
+    ross.death_date_string = '2010-10-31'
+    assert_equal 2010, ross.death_date.year
+    ross.death_date_string = '10/31/2010'
+    assert_equal 2010, ross.death_date.year
   end
 end

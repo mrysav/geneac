@@ -8,11 +8,6 @@ class Note < ApplicationRecord
   acts_as_taggable_on :tags, :tagged_people
 
   def date
-    Date.edtf(super)
-  end
-
-  def date=(value)
-    parsed_date = Date.edtf(value)&.edtf
-    super(parsed_date)
+    Chronic.parse(date_string)
   end
 end

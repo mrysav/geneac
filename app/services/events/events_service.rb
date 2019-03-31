@@ -10,13 +10,13 @@ module Events
     def events
       events = []
 
-      unless @person.date_of_birth.nil?
-        events.push(Event.new(title: 'Born', date: @person.date_of_birth,
+      unless @person.birth_date.nil?
+        events.push(Event.new(title: 'Born', date: @person.birth_date,
                               location: @person.birthplace))
       end
 
-      unless @person.date_of_death.nil?
-        events.push(Event.new(title: 'Burial', date: @person.date_of_death,
+      unless @person.death_date.nil?
+        events.push(Event.new(title: 'Burial', date: @person.death_date,
                               location: @person.burialplace))
       end
 

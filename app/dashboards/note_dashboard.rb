@@ -10,7 +10,7 @@ class NoteDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    date: Field::String,
+    date_string: AdvancedDateField,
     content: Field::Text,
     tag_list: TagListField,
     tagged_person_list: PersonTagListField,
@@ -25,7 +25,7 @@ class NoteDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :title,
-    :date,
+    :date_string,
     :tag_list,
     :content,
   ].freeze
@@ -34,7 +34,7 @@ class NoteDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :title,
-    :date,
+    :date_string,
     :content,
     :tag_list,
     :tagged_person_list,
@@ -47,7 +47,7 @@ class NoteDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :date,
+    :date_string,
     :content,
     :tag_list,
     :tagged_person_list,

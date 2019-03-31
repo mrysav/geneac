@@ -98,6 +98,7 @@ GEM
     chromedriver-helper (2.1.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    chronic (0.10.2)
     commonmarker (0.18.2)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.5)
@@ -146,8 +147,6 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.5, >= 0.5.0)
       dry-types (~> 0.14, >= 0.14)
-    edtf (3.0.4)
-      activesupport (>= 3.0, < 6.0)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (1.9.3)
@@ -348,10 +347,10 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
+  chronic
   commonmarker
   country_select
   devise (~> 4.0)
-  edtf
   faker
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

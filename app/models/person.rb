@@ -4,7 +4,7 @@
 class Person < ApplicationRecord
   include PgSearch
   multisearchable against: %i[first_name last_name alternate_names
-                              date_of_birth date_of_death birthplace
+                              birth_date_string death_date_string birthplace
                               burialplace]
 
   # title is used when this shows up in search results
@@ -50,22 +50,12 @@ class Person < ApplicationRecord
                  id, father_id, mother_id)
   end
 
-  def date_of_birth
-    Date.edtf(super)
+  def birth_date
+    Chronic.parse(birth_date_string)
   end
 
-  def date_of_birth=(value)
-    parsed_date = Date.edtf(value)&.edtf
-    super(parsed_date)
-  end
-
-  def date_of_death
-    Date.edtf(super)
-  end
-
-  def date_of_death=(value)
-    parsed_date = Date.edtf(value)&.edtf
-    super(parsed_date)
+  def death_date
+    Chronic.parse(death_date_string)
   end
 
   def full_name
@@ -73,8 +63,8 @@ class Person < ApplicationRecord
   end
 
   def lifespan
-    birth_year = date_of_birth&.year
-    death_year = date_of_death&.year
+    birth_year = birth_date&.year
+    death_year = death_date&.year
 
     birth = birth_year || '?'
     death = death_year || (probably_dead? ? '?' : 'Present')
@@ -88,9 +78,9 @@ class Person < ApplicationRecord
   # but the US census releases records after 70 years
   # so I figure I'm good here
   def probably_dead?
-    definitely_dead = !date_of_death.nil?
-    no_record = !definitely_dead && date_of_birth.nil?
-    age = Date.today.year - (date_of_birth&.year || 0)
+    definitely_dead = !death_date.nil?
+    no_record = !definitely_dead && birth_date.nil?
+    age = Date.today.year - (birth_date&.year || 0)
     definitely_dead || no_record || age > 90
   end
 

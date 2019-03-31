@@ -13,8 +13,8 @@ class PersonDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     alternate_names: Field::String,
     gender: Field::String,
-    date_of_birth: Field::String,
-    date_of_death: Field::String,
+    birth_date_string: AdvancedDateField,
+    death_date_string: AdvancedDateField,
     birthplace: Field::String,
     burialplace: Field::String,
     bio: Field::Text,
@@ -45,7 +45,7 @@ class PersonDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :first_name,
     :last_name,
-    :date_of_birth,
+    :birth_date_string,
     :updated_at
   ].freeze
 
@@ -57,8 +57,8 @@ class PersonDashboard < Administrate::BaseDashboard
     :last_name,
     :alternate_names,
     :gender,
-    :date_of_birth,
-    :date_of_death,
+    :birth_date_string,
+    :death_date_string,
     :birthplace,
     :burialplace,
     :bio,
@@ -78,8 +78,8 @@ class PersonDashboard < Administrate::BaseDashboard
     :last_name,
     :alternate_names,
     :gender,
-    :date_of_birth,
-    :date_of_death,
+    :birth_date_string,
+    :death_date_string,
     :birthplace,
     :burialplace,
     :bio,

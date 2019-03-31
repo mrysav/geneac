@@ -92,7 +92,7 @@ group :production do
 end
 
 # Date parsing
-gem 'edtf'
+gem 'chronic'
 
 # Searching
 gem 'pg_search'

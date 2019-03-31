@@ -72,12 +72,12 @@ when 'development'
     has_deathday = [true, false].sample
 
     if has_birthday
-      person.date_of_birth = Faker::Date.birthday(0, 100).strftime('%F')
+      person.birth_date_string = Faker::Date.birthday(0, 100).strftime('%F')
       person.birthplace = Faker::Address.city + ', ' + Faker::Address.country
     end
 
     if has_deathday
-      person.date_of_death = Faker::Date.between(person.date_of_birth || 50.years.ago, Date.today).strftime('%F')
+      person.death_date_string = Faker::Date.between(person.birth_date || 50.years.ago, Date.today).strftime('%F')
       person.burialplace = Faker::Address.city + ', ' + Faker::Address.country
     end
 

@@ -10,11 +10,6 @@ class Photo < ApplicationRecord
   has_one_attached :image
 
   def date
-    Date.edtf(super)
-  end
-
-  def date=(value)
-    parsed_date = Date.edtf(value)&.edtf
-    super(parsed_date)
+    Chronic.parse(date_string)
   end
 end

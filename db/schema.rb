@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_09_023846) do
+ActiveRecord::Schema.define(version: 2019_03_31_071444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_023846) do
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
-    t.string "date"
+    t.string "date_string"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2019_02_09_023846) do
     t.string "last_name"
     t.string "alternate_names"
     t.string "gender"
-    t.string "date_of_birth"
-    t.string "date_of_death"
+    t.string "birth_date_string"
+    t.string "death_date_string"
     t.string "birthplace"
     t.string "burialplace"
     t.integer "father_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_023846) do
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "date"
+    t.string "date_string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
