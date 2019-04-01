@@ -1,0 +1,16 @@
+@import '~awesomplete/awesomplete';
+
+.person-field {
+
+  .person-field-search {
+    display: none;
+  }
+
+  .person-field-selected {
+    display: none;
+
+    i {
+      cursor: pointer;
+    }
+  }
+}

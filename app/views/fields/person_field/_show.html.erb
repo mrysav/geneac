@@ -1,0 +1,7 @@
+<%
+# Person field
+%>
+
+<% if field.data %>
+  <%= link_to field.to_s, admin_person_path(field.person_id) %>
+<% end %>

@@ -1,0 +1,16 @@
+<%
+# Person field
+%>
+
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+
+<div class="field-unit__field person-field">
+  <%= f.hidden_field field.attribute, value: field.data, class: 'person-field-id' %>
+  <div class="person-field-selected">
+    <span class="name"></span>
+    <i class="fas fa-times"></i>
+  </div>
+  <input type="text" class="person-field-search">
+</div>

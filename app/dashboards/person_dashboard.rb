@@ -20,18 +20,9 @@ class PersonDashboard < Administrate::BaseDashboard
     bio: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    father: Field::BelongsTo.with_options(
-      class_name: 'Person'
-    ),
-    father_id: Field::Number,
-    mother: Field::BelongsTo.with_options(
-      class_name: 'Person'
-    ),
-    mother_id: Field::Number,
-    current_spouse: Field::BelongsTo.with_options(
-      class_name: 'Person'
-    ),
-    current_spouse_id: Field::Number,
+    father_id: PersonField,
+    mother_id: PersonField,
+    current_spouse_id: PersonField,
     children: Field::HasMany.with_options(
       class_name: 'Person'
     )
@@ -64,9 +55,9 @@ class PersonDashboard < Administrate::BaseDashboard
     :bio,
     :created_at,
     :updated_at,
-    :father,
-    :mother,
-    :current_spouse,
+    :father_id,
+    :mother_id,
+    :current_spouse_id,
     :children,
   ].freeze
 
@@ -83,9 +74,9 @@ class PersonDashboard < Administrate::BaseDashboard
     :birthplace,
     :burialplace,
     :bio,
-    :father,
-    :mother,
-    :current_spouse,
+    :father_id,
+    :mother_id,
+    :current_spouse_id,
   ].freeze
 
   # Overwrite this method to customize how people are displayed
