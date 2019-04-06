@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+
+require 'io/console'
 require 'fileutils'
 include FileUtils
 
@@ -18,7 +20,7 @@ chdir APP_ROOT do
   system('bundle check') || system!('bundle install')
 
   # Install JavaScript dependencies if using Yarn
-  # system('bin/yarn')
+  system('bin/yarn')
 
   # puts "\n== Copying sample files =="
   # unless File.exist?('config/database.yml')
@@ -33,4 +35,20 @@ chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! 'bin/rails restart'
+
+  puts "\n== Creating administrator =="
+
+  print 'Email: '
+  email = $stdin.gets.chomp
+
+  print 'Password: '
+  pw = STDIN.noecho(&:gets).chomp
+
+  print "\nAgain: "
+  pw_conf = STDIN.noecho(&:gets).chomp
+
+  print "\n"
+
+  system! "rake users:create[#{email}\,#{pw}\,#{pw_conf}]"
+  system! "rake admin:grant[#{email}]"
 end
