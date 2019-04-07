@@ -2,8 +2,10 @@
   <% @results.each do |d| %>
     <%= render partial: 'shared/search_doc', locals: { doc: d }  %>
   <% end %>
-  <br/>
+  
+  <%== pagy_bootstrap_nav(@pagy) %>
+  
   <div class="total-results">
-    <i>Total results: <%= @results.count %></i>
+    <i>Total results: <%= @total_results %></i>
   </div>
 </div>
