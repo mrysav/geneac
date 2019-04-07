@@ -16,7 +16,11 @@ module Events
     end
 
     def <=>(other)
-      date <=> other&.date
+      if date && other.date
+        date <=> other&.date
+      else
+        -1
+      end
     end
   end
 end

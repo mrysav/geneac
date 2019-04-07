@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cool_fact:
+  factable_type: Person
+  factable_id: 1
+  fact_type: birth
