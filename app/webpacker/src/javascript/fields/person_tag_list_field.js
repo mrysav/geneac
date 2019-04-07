@@ -1,17 +1,8 @@
 import Awesomplete from 'awesomplete'
+import * as ajax from '../ajax'
 
-const ALL_TAGS = '/ajax/tags'
 const ALL_PEOPLE_TAGS = '/ajax/people_tags'
 const PERSON_TAG = '/ajax/people_tag/'
-
-function ajax (endpoint, callback) {
-  var ajax = new XMLHttpRequest()
-  ajax.open('GET', endpoint, true)
-  ajax.onload = function () {
-    callback(ajax.responseText)
-  }
-  ajax.send()
-}
 
 /**
  * Awesomplete-enabled element for tagging people.
@@ -104,39 +95,7 @@ let PersonTagInput = function (element) {
   ajax(ALL_PEOPLE_TAGS, initializeAwesomplete)
 }
 
-/**
- * Awesomplete-enabled element for comma-separated tag text field.
- * @param {*} element
- */
-let TagInput = function (element) {
-  ajax(ALL_TAGS, function (response) {
-    var list = JSON.parse(response)
-    return new Awesomplete(element, {
-      list: list,
-      filter: function (text, input) {
-        return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0])
-      },
-
-      item: function (text, input) {
-        return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0])
-      },
-
-      replace: function (text) {
-        var before = this.input.value.match(/^.+,\s*|/)[0]
-        this.input.value = before + text + ', '
-      }
-    })
-  })
+export default {
+  ELEMENT_NAME: '.person-tag-field',
+  activate: PersonTagInput
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  let personTagFields = document.querySelectorAll('.person-tag-field')
-  for (let t = 0; t < personTagFields.length; t++) {
-    PersonTagInput(personTagFields[t])
-  }
-
-  var tagFields = document.querySelectorAll('.tag-field')
-  for (var x = 0; x < tagFields.length; x++) {
-    TagInput(tagFields[x])
-  }
-})

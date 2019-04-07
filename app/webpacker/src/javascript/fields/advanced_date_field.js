@@ -26,9 +26,7 @@ let AdvancedDateField = function (element) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  let advancedDateFields = document.querySelectorAll('.advanced-date-field')
-  for (let t = 0; t < advancedDateFields.length; t++) {
-    AdvancedDateField(advancedDateFields[t])
-  }
-})
+export default {
+  ELEMENT_NAME: '.advanced-date-field',
+  activate: AdvancedDateField
+}

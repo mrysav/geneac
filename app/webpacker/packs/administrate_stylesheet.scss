@@ -4,9 +4,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 
-@import '../src/stylesheets/tag_list_field';
-@import '../src/stylesheets/advanced_date_field';
-@import '../src/stylesheets/person_field';
+@import '../src/stylesheets/fields/all';
 
 .img-preview {
   max-width: 200px;

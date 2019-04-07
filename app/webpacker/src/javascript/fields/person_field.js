@@ -1,16 +1,8 @@
 import Awesomplete from 'awesomplete'
+import * as ajax from '../ajax'
 
 const ALL_PEOPLE_TAGS = '/ajax/people_tags'
 const PERSON_TAG = '/ajax/people_tag/'
-
-function ajax (endpoint, callback) {
-  var ajax = new XMLHttpRequest()
-  ajax.open('GET', endpoint, true)
-  ajax.onload = function () {
-    callback(ajax.responseText)
-  }
-  ajax.send()
-}
 
 /**
  * Awesomplete-enabled element for inputting a single person.
@@ -59,11 +51,12 @@ let PersonField = function (peopleList, element) {
   initializeAwesomplete()
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  ajax(ALL_PEOPLE_TAGS, function (peopleList) {
-    let personFields = document.querySelectorAll('.person-field')
-    for (let t = 0; t < personFields.length; t++) {
-      PersonField(JSON.parse(peopleList), personFields[t])
-    }
-  })
-})
+export default {
+  ELEMENT_NAME: '.person-field',
+  activate: (element) => {
+    ajax(ALL_PEOPLE_TAGS, (people) => {
+      let peopleList = JSON.parse(people)
+      PersonField(peopleList, element)
+    })
+  }
+}
