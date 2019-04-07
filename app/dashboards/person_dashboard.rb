@@ -25,7 +25,8 @@ class PersonDashboard < Administrate::BaseDashboard
     current_spouse_id: PersonField,
     children: Field::HasMany.with_options(
       class_name: 'Person'
-    )
+    ),
+    facts: Field::NestedHasMany.with_options(skip: :factable),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -59,6 +60,7 @@ class PersonDashboard < Administrate::BaseDashboard
     :mother_id,
     :current_spouse_id,
     :children,
+    :facts,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -77,6 +79,7 @@ class PersonDashboard < Administrate::BaseDashboard
     :father_id,
     :mother_id,
     :current_spouse_id,
+    :facts,
   ].freeze
 
   # Overwrite this method to customize how people are displayed

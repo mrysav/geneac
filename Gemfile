@@ -79,6 +79,8 @@ gem 'country_select'
 
 # administrate for content management
 gem 'administrate'
+# administrate plugins
+gem 'administrate-field-nested_has_many'
 
 # For content tagging
 gem 'acts-as-taggable-on', '~> 6.0'
