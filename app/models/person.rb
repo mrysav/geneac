@@ -5,7 +5,7 @@ class Person < ApplicationRecord
   has_many :facts, as: :factable
   accepts_nested_attributes_for :facts
 
-  include PgSearch
+  include PgSearch::Model
   multisearchable against: %i[first_name last_name alternate_names
                               birth_date_string death_date_string birthplace
                               burialplace]

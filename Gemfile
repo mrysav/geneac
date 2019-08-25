@@ -1,40 +1,32 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sassc-rails', '~> 1.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'sassc-rails', '~> 2.1'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,16 +41,16 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  # For getting test data!
+  # For making test data!
   gem 'faker'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
+  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'webdrivers'
 
   # Code coverage
   gem 'simplecov', require: false
@@ -74,23 +66,25 @@ gem 'devise', '~> 4.0'
 gem 'pundit'
 
 # simple_form and country_select for easier forms
-gem 'simple_form', '~> 4.0'
 gem 'country_select'
+gem 'simple_form', '~> 4.0'
 
 # administrate for content management
-gem 'administrate'
+# TODO: Upgrade to official release when it's out
+gem 'administrate', github: 'thoughtbot/administrate'
 # administrate plugins
 gem 'administrate-field-nested_has_many'
 
 # For content tagging
-gem 'acts-as-taggable-on', '~> 6.0'
+# TODO: Use official branch
+gem 'acts-as-taggable-on', '~> 6.0', github: 'ogasawaraShinnosuke/acts-as-taggable-on'
 
 # Rendering markdown
 gem 'commonmarker'
 
 group :production do
   # For S3
-  gem "aws-sdk-s3"
+  gem 'aws-sdk-s3'
 end
 
 # Date parsing
@@ -100,8 +94,10 @@ gem 'chronic'
 gem 'pg_search'
 
 # Settings
-gem 'rails-settings-cached'
-gem 'rails-settings-ui'
+# TODO: migrate to different settings gem
+gem 'rails-settings-cached', '~> 0'
+# TODO: PR or leave
+gem 'rails-settings-ui', github: 'mrysav/rails-settings-ui'
 
 # Pagination
 gem 'pagy'

@@ -2,7 +2,7 @@
 
 # Controls search-related functions
 class SearchController < ApplicationController
-  include PgSearch
+  include PgSearch::Model
 
   def search
     r = PgSearch.multisearch(params[:s]).map(&:searchable)

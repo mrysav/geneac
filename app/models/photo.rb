@@ -2,7 +2,7 @@
 
 # Photo model
 class Photo < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   multisearchable against: %i[title description date]
 
   acts_as_taggable_on :tags, :tagged_people
