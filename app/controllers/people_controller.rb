@@ -6,6 +6,16 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     authorize @person
 
+    @children = @person.children.map do |p|
+      authorize p
+      p
+    end
+
+    @siblings = @person.siblings.map do |p|
+      authorize p
+      p
+    end
+
     @events = events_service.events
     @notes = Note.tagged_with(@person.id.to_s)
     @photos = Photo.tagged_with(@person.id.to_s)
