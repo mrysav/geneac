@@ -1,5 +1,7 @@
 # config/app.yml for rails-settings-cached
 defaults: &defaults
+  site_title: 'Geneac'
+  site_tagline: 'Genealogy for maniacs!'
   show_recent_updates: true 
   require_login: false
   restrict_living_info: true

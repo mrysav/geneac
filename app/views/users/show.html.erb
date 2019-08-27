@@ -5,7 +5,7 @@
 
   <% if current_user && current_user.id == @user.id %>
     <div>
-      <%= link_to 'Edit profile', edit_user_registration_path %>
+      <%= link_to t('users.edit_profile'), edit_user_registration_path %>
     </div>
   <% end %>
 </div>

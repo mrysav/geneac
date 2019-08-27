@@ -30,6 +30,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  nav:
+    toggle_navigation: 'Toggle navigation'
+    home: 'Home'
+    profile: 'Profile'
+    admin_console: 'Admin Console'
+    site_settings: 'Site Settings'
+    sign_in: 'Sign In or Register'
+    sign_out: 'Sign Out'
+    search: 'Search'
+  home:
+    recent_updates: 'Recent Updates'
+  people:
+    bio: 'Bio'
+    timeline: 'Timeline'
+    family: 'Family'
+    notes: 'Notes'
+    photos: 'Photos'
+    parents: 'Parents'
+    siblings: 'Siblings'
+    children: 'Children'
+    unknown: 'Unknown'
+    with: 'With'
+    with_and: 'With %{p1} and %{p2}'
+  search:
+    total_results: 'Total results: %{total}'
+    type: 'Type: %{type}'
   settings:
     attributes:
       show_recent_updates:
@@ -38,7 +64,14 @@ en:
         name: 'Require users to be signed in to view all data'
       restrict_living_info:
         name: 'Require admin privileges to see details of living people'
+      site_title:
+        name: 'Site Title'
+      site_tagline:
+        name: 'Site Tagline'
     index:
       # Fix translation
       settings_saved: Settings saved successfully!
+  admin:
+    advanced_date:
+      parsed_as: 'Parsed as: '
 

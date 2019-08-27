@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Geneac - <%= @title || 'Genealogy for Braniacs!' %></title>
+  <title><%= setting(:site_title) %> - <%= @title || setting(:site_tagline) %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 

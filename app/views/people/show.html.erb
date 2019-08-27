@@ -17,18 +17,18 @@
     <nav>
       <div class="nav nav-pills" id="nav-tab" role="tablist">
         <% if show_bio %>
-        <a class="nav-item nav-link active" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="true">Bio</a>
+        <a class="nav-item nav-link active" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="true"><%= t('people.bio') %></a>
         <% end %>
-        <a class="nav-item nav-link <%= 'active' if !show_bio %>" id="nav-timeline-tab" data-toggle="tab" href="#nav-timeline" role="tab" aria-controls="nav-timeline" aria-selected="false">Timeline</a>
+        <a class="nav-item nav-link <%= 'active' if !show_bio %>" id="nav-timeline-tab" data-toggle="tab" href="#nav-timeline" role="tab" aria-controls="nav-timeline" aria-selected="false"><%= t('people.timeline') %></a>
         
-        <a class="nav-item nav-link" id="nav-family-tab" data-toggle="tab" href="#nav-family" role="tab" aria-controls="nav-family" aria-selected="false">Family</a>
+        <a class="nav-item nav-link" id="nav-family-tab" data-toggle="tab" href="#nav-family" role="tab" aria-controls="nav-family" aria-selected="false"><%= t('people.family') %></a>
         
         <% if @notes.count > 0 %>
-        <a class="nav-item nav-link" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab" aria-controls="nav-notes" aria-selected="false">Notes</a>
+        <a class="nav-item nav-link" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab" aria-controls="nav-notes" aria-selected="false"><%= t('people.notes') %></a>
         <% end %>
 
         <% if @photos.count > 0 %>
-        <a class="nav-item nav-link" id="nav-photos-tab" data-toggle="tab" href="#nav-photos" role="tab" aria-controls="nav-photos" aria-selected="false">Photos</a>
+        <a class="nav-item nav-link" id="nav-photos-tab" data-toggle="tab" href="#nav-photos" role="tab" aria-controls="nav-photos" aria-selected="false"><%= t('people.photos') %></a>
         <% end %>
       </div>
     </nav>
@@ -50,18 +50,20 @@
 
       <div class="tab-pane fade pl-3" id="nav-family" role="tabpanel" aria-labelledby="nav-family-tab">
         <% if @person.father_id || @person.mother_id %>
-          <h4 class="mt-2">Parents</h4>
+          <h4 class="mt-2"><%= t('people.parents') %></h4>
           <%= render partial: 'shared/search_doc', locals: { doc: @person.mother, hide_type: true } if @person.mother_id %>
           <%= render partial: 'shared/search_doc', locals: { doc: @person.father, hide_type: true } if @person.father_id %>
         <% end %>
 
         <% if @siblings&.count > 0 %>
-          <h4 class="mt-2">Siblings</h4>
+          <h4 class="mt-2"><%= t('people.siblings') %></h4>
           <% last_mother_id = -1 %>
           <% last_father_id = -1 %>
           <% @siblings.each do |sibling| %>
             <% if sibling.mother_id != last_mother_id || sibling.father_id != last_father_id %>
-              <h5>With <%= link_to sibling.mother&.full_name, sibling.mother || 'Unknown' %> and <%= link_to sibling.father&.full_name, sibling.father || 'Unknown' %></h5>
+              <h5><%= t('people.with_and', p1: (link_to sibling.mother&.full_name, sibling.mother || t('people.unknown')), 
+                                           p2: (link_to sibling.father&.full_name, sibling.father || t('people.unknown'))).html_safe %>
+              </h5>
             <% end %>
             <%= render partial: 'shared/search_doc', locals: { doc: sibling, hide_type: true } %>
             <% last_mother_id = sibling.mother_id %>
@@ -70,14 +72,14 @@
         <% end %>
 
         <% if @children&.count > 0 %>
-          <h4 class="mt-2">Children</h4>
+          <h4 class="mt-2"><%= t('people.children') %></h4>
           <% last_spouse_id = -1 %>
           <% @children.each do |child| %>
             <% if (child.mother_id == @person.id && child.father_id != last_spouse_id) %>
-              <h5>With <%= link_to child.father&.full_name, child.father || 'Unknown' %></h5>
+              <h5><%= t('people.with') %> <%= link_to child.father&.full_name, child.father || t('people.unknown') %></h5>
               <% last_spouse_id = child.father_id %>
             <% elsif (child.father_id == @person.id && child.mother_id != last_spouse_id)  %>
-              <h5>With <%= link_to child.mother&.full_name, child.mother || 'Unknown' %></h5>
+              <h5><%= t('people.with') %> <%= link_to child.mother&.full_name, child.mother || t('people.unknown') %></h5>
               <% last_spouse_id = child.mother_id %>
             <% end %>
             <%= render partial: 'shared/search_doc', locals: { doc: child, hide_type: true } %>

@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="/">geneac</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="/"><%= setting(:site_title) %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<%= t('nav.toggle_navigation') %>%">
   <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <%= link_to 'Home', '/', class: 'nav-link' %>
+      <%= link_to t('nav.home'), '/', class: 'nav-link' %>
     </li>
   </ul>
 
@@ -18,20 +18,20 @@
             <%= current_user.name || current_user.email %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'Profile', user_path(current_user.id), class: 'dropdown-item' %>
+            <%= link_to t('nav.profile'), user_path(current_user.id), class: 'dropdown-item' %>
             <% if current_user.admin? %>
             <div class="dropdown-divider"></div>
             <div class="font-weight-bold dropdown-item">Admin</div>
-            <%= link_to 'Admin Console', admin_root_path, class: 'dropdown-item' %>
-            <%= link_to 'Site Settings', rails_settings_ui_path, class: 'dropdown-item' %>
+            <%= link_to t('nav.admin_console'), admin_root_path, class: 'dropdown-item' %>
+            <%= link_to t('nav.site_settings'), rails_settings_ui_path, class: 'dropdown-item' %>
             <% end %>
             <div class="dropdown-divider"></div>
-            <%= link_to 'Sign Out', destroy_user_session_path, class: 'dropdown-item' %>
+            <%= link_to t('nav.sign_out'), destroy_user_session_path, class: 'dropdown-item' %>
         </div>
     </li>
     <% else %>
     <li class="nav-item">
-        <%= link_to 'Sign In or Register', new_user_session_path, class: 'nav-link' %>
+        <%= link_to t('nav.sign_in'), new_user_session_path, class: 'nav-link' %>
     </li>
     <% end %>
   </ul>
@@ -39,7 +39,7 @@
   <% if show_search_bar %>  
   <form class="form-inline" action="/search">
     <div class="input-group">
-    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="s" id="s" value="<%= params[:s] %>"></input>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="s" id="s" value="<%= params[:s] %>" />
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
     </div>
