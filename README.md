@@ -48,7 +48,7 @@ And to start:
 
 * [ ] Data import/export to JSON via rake task
 * [ ] GEDCOM import/export (possibly separate tool)
-* [ ] Multiple language support (I18n)
+* [x] Multiple language support (I18n) *(only English right now, but all strings localized)*
 
 0.3 Social Animal:
 
