@@ -41,6 +41,8 @@ en:
     search: 'Search'
   home:
     recent_updates: 'Recent Updates'
+  users:
+    edit_profile: 'Edit Profile'
   people:
     bio: 'Bio'
     timeline: 'Timeline'
