@@ -101,3 +101,6 @@ gem 'rails-settings-ui', github: 'mrysav/rails-settings-ui'
 
 # Pagination
 gem 'pagy'
+
+# Backup/restore with zip file
+gem 'rubyzip'
