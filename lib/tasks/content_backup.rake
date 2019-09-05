@@ -26,5 +26,6 @@ namespace :content do
 
     stringio.rewind        # reposition buffer pointer to the beginning
     print stringio.sysread # write buffer to stdout
+    $stdout.flush
   end
 end
