@@ -60,7 +60,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use Devise for authentication
-gem 'devise', '~> 4.0'
+gem 'devise', '~> 4.7'
 
 # Pundit for policies
 gem 'pundit'
