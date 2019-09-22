@@ -5,7 +5,7 @@ require 'test_helper'
 class NotesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-   test 'anonymous user visibility' do
+  test 'anonymous user visibility' do
     note = notes(:markdown)
 
     Setting.require_login = false
@@ -15,14 +15,14 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
     Setting.require_login = false
     Setting.restrict_living_info = true
-    note.tagged_person_list = ['1']
+    note.tagged_person_list.add('1')
     note.save!
     get note_path note.id
     assert_response :forbidden
 
     Setting.require_login = false
     Setting.restrict_living_info = true
-    note.tagged_person_list = []
+    note.tagged_person_list.remove('1')
     note.save!
     get note_path note.id
     assert_response :success
@@ -38,7 +38,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_response :forbidden
   end
 
-   test 'non-admin user visibility' do
+  test 'non-admin user visibility' do
     note = notes(:markdown)
     sign_in users(:biff)
 
@@ -49,14 +49,14 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
     Setting.require_login = false
     Setting.restrict_living_info = true
-    note.tagged_person_list = ['1']
+    note.tagged_person_list.add('1')
     note.save!
     get note_path note.id
     assert_response :forbidden
 
     Setting.require_login = false
     Setting.restrict_living_info = true
-    note.tagged_person_list = []
+    note.tagged_person_list.remove('1')
     note.save!
     get note_path note.id
     assert_response :success
@@ -68,20 +68,20 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
     Setting.require_login = true
     Setting.restrict_living_info = true
-    note.tagged_person_list = ['1']
+    note.tagged_person_list.add('1')
     note.save!
     get note_path note.id
     assert_response :forbidden
 
     Setting.require_login = true
     Setting.restrict_living_info = true
-    note.tagged_person_list = []
+    note.tagged_person_list.remove('1')
     note.save!
     get note_path note.id
     assert_response :success
   end
 
-   test 'admin user visibility' do
+  test 'admin user visibility' do
     note = notes(:markdown)
     sign_in users(:doc)
 
@@ -92,14 +92,14 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
     Setting.require_login = false
     Setting.restrict_living_info = true
-    note.tagged_person_list = ['1']
+    note.tagged_person_list.add('1')
     note.save!
     get note_path note.id
     assert_response :success
 
     Setting.require_login = false
     Setting.restrict_living_info = true
-    note.tagged_person_list = []
+    note.tagged_person_list.remove('1')
     note.save!
     get note_path note.id
     assert_response :success
@@ -111,14 +111,14 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
     Setting.require_login = true
     Setting.restrict_living_info = true
-    note.tagged_person_list = ['1']
+    note.tagged_person_list.add('1')
     note.save!
     get note_path note.id
     assert_response :success
 
     Setting.require_login = true
     Setting.restrict_living_info = true
-    note.tagged_person_list = []
+    note.tagged_person_list.remove('1')
     note.save!
     get note_path note.id
     assert_response :success

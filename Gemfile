@@ -76,8 +76,8 @@ gem 'administrate', github: 'thoughtbot/administrate'
 gem 'administrate-field-nested_has_many'
 
 # For content tagging
-# TODO: Use official branch
-gem 'acts-as-taggable-on', '~> 6.0', github: 'ogasawaraShinnosuke/acts-as-taggable-on'
+# TODO: Use 6.5 when stable
+gem 'acts-as-taggable-on', '~> 6.0', github: 'mbleigh/acts-as-taggable-on'
 
 # Rendering markdown
 gem 'commonmarker'
