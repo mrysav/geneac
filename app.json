@@ -14,7 +14,7 @@
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     },
-    "MAILER_HOSTNAME": {
+    "HOSTNAME": {
       "description": "Host to link to in password reset or confirmation emails."
     },
     "AWS_ACCESS_KEY_ID": {

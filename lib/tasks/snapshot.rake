@@ -2,9 +2,9 @@
 
 require 'zip'
 
-namespace :content do
-  desc 'Backup all content'
-  task backup: :environment do
+namespace :snapshot do
+  desc 'Create a snapshot of all content'
+  task create: :environment do
     stringio = Zip::OutputStream.write_buffer do |zio|
       zio.put_next_entry('Person.json')
       zio.write(Person.all.to_json)
@@ -23,9 +23,17 @@ namespace :content do
         zio.write(photo.image.download)
       end
     end
+    stringio.rewind # reposition buffer pointer to the beginning
 
-    stringio.rewind        # reposition buffer pointer to the beginning
-    print stringio.sysread # write buffer to stdout
-    $stdout.flush
+    snapshot = Snapshot.create(
+      archive: ActiveStorage::Blob.create_after_upload!(
+        io: stringio,
+        filename: "geneac_snapshot_#{Time.now.to_i}.zip",
+        content_type: 'application/zip'
+      )
+    )
+    snapshot.save!
+
+    print "Snapshot created. URL:\n\n#{snapshot.archive_url}\n\n"
   end
 end

@@ -67,7 +67,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # Mailer URL
-  config.action_mailer.default_url_options = { host: ENV['MAILER_HOSTNAME'],
+  config.action_mailer.default_url_options = { host: ENV['HOSTNAME'],
                                                port: ENV['PORT'] || 3000 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
