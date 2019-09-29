@@ -9,6 +9,5 @@ class SnapshotTest < ActiveSupport::TestCase
     file = File.open Rails.root.join('test', 'fixtures', 'files', 'test_snapshot.zip')
     snapshot.archive.attach(io: file, filename: 'test_snapshot.zip')
     snapshot.save!
-    assert_not_nil snapshot.archive_url
   end
 end

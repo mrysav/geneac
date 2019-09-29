@@ -76,4 +76,8 @@ en:
   admin:
     advanced_date:
       parsed_as: 'Parsed as: '
-
+  administrate:
+    actions:
+      download: 'Download'
+    snapshot:
+      create: 'Snapshot creation initiated.'

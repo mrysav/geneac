@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :photos
     resources :notes
     resources :facts
+    resources :snapshots
 
     root to: 'users#index'
   end
