@@ -70,8 +70,7 @@ gem 'country_select'
 gem 'simple_form', '~> 4.0'
 
 # administrate for content management
-# TODO: Upgrade to official release when it's out
-gem 'administrate', github: 'thoughtbot/administrate'
+gem 'administrate', '~> 0'
 # administrate plugins
 gem 'administrate-field-nested_has_many'
 

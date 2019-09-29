@@ -15,22 +15,6 @@ GIT
       i18n
       rails (>= 3.0)
 
-GIT
-  remote: https://github.com/thoughtbot/administrate.git
-  revision: 430f326ddbafcb75b9cb0d67272994a3e6bfc3fe
-  specs:
-    administrate (0.12.0)
-      actionpack (>= 4.2)
-      actionview (>= 4.2)
-      activerecord (>= 4.2)
-      autoprefixer-rails (>= 6.0)
-      datetime_picker_rails (~> 0.0.7)
-      jquery-rails (>= 4.0)
-      kaminari (>= 1.0)
-      momentjs-rails (~> 2.8)
-      sassc-rails (~> 2.1)
-      selectize-rails (~> 0.6)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -91,6 +75,17 @@ GEM
       zeitwerk (~> 2.1, >= 2.1.8)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    administrate (0.12.0)
+      actionpack (>= 4.2)
+      actionview (>= 4.2)
+      activerecord (>= 4.2)
+      autoprefixer-rails (>= 6.0)
+      datetime_picker_rails (~> 0.0.7)
+      jquery-rails (>= 4.0)
+      kaminari (>= 1.0)
+      momentjs-rails (~> 2.8)
+      sassc-rails (~> 2.1)
+      selectize-rails (~> 0.6)
     administrate-field-nested_has_many (1.1.0)
       administrate (> 0.8, < 1)
       cocoon (~> 1.2, >= 1.2.11)
@@ -355,7 +350,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 6.0)!
-  administrate!
+  administrate (~> 0)
   administrate-field-nested_has_many
   aws-sdk-s3
   bootsnap (>= 1.4.2)
