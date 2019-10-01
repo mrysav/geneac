@@ -10,8 +10,8 @@ class SnapshotDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    archive: FileField,
+    created_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,13 +21,14 @@ class SnapshotDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     created_at
+    archive
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    archive
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
