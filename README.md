@@ -46,12 +46,16 @@ And to start:
 
 0.2 The Data Update:
 
-* [ ] Data import/export to JSON via rake task
-* [ ] GEDCOM import/export (possibly separate tool)
 * [x] Multiple language support (I18n) *(only English right now, but all strings localized)*
+* [x] Data export to JSON in admin dashboard
+* [ ] Restore data from JSON snapshot in admin dashboard
+* [ ] Additional data type for storing citations/sources
+* [ ] Additional data type for storing [facts/events](https://wiki.phpgedview.net/en/index.php/Facts_and_Events)
+* [ ] GEDCOM import/export (possibly separate tool)
 
 0.3 Social Animal:
 
+* [ ] Store place information
 * [ ] Map views for location-based data
 * [ ] Facebook login
 * [ ] Family tree view
