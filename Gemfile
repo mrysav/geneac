@@ -95,8 +95,7 @@ gem 'pg_search'
 # Settings
 # TODO: migrate to different settings gem
 gem 'rails-settings-cached', '~> 0'
-# TODO: PR or leave
-gem 'rails-settings-ui', github: 'mrysav/rails-settings-ui'
+gem 'rails-settings-ui'
 
 # Pagination
 gem 'pagy'
