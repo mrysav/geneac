@@ -67,7 +67,7 @@ gem 'pundit'
 
 # simple_form and country_select for easier forms
 gem 'country_select'
-gem 'simple_form', '~> 4.0'
+gem 'simple_form', '~> 5.0'
 
 # administrate for content management
 gem 'administrate', '~> 0'
