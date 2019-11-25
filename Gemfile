@@ -75,8 +75,7 @@ gem 'administrate', '~> 0'
 gem 'administrate-field-nested_has_many'
 
 # For content tagging
-# TODO: Use 6.5 when stable
-gem 'acts-as-taggable-on', '~> 6.0', github: 'mbleigh/acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 6.5'
 
 # Rendering markdown
 gem 'commonmarker'
