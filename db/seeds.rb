@@ -21,7 +21,7 @@ when 'development'
 
   puts 'Created test user account'
 
-  sample_tags = Faker::Lorem.words(10)
+  sample_tags = Faker::Lorem.words(number: 10)
 
   Person.all.each(&:destroy!)
   ActiveRecord::Base.connection.reset_pk_sequence!(Person.table_name)
@@ -72,12 +72,14 @@ when 'development'
     has_deathday = [true, false].sample
 
     if has_birthday
-      person.birth_date_string = Faker::Date.birthday(0, 100).strftime('%F')
+      person.birth_date_string = Faker::Date.birthday(min_age: 0, max_age: 100).strftime('%F')
       person.birthplace = Faker::Address.city + ', ' + Faker::Address.country
     end
 
     if has_deathday
-      person.death_date_string = Faker::Date.between(person.birth_date || 50.years.ago, Date.today).strftime('%F')
+      person.death_date_string =
+        Faker::Date.between(from: person.birth_date || 50.years.ago,
+                            to: Date.today).strftime('%F')
       person.burialplace = Faker::Address.city + ', ' + Faker::Address.country
     end
 
@@ -96,7 +98,12 @@ when 'development'
 
   20.times do |_index|
     has_date = [true, false].sample
-    date = has_date ? Faker::Date.between(100.years.ago, Date.today).strftime('%F') : ''
+    date = if has_date
+             Faker::Date.between(from: 100.years.ago,
+                                 to: Date.today).strftime('%F')
+           else
+             ''
+           end
     tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
     people_tags = person_ids.sample(rand(5)).join(', ')
     photo = Photo.create!(title: Faker::Movies::BackToTheFuture.character,
@@ -112,11 +119,16 @@ when 'development'
 
   50.times do |_index|
     has_date = [true, false].sample
-    date = has_date ? Faker::Date.between(100.years.ago, Date.today).strftime('%F') : ''
+    date = if has_date
+             Faker::Date.between(from: 100.years.ago,
+                                 to: Date.today).strftime('%F')
+           else 
+             ''
+           end
     tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
     people_tags = person_ids.sample(rand(5)).join(', ')
     Note.create!(title: Faker::Movies::LordOfTheRings.character,
-                 content: Faker::Lorem.paragraphs(10).join("\n\n"),
+                 content: Faker::Lorem.paragraphs(number: 10).join("\n\n"),
                  date_string: date, tag_list: tags, tagged_person_list: people_tags)
   end
   puts "Created #{Note.count} notes"
