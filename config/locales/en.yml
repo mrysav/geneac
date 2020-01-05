@@ -81,3 +81,6 @@ en:
       download: 'Download'
     snapshot:
       create: 'Snapshot creation initiated.'
+      restore: 'Restore %{name}'
+      are_you_sure: 'Are you sure you want to restore this snapshot? All existing data will be lost!'
+      restore_initiated: 'Snapshot restoration initiated.'

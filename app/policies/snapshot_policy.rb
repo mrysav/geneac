@@ -12,4 +12,8 @@ class SnapshotPolicy < ApplicationPolicy
   def show?
     admin?
   end
+
+  def restore?
+    admin?
+  end
 end

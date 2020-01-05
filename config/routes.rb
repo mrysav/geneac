@@ -27,7 +27,9 @@ Rails.application.routes.draw do
     resources :photos
     resources :notes
     resources :facts
-    resources :snapshots
+    resources :snapshots do
+      get 'restore' => 'snapshots#restore'
+    end
 
     root to: 'users#index'
   end

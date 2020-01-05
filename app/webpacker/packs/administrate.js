@@ -12,3 +12,12 @@ window.readImagePreview = function (input) {
     reader.readAsDataURL(input.files[0])
   }
 }
+
+window.confirmWithMessage = function (message) {
+  return function (e) {
+    e = e || window.event
+    if (!confirm(message)) {
+      e.preventDefault()
+    }
+  }
+}
