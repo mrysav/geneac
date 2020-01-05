@@ -1,8 +1,8 @@
 module Admin
   class SnapshotsController < Admin::ApplicationController
-    def new
+    def initiate
       CreateSnapshotJob.perform_later
-      flash[:notice] = I18n.t 'administrate.snapshot.create'
+      flash[:notice] = I18n.t 'administrate.snapshot.initiate'
       redirect_to :admin_snapshots
     end
 

@@ -10,10 +10,11 @@ class RestoreSnapshotJob < ApplicationJob
     delete_all_data
 
     snapshot.archive.open do |zipfile|
-      Zip::InputStream.open(zipfile) do |zip|
-        while (entry = zip.get_next_entry)
-          handle_json(entry.name, zip) if entry.name.end_with?('.json')
-          handle_photo(entry.name, zip) if entry.name.start_with?('Photos/')
+      Zip::File.open_buffer(zipfile) do |zip|
+        zip.each do |entry|
+          istream = zip.get_input_stream(entry)
+          handle_json(entry.name, istream) if entry.name.end_with?('.json')
+          handle_photo(entry.name, istream) if entry.name.start_with?('Photos/')
         end
       end
     end
