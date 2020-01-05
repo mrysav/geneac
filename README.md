@@ -48,10 +48,10 @@ And to start:
 
 * [x] Multiple language support (I18n) *(only English right now, but all strings localized)*
 * [x] Data export to JSON in admin dashboard
-* [ ] Restore data from JSON snapshot in admin dashboard
+* [x] Restore data from JSON snapshot in admin dashboard
 * [ ] Additional data type for storing citations/sources
-* [ ] Additional data type for storing [facts/events](https://wiki.phpgedview.net/en/index.php/Facts_and_Events)
-* [ ] GEDCOM import/export (possibly separate tool)
+* [x] Additional data type for storing [facts/events](https://wiki.phpgedview.net/en/index.php/Facts_and_Events)
+* [x] GEDCOM import/export (see: [gedcom2geneac](https://github.com/mrysav/gedcom2geneac))
 
 0.3 Social Animal:
 
