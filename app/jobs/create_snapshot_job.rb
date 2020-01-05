@@ -6,7 +6,7 @@ require 'zip'
 class CreateSnapshotJob < ApplicationJob
   queue_as :default
 
-  def perform(*_args)
+  def perform(*)
     stringio = Zip::OutputStream.write_buffer do |zio|
       add_people(zio)
       add_facts(zio)
