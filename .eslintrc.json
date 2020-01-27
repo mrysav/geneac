@@ -1,6 +1,15 @@
 {
-    "extends": "standard",
-    "env": {
-        "browser": 1
-    }
+  "extends": ["plugin:prettier/recommended"],
+
+  "plugins": ["prettier"],
+
+  "parser": "babel-eslint",
+
+  "rules": {
+    "prettier/prettier": "error"
+  },
+
+  "env": {
+    "browser": true
+  }
 }

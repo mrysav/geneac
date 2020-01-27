@@ -76,4 +76,10 @@ class PersonTest < ActiveSupport::TestCase
     ross.death_date_string = '10/31/2010'
     assert_equal 2010, ross.death_date.year
   end
+
+  test 'parse birth date year only' do
+    joey = Person.new
+    joey.birth_date_string = '1980'
+    assert_equal 1980, joey.birth_date.year
+  end
 end

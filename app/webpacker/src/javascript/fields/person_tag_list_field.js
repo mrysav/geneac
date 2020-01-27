@@ -8,7 +8,7 @@ const PERSON_TAG = '/ajax/people_tag/'
  * Awesomplete-enabled element for tagging people.
  * @param {Element} element
  */
-let PersonTagInput = function (element) {
+let PersonTagInput = function(element) {
   let tagListValueInput = element
   tagListValueInput.type = 'hidden'
 
@@ -28,14 +28,16 @@ let PersonTagInput = function (element) {
   parentDiv.appendChild(textField)
   parentDiv.appendChild(tagListValueInput)
 
-  let syncTagValues = function () {
+  let syncTagValues = function() {
     tagListValueInput.value = tagListValues.join(', ')
   }
 
-  let deleteTag = function (value) {
+  let deleteTag = function(value) {
     value = parseInt(value, 10)
     // if value is NaN or less than 0, return
-    if (!(value > 0)) { return }
+    if (!(value > 0)) {
+      return
+    }
 
     let index = tagListValues.indexOf(value)
     if (index > -1) {
@@ -46,18 +48,22 @@ let PersonTagInput = function (element) {
     }
   }
 
-  let addTag = function (name, value) {
+  let addTag = function(name, value) {
     value = parseInt(value, 10)
     // if value is NaN or less than 0, return
-    if (!(value > 0)) { return }
+    if (!(value > 0)) {
+      return
+    }
     // if value already exists in tag list, return
-    if (tagListValues.indexOf(value) > -1) { return }
+    if (tagListValues.indexOf(value) > -1) {
+      return
+    }
 
     var li = document.createElement('li')
     li.innerHTML = name + ' <a href="#">(x)</a>'
     li.classList.add('tag-' + value)
 
-    li.querySelector('a').addEventListener('click', function (event) {
+    li.querySelector('a').addEventListener('click', function(event) {
       event.preventDefault()
       deleteTag(value)
     })
@@ -68,17 +74,17 @@ let PersonTagInput = function (element) {
     syncTagValues()
   }
 
-  let initializeAwesomplete = function (peopleTags) {
+  let initializeAwesomplete = function(peopleTags) {
     var list = JSON.parse(peopleTags)
     return new Awesomplete(textField, {
       list: list,
-      replace: function () {
+      replace: function() {
         this.input.value = ''
       }
     })
   }
 
-  textField.addEventListener('awesomplete-selectcomplete', function (event) {
+  textField.addEventListener('awesomplete-selectcomplete', function(event) {
     addTag(event.text.label, event.text.value)
   })
 
@@ -86,7 +92,7 @@ let PersonTagInput = function (element) {
   for (let t = 0; t < tags.length; t++) {
     let pid = parseInt(tags[t], 10)
     if (pid > 0) {
-      ajax(PERSON_TAG + pid, function (person) {
+      ajax(PERSON_TAG + pid, function(person) {
         addTag(person, pid)
       })
     }

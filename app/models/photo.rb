@@ -2,6 +2,8 @@
 
 # Photo model
 class Photo < ApplicationRecord
+  include ParseableDate
+
   include PgSearch::Model
   multisearchable against: %i[title description date]
 
@@ -10,6 +12,6 @@ class Photo < ApplicationRecord
   has_one_attached :image
 
   def date
-    Chronic.parse(date_string)
+    parse(date_string)
   end
 end

@@ -2,6 +2,8 @@
 
 # Model for people
 class Person < ApplicationRecord
+  include ParseableDate
+
   has_many :facts, as: :factable
   accepts_nested_attributes_for :facts
 
@@ -54,11 +56,11 @@ class Person < ApplicationRecord
   end
 
   def birth_date
-    Chronic.parse(birth_date_string)
+    parse(birth_date_string)
   end
 
   def death_date
-    Chronic.parse(death_date_string)
+    parse(death_date_string)
   end
 
   def full_name
