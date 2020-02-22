@@ -10,11 +10,11 @@ require('turbolinks').start()
 require('@rails/activestorage').start()
 
 // The next line you only need if you need channels in administrate
-//require('channels')
+// require('channels')
 
 // The next two lines you only need if you want ActionText support
-//require('trix')
-//require('@rails/actiontext')
+require('trix')
+require('@rails/actiontext')
 
 require('../src/javascript/administrate/index')
 require('../src/stylesheets/administrate/index')
