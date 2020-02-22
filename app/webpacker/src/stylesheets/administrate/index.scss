@@ -1,0 +1,55 @@
+@import '~bootstrap/scss/bootstrap';
+
+@import '~flatpickr/dist/flatpickr.min';
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+@import 'fields/all';
+
+// @import "trix/dist/trix";
+
+// We need to override trix.css’s image gallery styles to accommodate the
+// <action-text-attachment> element we wrap around attachments. Otherwise,
+// images in galleries will be squished by the max-width: 33%; rule.
+.trix-content {
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
+
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  action-text-attachment {
+    .attachment {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+.field-unit--rich-text-area-field {
+  .field-unit__field {
+    width: 80%;
+  }
+}
+
+.img-preview {
+  max-width: 200px;
+}
+
+.img-form-file {
+  margin-top: 0.5rem;
+}

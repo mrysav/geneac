@@ -21,11 +21,14 @@ By default, it renders:
   <title>
     <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
   </title>
-  <%= javascript_pack_tag 'administrate' %>
-  <%= stylesheet_pack_tag 'administrate_stylesheet' %>
-  
+  <%= javascript_pack_tag 'administrate', 'data-turbolinks-track': 'reload' %>
+
   <%= render "stylesheet" %>
+  <%= stylesheet_pack_tag 'administrate', 'data-turbolinks-track': 'reload' %>
+
   <%= csrf_meta_tags %>
+
+  <meta name="turbolinks-root" content="/admin">
 </head>
 <body>
   <%= render "icons" %>

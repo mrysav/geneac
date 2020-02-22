@@ -1,5 +1,5 @@
 import Awesomplete from 'awesomplete'
-import * as ajax from '../ajax'
+import * as ajax from '../../ajax'
 
 const ALL_TAGS = '/ajax/tags'
 
