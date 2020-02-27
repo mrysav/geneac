@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_221546) do
+ActiveRecord::Schema.define(version: 2020_02_27_024258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2020_02_22_221546) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "citations", force: :cascade do |t|
+    t.string "citable_type"
+    t.integer "citable_id"
+    t.text "text"
+    t.jsonb "attrs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "facts", force: :cascade do |t|

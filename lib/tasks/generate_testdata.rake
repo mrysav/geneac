@@ -25,6 +25,8 @@ namespace :generate do
 
     Person.all.each(&:destroy!)
     ActiveRecord::Base.connection.reset_pk_sequence!(Person.table_name)
+    Fact.all.each(&:destroy!)
+    ActiveRecord::Base.connection.reset_pk_sequence!(Fact.table_name)
 
     single_females = []
     single_males = []

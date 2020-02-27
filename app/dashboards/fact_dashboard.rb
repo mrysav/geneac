@@ -16,6 +16,7 @@ class FactDashboard < Administrate::BaseDashboard
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    citations: Field::NestedHasMany.with_options(skip: :citable),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -38,6 +39,7 @@ class FactDashboard < Administrate::BaseDashboard
     :date_string,
     :place,
     :description,
+    :citations,
     :created_at,
     :updated_at,
   ].freeze
@@ -50,6 +52,7 @@ class FactDashboard < Administrate::BaseDashboard
     :date_string,
     :place,
     :description,
+    :citations,
   ].freeze
 
   # Overwrite this method to customize how facts are displayed

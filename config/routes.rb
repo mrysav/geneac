@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :photos
     resources :notes
     resources :facts
+    resources :citations
 
     get '/snapshots/initiate' => 'snapshots#initiate', as: :initiate_snapshot
     resources :snapshots do

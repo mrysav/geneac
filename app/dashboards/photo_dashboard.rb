@@ -17,6 +17,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    citation: Field::HasOne,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -43,6 +44,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :image,
+    :citation,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -55,6 +57,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     :tag_list,
     :tagged_person_list,
     :image,
+    :citation,
   ].freeze
 
   # Overwrite this method to customize how photos are displayed

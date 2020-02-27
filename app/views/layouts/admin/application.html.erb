@@ -21,6 +21,7 @@ By default, it renders:
   <title>
     <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
   </title>
+  <%= render "javascript" %>
   <%= javascript_pack_tag 'administrate', 'data-turbolinks-track': 'reload' %>
 
   <%= render "stylesheet" %>

@@ -11,6 +11,9 @@ class Photo < ApplicationRecord
 
   has_one_attached :image
 
+  has_one :citation, as: :citable
+  accepts_nested_attributes_for :citation
+
   def date
     parse(date_string)
   end
