@@ -24,12 +24,18 @@ If you want to run your own instance of Geneac, you must be familiar with Ruby o
 
 If this is your first time running geneac, you need to configure the database:
 
-    rails db:create db:migrate
+    rails db:create db:schema:load
+    
+Additionally, if you are running a test instance and want to generate simulated data, you can run:
+
+    rails generate:testdata
 
 And to start:
 
-    foreman start
-    bin/webpack-dev-server start
+```bash
+# Starts server and webpack-dev-server
+foreman start -f Procfile.dev
+```
 
 ## Contributing
 
