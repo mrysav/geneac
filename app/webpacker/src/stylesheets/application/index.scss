@@ -1,8 +1,14 @@
+// External stylesheets
 @import '~bootstrap/scss/bootstrap';
 
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
+
+// Other stylesheet files
+@import './home';
+
+// Local styles
 
 $font-primary: black;
 $secondary: #c9c9c9;

@@ -39,6 +39,7 @@ en:
     sign_in: 'Sign In or Register'
     sign_out: 'Sign Out'
     search: 'Search'
+    geneac: 'Geneac'
   home:
     recent_updates: 'Recent Updates'
   users:

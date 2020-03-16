@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title><%= setting(:site_title) %> - <%= @title || setting(:site_tagline) %></title>
+  <title><%= setting(:site_title) %> - <%= @title || setting(:site_tagline) || t('nav.geneac') %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_pack_tag 'application_stylesheet' %>
+  <%= stylesheet_pack_tag 'application' %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
