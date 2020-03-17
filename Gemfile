@@ -70,7 +70,8 @@ gem 'country_select'
 gem 'simple_form', '~> 5.0'
 
 # administrate for content management
-gem 'administrate', '~> 0'
+# TODO: Upgrade soon!
+gem 'administrate', '0.12'
 # administrate plugins
 gem 'administrate-field-nested_has_many'
 
