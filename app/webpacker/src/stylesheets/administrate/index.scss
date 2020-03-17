@@ -45,6 +45,13 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   }
 }
 
+// Mitigate bootstrap incompatibilities
+label {
+  display: block;
+  font-weight: 700;
+  margin: 0;
+}
+
 .img-preview {
   max-width: 200px;
 }
