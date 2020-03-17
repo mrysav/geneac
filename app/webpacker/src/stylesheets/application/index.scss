@@ -6,7 +6,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 
 // Other stylesheet files
+@import './flashes';
 @import './home';
+@import './settings';
 
 // Local styles
 

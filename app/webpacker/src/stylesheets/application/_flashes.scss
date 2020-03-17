@@ -1,0 +1,28 @@
+@mixin flash($color, $bgcolor) {
+  color: $color;
+  border-bottom: 1px solid $color;
+  background-color: $bgcolor;
+}
+
+.flashes {
+
+  .flash {
+    min-height: 3rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .flash-success {
+    @include flash(green, lightgreen);
+  }
+
+  .flash-notice {
+    @include flash(blue, lightblue);
+  }
+
+  .flash-error, .flash-alert {
+    @include flash(red, pink);
+  }
+
+}

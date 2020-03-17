@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <a class="navbar-brand" href="/"><%= setting(:site_title) %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<%= t('nav.toggle_navigation') %>%">
   <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.name || current_user.email %>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to t('nav.profile'), user_path(current_user.id), class: 'dropdown-item' %>
             <% if current_user.admin? %>
             <div class="dropdown-divider"></div>
@@ -39,7 +39,7 @@
   <% if show_search_bar %>  
   <form class="form-inline" action="/search">
     <div class="input-group">
-    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="s" id="s" value="<%= params[:s] %>" />
+    <input class="form-control" type="search" placeholder="<%= t('nav.search') %>" aria-label="<%= t('nav.search') %>" name="s" id="s" value="<%= params[:s] %>" />
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
     </div>
