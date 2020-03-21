@@ -57,7 +57,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For making test data!
-gem 'faker'
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+end
 
 # Use Devise for authentication
 gem 'devise', '~> 4.7'
