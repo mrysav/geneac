@@ -56,8 +56,7 @@ class CreateSnapshotJob < ApplicationJob
     zio.write(Note.all.to_json)
 
     Note.all.each do |n|
-      zio.put_next_entry("Notes/note_#{n.id}.html")
-      zio.write(n.rich_content.to_s)
+      serialize_actiontext(n.rich_content, 'Notes', "note_#{n.id}", zio)
     end
   end
 
@@ -73,5 +72,25 @@ class CreateSnapshotJob < ApplicationJob
 
     zio.put_next_entry('Fact.json')
     zio.write(Fact.all.to_json)
+  end
+
+  def serialize_actiontext(rich_text, root, path, zio)
+    inner_html = Nokogiri::HTML(rich_text.body.to_s)
+
+    inner_html.css('action-text-attachment').each do |attachment|
+      blob = ActionText::Attachable.from_attachable_sgid(attachment['sgid'])
+      zio.put_next_entry("#{root}/#{path}/#{blob.filename}")
+      zio.write(blob.download)
+
+      img = attachment.css('img')[0]
+      img['src'] = "#{path}/#{blob.filename}" if img
+
+      # Unset ActionText attrs - we'll infer them on deserialize
+      attachment['sgid'] = ''
+      attachment['url'] = ''
+    end
+
+    zio.put_next_entry("#{root}/#{path}.html")
+    zio.write(inner_html.css('div.trix-content').inner_html.to_s)
   end
 end
