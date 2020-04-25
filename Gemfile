@@ -56,10 +56,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# For generating fake data - used in a rake task as well as tests
+gem 'faker'
+
 # For making test data!
 group :development, :test do
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 # Use Devise for authentication
