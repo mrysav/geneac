@@ -8,6 +8,7 @@ class CreateSnapshotJob < ApplicationJob
 
   def perform(*)
     stringio = Zip::OutputStream.write_buffer do |zio|
+      add_manifest(zio)
       add_people(zio)
       add_facts(zio)
       add_notes(zio)
@@ -23,6 +24,17 @@ class CreateSnapshotJob < ApplicationJob
       )
     )
     snapshot.save!
+  end
+
+  def add_manifest(zio)
+    manifest = {
+      # Version 1/unversioned: Notes have markdown text
+      # Version 2: Notes have rich text HTML file with them
+      version: '2'
+    }
+
+    zio.put_next_entry('manifest.json')
+    zio.write(manifest.to_json)
   end
 
   def add_photos(zio)
@@ -42,6 +54,10 @@ class CreateSnapshotJob < ApplicationJob
 
     zio.put_next_entry('Note.json')
     zio.write(Note.all.to_json)
+
+    Note.all.each do |n|
+      serialize_actiontext(n.rich_content, 'Notes', "note_#{n.id}", zio)
+    end
   end
 
   def add_people(zio)
@@ -56,5 +72,32 @@ class CreateSnapshotJob < ApplicationJob
 
     zio.put_next_entry('Fact.json')
     zio.write(Fact.all.to_json)
+  end
+
+  # Decomposes a rich_text field by saving the text as well
+  # as the associated attachments.
+  #
+  # TODO: Possible bug!
+  #
+  # If two attachments are different files, but have the same filename,
+  # this could result in overwriting one of them.
+  def serialize_actiontext(rich_text, root, path, zio)
+    inner_html = Nokogiri::HTML(rich_text.body.to_s)
+
+    zio.put_next_entry("#{root}/#{path}.html")
+    zio.write(inner_html.css('div.trix-content').inner_html.to_s)
+
+    inner_html.css('action-text-attachment').each do |attachment|
+      blob = ActionText::Attachable.from_attachable_sgid(attachment['sgid'])
+      zio.put_next_entry("#{root}/#{path}/#{blob.filename}")
+      zio.write(blob.download)
+
+      img = attachment.css('img')[0]
+      img['src'] = "#{path}/#{blob.filename}" if img
+
+      # Unset ActionText attrs - we'll infer them on deserialize
+      attachment['sgid'] = ''
+      attachment['url'] = ''
+    end
   end
 end

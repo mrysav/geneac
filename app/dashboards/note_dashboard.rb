@@ -11,7 +11,7 @@ class NoteDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     date_string: AdvancedDateField,
-    content: Field::Text,
+    rich_content: RichTextAreaField,
     tag_list: TagListField,
     tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
@@ -28,7 +28,6 @@ class NoteDashboard < Administrate::BaseDashboard
     :title,
     :date_string,
     :tag_list,
-    :content,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,7 +35,7 @@ class NoteDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :title,
     :date_string,
-    :content,
+    :rich_content,
     :citation,
     :tag_list,
     :tagged_person_list,
@@ -50,7 +49,7 @@ class NoteDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :date_string,
-    :content,
+    :rich_content,
     :citation,
     :tag_list,
     :tagged_person_list,
@@ -59,7 +58,7 @@ class NoteDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how notes are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(note)
-  #   "Note ##{note.id}"
-  # end
+  def display_resource(note)
+    note.title || "Note ##{note.id}"
+  end
 end

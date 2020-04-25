@@ -4,8 +4,10 @@
 class Note < ApplicationRecord
   include ParseableDate
 
+  has_rich_text :rich_content
+
   include PgSearch::Model
-  multisearchable against: %i[title content date]
+  multisearchable against: %i[title rich_content date]
 
   has_one :citation, as: :citable
   accepts_nested_attributes_for :citation

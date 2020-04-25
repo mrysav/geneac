@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :fact do
-    fact_type { %w[Residence Marriage Baptism Divorce] }
+    fact_type { %w[Residence Marriage Baptism Divorce].sample }
     date_string do
       Faker::Date.between(from: 50.years.ago, to: Date.today).strftime('%F')
     end
