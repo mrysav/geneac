@@ -11,11 +11,21 @@ class RestoreSnapshotJob < ApplicationJob
 
     snapshot.archive.open do |zipfile|
       Zip::File.open_buffer(zipfile) do |zip|
+        notes_buffer = {}
+
         zip.each do |entry|
           istream = zip.get_input_stream(entry)
           handle_json(entry.name, istream) if entry.name.end_with?('.json')
           handle_photo(entry.name, istream) if entry.name.start_with?('Photos/')
-          handle_note(entry.name, istream) if entry.name.start_with?('Notes/')
+          if entry.name.start_with?('Notes/')
+            handle_note(entry.name, istream, notes_buffer)
+          end
+        end
+
+        notes_buffer.each do |k, v|
+          n = Note.find(k)
+          n.rich_content = v
+          n.save!(touch: false)
         end
       end
     end
@@ -51,11 +61,39 @@ class RestoreSnapshotJob < ApplicationJob
 
   # TODO: This needs to handle attachments too
   # This is broken for now
-  def handle_note(filename, io)
-    fn_cap = filename.match(/note_([0-9]+)/)
-    note_id = fn_cap.captures[0]
-    note = Note.find(note_id)
-    note.rich_content = io.read
-    note.save!
+  def handle_note(filename, io, notes_buffer)
+    content_match = filename.match(%r{\ANotes\/note_([0-9]+)\.html\z})
+    attachment_match = filename.match(%r{\ANotes\/note_([0-9]+)\/.+\z})
+
+    if content_match
+      note_id = content_match.captures[0]
+      notes_buffer[note_id] = io.read
+    elsif attachment_match
+      note_id = attachment_match.captures[0]
+
+      unless notes_buffer.key?(note_id)
+        throw "Note #{note_id} not processed before attachment #{filename}"
+      end
+
+      note = notes_buffer[note_id]
+      inner_html = Nokogiri::HTML(note)
+
+      # TODO: Possible bug!
+      # See the create_snapshot_job for the duplicate file/filename problem
+      inner_html.css("action-text-attachment[filename='#{filename}']")
+                .each do |attachment|
+        content_type = attachment['content-type']
+        blob = ActiveStorage::Blob.create_and_upload! io: io,
+                                                      filename: filename,
+                                                      content_type: content_type
+        sgid = blob.to_sgid
+        attachment['sgid'] = sgid
+
+        img = attachment.css('img')[0]
+        img['src'] = path_to_blob(blob) if img
+
+        attachment['url'] = path_to_blob(blob)
+      end
+    end
   end
 end

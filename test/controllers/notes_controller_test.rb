@@ -6,7 +6,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   test 'anonymous user visibility' do
-    note = notes(:markdown)
+    note = create(:note)
 
     Setting.require_login = false
     Setting.restrict_living_info = false
@@ -39,7 +39,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'non-admin user visibility' do
-    note = notes(:markdown)
+    note = create(:note)
     sign_in users(:biff)
 
     Setting.require_login = false
@@ -82,7 +82,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'admin user visibility' do
-    note = notes(:markdown)
+    note = create(:note)
     sign_in users(:doc)
 
     Setting.require_login = false

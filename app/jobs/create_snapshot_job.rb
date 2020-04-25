@@ -74,8 +74,18 @@ class CreateSnapshotJob < ApplicationJob
     zio.write(Fact.all.to_json)
   end
 
+  # Decomposes a rich_text field by saving the text as well
+  # as the associated attachments.
+  #
+  # TODO: Possible bug!
+  #
+  # If two attachments are different files, but have the same filename,
+  # this could result in overwriting one of them.
   def serialize_actiontext(rich_text, root, path, zio)
     inner_html = Nokogiri::HTML(rich_text.body.to_s)
+
+    zio.put_next_entry("#{root}/#{path}.html")
+    zio.write(inner_html.css('div.trix-content').inner_html.to_s)
 
     inner_html.css('action-text-attachment').each do |attachment|
       blob = ActionText::Attachable.from_attachable_sgid(attachment['sgid'])
@@ -89,8 +99,5 @@ class CreateSnapshotJob < ApplicationJob
       attachment['sgid'] = ''
       attachment['url'] = ''
     end
-
-    zio.put_next_entry("#{root}/#{path}.html")
-    zio.write(inner_html.css('div.trix-content').inner_html.to_s)
   end
 end

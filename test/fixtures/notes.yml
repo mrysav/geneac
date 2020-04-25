@@ -1,8 +1,0 @@
-markdown:
-  title: Lorem Ipsum
-  date_string: 1999-10-1
-  content: "*Lorem Ipsum*"
-
-no_date:
-  title: No-Date Note
-  content: Testing no date
