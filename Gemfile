@@ -56,6 +56,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Workin' jobs
+gem 'resque'
+
 # For generating fake data - used in a rake task as well as tests
 gem 'faker'
 

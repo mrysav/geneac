@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'resque/server'
+
 Rails.application.routes.draw do
   root 'home#index'
 
@@ -19,7 +21,10 @@ Rails.application.routes.draw do
     get 'people_tag/:id' => 'ajax#people_tag', as: :people_tag
   end
 
-  mount RailsSettingsUi::Engine, at: 'settings'
+  authenticate :user do
+    mount RailsSettingsUi::Engine, at: 'settings'
+    mount Resque::Server, at: 'jobs'
+  end
 
   namespace :admin do
     resources :users
