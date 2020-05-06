@@ -49,3 +49,6 @@ yarn-debug.log*
 
 # Rake tasks tempfile
 /.rake_tasks~
+
+# Never commit env vars
+*.env
