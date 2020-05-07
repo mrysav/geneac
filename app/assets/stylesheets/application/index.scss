@@ -1,13 +1,17 @@
-// External stylesheets
-@import '~bootstrap/scss/bootstrap';
+/**
+ *= require bootstrap
+ *= require @fortawesome/fontawesome-free/scss/fontawesome
+ *= require @fortawesome/fontawesome-free/scss/solid
+ *= require_tree .
+ *= require_self
+ */
 
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
+ // @TODO: Fix FontAwesome
 
-// Other stylesheet files
-@import './flashes';
-@import './home';
+// $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '~@fortawesome/fontawesome-free/scss/solid';
+
 
 // Local styles
 

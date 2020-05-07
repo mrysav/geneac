@@ -1,9 +1,9 @@
-import 'bootstrap'
-
-import './components/date_time_picker'
-import './components/table'
-
-import './fields/index'
+/**
+ *= require chrono-node
+ *= require awesomplete
+ *
+ *= require_tree .
+ */
 
 window.readImagePreview = function(input) {
   var preview = document.querySelector('#' + input.dataset.preview)

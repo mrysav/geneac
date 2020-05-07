@@ -1,13 +1,10 @@
-@import '~bootstrap/scss/bootstrap';
-@import '~flatpickr/dist/flatpickr.min';
+//
+// Provides a drop-in pointer for the default Trix stylesheet that will format the toolbar and
+// the trix-editor content (whether displayed or under editing). Feel free to incorporate this
+// inclusion directly in any other asset bundle and remove this file.
+//
 
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-
-@import "trix/dist/trix";
-
-@import 'fields/all';
+@import 'trix/dist/trix';
 
 // We need to override trix.css’s image gallery styles to accommodate the
 // <action-text-attachment> element we wrap around attachments. Otherwise,
@@ -37,25 +34,4 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
       max-width: 100% !important;
     }
   }
-}
-
-.field-unit--rich-text-area-field {
-  .field-unit__field {
-    width: 80%;
-  }
-}
-
-// Mitigate bootstrap incompatibilities
-label {
-  display: block;
-  font-weight: 700;
-  margin: 0;
-}
-
-.img-preview {
-  max-width: 200px;
-}
-
-.img-form-file {
-  margin-top: 0.5rem;
 }

@@ -11,6 +11,11 @@ by providing a `content_for(:javascript)` block.
   <%= javascript_include_tag js_path %>
 <% end %>
 
+<%
+# Added to get ActionText working
+%>
+<%= javascript_pack_tag 'administrate_actiontext', 'data-turbolinks-track': 'reload' %>
+
 <%= yield :javascript %>
 
 <% if Rails.env.test? %>

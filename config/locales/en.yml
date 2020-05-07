@@ -36,6 +36,7 @@ en:
     profile: 'Profile'
     admin_console: 'Admin Console'
     site_settings: 'Site Settings'
+    jobs: 'Jobs Dashboard'
     sign_in: 'Sign In or Register'
     sign_out: 'Sign Out'
     search: 'Search'

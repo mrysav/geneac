@@ -22,6 +22,7 @@
             <% if current_user.admin? %>
             <div class="dropdown-divider"></div>
             <div class="font-weight-bold dropdown-item">Admin</div>
+            <%= link_to t('nav.jobs'), resque_server_path, class: 'dropdown-item' %>
             <%= link_to t('nav.admin_console'), admin_root_path, class: 'dropdown-item' %>
             <%= link_to t('nav.site_settings'), rails_settings_ui_path, class: 'dropdown-item' %>
             <% end %>
