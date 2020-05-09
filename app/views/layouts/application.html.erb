@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title><%= setting(:site_title) %> - <%= @title || setting(:site_tagline) || t('nav.geneac') %></title>
+  <title><%= (@title + ' - ') if @title %><%= setting(:site_title) %> - <%= setting(:site_tagline) || t('nav.geneac') %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
