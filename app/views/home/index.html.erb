@@ -27,7 +27,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
-    <% if @recent_updates %>
+    <% if setting(:show_recent_updates) && @recent_updates %>
       <div class="recent-updates mt-5">
         <h2 class="text-center"><%= t('home.recent_updates') %></h2>
         <% @recent_updates.each do |recent_update| %>
