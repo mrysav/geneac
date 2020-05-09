@@ -5,9 +5,16 @@
     <div class="col-lg-8 offset-lg-2 col-sm-12">
       <h2 class="text-center pt-4"><%= @note.title %></h2>
       <hr>
+
       <div class="note_content serif mb-2">
         <%= @note.rich_content %>
       </div>
+
+      <% if @note.citation %>
+      <p class="font-weight-bold"><%= t('content.citation_header') %></p>
+      <p><%= render @note.citation %></p>
+      <% end %>
+
       <%= render partial: 'shared/tag_list', locals: { list: @note.tag_list, class_list: "mt-5" } %>
       <%= render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: "mt-3" } %>
     </div>
