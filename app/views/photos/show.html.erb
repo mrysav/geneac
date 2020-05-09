@@ -1,19 +1,30 @@
 <% @title = @photo.title %>
 
-<div class="row">
-  <div class="col-lg-8 offset-lg-2 col-sm-12 mt-3 text-center">
-    <a target="_blank" href="<%= url_for(@photo.image) %>">
-      <%= image_tag @photo.image, class: 'img-fluid border rounded p-1' %>
-    </a>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-8 offset-lg-2 col-sm-12">
-      <h3 class="text-center"><%= @photo.title %></h3>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-sm-12 text-center">
+      <h2 class="text-center"><%= @photo.title %></h3>
       <hr>
-      <p><%= markdown @photo.description %></p>
+
+      <a target="_blank" href="<%= url_for(@photo.image) %>">
+        <%= image_tag @photo.image, class: 'img-fluid border rounded p-1' %>
+      </a>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-8 offset-lg-2 col-sm-12">
+      <% unless @photo.description.blank? %>
+      <p><%= @photo.description %></p>
+      <% end %>
+
+      <% if @photo.citation %>
+      <p class="font-weight-bold"><%= t('content.citation_header') %></p>
+      <p><%= render @photo.citation %></p>
+      <% end %>
+
       <%= render partial: 'shared/tag_list', locals: { list: @photo.tag_list, class_list: "mt-5" } %>
       <%= render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: "mt-3" } %>
+    </div>
   </div>
 </div>

@@ -45,6 +45,8 @@ en:
     recent_updates: 'Recent Updates'
   users:
     edit_profile: 'Edit Profile'
+  content:
+    citation_header: 'Citation:'
   people:
     bio: 'Bio'
     timeline: 'Timeline'
