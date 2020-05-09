@@ -1,17 +1,11 @@
 /**
  *= require bootstrap
- *= require @fortawesome/fontawesome-free/scss/fontawesome
- *= require @fortawesome/fontawesome-free/scss/solid
  *= require_tree .
  *= require_self
  */
 
- // @TODO: Fix FontAwesome
-
-// $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-// @import '~@fortawesome/fontawesome-free/scss/solid';
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // Local styles
 

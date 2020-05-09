@@ -2,7 +2,6 @@
   "name": "geneac",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.1.0",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/actiontext": "^6.0.2-1",
     "@rails/activestorage": "^6.0.0-alpha",
