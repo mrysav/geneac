@@ -113,3 +113,8 @@ gem 'rubyzip'
 
 # FontAwesome - using Rails/Sprockets version since there is no JS
 gem 'font-awesome-sass', '~> 5.12.0'
+
+# Monitoring
+group :production do
+  gem 'newrelic_rpm'
+end
