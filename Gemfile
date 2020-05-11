@@ -63,9 +63,9 @@ gem 'resque'
 # For generating fake data - used in a rake task as well as tests
 gem 'faker'
 
-# For making test data!
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 4.0.0'
 end
 
 # Use Devise for authentication

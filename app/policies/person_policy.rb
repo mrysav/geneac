@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class PersonPolicy < ApplicationPolicy
+  # class Scope < Scope
+  #   def resolve
+  #     scope.all if admin?
+
+  #   end
+  # end
+
   def show?
     return true if admin?
 

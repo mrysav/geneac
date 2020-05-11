@@ -11,18 +11,18 @@ FactoryBot.define do
 
     trait :has_birthday do
       birth_date_string do
-        Faker::Date.birthday(min_age: 0,
-                             max_age: 100).strftime('%F')
+        Faker::Date.birthday(min_age: 91,
+                             max_age: 200).strftime('%F')
       end
       birthplace { Faker::Address.city + ', ' + Faker::Address.country }
     end
 
     trait :has_deathday do
       death_date_string do
-        Faker::Date.between(from: birth_date || 50.years.ago,
-                            to: Date.today).strftime('%F')
+        Faker::Date.between(from: birth_date || 200.years.ago,
+                            to: 91.years.ago).strftime('%F')
       end
-      burialplace { Address.city + ', ' + Faker::Address.country }
+      burialplace { Faker::Address.city + ', ' + Faker::Address.country }
     end
   end
 end
