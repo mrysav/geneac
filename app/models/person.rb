@@ -60,7 +60,9 @@ class Person < ApplicationRecord
   end
 
   def children
-    Person.where(father_id: id).or(Person.where(mother_id: id))
+    Person.where('id != ? AND ((father_id > 0 AND father_id = ?)'\
+                 ' OR (mother_id > 0 AND mother_id = ?))',
+                 id, id, id)
   end
 
   def siblings

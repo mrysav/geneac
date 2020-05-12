@@ -1,4 +1,30 @@
+# frozen_string_literal: true
+
+# Default access settings for all models
 class ApplicationPolicy
+
+  # Default access settings for groups of objects
+  class Scope
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      scope
+    end
+
+    def admin?
+      logged_in? && user.admin?
+    end
+
+    def logged_in?
+      !user.nil?
+    end
+  end
+
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -36,19 +62,6 @@ class ApplicationPolicy
 
   def scope
     Pundit.policy_scope!(user, record.class)
-  end
-
-  class Scope
-    attr_reader :user, :scope
-
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      scope
-    end
   end
 
   protected

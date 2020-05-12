@@ -6,15 +6,8 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     authorize @person
 
-    @children = @person.children.map do |p|
-      authorize p
-      p
-    end
-
-    @siblings = @person.siblings.map do |p|
-      authorize p
-      p
-    end
+    @children = policy_scope(@person.children)
+    @siblings = policy_scope(@person.siblings)
 
     @events = events_service.events
     @notes = Note.tagged_with(@person.id.to_s)
