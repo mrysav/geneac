@@ -1,6 +1,6 @@
 class DropContentFromNotes < ActiveRecord::Migration[6.0]
   def up
-    return unless Note.column_names.include? 'content'
+    return unless column_exists? :notes, :content
 
     Note.all.each do |n|
       unless n.content.blank?
@@ -9,5 +9,9 @@ class DropContentFromNotes < ActiveRecord::Migration[6.0]
 
       remove_column :notes, :content
     end
+  end
+
+  def down
+    add_column :notes, :content
   end
 end
