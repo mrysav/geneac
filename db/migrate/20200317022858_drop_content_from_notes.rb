@@ -6,9 +6,9 @@ class DropContentFromNotes < ActiveRecord::Migration[6.0]
       unless n.content.blank?
         throw 'Some notes still have content. Run `rake content:migrate_rich_text` and re-run these migrations.'
       end
-
-      remove_column :notes, :content
     end
+
+    remove_column :notes, :content
   end
 
   def down
