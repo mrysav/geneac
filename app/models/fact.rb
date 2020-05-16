@@ -11,6 +11,8 @@ class Fact < ApplicationRecord
   has_many :citations, as: :citable
   accepts_nested_attributes_for :citations
 
+  acts_as_taggable_on :tags, :tagged_people
+
   def date
     parse(date_string)
   end

@@ -14,6 +14,7 @@ class FactDashboard < Administrate::BaseDashboard
     date_string: AdvancedDateField,
     place: Field::String,
     description: Field::Text,
+    tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     citations: Field::NestedHasMany.with_options(skip: :citable),
@@ -39,6 +40,7 @@ class FactDashboard < Administrate::BaseDashboard
     :date_string,
     :place,
     :description,
+    :tagged_person_list,
     :citations,
     :created_at,
     :updated_at,
@@ -52,6 +54,7 @@ class FactDashboard < Administrate::BaseDashboard
     :date_string,
     :place,
     :description,
+    :tagged_person_list,
     :citations,
   ].freeze
 
