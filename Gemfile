@@ -119,3 +119,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 group :production do
   gem 'newrelic_rpm'
 end
+
+# Haml templating
+gem 'haml'
+gem 'haml-rails'
