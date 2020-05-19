@@ -58,7 +58,7 @@
       }
 
       var li = document.createElement('li')
-      li.innerHTML = name + ' <a href="#">(x)</a>'
+      li.innerHTML = name + ' <a href="#"><i class="fas fa-times"></i></a>'
       li.classList.add('tag-' + value)
 
       li.querySelector('a').addEventListener('click', function(event) {

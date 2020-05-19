@@ -8,5 +8,5 @@
 </div>
 
 <div class="field-unit__field">
-  <%= f.text_field field.attribute, value: field.data.join(', ') + ', ', class: 'person-tag-field' %>
+  <%= f.text_field field.attribute, value: (field.data || []).join(', ') + ', ', class: 'person-tag-field' %>
 </div>
