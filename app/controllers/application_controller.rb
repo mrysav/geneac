@@ -33,6 +33,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authorize_or_nil(record)
+    authorize record
+  rescue NotAuthorizedError
+    nil
+  end
+
   private
 
   def user_not_authorized

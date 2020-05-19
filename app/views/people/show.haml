@@ -1,0 +1,14 @@
+- @title = @person.full_name
+- show_picture = @photos.count > 0
+
+.person-cover-image
+:javascript
+  var coverImg = "#{asset_path 'cover/house_grass_field.jpg'}"
+  document.querySelector('.person-cover-image').style.backgroundImage = "url('" + coverImg + "')"
+
+.container.person-container
+  .row.name-header{ class:[ (:photo if show_picture) ] }
+    = image_tag(@photos[0].image.variant(resize_to_limit: [200, 200]), class: 'img-fluid mx-auto main-photo') if show_picture
+    %h2.col-lg-8.offset-lg-2.col-md-12.mt-3= @person.full_name
+
+  = render partial: "#{@tab}"

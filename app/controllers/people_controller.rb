@@ -6,6 +6,10 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     authorize @person
 
+    @current_spouse = authorize_or_nil(@current_spouse) if @current_spouse
+
+    @tab = %w[bio family gallery].include?(params[:t]) ? params[:t] : :bio
+
     @children = policy_scope(@person.children)
     @siblings = policy_scope(@person.siblings)
 

@@ -1,0 +1,8 @@
+.row.mt-3.person-nav
+  .col-4.col-lg-2.offset-lg-3.text-center
+    = link_to(t('people.bio'), '?t=bio', { class: ['person-top-link', (:active if tab == :bio)] })
+  .col-4.col-lg-2.text-center
+    = link_to(t('people.family'), '?t=family', { class: ['person-top-link', (:active if tab == :family)] })
+  .col-4.col-lg-2.text-center
+    = link_to(t('people.gallery'), '?t=gallery', { class: ['person-top-link', (:active if tab == :gallery)] })
+%hr.row

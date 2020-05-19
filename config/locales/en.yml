@@ -48,17 +48,19 @@ en:
   content:
     citation_header: 'Citation:'
   people:
-    bio: 'Bio'
+    bio: 'Biography'
     timeline: 'Timeline'
     family: 'Family'
     notes: 'Notes'
     photos: 'Photos'
+    gallery: 'Gallery'
     parents: 'Parents'
     siblings: 'Siblings'
     children: 'Children'
     unknown: 'Unknown'
     with: 'With'
     with_and: 'With %{p1} and %{p2}'
+    married_to: 'Married to %{spouse}'
   search:
     total_results: 'Total results: %{total}'
     type: 'Type: %{type}'
