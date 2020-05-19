@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     authorize @person
 
-    @current_spouse = authorize_or_nil(@current_spouse) if @current_spouse
+    @current_spouse = authorize_or_nil(@person.current_spouse) if @person.current_spouse
 
     @tab = %w[bio family gallery].include?(params[:t]) ? params[:t] : :bio
 
