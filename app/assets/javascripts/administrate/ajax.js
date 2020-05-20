@@ -1,8 +1,14 @@
-window.ajax = (endpoint, callback) => {
+window.ajax = (endpoint, callback, error = null) => {
   let req = new XMLHttpRequest()
   req.open('GET', endpoint, true)
   req.onload = function() {
-    callback(req.responseText)
+    if (req.status == 200) {
+      callback(req.responseText)
+    } else {
+      if (error) {
+        error(req.status, req.responseText)
+      }
+    }
   }
   req.send()
 }

@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 module Admin
   class CitationsController < Admin::ApplicationController
+    rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
@@ -30,5 +34,20 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+
+    def suggestions
+      authorize :citation, :suggestions?
+      suggestions = Citation.search_by_text(params[:text])
+                            .limit(5)
+                            .map(&:text)
+                            .uniq
+      render json: suggestions
+    end
+
+    private
+
+    def user_not_authorized
+      head 401
+    end
   end
 end

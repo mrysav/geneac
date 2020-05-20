@@ -1,0 +1,7 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <%= f.text_area field.attribute, { class: :completable, 
+                                     data: { suggestions: field.suggestion_url } } %>
+</div>

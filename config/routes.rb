@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     resources :facts
     resources :citations
 
+    get 'suggestions/citation/:text' => 'citations#suggestions'
+
     get '/snapshots/initiate' => 'snapshots#initiate', as: :initiate_snapshot
     resources :snapshots do
       get 'restore' => 'snapshots#restore'
