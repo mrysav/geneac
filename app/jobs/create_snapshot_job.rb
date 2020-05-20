@@ -92,10 +92,11 @@ class CreateSnapshotJob < ApplicationJob
   def serialize_actiontext(rich_text, root, path, zio)
     inner_html = Nokogiri::HTML(rich_text.body.to_s)
 
+    blobs = []
+
     inner_html.css('action-text-attachment').each do |attachment|
       blob = ActionText::Attachable.from_attachable_sgid(attachment['sgid'])
-      zio.put_next_entry("#{root}/#{path}/#{blob.filename}")
-      zio.write(blob.download)
+      blobs.push blob
 
       img = attachment.css('img')[0]
       img['src'] = "#{path}/#{blob.filename}" if img
@@ -107,5 +108,11 @@ class CreateSnapshotJob < ApplicationJob
 
     zio.put_next_entry("#{root}/#{path}.html")
     zio.write(inner_html.css('div.trix-content').inner_html.to_s)
+
+    blobs.each do |blob|
+      key = "#{root}/#{path}/#{blob.filename}"
+      zio.put_next_entry(key)
+      zio.write(blob.download)
+    end
   end
 end
