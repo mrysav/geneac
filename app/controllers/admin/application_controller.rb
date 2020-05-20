@@ -12,11 +12,16 @@ module Admin
 
     before_action :authenticate_user!
     before_action :authenticate_admin
+    before_action :authorize_miniprofiler
 
     helper SettingHelper
 
     def authenticate_admin
       redirect_to root_path, alert: 'Not authorized.' unless current_user.admin?
+    end
+
+    def authorize_miniprofiler
+      Rack::MiniProfiler.authorize_request if current_user&.admin?
     end
 
     # Override this value to specify the number of elements to display at a time
