@@ -120,10 +120,9 @@ gem 'haml'
 gem 'haml-rails'
 
 # Profiling
-group :development, :production do
-  gem 'rack-mini-profiler'
+gem 'rack-mini-profiler'
 
-  gem 'flamegraph'
-  gem 'memory_profiler'
-  gem 'stackprof'
-end
+gem 'flamegraph'
+gem 'memory_profiler'
+gem 'stackprof'
+
