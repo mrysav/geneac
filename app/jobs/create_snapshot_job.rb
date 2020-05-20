@@ -11,6 +11,7 @@ class CreateSnapshotJob < ApplicationJob
       add_manifest(zio)
       add_people(zio)
       add_facts(zio)
+      add_citations(zio)
       add_notes(zio)
       add_photos(zio)
     end
@@ -72,6 +73,13 @@ class CreateSnapshotJob < ApplicationJob
 
     zio.put_next_entry('Fact.json')
     zio.write(Fact.all.to_json)
+  end
+
+  def add_citations(zio)
+    return if Citation.count.zero?
+
+    zio.put_next_entry('Citation.json')
+    zio.write(Citation.all.to_json)
   end
 
   # Decomposes a rich_text field by saving the text as well
