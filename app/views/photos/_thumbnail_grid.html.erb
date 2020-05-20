@@ -2,7 +2,7 @@
 <% for photo in photos %>
   <div class="thumbnail m-1">
     <a href="<%= photo_path(photo) %>">
-      <%= image_tag url_for(photo.image), class: 'img-fluid border rounded p-1' %>
+      <%= image_tag photo.image.variant(resize_to_limit: [200, 200]), class: 'img-fluid border rounded p-1' %>
     </a>
   </div>
 <% end %>

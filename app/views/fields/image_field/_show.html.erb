@@ -10,4 +10,4 @@ By default, the attribute is rendered as an image tag.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Image
 %>
 
-<%= image_tag field.data, class: 'img-thumbnail img-preview' if field.data.present? %>
+<%= image_tag field.data.variant(resize_to_limit: [200, 200]), class: 'img-thumbnail img-preview' if field.data.present? %>
