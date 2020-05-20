@@ -4,6 +4,8 @@ require 'zip'
 
 # Replaces the internal database contents with that of the snapshot.
 class RestoreSnapshotJob < ApplicationJob
+  include Rails.application.routes.url_helpers
+
   queue_as :default
 
   def perform(snapshot)
@@ -89,22 +91,27 @@ class RestoreSnapshotJob < ApplicationJob
       note = notes_buffer[note_id]
       inner_html = Nokogiri::HTML(note)
 
+      fname = filename.gsub!(%r{^Notes\/note_[0-9]+/}, '')
+
       # TODO: Possible bug!
       # See the create_snapshot_job for the duplicate file/filename problem
-      inner_html.css("action-text-attachment[filename='#{filename}']")
+      inner_html.css("action-text-attachment[filename='#{fname}']")
                 .each do |attachment|
         content_type = attachment['content-type']
-        blob = ActiveStorage::Blob.create_and_upload! io: io,
-                                                      filename: filename,
+        blob = ActiveStorage::Blob.create_and_upload! io: StringIO.new(io.read),
+                                                      filename: fname,
                                                       content_type: content_type
         sgid = blob.to_sgid
         attachment['sgid'] = sgid
 
-        img = attachment.css('img')[0]
-        img['src'] = path_to_blob(blob) if img
+        url = rails_blob_path(blob, disposition: 'attachment', only_path: true)
 
-        attachment['url'] = path_to_blob(blob)
+        img = attachment.css('img')[0]
+        img['src'] = url if img
+        attachment['url'] = url
       end
+
+      notes_buffer[note_id] = inner_html.to_s
     end
   end
 end
