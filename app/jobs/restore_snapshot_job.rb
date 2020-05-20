@@ -12,10 +12,17 @@ class RestoreSnapshotJob < ApplicationJob
     snapshot.archive.open do |zipfile|
       Zip::File.open_buffer(zipfile) do |zip|
         notes_buffer = {}
+        json_buffer = {}
 
         zip.each do |entry|
           istream = zip.get_input_stream(entry)
-          handle_json(entry.name, istream) if entry.name.end_with?('.json')
+          if entry.name.end_with?('.json')
+            if %w[manifest.json Person.json Note.json Photo.json].include? entry.name
+              handle_json(entry.name, istream)
+            else
+              json_buffer[entry.name] = istream.read
+            end
+          end
           handle_photo(entry.name, istream) if entry.name.start_with?('Photos/')
           if entry.name.start_with?('Notes/')
             handle_note(entry.name, istream, notes_buffer)
@@ -27,12 +34,16 @@ class RestoreSnapshotJob < ApplicationJob
           n.rich_content = v
           n.save!(touch: false)
         end
+
+        json_buffer.each do |k, v|
+          handle_json(k, StringIO.new(v))
+        end
       end
     end
   end
 
   def delete_all_data
-    [Person, Note, Photo, Fact].each(&:drop_em_all!)
+    [Person, Note, Photo, Fact, Citation].each(&:drop_em_all!)
   end
 
   def batch_create(model_type, obj_list)
