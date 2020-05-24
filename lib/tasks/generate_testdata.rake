@@ -129,7 +129,7 @@ namespace :generate do
       tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
       people_tags = person_ids.sample(rand(5)).join(', ')
       Note.create!(title: Faker::Movies::LordOfTheRings.character,
-                   content: Faker::Lorem.paragraphs(number: 10).join("\n\n"),
+                   rich_content: Faker::Lorem.paragraphs(number: 10).join("\n\n"),
                    date_string: date, tag_list: tags, tagged_person_list: people_tags)
     end
     puts "Created #{Note.count} notes"
