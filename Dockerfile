@@ -3,7 +3,7 @@ FROM ruby:2.7.2-alpine
 # includes support for postgres, nokogiri, and a js runtime
 # then installs yarn with npm
 
-RUN apk add --update --no-cache build-base yarn git nodejs-current imagemagick tzdata postgresql-dev libxml2-dev libxslt-dev
+RUN apk add --update --no-cache build-base yarn git nodejs imagemagick tzdata postgresql-dev libxml2-dev libxslt-dev
 
 ENV APP_HOME /geneac
 RUN mkdir $APP_HOME
