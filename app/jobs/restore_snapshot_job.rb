@@ -4,9 +4,9 @@ require 'zip'
 
 # Replaces the internal database contents with that of the snapshot.
 class RestoreSnapshotJob < ApplicationJob
-  include Rails.application.routes.url_helpers
-
   queue_as :default
+
+  RESTORABLE_MODELS = [Person, Note, Photo, Fact, Citation].freeze
 
   def perform(snapshot)
     delete_all_data
@@ -33,8 +33,11 @@ class RestoreSnapshotJob < ApplicationJob
 
         notes_buffer.each do |k, v|
           n = Note.find(k)
+          # Hack! We want to preserve the original updated_at, so save it here
+          updated_at = n.updated_at
           n.rich_content = v
-          n.save!(touch: false)
+          n.save!
+          n.update_columns(updated_at: updated_at)
         end
 
         json_buffer.each do |k, v|
@@ -42,10 +45,16 @@ class RestoreSnapshotJob < ApplicationJob
         end
       end
     end
+
+    update_all_seqs
   end
 
   def delete_all_data
-    [Person, Note, Photo, Fact, Citation].each(&:drop_em_all!)
+    RESTORABLE_MODELS.each(&:drop_em_all!)
+  end
+
+  def update_all_seqs
+    RESTORABLE_MODELS.each(&:update_seq!)
   end
 
   def batch_create(model_type, obj_list)
@@ -67,9 +76,10 @@ class RestoreSnapshotJob < ApplicationJob
     photo_id = fn_cap.captures[0]
     photo_filename = fn_cap.captures[1]
     photo = Photo.find(photo_id)
+    orig_updated_at = photo.updated_at
     # TODO: patch this so the photo doesn't have to be read into memory
     photo.image.attach(io: StringIO.new(io.read), filename: photo_filename)
-    photo.save!
+    photo.update_columns(updated_at: orig_updated_at)
   end
 
   # TODO: This needs to handle attachments too
@@ -98,17 +108,17 @@ class RestoreSnapshotJob < ApplicationJob
       inner_html.css("action-text-attachment[filename='#{fname}']")
                 .each do |attachment|
         content_type = attachment['content-type']
-        blob = ActiveStorage::Blob.create_and_upload! io: StringIO.new(io.read),
-                                                      filename: fname,
-                                                      content_type: content_type
-        sgid = blob.to_sgid
+        blob = ActiveStorage::Blob.create_and_upload!(
+          io: StringIO.new(io.read),
+          filename: fname,
+          content_type: content_type
+        )
+        sgid = blob.to_sgid(expires_in: nil, for: 'attachable')
+        url = rails_blob_path(blob, disposition: :attachment, only_path: true)
+
         attachment['sgid'] = sgid
-
-        url = rails_blob_path(blob, disposition: 'attachment', only_path: true)
-
-        img = attachment.css('img')[0]
-        img['src'] = url if img
         attachment['url'] = url
+        attachment.inner_html = ''
       end
 
       notes_buffer[note_id] = inner_html.to_s

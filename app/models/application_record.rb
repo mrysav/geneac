@@ -6,6 +6,10 @@ class ApplicationRecord < ActiveRecord::Base
 
   def self.drop_em_all!
     all.each(&:destroy!)
+    update_seq!
+  end
+
+  def self.update_seq!
     ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
   end
 end
