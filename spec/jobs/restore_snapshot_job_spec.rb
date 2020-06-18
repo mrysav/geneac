@@ -29,7 +29,7 @@ RSpec.describe RestoreSnapshotJob, type: :job do
       reference_snapshot = digest_snapshot Snapshot.find(1)
       new_snapshot = digest_snapshot Snapshot.find(2)
 
-      expect(new_snapshot[:hashes].keys.sort).to eq(reference_snapshot[:hashes].keys.sort)
+      expect(new_snapshot[:hashes].keys).to match_array(reference_snapshot[:hashes].keys)
       reference_snapshot[:hashes].keys.each do |file|
         ref_hash = reference_snapshot[:hashes][file]
         new_hash = new_snapshot[:hashes][file]
@@ -38,7 +38,7 @@ RSpec.describe RestoreSnapshotJob, type: :job do
         if file.ends_with?('.json') && new_hash != ref_hash
           ref_contents = reference_snapshot[:contents][file]
           new_contents = new_snapshot[:contents][file]
-          expect(new_contents).to eq(ref_contents), file
+          expect(new_contents).to match_array(ref_contents), file
         else
           expect(new_hash).to eq(ref_hash), file.to_s
         end
