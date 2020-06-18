@@ -36,9 +36,9 @@ RSpec.describe RestoreSnapshotJob, type: :job do
         # Print the actual different contents of each json file
         # if they don't match.
         if file.ends_with?('.json') && new_hash != ref_hash
-          ref_contents = reference_snapshot[:contents][file]
-          new_contents = new_snapshot[:contents][file]
-          expect(new_contents).to match_array(ref_contents), file
+          ref_contents = reference_snapshot[:contents][file].flatten
+          new_contents = new_snapshot[:contents][file].flatten
+          expect(new_contents).to match_array(ref_contents), "#{file} (flattened)"
         else
           expect(new_hash).to eq(ref_hash), file.to_s
         end
