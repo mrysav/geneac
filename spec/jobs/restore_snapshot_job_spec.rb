@@ -33,9 +33,12 @@ RSpec.describe RestoreSnapshotJob, type: :job do
       reference_snapshot[:hashes].keys.each do |file|
         ref_hash = reference_snapshot[:hashes][file]
         new_hash = new_snapshot[:hashes][file]
-        # Print the actual different contents of each json file
-        # if they don't match.
+        # @TODO: there needs to be better equality checking for snapshots.
+        # When restored, apparently sometimes things get out of order even
+        # though the data *inside* each record is fine.
         if file.ends_with?('.json') && new_hash != ref_hash
+          # Print the actual different contents of each json file
+          # if they don't match.
           ref_contents = reference_snapshot[:contents][file].flatten
           new_contents = new_snapshot[:contents][file].flatten
           expect(new_contents).to match_array(ref_contents), "#{file} (flattened)"
