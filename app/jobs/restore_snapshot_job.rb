@@ -26,9 +26,7 @@ class RestoreSnapshotJob < ApplicationJob
             end
           end
           handle_photo(entry.name, istream) if entry.name.start_with?('Photos/')
-          if entry.name.start_with?('Notes/')
-            handle_note(entry.name, istream, notes_buffer)
-          end
+          handle_note(entry.name, istream, notes_buffer) if entry.name.start_with?('Notes/')
         end
 
         notes_buffer.each do |k, v|
@@ -94,9 +92,7 @@ class RestoreSnapshotJob < ApplicationJob
     elsif attachment_match
       note_id = attachment_match.captures[0]
 
-      unless notes_buffer.key?(note_id)
-        throw "Note #{note_id} not processed before attachment #{filename}"
-      end
+      throw "Note #{note_id} not processed before attachment #{filename}" unless notes_buffer.key?(note_id)
 
       note = notes_buffer[note_id]
       inner_html = Nokogiri::HTML(note)

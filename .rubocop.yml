@@ -1,0 +1,17 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.5
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
