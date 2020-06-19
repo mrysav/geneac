@@ -22,7 +22,7 @@ module ParseableDate
     parsed_date
   end
 
-  # @TODO: In the event I need to parse years < 1000 or > 9999... fix this
+  # @todo In the event I need to parse years < 1000 or > 9999... fix this
   def self.parse_four_digit_year(date)
     Date.new(date.to_i) if !date.nil? && date.match(/^[1-9][0-9]{3}$/)
   end

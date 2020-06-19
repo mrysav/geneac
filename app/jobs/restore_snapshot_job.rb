@@ -75,12 +75,12 @@ class RestoreSnapshotJob < ApplicationJob
     photo_filename = fn_cap.captures[1]
     photo = Photo.find(photo_id)
     orig_updated_at = photo.updated_at
-    # @TODO: patch this so the photo doesn't have to be read into memory
+    # @todo patch this so the photo doesn't have to be read into memory
     photo.image.attach(io: StringIO.new(io.read), filename: photo_filename)
     photo.update_columns(updated_at: orig_updated_at)
   end
 
-  # @TODO: This needs to handle attachments too
+  # @todo This needs to handle attachments too
   # This is broken for now
   def handle_note(filename, io, notes_buffer)
     content_match = filename.match(%r{\ANotes\/note_([0-9]+)\.html\z})
@@ -99,7 +99,7 @@ class RestoreSnapshotJob < ApplicationJob
 
       fname = filename.gsub!(%r{^Notes\/note_[0-9]+/}, '')
 
-      # @TODO: Possible bug!
+      # @todo Possible bug!
       # See the create_snapshot_job for the duplicate file/filename problem
       inner_html.css("action-text-attachment[filename='#{fname}']")
                 .each do |attachment|

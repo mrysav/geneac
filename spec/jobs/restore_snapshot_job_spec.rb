@@ -33,7 +33,7 @@ RSpec.describe RestoreSnapshotJob, type: :job do
       reference_snapshot[:hashes].keys.each do |file|
         ref_hash = reference_snapshot[:hashes][file]
         new_hash = new_snapshot[:hashes][file]
-        # @TODO: there needs to be better equality checking for snapshots.
+        # @todo there needs to be better equality checking for snapshots.
         # When restored, apparently sometimes things get out of order even
         # though the data *inside* each record is fine.
         if file.ends_with?('.json') && new_hash != ref_hash

@@ -4,7 +4,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include Pundit
-  # @TODO: disable this if necessary
+  # @todo disable this if necessary
   after_action :verify_authorized, unless: :devise_controller?
 
   helper MarkdownHelper

@@ -13,7 +13,7 @@ window.CustomizedChrono = (function() {
       text: match[0],
       index: match.index,
       start: {
-        day: 1, // TODO: Not great
+        day: 1, // @todo Not great
         month: 1,
         year: parseInt(match[0], 10)
       }

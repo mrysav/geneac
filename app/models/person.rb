@@ -100,7 +100,7 @@ class Person < ApplicationRecord
 
   private
 
-  # @TODO: More sophisticated probably_alive logic
+  # @todo More sophisticated probably_alive logic
   # Obviously a person can live to be older than 90,
   # but the US census releases records after 70 years
   # so I figure I'm good here

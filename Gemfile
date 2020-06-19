@@ -107,7 +107,7 @@ gem 'chronic'
 gem 'pg_search'
 
 # Settings
-# @TODO: migrate to different settings gem
+# @todo migrate to different settings gem
 gem 'rails-settings-cached', '~> 0'
 gem 'rails-settings-ui'
 
