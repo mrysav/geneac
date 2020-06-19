@@ -85,7 +85,7 @@ class CreateSnapshotJob < ApplicationJob
   # Decomposes a rich_text field by saving the text as well
   # as the associated attachments.
   #
-  # TODO: Possible bug!
+  # @TODO: Possible bug!
   #
   # If two attachments are different files, but have the same filename,
   # this could result in overwriting one of them.
