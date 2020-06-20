@@ -83,8 +83,8 @@ class RestoreSnapshotJob < ApplicationJob
   # @todo This needs to handle attachments too
   # This is broken for now
   def handle_note(filename, io, notes_buffer)
-    content_match = filename.match(%r{\ANotes\/note_([0-9]+)\.html\z})
-    attachment_match = filename.match(%r{\ANotes\/note_([0-9]+)\/.+\z})
+    content_match = filename.match(%r{\ANotes/note_([0-9]+)\.html\z})
+    attachment_match = filename.match(%r{\ANotes/note_([0-9]+)/.+\z})
 
     if content_match
       note_id = content_match.captures[0]
@@ -97,7 +97,7 @@ class RestoreSnapshotJob < ApplicationJob
       note = notes_buffer[note_id]
       inner_html = Nokogiri::HTML(note)
 
-      fname = filename.gsub!(%r{^Notes\/note_[0-9]+/}, '')
+      fname = filename.gsub!(%r{^Notes/note_[0-9]+/}, '')
 
       # @todo Possible bug!
       # See the create_snapshot_job for the duplicate file/filename problem
