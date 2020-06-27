@@ -1,6 +1,6 @@
 <% hide_type = hide_type || false %>
 <div class="mb-3">
-<b><%= link_to doc.title, doc %></b><br/>
+<b><%= link_to doc.title, doc.url_path %></b><br/>
 <% if !hide_type %>
 <i><%= t('search.type', type: doc.class.to_s) %></i>
 <% end %>

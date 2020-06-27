@@ -88,7 +88,6 @@ RSpec.describe Person, type: :model do
     end
   end
 
-
   context 'with a name' do
     it 'properly formats a full name' do
       person = build(:person)

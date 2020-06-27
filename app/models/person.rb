@@ -3,6 +3,7 @@
 # Model for people
 class Person < ApplicationRecord
   include ParseableDate
+  include FriendlyUrlName
 
   has_many :facts, as: :factable
   accepts_nested_attributes_for :facts
@@ -13,6 +14,8 @@ class Person < ApplicationRecord
                               burialplace]
 
   before_save :update_probably_alive
+
+  has_friendly_url_name field: :friendly_url, field_name: :full_name, url_root: 'p'
 
   # title is used when this shows up in search results
   def title
@@ -108,7 +111,7 @@ class Person < ApplicationRecord
   # but obviously lived and died > 90 years ago?
   def update_probably_alive
     definitely_dead = !death_date.nil?
-    age = Date.today.year - (birth_date&.year || 0)
+    age = Time.zone.today.year - (birth_date&.year || 0)
     self.probably_alive = !definitely_dead && age < 90
   end
 end

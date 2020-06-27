@@ -3,7 +3,7 @@
 # Controller for displaying people (editing controlled by Administrate)
 class PeopleController < ApplicationController
   def show
-    @person = Person.find(params[:id])
+    @person = Person.where(friendly_url: params[:friendly_url]).first
     authorize @person
 
     @current_spouse = authorize_or_nil(@person.current_spouse) if @person.current_spouse

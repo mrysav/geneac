@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   devise_for :users
   get '/u/:id' => 'users#show', as: :user
 
-  get  '/photos/:id' => 'photos#show', as: :photo
-  get  '/notes/:id'  => 'notes#show', as: :note
-  get  '/p/:id'      => 'people#show', as: :person
+  get  '/photos/:friendly_url' => 'photos#show', as: :photo
+  get  '/notes/:friendly_url'  => 'notes#show', as: :note
+  get  '/p/:friendly_url' => 'people#show', as: :person
 
   get '/search'      => 'search#search', as: :search
   get '/tagged/:tag' => 'search#tagged', as: :tagged

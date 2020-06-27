@@ -3,6 +3,7 @@
 # Model for Note class
 class Note < ApplicationRecord
   include ParseableDate
+  include FriendlyUrlName
 
   has_rich_text :rich_content
 
@@ -13,6 +14,8 @@ class Note < ApplicationRecord
   accepts_nested_attributes_for :citation
 
   acts_as_taggable_on :tags, :tagged_people
+
+  has_friendly_url_name field: :friendly_url, field_name: :title
 
   def date
     parse(date_string)

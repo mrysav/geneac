@@ -3,7 +3,7 @@
 # Controller for displaying photos to end-users
 class PhotosController < ApplicationController
   def show
-    @photo = Photo.find(params[:id])
+    @photo = Photo.where(friendly_url: params[:friendly_url]).first
     authorize @photo
 
     @tagged_people = @photo.tagged_people.map do |p|
