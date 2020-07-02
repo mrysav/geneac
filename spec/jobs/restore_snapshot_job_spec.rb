@@ -30,20 +30,29 @@ RSpec.describe RestoreSnapshotJob, type: :job do
       new_snapshot = digest_snapshot Snapshot.find(2)
 
       expect(new_snapshot[:hashes].keys).to match_array(reference_snapshot[:hashes].keys)
-      reference_snapshot[:hashes].keys.each do |file|
+      reference_snapshot[:hashes].each_key do |file|
         ref_hash = reference_snapshot[:hashes][file]
         new_hash = new_snapshot[:hashes][file]
-        # @todo there needs to be better equality checking for snapshots.
-        # When restored, apparently sometimes things get out of order even
-        # though the data *inside* each record is fine.
-        if file.ends_with?('.json') && new_hash != ref_hash
+
+        if file.match?(/[A-Z][a-z]+\.json/)
           # Print the actual different contents of each json file
           # if they don't match.
-          ref_contents = reference_snapshot[:contents][file].flatten
-          new_contents = new_snapshot[:contents][file].flatten
-          expect(new_contents).to match_array(ref_contents), "#{file} (flattened)"
+          ref_contents = reference_snapshot[:contents][file].sort_by { |a| a['id'] }
+          new_contents = new_snapshot[:contents][file].sort_by { |a| a['id'] }
+
+          expect(new_contents.count).to eq(ref_contents.count)
+          new_contents.each_with_index do |p, i|
+            expect(p).to include(ref_contents[i])
+          end
+        elsif file.match?(%r{Notes/note_[0-9]+.html})
+          normalized_ref = normalize_note_html(reference_snapshot[:contents][file])
+          normalized_new = normalize_note_html(new_snapshot[:contents][file])
+
+          # This avoids matching the actual attachment inner text, which can change
+          expect(normalized_new[:attachments]).to match_array(normalized_ref[:attachments]), 'attachments'
+          expect(normalized_new[:contents]).to eq(normalized_ref[:contents]), 'note contents'
         else
-          expect(new_hash).to eq(ref_hash), file.to_s
+          expect(new_hash).to eq(ref_hash), file
         end
       end
     end
@@ -60,12 +69,29 @@ RSpec.describe RestoreSnapshotJob, type: :job do
           file_name = entry.name
           file_contents = zip.get_input_stream(entry).read.force_encoding('UTF-8')
           digest_contents[:hashes][file_name] = Digest::MD5.hexdigest(file_contents)
-          next unless file_name.ends_with?('.json')
-
-          digest_contents[:contents][file_name] = JSON.parse(file_contents)
+          digest_contents[:contents][file_name] = if file_name.ends_with?('.json')
+                                                    JSON.parse(file_contents)
+                                                  else
+                                                    file_contents
+                                                  end
         end
       end
     end
     digest_contents
+  end
+
+  ACTION_TEXT_ATTACHMENT = %r{<action-text-attachment(.+?)>.+</action-text-attachment>}m.freeze
+
+  def normalize_note_html(note_html)
+    attachments = []
+    captures = ACTION_TEXT_ATTACHMENT.match(note_html)&.captures
+    attachments += captures if captures
+
+    normalized_text = note_html.gsub(ACTION_TEXT_ATTACHMENT, '')
+
+    {
+      attachments: attachments,
+      contents: normalized_text
+    }
   end
 end
