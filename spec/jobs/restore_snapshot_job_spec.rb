@@ -7,12 +7,55 @@ require 'zip'
 require 'rails_helper'
 
 RSpec.describe RestoreSnapshotJob, type: :job do
-  before :each do
+  before :all do
     Snapshot.drop_em_all!
+
+    10.times do
+      create(:note, :with_date)
+    end
+
+    3.times do
+      create(:photo)
+    end
+
+    10.times do
+      create(:fact, :attached_to_person)
+    end
+
+    5.times do
+      create(:person)
+    end
+
+    CreateSnapshotJob.perform_now
+    expect(Snapshot.count).to eq(1)
   end
 
-  context 'restoring a v1 snapshot' do
-    it 'restores the database from reference snapshot' do
+  before :each do
+    Note.drop_em_all!
+    expect(Note.count).to eq(0)
+
+    Photo.drop_em_all!
+    expect(Photo.count).to eq(0)
+
+    Person.drop_em_all!
+    expect(Person.count).to eq(0)
+
+    Fact.drop_em_all!
+    expect(Fact.count).to eq(0)
+  end
+
+  context 'restoring a snapshot' do
+    it 'restores notes' do
+      RestoreSnapshotJob.perform_now(Snapshot.find(1))
+
+      expect(Note.count).to eq(10)
+
+      note = Note.all.first
+
+      expect(note.title).not_to be_empty
+      expect(note.rich_content.body.to_s).to match(%r{<b>.+</b>.+})
+    end
+    skip 'restores the database from reference snapshot' do
       expect(Snapshot.count).to eq(0)
       RestoreSnapshotJob.perform_now(create(:snapshot, :v1))
 
@@ -34,7 +77,8 @@ RSpec.describe RestoreSnapshotJob, type: :job do
         ref_hash = reference_snapshot[:hashes][file]
         new_hash = new_snapshot[:hashes][file]
 
-        if file.match?(/[A-Z][a-z]+\.json/)
+        case file
+        when /[A-Z][a-z]+\.json/
           # Print the actual different contents of each json file
           # if they don't match.
           ref_contents = reference_snapshot[:contents][file].sort_by { |a| a['id'] }
@@ -44,7 +88,7 @@ RSpec.describe RestoreSnapshotJob, type: :job do
           new_contents.each_with_index do |p, i|
             expect(p).to include(ref_contents[i])
           end
-        elsif file.match?(%r{Notes/note_[0-9]+.html})
+        when %r{Notes/note_[0-9]+.html}
           normalized_ref = normalize_note_html(reference_snapshot[:contents][file])
           normalized_new = normalize_note_html(new_snapshot[:contents][file])
 

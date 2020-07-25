@@ -5,11 +5,11 @@ require 'faker'
 FactoryBot.define do
   factory :note do
     title { Faker::Music::GratefulDead.song }
-    rich_content { 'Hello world! <b>Bold move.</b>' }
+    rich_content { "<b>#{Faker::Music::Prince.song}</b><br/>#{Faker::Lorem.paragraphs}" }
 
-    trait :has_date do
+    trait :with_date do
       date_string do
-        Faker::Date.between(from: 50.years.ago, to: Date.today).strftime('%F')
+        Faker::Date.between(from: 50.years.ago, to: Time.zone.today).strftime('%F')
       end
     end
   end

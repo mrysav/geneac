@@ -122,6 +122,10 @@ GEM
       countries (~> 3.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.6)
+    database_cleaner (1.8.5)
+    database_cleaner-active_record (1.8.0)
+      activerecord
+      database_cleaner (~> 1.8.0)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     devise (4.7.2)
@@ -457,6 +461,7 @@ DEPENDENCIES
   chronic
   commonmarker
   country_select
+  database_cleaner-active_record
   devise (~> 4.7)
   factory_bot_rails
   faker

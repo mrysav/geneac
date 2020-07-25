@@ -52,3 +52,6 @@ yarn-debug.log*
 
 # Never commit env vars
 *.env
+
+# rspec temp file
+spec/examples.txt

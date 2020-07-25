@@ -53,6 +53,9 @@ yarn-debug.log*
 # Never commit env vars
 *.env
 
+# rspec tempfile
+spec/examples.txt
+
 ## Dockerignore-specific
 
 **/.git
