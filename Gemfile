@@ -50,7 +50,8 @@ group :test do
   gem 'webdrivers'
 
   # Code coverage
-  gem 'simplecov', require: false
+  # CodeClimate doesn't support 0.18+
+  gem 'simplecov', '< 0.18', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
