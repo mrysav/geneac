@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_205933) do
+ActiveRecord::Schema.define(version: 2020_08_02_204435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_06_21_205933) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "normalized_type"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -81,20 +82,17 @@ ActiveRecord::Schema.define(version: 2020_06_21_205933) do
     t.string "last_name"
     t.string "alternate_names"
     t.string "gender"
-    t.string "birth_date_string"
-    t.string "death_date_string"
-    t.string "birthplace"
-    t.string "burialplace"
     t.integer "father_id"
     t.integer "mother_id"
     t.integer "current_spouse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "bio"
-    t.string "deathplace"
-    t.string "burial_date_string"
     t.boolean "probably_alive"
     t.string "friendly_url"
+    t.integer "birth_fact_id"
+    t.integer "death_fact_id"
+    t.integer "burial_fact_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|

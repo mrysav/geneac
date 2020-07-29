@@ -10,21 +10,9 @@ module Events
     def events
       events = []
 
-      unless @person.birth_date.nil?
-        events.push(Event.new(title: 'Birth', date: @person.birth_date,
-                              date_string: @person.birth_date_string,
-                              location: @person.birthplace))
-      end
-
-      unless @person.death_date.nil?
-        events.push(Event.new(title: 'Death', date: @person.death_date,
-                              date_string: @person.death_date_string,
-                              location: @person.burialplace))
-      end
-
       @person.facts.each do |fact|
         events.push(Event.new(title: fact.fact_type, date: fact.date,
-                              date_string: fact.date_string,
+                              date_string: fact.date_string&.capitalize,
                               location: fact.place))
       end
 

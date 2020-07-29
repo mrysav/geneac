@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'person_spec_helper'
 
 RSpec.describe Person, type: :model do
   context 'with relationships' do
@@ -95,34 +96,21 @@ RSpec.describe Person, type: :model do
     end
 
     it 'properly formats a title' do
-      person = create(:person, :has_birthday, :has_deathday)
+      person = create_person(create(:fact, fact_type: 'birth'), create(:fact, fact_type: 'death'))
       expect(person.title).to start_with person.full_name
       expect(person.title).to end_with person.lifespan
     end
   end
 
   context 'with attached dates' do
-    it 'can parse a birth date' do
-      person = build(:person, birth_date_string: '2010-10-31')
-      expect(person.birth_date.year).to eq(2010)
-    end
-
-    it 'can parse a death date' do
-      person = build(:person, death_date_string: '10/31/2010')
-      expect(person.death_date.year).to eq(2010)
-      # Year only
-      person.death_date_string = '2010'
-      expect(person.death_date.year).to eq(2010)
-    end
-
     it 'determines a very old person with no death date as dead' do
-      person = create(:person, birth_date_string: '1900-01-01')
+      person = create_person(create(:fact, fact_type: 'birth', date_string: '1900-01-01'))
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true
     end
 
     it 'and a death date is dead' do
-      person = create(:person, :has_deathday)
+      person = create_person(create(:fact, fact_type: 'death'))
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true
     end
@@ -139,23 +127,23 @@ RSpec.describe Person, type: :model do
     end
 
     it 'calculates lifespan correctly for birthdate only' do
-      known_birth = build(:person, :has_birthday)
+      known_birth = create_person(create(:fact, fact_type: 'birth', date_string: '1900-01-01'))
       expect(known_birth.lifespan).to end_with '?)'
     end
 
     it 'calculates lifespan correctly for deathdate only' do
-      known_death = build(:person, :has_deathday)
+      known_death = create_person(create(:fact, fact_type: 'death'))
       expect(known_death.lifespan).to start_with '(?'
     end
 
     it 'calculates lifespan correctly for alive person' do
-      alive = create(:person, birth_date_string: Date.today)
+      alive = create_person(create(:fact, fact_type: 'birth', date_string: Time.zone.today))
       expect(alive.probably_alive?).to be true
       expect(alive.lifespan).to end_with 'Present)'
     end
 
     it 'calculates lifespan correctly for known birth and death' do
-      known_both = build(:person, :has_birthday, :has_deathday)
+      known_both = create_person(create(:fact, fact_type: 'birth'), create(:fact, fact_type: 'death'))
       expect(known_both.lifespan).to match(/\([0-9]{4} - [0-9]{4}\)/)
     end
   end

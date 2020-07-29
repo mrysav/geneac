@@ -12,6 +12,9 @@ Layout/LineLength:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/CyclomaticComplexity:
+  Max: 10
+
 Metrics/MethodLength:
   Enabled: false
 

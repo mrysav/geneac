@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class PersonDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -13,13 +13,8 @@ class PersonDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     alternate_names: Field::String,
     gender: Field::String,
-    birth_date_string: AdvancedDateField,
-    burial_date_string: AdvancedDateField,
-    death_date_string: AdvancedDateField,
-    birthplace: Field::String,
-    burialplace: Field::String,
-    deathplace: Field::String,
     bio: Field::Text,
+    birth_date: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     father_id: PersonField,
@@ -28,7 +23,7 @@ class PersonDashboard < Administrate::BaseDashboard
     children: Field::HasMany.with_options(
       class_name: 'Person'
     ),
-    facts: Field::NestedHasMany.with_options(skip: :factable),
+    facts: Field::NestedHasMany.with_options(skip: :factable)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,56 +31,44 @@ class PersonDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :first_name,
-    :last_name,
-    :birth_date_string,
-    :updated_at
+  COLLECTION_ATTRIBUTES = %i[
+    first_name
+    last_name
+    birth_date
+    updated_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :first_name,
-    :last_name,
-    :alternate_names,
-    :gender,
-    :birth_date_string,
-    :burial_date_string,
-    :death_date_string,
-    :birthplace,
-    :burialplace,
-    :deathplace,
-    :bio,
-    :created_at,
-    :updated_at,
-    :father_id,
-    :mother_id,
-    :current_spouse_id,
-    :children,
-    :facts,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    id
+    first_name
+    last_name
+    alternate_names
+    gender
+    bio
+    created_at
+    updated_at
+    father_id
+    mother_id
+    current_spouse_id
+    children
+    facts
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :first_name,
-    :last_name,
-    :alternate_names,
-    :gender,
-    :birth_date_string,
-    :burial_date_string,
-    :death_date_string,
-    :birthplace,
-    :burialplace,
-    :deathplace,
-    :bio,
-    :father_id,
-    :mother_id,
-    :current_spouse_id,
-    :facts,
+  FORM_ATTRIBUTES = %i[
+    first_name
+    last_name
+    alternate_names
+    gender
+    bio
+    father_id
+    mother_id
+    current_spouse_id
+    facts
   ].freeze
 
   # Overwrite this method to customize how people are displayed

@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'person_spec_helper'
 
 RSpec.describe 'People', type: :request do
   before :each do
-    @dead = create(:person, :has_birthday, :has_deathday)
-    @alive = create(:person, birth_date_string: (Time.zone.today - 90.days).to_s)
+    @dead = create_person(create(:fact, fact_type: 'birth', date_string: '1900'),
+                          create(:fact, fact_type: 'death', date_string: '1980'))
+    @alive = create_person(create(:fact, fact_type: 'birth', date_string: (Time.zone.today - 90.days).to_s))
 
     # Create a relationship so policy_scope on @children will work
     @alive.mother = @dead

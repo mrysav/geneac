@@ -73,15 +73,25 @@ namespace :generate do
       has_deathday = [true, false].sample
 
       if has_birthday
-        person.birth_date_string = Faker::Date.birthday(min_age: 0, max_age: 100).strftime('%F')
-        person.birthplace = Faker::Address.city + ', ' + Faker::Address.country
+        f = Fact.new
+        f.fact_type = 'birth'
+        f.factable = person
+        f.date_string = Faker::Date.birthday(min_age: 0, max_age: 100).strftime('%F')
+        f.place = Faker::Address.city + ', ' + Faker::Address.country
+        f.save!
+        person.birth_fact_id = f.id
       end
 
       if has_deathday
-        person.death_date_string =
+        f = Fact.new
+        f.fact_type = 'death'
+        f.factable = person
+        f.date_string =
           Faker::Date.between(from: person.birth_date || 50.years.ago,
-                              to: Date.today).strftime('%F')
-        person.burialplace = Faker::Address.city + ', ' + Faker::Address.country
+                              to: Time.zone.today).strftime('%F')
+        f.place = Faker::Address.city + ', ' + Faker::Address.country
+        f.save!
+        person.death_fact_id = f.id
       end
 
       person.save!
@@ -101,7 +111,7 @@ namespace :generate do
       has_date = [true, false].sample
       date = if has_date
                Faker::Date.between(from: 100.years.ago,
-                                   to: Date.today).strftime('%F')
+                                   to: Time.zone.today).strftime('%F')
              else
                ''
              end
@@ -122,7 +132,7 @@ namespace :generate do
       has_date = [true, false].sample
       date = if has_date
                Faker::Date.between(from: 100.years.ago,
-                                   to: Date.today).strftime('%F')
+                                   to: Time.zone.today).strftime('%F')
              else
                ''
              end

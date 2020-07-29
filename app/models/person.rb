@@ -17,10 +17,9 @@ class Person < ApplicationRecord
   belongs_to :current_spouse, class_name: 'Person', optional: true
 
   include PgSearch::Model
-  multisearchable against: %i[first_name last_name alternate_names
-                              birth_date_string death_date_string birthplace
-                              burialplace]
+  multisearchable against: %i[first_name last_name alternate_names]
 
+  before_save :update_special_fact_types
   before_save :update_probably_alive
   before_destroy :update_current_spouse
 
@@ -42,11 +41,11 @@ class Person < ApplicationRecord
   end
 
   def birth_date
-    parse(birth_date_string)
+    Fact.find(birth_fact_id).date if birth_fact_id
   end
 
   def death_date
-    parse(death_date_string)
+    Fact.find(death_fact_id).date if death_fact_id
   end
 
   def full_name
@@ -56,12 +55,11 @@ class Person < ApplicationRecord
   def lifespan
     birth_year = birth_date&.year
     death_year = death_date&.year
+    return '' unless birth_year || death_year
 
     birth = birth_year || '?'
     death = death_year || (probably_dead? ? '?' : 'Present')
-    return "(#{birth} - #{death})" if birth_year || death_year
-
-    ''
+    "(#{birth} - #{death})"
   end
 
   def probably_dead?
@@ -88,5 +86,17 @@ class Person < ApplicationRecord
 
     current_spouse.current_spouse = nil
     current_spouse.save!
+  end
+
+  # Updates the index of the fact that represents the birth, death, burial, etc.
+  # This index is used to speed up lookups of these dates for rendering.
+  # Uses first fact of the desired type that it finds
+  def update_special_fact_types
+    {
+      birth_fact_id: 'birth',
+      death_fact_id: 'death'
+    }.each do |fact, fact_type|
+      self[fact] = facts.where(fact_type: fact_type).limit(1)[0]&.id
+    end
   end
 end
