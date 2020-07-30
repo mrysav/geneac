@@ -110,7 +110,7 @@ namespace :generate do
       photo = Photo.create!(title: Faker::Movies::BackToTheFuture.character,
                             description: Faker::Movies::BackToTheFuture.quote,
                             date_string: date, tag_list: tags, tagged_person_list: people_tags)
-      downloaded_img = open(Faker::LoremFlickr.image)
+      downloaded_img = URI.open(Faker::LoremFlickr.image)
       photo.image.attach(io: downloaded_img, filename: "photo_#{photo.id}.jpg")
     end
     puts "Created #{Photo.count} photos"

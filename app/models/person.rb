@@ -5,8 +5,16 @@ class Person < ApplicationRecord
   include ParseableDate
   include FriendlyUrlName
 
-  has_many :facts, as: :factable
+  has_many :facts, as: :factable, dependent: :destroy
   accepts_nested_attributes_for :facts
+
+  belongs_to :mother, class_name: 'Person', optional: true
+  has_many :mothered_children, class_name: 'Person', dependent: :nullify, foreign_key: 'mother_id', inverse_of: :mother
+
+  belongs_to :father, class_name: 'Person', optional: true
+  has_many :fathered_children, class_name: 'Person', dependent: :nullify, foreign_key: 'father_id', inverse_of: :father
+
+  belongs_to :current_spouse, class_name: 'Person', optional: true
 
   include PgSearch::Model
   multisearchable against: %i[first_name last_name alternate_names
@@ -14,6 +22,7 @@ class Person < ApplicationRecord
                               burialplace]
 
   before_save :update_probably_alive
+  before_destroy :update_current_spouse
 
   has_friendly_url_name field: :friendly_url, field_name: :full_name, url_root: 'p'
 
@@ -22,50 +31,8 @@ class Person < ApplicationRecord
     [full_name, lifespan].reject(&:empty?).join(' ')
   end
 
-  # Unfortunately can't get associations to work so
-  # relationships are defined by helper functions here.
-
-  def father
-    Person.find(father_id) if father_id && Person.exists?(father_id)
-  end
-
-  def father=(value)
-    if value.nil?
-      self.father_id = nil
-    elsif value.id && Person.exists?(value.id)
-      self.father_id = value.id
-    end
-  end
-
-  def mother
-    Person.find(mother_id) if mother_id && Person.exists?(mother_id)
-  end
-
-  def mother=(value)
-    if value.nil?
-      self.mother_id = nil
-    elsif value.id && Person.exists?(value.id)
-      self.mother_id = value.id
-    end
-  end
-
-  def current_spouse
-    Person.find(current_spouse_id) if current_spouse_id &&
-                                      Person.exists?(current_spouse_id)
-  end
-
-  def current_spouse=(value)
-    if value.nil?
-      self.current_spouse_id = nil
-    elsif value.id && Person.exists?(value.id)
-      self.current_spouse_id = value.id
-    end
-  end
-
   def children
-    Person.where('id != ? AND ((father_id > 0 AND father_id = ?)'\
-                 ' OR (mother_id > 0 AND mother_id = ?))',
-                 id, id, id)
+    mothered_children.or(fathered_children)
   end
 
   def siblings
@@ -113,5 +80,13 @@ class Person < ApplicationRecord
     definitely_dead = !death_date.nil?
     age = Time.zone.today.year - (birth_date&.year || 0)
     self.probably_alive = !definitely_dead && age < 90
+  end
+
+  # Called before_destroy to ensure the spouse's record does not go stale.
+  def update_current_spouse
+    return unless current_spouse
+
+    current_spouse.current_spouse = nil
+    current_spouse.save!
   end
 end
