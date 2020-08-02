@@ -56,7 +56,12 @@ yarn-debug.log*
 # rspec tempfile
 spec/examples.txt
 
+# generated docs
+/.yardoc/
+/doc/
+
 ## Dockerignore-specific
 
 **/.git
 **/.gitignore
+

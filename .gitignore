@@ -55,3 +55,7 @@ yarn-debug.log*
 
 # rspec temp file
 spec/examples.txt
+
+# generated docs
+/.yardoc/
+/doc/
