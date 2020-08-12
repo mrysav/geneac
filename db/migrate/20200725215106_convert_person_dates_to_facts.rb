@@ -8,6 +8,7 @@ class ConvertPersonDatesToFacts < ActiveRecord::Migration[6.0]
     Person.all.each do |p|
       fact_for(p, 'birth', p.birth_date_string, p.birthplace)&.save!
       fact_for(p, 'death', p.death_date_string, p.deathplace)&.save!
+      fact_for(p, 'burial', p.burial_date_string, p.burialplace)&.save!
       p.save!
     end
 
