@@ -1,13 +1,13 @@
 <% @title = @photo.title %>
 
-<div class="container">
+<div class="show-photo container">
   <div class="row">
     <div class="col-lg-8 offset-lg-2 col-sm-12 text-center">
       <h2 class="text-center"><%= @photo.title %></h3>
       <hr>
 
       <a target="_blank" href="<%= url_for(@photo.image) %>">
-        <%= image_tag @photo.image, class: 'img-fluid border rounded p-1' %>
+        <%= image_tag @photo.image, class: 'img-fluid photo-image border rounded p-1' %>
       </a>
     </div>
   </div>
