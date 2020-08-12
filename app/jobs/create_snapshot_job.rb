@@ -31,7 +31,8 @@ class CreateSnapshotJob < ApplicationJob
     manifest = {
       # Version 1/unversioned: Notes have markdown text
       # Version 2: Notes have rich text HTML file with them
-      version: '2'
+      # Version 3: 'Person' models no longer have birth/death/burial dates
+      version: '3'
     }
 
     zio.put_next_entry('manifest.json')
