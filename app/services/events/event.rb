@@ -3,21 +3,20 @@
 module Events
   # Event model object.
   class Event
-    attr_reader :title
-    attr_reader :location
-    attr_reader :date
-    attr_reader :date_string
+    attr_reader :title, :title_link, :location, :date, :date_string, :preview_photo_attachment
 
     def initialize(params)
       @title = params[:title]
+      @title_link = params[:title_link]
       @location = params[:location]
       @date = params[:date]
       @date_string = params[:date_string]
+      @preview_photo_attachment = params[:preview_photo_attachment]
     end
 
     def <=>(other)
-      if date && other.date
-        date <=> other&.date
+      if date && other&.date
+        date <=> other.date
       else
         -1
       end

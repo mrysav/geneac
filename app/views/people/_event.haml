@@ -1,0 +1,15 @@
+%tr
+  %td.w-25
+    = event.date_string
+  %td
+    %div.person-event-title
+      - if event.title_link
+        = link_to event.title, event.title_link
+      - else
+        = event.title
+    - if event.location
+      %div.person-event-location
+        = event.location
+    - if event.preview_photo_attachment
+      %div.person-event-preview-photo
+        = image_tag(event.preview_photo_attachment.variant(resize_to_limit: [150, 150]), class: 'img-fluid')
