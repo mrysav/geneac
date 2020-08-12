@@ -6,7 +6,8 @@
       %h4= @person.title
       = @person.bio
 
-  .col-12.col-lg-4
+  - layout_classes = ["col-12", ("col-lg-4" unless @person.bio.blank?)]
+  = content_tag :div, class: layout_classes do
     %table.table.table-borderless.table-hover.table-striped
       - for event in @events
         = render partial: 'event', locals: { event: event }

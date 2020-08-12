@@ -49,9 +49,12 @@
   margin: 1rem;
 
   .photo img {
-    max-width: 100px;
+    width: 100px;
     border-radius: 50px;
     object-fit: cover;
+    height: 100px;
+    border: 1px solid gray;
+    padding: 2px;
   }
 
   .name p {
