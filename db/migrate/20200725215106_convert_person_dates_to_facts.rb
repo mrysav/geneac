@@ -31,7 +31,6 @@ class ConvertPersonDatesToFacts < ActiveRecord::Migration[6.0]
     change_table(:people, bulk: true) do |t|
       t.remove :birth_fact_id
       t.remove :death_fact_id
-      t.remove :burial_fact_id
 
       t.string :birth_date_string
       t.string :birthplace

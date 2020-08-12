@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_204435) do
+ActiveRecord::Schema.define(version: 2020_08_12_145802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_08_02_204435) do
     t.string "friendly_url"
     t.integer "birth_fact_id"
     t.integer "death_fact_id"
-    t.integer "burial_fact_id"
+    t.integer "profile_photo_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
