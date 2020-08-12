@@ -1,0 +1,9 @@
+%div.family-tile.text-center
+  %div.photo
+    - if person.profile_photo
+      = image_tag person.profile_photo.image.variant(resize_to_limit: [100, 100]), class: 'img-fluid'
+    - else
+      = image_tag 'lincoln_stock_photo.jpg', class: 'img-fluid'
+  %div.name
+    %p= link_to person.full_name, person.url_path
+    %p= person.lifespan

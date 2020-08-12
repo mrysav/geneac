@@ -61,6 +61,7 @@ en:
     with: 'With'
     with_and: 'With %{p1} and %{p2}'
     married_to: 'Married to %{spouse}'
+    marriages: 'Marriages'
   search:
     total_results: 'Total results: %{total}'
     type: 'Type: %{type}'

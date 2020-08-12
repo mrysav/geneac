@@ -16,11 +16,14 @@ class Person < ApplicationRecord
 
   belongs_to :current_spouse, class_name: 'Person', optional: true
 
+  belongs_to :profile_photo, class_name: 'Photo', optional: true
+
   include PgSearch::Model
   multisearchable against: %i[first_name last_name alternate_names]
 
   before_save :update_special_fact_types
   before_save :update_probably_alive
+  before_save :update_profile_photo
   before_destroy :update_current_spouse
 
   has_friendly_url_name field: :friendly_url, field_name: :full_name, url_root: 'p'
@@ -98,5 +101,12 @@ class Person < ApplicationRecord
     }.each do |fact, fact_type|
       self[fact] = facts.where(fact_type: fact_type).limit(1)[0]&.id
     end
+  end
+
+  def update_profile_photo
+    return if profile_photo_id
+
+    photos = Photo.tagged_with(id.to_s)
+    self.profile_photo_id = photos[0].id if photos.size.positive?
   end
 end

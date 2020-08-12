@@ -1,11 +1,12 @@
 = render partial: 'nav', locals: { tab: :bio }
 
-- unless @person.bio.blank?
-  .row.mt-3
-    .col-12.col-lg-8.offset-lg-2.serif.person-bio
+.row.flex-row-reverse
+  - unless @person.bio.blank?
+    .col-12.col-lg-8.serif.person-bio.mb-4
+      %h4= @person.title
       = @person.bio
 
-.row.mt-3
-  %table.table.table-borderless.table-hover.table-striped
-    - for event in @events
-      = render partial: 'event', locals: { event: event }
+  .col-12.col-lg-4
+    %table.table.table-borderless.table-hover.table-striped
+      - for event in @events
+        = render partial: 'event', locals: { event: event }
