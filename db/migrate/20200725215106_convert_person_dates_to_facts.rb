@@ -1,7 +1,7 @@
 class ConvertPersonDatesToFacts < ActiveRecord::Migration[6.0]
   def up
     add_column :facts, :normalized_type, :string
-    Fact.all.each(&save!)
+    Fact.all.each(&:save!)
 
     change_table(:people, bulk: true) do |t|
       t.integer :birth_fact_id
