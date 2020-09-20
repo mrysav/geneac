@@ -7,36 +7,26 @@
 
 ## Quickstart
 
+### Prerequisites
+
+A few things are assumed to be setup to run your own instance of Geneac:
+
+* Postgres
+* Redis
+* S3-compatible storage (can be S3, Minio, B2, Spaces, etc)
+
+### Heroku
+
 If you already have a [Heroku](https://heroku.com) account you can click this to get up and running:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## Requirements
+This will provision the Heroku Postgres and Redis instances for you, but you will need to supply your S3 storage configuration yourself.
 
-If you want to run your own instance of Geneac, you must be familiar with Ruby on Rails web applications. This is the stack I used for development:
+### Docker
 
-* Ruby & Bundler (see `.ruby-version` for version info)
-  * You can use [rbenv](https://github.com/sstephenson/rbenv) to keep versions clean and separated.
-* NodeJS + Yarn (see `.nvmrc` for version)
-  * You can use NVM or [nodenv](https://github.com/nodenv/nodenv) to keep versions separated. (nodenv will require [nodenv-nvmrc](https://github.com/ouchxp/nodenv-nvmrc) to use `.nvmrc`)
-* [foreman](https://github.com/ddollar/foreman)-compatible launcher for Procfile-based launch
-* PostgreSQL
-
-If this is your first time running geneac, you need to configure the database:
-
-    rails db:create db:schema:load
-    
-Additionally, if you are running a test instance and want to generate simulated data, you can run:
-
-    rails generate:testdata
-
-And to start:
-
-```bash
-# Starts server and webpack-dev-server
-foreman start -f Procfile.dev
-```
+Geneac can be deployed using Docker (see the provided Dockerfile) but the Postgres, Redis and S3 configurations have to be supplied via environment variables.
 
 ## Contributing
 
-If you have an idea for a feature or suggestion, feel free submit a pull request or send me an email! [mitchell.rysavy@gmail.com](mailto:mitchell.rysavy@gmail.com)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for a guide on making contributions.
