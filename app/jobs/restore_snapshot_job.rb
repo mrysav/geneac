@@ -80,8 +80,6 @@ class RestoreSnapshotJob < ApplicationJob
     photo.update_columns(updated_at: orig_updated_at)
   end
 
-  # @todo This needs to handle attachments too
-  # This is broken for now
   def handle_note(filename, io, notes_buffer)
     content_match = filename.match(%r{\ANotes/note_([0-9]+)\.html\z})
     attachment_match = filename.match(%r{\ANotes/note_([0-9]+)/.+\z})
