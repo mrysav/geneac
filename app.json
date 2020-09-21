@@ -17,17 +17,22 @@
     "HOSTNAME": {
       "description": "Host to link to in password reset or confirmation emails."
     },
-    "AWS_ACCESS_KEY_ID": {
-      "description": "Access key ID for AWS Account for S3 file storage."
+    "S3_ACCESS_KEY_ID": {
+      "description": "Access key ID for AWS (or 3rd party) access key ID for S3 file storage."
     },
-    "AWS_SECRET_ACCESS_KEY": {
-      "description": "Secret access key for AWS Account for S3 file storage."
+    "S3_SECRET_ACCESS_KEY": {
+      "description": "Secret access key for AWS (or 3rd party) secret access key for S3 file storage."
     },
-    "AWS_BUCKET_NAME": {
+    "S3_BUCKET_NAME": {
       "description": "S3 bucket name for file storage."
     },
     "AWS_REGION": {
-      "description": "Region that S3 bucket is located in."
+      "description": "AWS Region that S3 bucket is located in, if you are using AWS. Either AWS_REGION or S3_ENDPOINT must be specified.",
+      "required": false
+    },
+    "S3_ENDPOINT": {
+      "description": "Endpoint of 3rd party service providing an S3-compatible API. Either AWS_REGION or S3_ENDPOINT must be specified.",
+      "required": false
     }
   },
   "formation": {
