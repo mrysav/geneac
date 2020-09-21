@@ -1,9 +1,7 @@
 {
   "name": "Geneac",
   "description": "Genealogy for Brainiacs!",
-  "keywords": [
-    "genealogy", "rails", "facebook", "family", "history"
-  ],
+  "keywords": ["genealogy", "rails", "facebook", "family", "history"],
   "repository": "https://github.com/mrysav/geneac",
   "success_url": "/",
   "scripts": {
@@ -38,14 +36,17 @@
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "free"
+      "size": "free",
+      "command": "bundle exec rails server"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free",
+      "command": "QUEUE=* bundle exec rake resque:work"
     }
   },
   "image": "heroku/ruby",
-  "addons": [
-    "heroku-postgresql",
-    "heroku-redis"
-  ],
+  "addons": ["heroku-postgresql", "heroku-redis"],
   "buildpacks": [
     {
       "url": "heroku/ruby"
@@ -57,7 +58,7 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "bundle exec rake test"
+        "test": "bundle exec rake"
       }
     }
   }
