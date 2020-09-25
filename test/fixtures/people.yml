@@ -2,23 +2,21 @@ chandler:
   id: 1
   first_name: Chandler
   last_name: Bing
-  birth_date_string: 1975-1-19
-  birthplace: Ohio
+  birth_fact_id: 1975-1-19
   current_spouse_id: 2
 
 monica:
   id: 2
   first_name: Monica
   last_name: Geller
-  birth_date_string: 1976-4-15
-  birthplace: Ohio
+  birth_fact_id: 1
   current_spouse_id: 1
   mother_id: 4
 
 jack:
   id: 3
   first_name: Jack
-  birth_date_string: 1999-8-19
+  birth_fact_id: 1
   father_id: 1
   mother_id: 2
 
@@ -26,22 +24,21 @@ grandma:
   id: 4
   first_name: Grandma
   last_name: Geller
-  death_date_string: 1980-5-8
-  burialplace: New York
+  death_fact_id: 1
   father_id: 5
 
 great_grandpa:
   id: 5
   first_name: Great-Grandpa
   last_name: Geller
-  birth_date_string: 1910-1-1
-  death_date_string: 1970-6-13
+  birth_fact_id: 1
+  death_fact_id: 1
 
 great_grandma:
   id: 6
   first_name: Great-Grandma
   last_name: Bing
-  birth_date_string: 1910-05-23
+  birth_fact_id: 1
 
 ross:
   id: 7
