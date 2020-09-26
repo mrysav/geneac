@@ -59,3 +59,4 @@ spec/examples.txt
 # generated docs
 /.yardoc/
 /doc/
+.idea/
