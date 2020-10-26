@@ -13,6 +13,7 @@ class PersonDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     alternate_names: Field::String,
     gender: Field::String,
+    sex: Field::String,
     bio: Field::Text,
     birth_date: Field::DateTime,
     created_at: Field::DateTime,
@@ -46,6 +47,7 @@ class PersonDashboard < Administrate::BaseDashboard
     last_name
     alternate_names
     gender
+    sex
     bio
     created_at
     updated_at
@@ -64,6 +66,7 @@ class PersonDashboard < Administrate::BaseDashboard
     last_name
     alternate_names
     gender
+    sex
     bio
     father_id
     mother_id
