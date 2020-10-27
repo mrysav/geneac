@@ -34,9 +34,17 @@ namespace :generate do
 
     100.times do |_index|
       is_female = [true, false].sample
+      def generate_sex
+        ['', 'male', 'female'].sample
+      end
+      
+      def generate_gender
+        ['', 'male', 'female', 'transgender', 'gender neutral', 'non-binary', 'agender', 'polygender'].sample
+      end
       person = Person.create!(first_name: is_female ? Faker::Name.female_first_name : Faker::Name.male_first_name,
                               last_name: Faker::Name.last_name,
-                              gender: is_female ? 'Female' : 'Male',
+                              gender: generate_gender,
+                              sex: generate_sex,
                               bio: Faker::Quote.famous_last_words)
 
       is_new_branch = rand(7) <= 1
