@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Photo, type: :request do
 
   let(:photo) { Photo.new(title: 'Hello world') }
-  let(:file) { File.open Rails.root.join('test', 'fixtures', 'files', 'image.jpg') }
+  let(:file) { File.open Rails.root.join('spec', 'fixtures', 'files', 'image.jpg') }
   let(:show_path) { "/photos/#{photo.friendly_url}" }
   let(:person) { create(:person) }
 
