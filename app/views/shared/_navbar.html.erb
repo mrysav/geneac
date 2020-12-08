@@ -24,7 +24,7 @@
             <div class="font-weight-bold dropdown-item">Admin</div>
             <%= link_to t('nav.jobs'), resque_server_path, class: 'dropdown-item' %>
             <%= link_to t('nav.admin_console'), admin_root_path, class: 'dropdown-item' %>
-            <%= link_to t('nav.site_settings'), rails_settings_ui_path, class: 'dropdown-item' %>
+            <%= link_to t('nav.site_settings'), settings_path, class: 'dropdown-item' %>
             <% end %>
             <div class="dropdown-divider"></div>
             <%= link_to t('nav.sign_out'), destroy_user_session_path, class: 'dropdown-item' %>
@@ -37,7 +37,7 @@
     <% end %>
   </ul>
 
-  <% if show_search_bar %>  
+  <% if show_search_bar %>
   <form class="form-inline" action="/search">
     <div class="input-group">
     <input class="form-control" type="search" placeholder="<%= t('nav.search') %>" aria-label="<%= t('nav.search') %>" name="s" id="s" value="<%= params[:s] %>" />

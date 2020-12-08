@@ -77,6 +77,8 @@ en:
         name: 'Site Title'
       site_tagline:
         name: 'Site Tagline'
+    title: 'Site Settings'
+    update: 'Update Settings'
     index:
       # Fix translation
       settings_saved: Settings saved successfully!

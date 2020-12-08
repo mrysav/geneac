@@ -112,9 +112,7 @@ gem 'chronic'
 gem 'pg_search'
 
 # Settings
-# @todo migrate to different settings gem
-gem 'rails-settings-cached', '~> 0'
-gem 'rails-settings-ui', github: 'mrysav/rails-settings-ui'
+gem 'rails-settings-cached', '~> 2.0'
 
 # Pagination
 gem 'pagy'

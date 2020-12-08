@@ -3,6 +3,6 @@
 # Renders settings in views.
 module SettingHelper
   def setting(key)
-    Setting[key]
+    Setting.send(key)
   end
 end
