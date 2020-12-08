@@ -1,7 +1,14 @@
+# frozen_string_literal: true
+
 # RailsSettings Model
 class Setting < RailsSettings::Base
-  source Rails.root.join("config/app.yml")
+  # When this file is updated, bump the cache_prefix
+  cache_prefix { '1' }
 
-  # When config/app.yml has changed, you need change this prefix to v2, v3 ... to expires caches
-  # cache_prefix { "v1" }
+  field :site_title, default: 'Geneac'
+  field :site_tagline, default: 'Genealogy for maniacs!'
+
+  field :require_login, type: :boolean, default: false
+  field :restrict_living_info, type: :boolean, default: true
+  field :show_recent_updates, type: :boolean, default: true
 end

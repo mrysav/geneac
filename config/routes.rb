@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   end
 
   authenticate :user do
-    mount RailsSettingsUi::Engine, at: 'settings'
+    resource :settings
+
     mount Resque::Server, at: 'jobs'
   end
 

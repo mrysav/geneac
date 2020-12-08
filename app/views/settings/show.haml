@@ -1,0 +1,19 @@
+.container.mt-3
+  .row.col-lg-8.offset-lg-2.col-sm-12.text-center
+    %h2.mx-auto= t('settings.title')
+    %hr.col-sm-12
+  .row
+    = form_for(Setting.new, url: settings_path, html: { class: 'mx-auto' }) do |f|
+      - Setting.keys.each do |key|
+        - field = Setting.get_field(key)
+        - if field[:type] == :boolean
+          .form-check
+            = f.check_box field[:key], { checked: Setting.send(field[:key]), class: 'form-check-input' }
+            = f.label field[:key], t("settings.attributes.#{field[:key]}.name"), class: 'form-check-label'
+        - else
+          .form-group
+            = f.label field[:key], t("settings.attributes.#{field[:key]}.name")
+            = f.text_field field[:key], value: Setting.send(field[:key]), placeholder: field.default, class: 'form-control'
+
+      .text-center.mt-3
+        = f.submit t('settings.update'), class: 'mx-auto'
