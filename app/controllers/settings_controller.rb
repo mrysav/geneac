@@ -8,7 +8,7 @@ class SettingsController < ApplicationController
     setting_params.each_key do |key|
       Setting.send("#{key}=", setting_params[key].strip) unless setting_params[key].nil?
     end
-    redirect_to settings_path, notice: 'Setting was successfully updated.'
+    redirect_to settings_path, notice: I18n.t('settings.settings_updated')
   end
 
   def show
