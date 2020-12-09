@@ -79,9 +79,7 @@ en:
         name: 'Site Tagline'
     title: 'Site Settings'
     update: 'Update Settings'
-    index:
-      # Fix translation
-      settings_saved: Settings saved successfully!
+    settings_updated: Settings updated successfully.
   admin:
     advanced_date:
       parsed_as: 'Parsed as: '
