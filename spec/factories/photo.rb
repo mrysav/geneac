@@ -11,8 +11,8 @@ FactoryBot.define do
                  .strftime('%Y-%mm-%d')
     end
     image do
-      fixture_file_upload(
-        Rails.root.join('spec', 'fixtures', 'files', 'image.jpg'),
+      Rack::Test::UploadedFile.new(
+        Rails.root.join('spec/fixtures/files/image.jpg'),
         'image/jpg'
       )
     end
