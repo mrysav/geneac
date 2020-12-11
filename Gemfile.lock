@@ -84,6 +84,9 @@ GEM
     administrate-field-nested_has_many (1.3.0)
       administrate (> 0.8, < 1)
       cocoon (~> 1.2, >= 1.2.11)
+    administrate_collapsible_navigation (0.0.3)
+      administrate (>= 0.11.0)
+      rails (>= 4.2, < 7.0)
     ast (2.4.1)
     autoprefixer-rails (10.1.0.0)
       execjs
@@ -438,6 +441,7 @@ DEPENDENCIES
   acts-as-taggable-on!
   administrate (~> 0.13)
   administrate-field-nested_has_many
+  administrate_collapsible_navigation
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
