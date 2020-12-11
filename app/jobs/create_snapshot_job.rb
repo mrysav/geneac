@@ -18,7 +18,7 @@ class CreateSnapshotJob < ApplicationJob
     stringio.rewind # reposition buffer pointer to the beginning
 
     snapshot = Snapshot.create(
-      archive: ActiveStorage::Blob.create_after_upload!(
+      archive: ActiveStorage::Blob.create_and_upload!(
         io: stringio,
         filename: "geneac_snapshot_#{Time.now.to_i}.zip",
         content_type: 'application/zip'

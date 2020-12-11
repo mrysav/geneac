@@ -13,7 +13,7 @@ class CitationDashboard < Administrate::BaseDashboard
     citable: Field::Polymorphic,
     citable_type: Field::String,
     id: Field::Number,
-    text: Field::CompletableTextField.with_options(
+    text: CompletableTextField.with_options(
       suggestion_url: '/admin/suggestions/citation/%s'
     ),
     attrs: Field::String.with_options(searchable: false),

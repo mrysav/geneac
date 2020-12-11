@@ -9,7 +9,12 @@ Bundler.require(*Rails.groups)
 module Geneac
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.1
+
+    # optimize autoloader
+    # https://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-5-2-to-rails-6-0
+    config.add_autoload_paths_to_load_path = false
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
