@@ -19,6 +19,11 @@ class Fact < ApplicationRecord
     parse(date_string)
   end
 
+  def resolved_people
+    ids = tagged_people.map { |t| t.name.to_i }
+    Person.where(id: ids)
+  end
+
   # Updates the 'normalized' fact type so a fact can be mapped to
   # something like a birthday even if the fact type is different.
   # ('birth' vs 'birthdate' etc)

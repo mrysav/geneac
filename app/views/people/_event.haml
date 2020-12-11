@@ -1,6 +1,6 @@
 %tr
   %td.w-25
-    = event.date_string
+    %strong= event.date_string
   %td
     %div.person-event-title
       - if event.title_link
@@ -10,6 +10,10 @@
     - if event.location
       %div.person-event-location
         = event.location
+    - if event.tagged_people
+      .person-event-tagged-people
+        - policy_scope(event.tagged_people).each do |p|
+          .person-event-tagged-person= link_to p.title, p.friendly_url
     - if event.preview_photo_attachment
       %div.person-event-preview-photo
         = image_tag(event.preview_photo_attachment.variant(resize_to_limit: [150, 150]), class: 'img-fluid')

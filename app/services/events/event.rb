@@ -3,7 +3,8 @@
 module Events
   # Event model object.
   class Event
-    attr_reader :title, :title_link, :location, :date, :date_string, :preview_photo_attachment
+    attr_reader :title, :title_link, :location, :date, :date_string, :preview_photo_attachment,
+                :tagged_people, :citations
 
     def initialize(params)
       @title = params[:title]
@@ -12,6 +13,8 @@ module Events
       @date = params[:date]
       @date_string = params[:date_string]
       @preview_photo_attachment = params[:preview_photo_attachment]
+      @tagged_people = params[:tagged_people]
+      @citations = params[:citations]
     end
 
     def <=>(other)

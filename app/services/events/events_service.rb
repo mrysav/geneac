@@ -13,7 +13,19 @@ module Events
       @person.facts.each do |fact|
         events.push(Event.new(title: fact.fact_type.capitalize, date: fact.date,
                               date_string: fact.date_string&.capitalize,
-                              location: fact.place))
+                              location: fact.place, citations: fact.citations,
+                              tagged_people: fact.resolved_people))
+      end
+
+      Fact.tagged_with(@person.id.to_s).each do |fact|
+        title = "#{fact.fact_type.capitalize} (#{fact.factable.title})" if fact.factable
+        title_link = fact.factable.friendly_url if fact.factable
+        title = fact.fact_type.capitalize unless fact.factable
+
+        events.push(Event.new(title: title, title_link: title_link, date: fact.date,
+                              date_string: fact.date_string&.capitalize,
+                              location: fact.place, citations: fact.citations,
+                              tagged_people: fact.resolved_people))
       end
 
       Photo.tagged_with(@person.id.to_s).each do |photo|
