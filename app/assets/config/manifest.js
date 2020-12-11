@@ -7,5 +7,7 @@
 //= link administrate/application.js
 //= link administrate-field-nested_has_many/application.css
 //= link administrate-field-nested_has_many/application.js
+//= link administrate_collapsible_navigation/application.css
+//= link administrate_collapsible_navigation/application.js
 {
 }
