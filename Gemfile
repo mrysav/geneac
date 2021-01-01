@@ -95,11 +95,11 @@ gem 'simple_form', '~> 5.0'
 # administrate for content management
 gem 'administrate', '~> 0.13'
 # administrate plugins
-gem 'administrate-field-nested_has_many'
 gem 'administrate_collapsible_navigation'
+gem 'administrate-field-nested_has_many'
 
 # For content tagging
-gem 'acts-as-taggable-on', github: 'jamesbrooks/acts-as-taggable-on', branch: 'rails-6.1' # '~> 6.5'
+gem 'acts-as-taggable-on', '~> 7.0'
 
 # Rendering markdown
 gem 'commonmarker'
