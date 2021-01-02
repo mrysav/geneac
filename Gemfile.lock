@@ -200,6 +200,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    linkify-it-rb (2.0.3)
+      uc.micro-rb (~> 1.0)
     listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -400,6 +402,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.3)
       concurrent-ruby (~> 1.0)
+    uc.micro-rb (1.0.5)
     unicode-display_width (1.7.0)
     unicode_utils (1.4.0)
     vegas (0.1.11)
@@ -455,6 +458,7 @@ DEPENDENCIES
   haml-rails
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
+  linkify-it-rb
   listen (~> 3.3)
   memory_profiler
   pagy

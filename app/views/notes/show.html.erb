@@ -12,7 +12,7 @@
 
       <% if @note.citation %>
       <p class="font-weight-bold"><%= t('content.citation_header') %></p>
-      <p><%= render @note.citation %></p>
+      <p><%= render_citation @note.citation %></p>
       <% end %>
 
       <%= render partial: 'shared/tag_list', locals: { list: @note.tag_list, class_list: "mt-5" } %>

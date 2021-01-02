@@ -131,6 +131,9 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'haml'
 gem 'haml-rails'
 
+# Parses links out of strings
+gem 'linkify-it-rb'
+
 gem 'rack-mini-profiler', '~> 2.0'
 gem 'flamegraph'
 gem 'memory_profiler'

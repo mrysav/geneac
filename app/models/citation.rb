@@ -15,6 +15,15 @@ class Citation < ApplicationRecord
   private
 
   def parse_attrs
-    self.attrs = [text]
+    parsed_links = linkify.match(text)
+
+    self.attrs = {
+      text: text,
+      links: parsed_links
+    }
+  end
+
+  def linkify
+    @linkify = Linkify.new
   end
 end
