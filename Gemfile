@@ -95,11 +95,11 @@ gem 'simple_form', '~> 5.0'
 # administrate for content management
 gem 'administrate', '~> 0.13'
 # administrate plugins
-gem 'administrate-field-nested_has_many'
 gem 'administrate_collapsible_navigation'
+gem 'administrate-field-nested_has_many'
 
 # For content tagging
-gem 'acts-as-taggable-on', github: 'jamesbrooks/acts-as-taggable-on', branch: 'rails-6.1' # '~> 6.5'
+gem 'acts-as-taggable-on', '~> 7.0'
 
 # Rendering markdown
 gem 'commonmarker'
@@ -130,6 +130,9 @@ gem 'font-awesome-sass', '~> 5.12.0'
 # Haml templating
 gem 'haml'
 gem 'haml-rails'
+
+# Parses links out of strings
+gem 'linkify-it-rb'
 
 gem 'rack-mini-profiler', '~> 2.0'
 gem 'flamegraph'

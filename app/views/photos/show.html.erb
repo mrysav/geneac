@@ -20,7 +20,7 @@
 
       <% if @photo.citation %>
       <p class="font-weight-bold"><%= t('content.citation_header') %></p>
-      <p><%= render @photo.citation %></p>
+      <p><%= render_citation @photo.citation %></p>
       <% end %>
 
       <%= render partial: 'shared/tag_list', locals: { list: @photo.tag_list, class_list: "mt-5" } %>
