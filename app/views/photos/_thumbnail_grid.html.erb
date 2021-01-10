@@ -1,9 +1,0 @@
-<div class="thumbnail-grid d-flex flex-wrap">
-<% for photo in photos %>
-  <div class="thumbnail m-1">
-    <a href="<%= photo.url_path %>">
-      <%= image_tag photo.image.variant(resize_to_limit: [200, 200]), class: 'img-fluid border rounded p-1' %>
-    </a>
-  </div>
-<% end %>
-</div>

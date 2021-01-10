@@ -1,0 +1,8 @@
+%sl-gallery
+  - photos.each do |photo|
+    %sl-gallery-image{ src: url_for(photo.image),
+                       small: url_for(photo.image.variant(resize_to_limit: [200, 200])),
+                       title: photo.title,
+                       caption: photo.description }
+      .sl_img_link
+        = link_to 'View', photo.url_path
