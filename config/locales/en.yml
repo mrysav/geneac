@@ -41,6 +41,7 @@ en:
     sign_out: 'Sign Out'
     search: 'Search'
     geneac: 'Geneac'
+    edit_page: 'Edit Page'
   home:
     recent_updates: 'Recent Updates'
   users:

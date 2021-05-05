@@ -12,6 +12,15 @@
   </ul>
 
   <ul class="navbar-nav">
+
+    <% if current_user&.admin? && @edit_link %>
+      <li class="nav-item">
+        <a class="mr-3 btn btn-light" href="<%= @edit_link %>" data-turbolinks="false">
+          <%= t('nav.edit_page') %>
+        </a>
+      </li>
+    <% end %>
+
     <% if current_user %>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
