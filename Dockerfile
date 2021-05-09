@@ -1,4 +1,4 @@
-FROM ruby:2.7.2-alpine
+FROM ruby:2.7.3-alpine
 
 # includes support for postgres, nokogiri, and a js runtime
 # then installs yarn with npm
