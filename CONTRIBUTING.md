@@ -14,11 +14,11 @@ Ruby on Rails is the [official Rails documentation.](https://guides.rubyonrails.
 
 A few key libraries/gems that would also be helpful to learn about before contributing would be:
 
-* [Devise](https://github.com/heartcombo/devise)
-* [Administrate](https://github.com/thoughtbot/administrate)
-* [Pundit](https://github.com/varvet/pundit)
-* [Webpacker](https://github.com/rails/webpacker)
-* [RSpec](https://rspec.info/)
+- [Devise](https://github.com/heartcombo/devise)
+- [Administrate](https://github.com/thoughtbot/administrate)
+- [Pundit](https://github.com/varvet/pundit)
+- [Webpacker](https://github.com/rails/webpacker)
+- [RSpec](https://rspec.info/)
 
 Finally, since Heroku is the primary deployment target, I also recommend reading about [twelve-factor apps](https://12factor.net/).
 
@@ -37,13 +37,18 @@ coverage and (where necessary) have internationalisation support.
 
 For local development, it is recommended you have:
 
-* Ruby & Bundler (see `.ruby-version` for current supported version)
-  * [rbenv](https://github.com/sstephenson/rbenv) is recommended.
-* NodeJS + Yarn (see `.node-version` for current supported version)
-  * [nodenv](https://github.com/nodenv/nodenv) is recommended.
-* [foreman](https://github.com/ddollar/foreman)-compatible launcher for Procfile-based launch
-* PostgreSQL
-* Redis
+- Ruby & Bundler (see `.ruby-version` for current supported version)
+  - [rbenv](https://github.com/sstephenson/rbenv) is recommended.
+- NodeJS + Yarn (see `.node-version` for current supported version)
+  - [nodenv](https://github.com/nodenv/nodenv) is recommended.
+- [foreman](https://github.com/ddollar/foreman)-compatible launcher for Procfile-based launch
+- Docker
+
+Before doing anything else, you need to start the Postgres and Redis Docker containers:
+
+```bash
+docker-compose up -d
+```
 
 If this is your first time running geneac, you need to configure the database:
 

@@ -10,7 +10,7 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # Add things to the docker entrypoint script if you want
-COPY docker-entrypoint.sh /usr/bin/
+COPY docker/docker-entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 

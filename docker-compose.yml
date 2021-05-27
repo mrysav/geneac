@@ -1,64 +1,18 @@
 version: '3'
 
 volumes:
-  minio_data:
+  pgdata:
 
 services:
   postgres:
     image: postgres:latest
-    env_file: docker.env
-    expose:
-      - '5432'
+    env_file: ./docker/docker.env
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 
   redis:
     image: redis:latest
-    expose:
-      - '6379'
-
-  minio:
-    image: minio/minio:latest
-    volumes:
-      - minio_data:/data:rw
     ports:
-      - '9000:9000'
-    env_file: docker.env
-    command: server /data
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
-      interval: 30s
-      timeout: 20s
-      retries: 3
-
-  make_buckets:
-    image: minio/mc:latest
-    volumes:
-     - ./docker:/docker:ro
-    env_file: docker.env
-    entrypoint: ['/bin/sh']
-    command: [
-      '/docker/make_buckets.sh'
-    ]
-
-  web:
-    build: .
-    command: ['sh', 'docker/rails_web.sh']
-    ports:
-      - '3000:3000'
-    depends_on:
-      - postgres
-      - redis
-      - minio
-    volumes:
-      - .:/geneac
-    env_file: docker.env
-
-  worker:
-    build: .
-    command: ['sh', 'docker/rails_worker.sh']
-    depends_on:
-      - postgres
-      - redis
-      - minio
-    volumes:
-      - .:/geneac
-    env_file: docker.env
+      - '6379:6379'

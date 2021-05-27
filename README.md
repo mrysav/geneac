@@ -4,19 +4,33 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4f02be904a9d52414167/test_coverage)](https://codeclimate.com/github/mrysav/geneac/test_coverage)
 [![Docker](https://img.shields.io/docker/cloud/build/mrysav/geneac?label=Docker&style=flat)](https://hub.docker.com/r/mrysav/geneac/builds)
 
-* **[Homepage](https://mrysav.github.io/geneac)**
+- **[Homepage](https://mrysav.github.io/geneac)**
 
-* **[Demo Site](https://geneac-demo.herokuapp.com/)**
+- **[Demo Site](https://geneac-demo.herokuapp.com/)**
 
 ## Quickstart
 
-### Prerequisites
+### Docker
 
-A few things are assumed to be setup to run your own instance of Geneac:
+Docker is the preferred method for running Geneac locally for development.
 
-* Postgres
-* Redis
-* S3-compatible storage (can be S3, Minio, B2, Spaces, etc)
+`docker-compose.yml` contains a basic configuration you can use to run Postgres and Redis. Ruby must be installed locally. To develop geneac, you can run these commands:
+
+```bash
+# Start Postgres and Redis locally, with Docker
+docker-compose up -d
+
+# Install dependencies
+bundle install
+
+# Create the database
+rails db:create db:schema:load
+
+# Start the app!
+foreman start -f Procfile.dev
+```
+
+For deploying a production instance of Geneac with all of the dependencies running in Docker, including Minio for S3-compatible storage, `docker-compose.prod.sample.yml` provides a starting point for configuration.
 
 ### Heroku
 
@@ -25,10 +39,6 @@ If you already have a [Heroku](https://heroku.com) account you can click this to
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 This will provision the Heroku Postgres and Redis instances for you, but you will need to supply your S3 storage configuration yourself.
-
-### Docker
-
-Geneac can be deployed using Docker (see the provided Dockerfile) but the Postgres, Redis and S3 configurations have to be supplied via environment variables.
 
 ## Contributing
 

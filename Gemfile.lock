@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/mrysav/administrate_collapsible_navigation.git
+  revision: b0a19cb56ce58a928de4ca619d94eb512a5ebc5e
+  specs:
+    administrate_collapsible_navigation (0.0.3)
+      administrate (>= 0.11.0)
+      rails (>= 4.2, < 7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -77,9 +85,6 @@ GEM
     administrate-field-nested_has_many (1.3.0)
       administrate (> 0.8, < 1)
       cocoon (~> 1.2, >= 1.2.11)
-    administrate_collapsible_navigation (0.0.3)
-      administrate (>= 0.11.0)
-      rails (>= 4.2, < 7.0)
     ast (2.4.2)
     aws-eventstream (1.1.1)
     aws-partitions (1.452.0)
@@ -465,7 +470,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 7.0)
   administrate (~> 0.13)
   administrate-field-nested_has_many
-  administrate_collapsible_navigation
+  administrate_collapsible_navigation!
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
