@@ -43,7 +43,7 @@ It renders the `_table` partial to display details about the resources.
   <div>
     <%= link_to(
       t("administrate.snapshot.upload"),
-      [:new, namespace, page.resource_path],
+      [:new, namespace, page.resource_path.to_sym],
       class: "button",
     ) if valid_action?(:new) && show_action?(:new, new_resource) %>
   </div>
@@ -54,7 +54,7 @@ It renders the `_table` partial to display details about the resources.
         "administrate.actions.new_resource",
         name: page.resource_name.titleize.downcase
       ),
-      [namespace, :initiate, page.resource_path],
+      [namespace, :initiate, page.resource_path.to_sym],
       class: "button ml-1",
     ) if valid_action?(:initiate) && show_action?(:initiate, new_resource) %>
   </div>
