@@ -8,12 +8,12 @@
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^5.0.0",
     "awesomplete": "^1.1.4",
-    "bootstrap": "^4.5.3",
-    "chrono-node": "~2.0",
+    "bootstrap": "~4",
+    "chrono-node": "~2",
     "jquery": "^3.4.0",
     "moment": "^2.24.0",
     "popper.js": "^1.14.3",
-    "stimulus": "~2.0",
+    "stimulus": "~2",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0"
   },
@@ -30,5 +30,5 @@
     "prettier": "^2.2.1",
     "webpack-dev-server": "^3.8.0"
   },
-  "packageManager": "yarn@3.0.0"
+  "packageManager": "yarn@2.4.2"
 }
