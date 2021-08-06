@@ -1,35 +1,31 @@
 import * as chrono from 'chrono-node'
 
-let yearParser = new chrono.Parser()
+const custom = chrono.casual.clone()
 
-// Provide search pattern
-yearParser.pattern = function () {
-  return /^[1-9][0-9]{3}$/
-}
+// Construct a basic parser for 4-digit years
+// (when that is the whole string)
 
-// This function will be called when matched pattern is found
-yearParser.extract = (text, ref, match, opt) => {
-  return new chrono.ParsedResult({
-    ref: ref,
-    text: match[0],
-    index: match.index,
-    start: {
-      day: 1, // @todo Not great
+const fourDigitYearParser = {
+  pattern: () => /^[1-9][0-9]{3}$/,
+  extract: (_, match) => {
+    return {
+      day: 1,
       month: 1,
       year: parseInt(match[0], 10),
-    },
-  })
+    }
+  },
 }
 
-let chronoOptions = chrono.options.casualOption()
-let unwantedFmtIdx = chronoOptions.refiners.findIndex(
+custom.parsers.push(fourDigitYearParser)
+
+// Remove the "UnlikelyFormatFilter," which filters
+// out number-only dates
+
+const unwantedFmtIdx = custom.refiners.findIndex(
   (f) => f.constructor.name === 'UnlikelyFormatFilter'
 )
 if (unwantedFmtIdx >= 0) {
-  chronoOptions.refiners.splice(unwantedFmtIdx, 1)
+  custom.refiners.splice(unwantedFmtIdx, 1)
 }
-
-let custom = new chrono.Chrono(chronoOptions)
-custom.parsers = [yearParser, ...custom.parsers]
 
 export default custom

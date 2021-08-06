@@ -2690,12 +2690,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chrono-node@npm:< 2":
-  version: 1.4.8
-  resolution: "chrono-node@npm:1.4.8"
+"chrono-node@npm:~2.0":
+  version: 2.0.3
+  resolution: "chrono-node@npm:2.0.3"
   dependencies:
-    dayjs: ^1.8.19
-  checksum: 964b392813284c99df5b16757882e7164f4a11839020028eaa0e9960dc048f30887ad792ce308e20d531abf20a025b3a4d85812e55ccc8a70db0feef783ec84b
+    dayjs: ^1.8.29
+  checksum: fee561ee82400bf2eab8be6465027a9c297d4a778997424511ec2188f3e7dafb41b2ef7f8736ba206b613a8d2f5b380a074bda5512dd024a6136c46718fe9dce
   languageName: node
   linkType: hard
 
@@ -3370,7 +3370,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.8.19":
+"dayjs@npm:^1.8.29":
   version: 1.10.6
   resolution: "dayjs@npm:1.10.6"
   checksum: a79af6d19cf1e3aefc231e480037b37df50701e8d0cdbe1736fc6665b7045a159777215c5c8dd42ede7dd3c4c4f4a174d4ddd5bffca51df2a4ba0e0e25a6163c
@@ -4661,7 +4661,7 @@ fsevents@~2.3.1:
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
     bootstrap: ^4.5.3
-    chrono-node: < 2
+    chrono-node: ~2.0
     eslint: ^7.22.0
     eslint-config-prettier: ^8.1.0
     eslint-config-standard: ^16.0.2
