@@ -1,13 +1,13 @@
 let attachedFields = []
 
-window.attachField = function(field) {
+window.attachField = function (field) {
   attachedFields.push(field)
 }
 
 let attachFields = () => {
-  attachedFields.forEach(field => {
+  attachedFields.forEach((field) => {
     let fieldElements = document.querySelectorAll(field.ELEMENT_NAME)
-    fieldElements.forEach(element => {
+    fieldElements.forEach((element) => {
       if (!element.dataset.activated) {
         field.activate(element)
         element.dataset.activated = true
@@ -19,9 +19,9 @@ let attachFields = () => {
 let observer = new MutationObserver(attachFields)
 observer.observe(document.documentElement || document.body, {
   childList: true,
-  subtree: true
+  subtree: true,
 })
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', function () {
   attachFields()
 })
