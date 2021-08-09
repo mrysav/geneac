@@ -1,0 +1,68 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWS Account Resources for geneac stages
+
+Parameters:
+  Hostnames:
+    Type: CommaDelimitedList
+    Description: List of sites that will be added to the CORS configuration of these resources.
+
+Resources:
+  ApplicationUser:
+    Type: AWS::IAM::User
+
+  ApplicationCredentials:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      Status: Active
+      UserName: !Ref ApplicationUser
+
+  ApplicationCredentialsStored:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub /credentials/${ApplicationCredentials}
+      SecretString: !Sub '{"ACCESS_KEY":"${ApplicationCredentials}","SECRET_KEY":"${ApplicationCredentials.SecretAccessKey}"}'
+
+  ManagedApplicationPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - 's3:ListBucket'
+            Resource: !GetAtt AppBucket.Arn
+          - Effect: Allow
+            Action:
+              - 's3:PutObject'
+              - 's3:GetObject'
+              - 's3:DeleteObject'
+              - 's3:PutObjectAcl'
+            Resource: !Join ['', [!GetAtt AppBucket.Arn, '/*']]
+      Users:
+        - !Ref ApplicationUser
+
+  AppBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: Private
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
+            AllowedOrigins: !Ref Hostnames
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+Outputs:
+  BucketName:
+    Description: Full name of the app S3 Bucket
+    Value: !GetAtt AppBucket.RegionalDomainName
