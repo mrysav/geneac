@@ -3,8 +3,12 @@
 namespace :blobs do
   desc 'Delete unattached blobs'
   task cleanup: :environment do
-    total_sum = ActiveStorage::Blob.unattached.map(&:byte_size).sum
-    puts "Clearing #{total_sum} bytes..."
-    ActiveStorage::Blob.unattached.map(&:destroy)
+    total_sum = ActiveStorage::Blob.unattached.sum(&:byte_size)
+    if total_sum > 0
+      puts "Clearing #{total_sum} bytes..."
+      ActiveStorage::Blob.unattached.map(&:destroy)
+    else
+      puts 'Nothing to do.'
+    end
   end
 end
