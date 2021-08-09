@@ -35,3 +35,14 @@
     }
   }
 }
+
+// Below are modifications to the stock actiontext code above
+action-text-attachment {
+  figcaption {
+    opacity: 0%;
+    transition: opacity 500ms ease-in-out;
+  }
+  .attachment:hover figcaption {
+    opacity: 100%;
+  }
+}
