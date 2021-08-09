@@ -17,6 +17,8 @@ class Note < ApplicationRecord
 
   has_friendly_url_name field: :friendly_url, field_name: :title
 
+  validates :title, presence: true
+
   def date
     parse(date_string)
   end

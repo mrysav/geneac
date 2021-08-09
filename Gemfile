@@ -55,6 +55,9 @@ group :test do
   # Code coverage
   # CodeClimate doesn't support 0.18+
   gem 'simplecov', '< 0.18', require: false
+
+  # Fancier matchers!
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
