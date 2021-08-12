@@ -87,6 +87,7 @@ en:
   administrate:
     actions:
       download: 'Download'
+      view_page: 'View Page'
     snapshot:
       upload: 'Upload snapshot'
       initiate: 'Snapshot creation initiated.'
