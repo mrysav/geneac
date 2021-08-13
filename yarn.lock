@@ -1282,7 +1282,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^6.0.0-alpha":
+"@rails/actioncable@npm:^6.0.0":
   version: 6.1.4
   resolution: "@rails/actioncable@npm:6.1.4"
   checksum: 2039c4ae831225ad2d370b7bed6d590be6b46366911dd40f5cea409114471e70b4d2610379aed1443bc3b327ee3c746b5e5c43f730968e78c7d19335bfe932de
@@ -1300,7 +1300,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/activestorage@npm:^6.0.0, @rails/activestorage@npm:^6.0.0-alpha":
+"@rails/activestorage@npm:^6.0.0":
   version: 6.1.4
   resolution: "@rails/activestorage@npm:6.1.4"
   dependencies:
@@ -1309,14 +1309,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/ujs@npm:^6.0.0-alpha":
+"@rails/ujs@npm:^6.0.0":
   version: 6.1.4
   resolution: "@rails/ujs@npm:6.1.4"
   checksum: 5cc92030ff456615bb34ef7d8e594d33aa9d0f981115f8f335aaa47f926ec0d133f36ac30c43940169dace1fb591e47dcb6efd4396ae6a4f8caa63f215e998a4
   languageName: node
   linkType: hard
 
-"@rails/webpacker@npm:^5.0.0":
+"@rails/webpacker@npm:^5.4.0":
   version: 5.4.0
   resolution: "@rails/webpacker@npm:5.4.0"
   dependencies:
@@ -4641,11 +4641,11 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "geneac@workspace:."
   dependencies:
-    "@rails/actioncable": ^6.0.0-alpha
+    "@rails/actioncable": ^6.0.0
     "@rails/actiontext": ^6.0.2-1
-    "@rails/activestorage": ^6.0.0-alpha
-    "@rails/ujs": ^6.0.0-alpha
-    "@rails/webpacker": ^5.0.0
+    "@rails/activestorage": ^6.0.0
+    "@rails/ujs": ^6.0.0
+    "@rails/webpacker": ^5.4.0
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
     bootstrap: ~4
@@ -4667,7 +4667,7 @@ fsevents@~2.3.2:
     turbolinks: ^5.2.0
     webpack: ^4.46.0
     webpack-cli: ^3.3.12
-    webpack-dev-server: ^3.8.0
+    webpack-dev-server: ^3.11.2
   languageName: unknown
   linkType: soft
 
@@ -10245,7 +10245,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"webpack-dev-server@npm:^3.8.0":
+"webpack-dev-server@npm:^3.11.2":
   version: 3.11.2
   resolution: "webpack-dev-server@npm:3.11.2"
   dependencies:
