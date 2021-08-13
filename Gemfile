@@ -100,7 +100,7 @@ gem 'simple_form', '~> 5.0'
 # administrate for content management
 gem 'administrate', '~> 0.13'
 # administrate plugins
-gem 'administrate_collapsible_navigation'
+gem 'administrate_collapsible_navigation', github: 'mrysav/administrate_collapsible_navigation', branch: 'master'
 gem 'administrate-field-nested_has_many'
 
 # For content tagging
