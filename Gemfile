@@ -109,6 +109,7 @@ gem 'acts-as-taggable-on', '~> 7.0'
 # Rendering markdown
 gem 'commonmarker'
 
+gem 'aws-sdk-rails'
 group :production do
   # For S3
   gem 'aws-sdk-s3'

@@ -4,38 +4,40 @@
   "keywords": [
     "genealogy",
     "rails",
-    "facebook",
     "family",
     "history"
   ],
   "repository": "https://github.com/mrysav/geneac",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "bundle exec rake db:schema:load"
   },
   "env": {
+    "AWS_ACCESS_KEY_ID": {
+      "description": "The AWS Access Key ID for the IAM user this application will use."
+    },
+    "AWS_REGION": {
+      "description": "The AWS region that resources such as the S3 bucket are located in."
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "The AWS Secret Access Key for the IAM user this application will use."
+    },
+    "HOSTNAME": {
+      "description": "The full domain name of this application, such as \"my-cool-app.herokuapp.com\"."
+    },
+    "MAILER_SENDER": {
+      "description": "The email address this application will send email from."
+    },
+    "S3_BUCKET_NAME": {
+      "description": "The S3 bucket name this application will use for storage."
+    },
+    "S3_ENDPOINT": {
+      "description": "Endpoint of 3rd party service providing an S3-compatible API, if you are not using AWS S3. Either AWS_REGION or S3_ENDPOINT must be specified.",
+      "required": false
+    },
     "SECRET_KEY_BASE": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
-    },
-    "HOSTNAME": {
-      "description": "Host to link to in password reset or confirmation emails."
-    },
-    "AWS_ACCESS_KEY_ID": {
-      "description": "Access key ID for AWS (or 3rd party) access key ID for S3 file storage."
-    },
-    "AWS_SECRET_ACCESS_KEY": {
-      "description": "Secret access key for AWS (or 3rd party) secret access key for S3 file storage."
-    },
-    "S3_BUCKET_NAME": {
-      "description": "S3 bucket name for file storage."
-    },
-    "AWS_REGION": {
-      "description": "AWS Region that S3 bucket is located in, if you are using AWS. If using S3_ENDPOINT, this value is not used, so you may set it to whatever you want."
-    },
-    "S3_ENDPOINT": {
-      "description": "Endpoint of 3rd party service providing an S3-compatible API. Either AWS_REGION or S3_ENDPOINT must be specified.",
-      "required": false
     }
   },
   "formation": {
