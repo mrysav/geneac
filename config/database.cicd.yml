@@ -1,6 +1,7 @@
 test:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   username: postgres
   password: postgres
   database: geneac_test
