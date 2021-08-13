@@ -36,8 +36,8 @@ Rails.application.configure do
   # ActiveJob executes inline
   config.active_job.queue_adapter = :inline
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Raise delivery errors locally since this is development after all.
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
