@@ -40,7 +40,7 @@
 action-text-attachment {
   figcaption {
     opacity: 0%;
-    transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out 300ms;
   }
   .attachment:hover figcaption {
     opacity: 100%;
