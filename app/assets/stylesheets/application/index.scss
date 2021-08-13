@@ -1,9 +1,9 @@
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 
-@import "**/*";
+@import '**/*';
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 // Local styles
 
@@ -11,7 +11,7 @@ $font-primary: black;
 $secondary: #c9c9c9;
 
 .serif {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 a.tag {
@@ -36,4 +36,8 @@ a.tag {
   .thumbnail {
     max-width: 31%;
   }
+}
+
+.frosted-background {
+  background-color: rgba(255, 255, 255, 0.75);
 }
