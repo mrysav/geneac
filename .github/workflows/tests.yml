@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CC_TEST_REPORTER_ID: 3ab5b0fb05090ad19926f86753ee7e0bc4c76ffef8477a63c09bcbcba5737a1a
+      RAILS_ENV: test
 
     services:
       postgres:
@@ -31,23 +32,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
       - name: Install PostgreSQL client
         run: |
           sudo apt-get -yqq install libpq-dev
 
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Build App
-        env:
-          PGHOST: localhost
-          PGUSER: postgres
-          PGPASSWORD: postgres
-          RAILS_ENV: test
         run: |
           mv config/database.cicd.yml config/database.yml
           bin/rails db:setup
+          bin/rails webpacker:compile
 
       - name: Code Climate - Prebuild
         run: |
@@ -56,11 +57,6 @@ jobs:
           ./cc-test-reporter before-build
 
       - name: Run Tests
-        env:
-          PGHOST: localhost
-          PGUSER: postgres
-          PGPASSWORD: postgres
-          RAILS_ENV: test
         run: |
           bundle exec rspec
 
