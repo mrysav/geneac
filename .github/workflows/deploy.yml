@@ -1,0 +1,25 @@
+name: Deploy AWS Resources
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AwsAccessKeyId }}
+          aws-secret-access-key: ${{ secrets.AwsSecretAccessKey }}
+          aws-region: us-east-2
+
+      - name: Deploy AWS resources
+        run: |
+          bash script/deploy-infrastructure

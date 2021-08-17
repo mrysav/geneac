@@ -1,4 +1,4 @@
-name: Tests
+name: RSpec Tests
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - 'main'
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     env:
       CC_TEST_REPORTER_ID: 3ab5b0fb05090ad19926f86753ee7e0bc4c76ffef8477a63c09bcbcba5737a1a
@@ -53,16 +53,13 @@ jobs:
           bin/rails db:setup
           bin/rails webpacker:compile
 
-      - name: Code Climate - Prebuild
+      - name: Download Code Climate
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
-          ./cc-test-reporter before-build
 
       - name: Run Tests
         run: |
+          ./cc-test-reporter before-build
           bundle exec rspec
-
-      - name: Code Climate - Postbuild
-        run: |
-          ./cc-test-reporter after-build --exit-code 0
+          ./cc-test-reporter after-build --exit-code $?
