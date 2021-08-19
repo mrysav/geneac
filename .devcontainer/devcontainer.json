@@ -1,0 +1,56 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.191.1/containers/ruby-rails-postgres
+{
+  "name": "Geneac",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "sqltools.connections": [
+      {
+        "name": "Rails Development Database",
+        "driver": "PostgreSQL",
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 5432,
+        "database": "geneac_development",
+        "username": "vscode"
+      },
+      {
+        "name": "Rails Test Database",
+        "driver": "PostgreSQL",
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 5432,
+        "database": "geneac_test",
+        "username": "vscode"
+      }
+    ]
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "rebornix.Ruby",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg",
+    "karunamurti.haml",
+    "ms-azuretools.vscode-docker",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "aki77.haml-lint",
+    "esbenp.prettier-vscode",
+    "castwide.solargraph",
+    "misogi.ruby-rubocop",
+    "robinbentley.sass-indented",
+    "vortizhe.simple-ruby-erb",
+    "tyriar.sort-lines",
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    5000
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "bundle install && rake db:create db:schema:load",
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}

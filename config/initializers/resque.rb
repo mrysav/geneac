@@ -4,7 +4,7 @@ require 'resque/server'
 
 redis_url = ENV['REDIS_URL']
 
-unless redis_url.blank?
+if redis_url.present?
   uri = URI.parse(redis_url)
   REDIS = Redis.new(host: uri.host, port: uri.port, password: uri.password)
 
