@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'open-uri'
-require 'faker'
-
 namespace :generate do
   def create_account(name, email, password, admin: false)
     if User.where(email: email).count.positive?

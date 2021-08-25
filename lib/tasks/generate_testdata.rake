@@ -6,21 +6,6 @@ require 'faker'
 namespace :generate do
   desc 'Generate test data'
   task testdata: :environment do
-    User.all.each(&:destroy!)
-    ActiveRecord::Base.connection.reset_pk_sequence!(User.table_name)
-
-    User.create!(name: 'Marty McFly', email: 'mcfly@bttf.net',
-                 password: 'thatsheavy', password_confirmation: 'thatsheavy',
-                 admin: true)
-
-    puts 'Created test admin account'
-
-    User.create!(name: 'Lorraine McFly', email: 'lorraine@bttf.net',
-                 password: 'calvink', password_confirmation: 'calvink',
-                 admin: false)
-
-    puts 'Created test user account'
-
     sample_tags = Faker::Lorem.words(number: 10)
 
     Person.all.each(&:destroy!)
@@ -37,7 +22,7 @@ namespace :generate do
       def generate_sex
         ['', 'male', 'female'].sample
       end
-      
+
       def generate_gender
         ['', 'male', 'female', 'transgender', 'gender neutral', 'non-binary', 'agender', 'polygender'].sample
       end
@@ -85,7 +70,7 @@ namespace :generate do
         f.fact_type = 'birth'
         f.factable = person
         f.date_string = Faker::Date.birthday(min_age: 0, max_age: 100).strftime('%F')
-        f.place = Faker::Address.city + ', ' + Faker::Address.country
+        f.place = "#{Faker::Address.city}, #{Faker::Address.country}"
         f.save!
         person.birth_fact_id = f.id
       end
@@ -97,7 +82,7 @@ namespace :generate do
         f.date_string =
           Faker::Date.between(from: person.birth_date || 50.years.ago,
                               to: Time.zone.today).strftime('%F')
-        f.place = Faker::Address.city + ', ' + Faker::Address.country
+        f.place = "#{Faker::Address.city}, #{Faker::Address.country}"
         f.save!
         person.death_fact_id = f.id
       end
