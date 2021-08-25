@@ -6,11 +6,11 @@
   <%= f.label field.attribute %>
 </div>
 
-<div class="field-unit__field person-field">
+<div class="field-unit__field" data-controller="person-field" data-person-field-target="value">
   <%= f.hidden_field field.attribute, value: field.data, class: 'person-field-id' %>
-  <div class="person-field-selected">
+  <div class="person-field-selected" style="display: none">
     <span class="name"></span>
     <i class="fas fa-times"></i>
   </div>
-  <input type="text" class="person-field-search">
+  <input type="text" autocomplete="off" class="person-field-search">
 </div>
