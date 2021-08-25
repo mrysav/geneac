@@ -67,3 +67,6 @@ spec/examples.txt
 /.yardoc/
 /doc/
 .idea/
+
+# mkdocs files
+/docs/site
