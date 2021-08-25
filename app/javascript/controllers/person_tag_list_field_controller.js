@@ -1,12 +1,16 @@
-;(function(Awesomplete, ajax, attachField) {
-  const ALL_PEOPLE_TAGS = '/ajax/people_tags'
-  const PERSON_TAG = '/ajax/people_tag/'
+import { Controller } from 'stimulus'
+import Awesomplete from 'awesomplete'
+import ajax from '../lib/ajax'
 
-  /**
-   * Awesomplete-enabled element for tagging people.
-   * @param {Element} element
-   */
-  let PersonTagInput = function(element) {
+const people_tags_url = '/ajax/people_tags'
+const person_tag_url = '/ajax/people_tag/'
+
+export default class extends Controller {
+  static targets = ['value']
+
+  connect() {
+    const element = this.valueTarget
+
     let tagListValueInput = element
     tagListValueInput.type = 'hidden'
 
@@ -26,11 +30,11 @@
     parentDiv.appendChild(textField)
     parentDiv.appendChild(tagListValueInput)
 
-    let syncTagValues = function() {
+    let syncTagValues = function () {
       tagListValueInput.value = tagListValues.join(', ')
     }
 
-    let deleteTag = function(value) {
+    let deleteTag = function (value) {
       value = parseInt(value, 10)
       // if value is NaN or less than 0, return
       if (!(value > 0)) {
@@ -46,7 +50,7 @@
       }
     }
 
-    let addTag = function(name, value) {
+    let addTag = function (name, value) {
       value = parseInt(value, 10)
       // if value is NaN or less than 0, return
       if (!(value > 0)) {
@@ -57,11 +61,11 @@
         return
       }
 
-      var li = document.createElement('li')
+      let li = document.createElement('li')
       li.innerHTML = name + ' <a href="#"><i class="fas fa-times"></i></a>'
       li.classList.add('tag-' + value)
 
-      li.querySelector('a').addEventListener('click', function(event) {
+      li.querySelector('a').addEventListener('click', function (event) {
         event.preventDefault()
         deleteTag(value)
       })
@@ -72,17 +76,17 @@
       syncTagValues()
     }
 
-    let initializeAwesomplete = function(peopleTags) {
+    let initializeAwesomplete = function (peopleTags) {
       var list = JSON.parse(peopleTags)
       return new Awesomplete(textField, {
         list: list,
-        replace: function() {
+        replace: function () {
           this.input.value = ''
-        }
+        },
       })
     }
 
-    textField.addEventListener('awesomplete-selectcomplete', function(event) {
+    textField.addEventListener('awesomplete-selectcomplete', function (event) {
       addTag(event.text.label, event.text.value)
     })
 
@@ -90,17 +94,12 @@
     for (let t = 0; t < tags.length; t++) {
       let pid = parseInt(tags[t], 10)
       if (pid > 0) {
-        ajax(PERSON_TAG + pid, function(person) {
+        ajax.get(person_tag_url + pid, function (person) {
           addTag(person, pid)
         })
       }
     }
 
-    ajax(ALL_PEOPLE_TAGS, initializeAwesomplete)
+    ajax.get(people_tags_url, initializeAwesomplete)
   }
-
-  attachField({
-    ELEMENT_NAME: '.person-tag-field',
-    activate: PersonTagInput
-  })
-})(Awesomplete, window.ajax, window.attachField)
+}
