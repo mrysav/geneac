@@ -4,7 +4,7 @@
     %hr.col-sm-12
   .row
     = form_for(Setting.new, url: settings_path, html: { class: 'mx-auto' }) do |f|
-      - Setting.each_key do |key|
+      - Setting.keys.each do |key|
         - field = Setting.get_field(key)
         - if field[:type] == :boolean
           .form-check
