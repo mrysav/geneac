@@ -30,27 +30,28 @@
   },
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-    "rebornix.Ruby",
-    "mtxr.sqltools",
-    "mtxr.sqltools-driver-pg",
-    "karunamurti.haml",
-    "ms-azuretools.vscode-docker",
-    "editorconfig.editorconfig",
-    "dbaeumer.vscode-eslint",
     "aki77.haml-lint",
-    "esbenp.prettier-vscode",
     "castwide.solargraph",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "karunamurti.haml",
+    "manuelpuyol.erb-linter",
     "misogi.ruby-rubocop",
+    "ms-azuretools.vscode-docker",
+    "mtxr.sqltools-driver-pg",
+    "mtxr.sqltools",
+    "rebornix.Ruby",
     "robinbentley.sass-indented",
-    "vortizhe.simple-ruby-erb",
     "tyriar.sort-lines",
+    "vortizhe.simple-ruby-erb",
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
     5000
   ],
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "bundle install && rake db:create db:schema:load",
+  "postCreateCommand": "/workspace/.devcontainer/post-create-command.sh",
   // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode"
 }
