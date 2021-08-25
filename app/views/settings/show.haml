@@ -4,7 +4,7 @@
     %hr.col-sm-12
   .row
     = form_for(Setting.new, url: settings_path, html: { class: 'mx-auto' }) do |f|
-      - Setting.keys.each do |key|
+      - Setting.each_key do |key|
         - field = Setting.get_field(key)
         - if field[:type] == :boolean
           .form-check
@@ -13,7 +13,8 @@
         - else
           .form-group
             = f.label field[:key], t("settings.attributes.#{field[:key]}.name")
-            = f.text_field field[:key], value: Setting.send(field[:key]), placeholder: field.default, class: 'form-control'
+            = f.text_field field[:key], value: Setting.send(field[:key]),
+                                        placeholder: field.default, class: 'form-control'
 
       .text-center.mt-3
         = f.submit t('settings.update'), class: 'mx-auto'
