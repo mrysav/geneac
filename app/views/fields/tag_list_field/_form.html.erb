@@ -7,6 +7,6 @@
   <%= f.label field.attribute %>
 </div>
 
-<div class="field-unit__field">
-  <%= f.text_field field.attribute, value: field.data.join(', '), class: 'tag-field' %>
+<div class="field-unit__field" data-controller="tag-list-field">
+  <%= f.text_field field.attribute, value: field.data.join(', '), data: {'tag-list-field-target': 'value'} %>
 </div>
