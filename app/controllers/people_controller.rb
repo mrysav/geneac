@@ -51,7 +51,7 @@ class PeopleController < ApplicationController
   # but only for admins.
   # This can be used to easily direct
   def redirect_to_friendly_url
-    # return unless current_user&.admin?
+    return unless current_user&.admin?
     return unless person_id? params[:friendly_url]
 
     @person = Person.find(params[:friendly_url])
