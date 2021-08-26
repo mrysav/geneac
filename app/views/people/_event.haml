@@ -2,18 +2,18 @@
   %td.w-25
     %strong= event.date_string
   %td
-    %div.person-event-title
+    .person-event-title
       - if event.title_link
         = link_to event.title, event.title_link
       - else
         = event.title
     - if event.location
-      %div.person-event-location
+      .person-event-location
         = event.location
     - if event.tagged_people
       .person-event-tagged-people
         - policy_scope(event.tagged_people).each do |p|
           .person-event-tagged-person= link_to p.title, p.friendly_url
     - if event.preview_photo_attachment
-      %div.person-event-preview-photo
+      .person-event-preview-photo
         = image_tag(event.preview_photo_attachment.variant(resize_to_limit: [150, 150]), class: 'img-fluid')

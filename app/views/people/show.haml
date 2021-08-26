@@ -1,13 +1,12 @@
 = render partial: 'header', locals: { person: @person, tab: :bio }
 
 .container
-  .row.flex-row-reverse
+  .row
     - if @person.bio.present?
-      .col-12.col-lg-8.serif.person-bio.mb-4
+      .col-8.offset-2.serif.person-bio.mb-4
         = @person.bio
-
-    - layout_classes = ['col-12', ('col-lg-4' if @person.bio.present?)]
-    = tag :div, class: layout_classes do
-      %table.table.table-borderless.table-hover.table-striped
-        - @events.each do |event|
-          = render partial: 'event', locals: { event: event }
+        %hr
+  .row
+    %table.table.table-borderless.table-hover.table-striped
+      - @events.each do |event|
+        = render partial: 'event', locals: { event: event }
