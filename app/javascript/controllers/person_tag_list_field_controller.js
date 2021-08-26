@@ -3,7 +3,7 @@ import Awesomplete from 'awesomplete'
 import ajax from '../lib/ajax'
 
 const people_tags_url = '/ajax/people_tags'
-const person_tag_url = '/ajax/people_tag/'
+const person_tag_url = '/p'
 
 export default class extends Controller {
   static targets = ['value']
@@ -76,8 +76,7 @@ export default class extends Controller {
       syncTagValues()
     }
 
-    let initializeAwesomplete = function (peopleTags) {
-      var list = JSON.parse(peopleTags)
+    let initializeAwesomplete = function (list) {
       return new Awesomplete(textField, {
         list: list,
         replace: function () {
@@ -94,8 +93,8 @@ export default class extends Controller {
     for (let t = 0; t < tags.length; t++) {
       let pid = parseInt(tags[t], 10)
       if (pid > 0) {
-        ajax.get(person_tag_url + pid, function (person) {
-          addTag(person, pid)
+        ajax.get(`${person_tag_url}/${pid}`, function (person) {
+          addTag(person.title, pid)
         })
       }
     }

@@ -10,8 +10,7 @@ export default class extends Controller {
   connect() {
     const element = this.valueTarget
 
-    ajax.get(tag_url, function (response) {
-      var list = JSON.parse(response)
+    ajax.get(tag_url, function (list) {
       return new Awesomplete(element, {
         list: list,
         filter: function (text, input) {

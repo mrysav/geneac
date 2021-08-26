@@ -15,13 +15,6 @@ module Ajax
       render json: Person.all.map { |p| { label: p.title, value: p.id } }
     end
 
-    def people_tag
-      authorize :ajax, :people_tag?
-      person_id = params[:id].to_i
-      person = Person.find(person_id) if Person.exists?(person_id)
-      render json: person&.title
-    end
-
     private
 
     def user_not_authorized

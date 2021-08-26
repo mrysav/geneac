@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     skip_authorization if list.empty?
     list.select! do |s|
       authorize s, action
-    rescue Pundit::NotAuthorizedError => e
+    rescue Pundit::NotAuthorizedError => _e
       false
     end
   end

@@ -3,7 +3,7 @@ import Awesomplete from 'awesomplete'
 import ajax from '../lib/ajax'
 
 const people_tags_url = '/ajax/people_tags'
-const person_tag_url = '/ajax/people_tag/'
+const person_url = '/p/'
 
 export default class extends Controller {
   static targets = ['value']
@@ -15,8 +15,7 @@ export default class extends Controller {
   connect() {
     const element = this.valueTarget
 
-    ajax.get(people_tags_url, (people) => {
-      let peopleList = JSON.parse(people)
+    ajax.get(people_tags_url, (peopleList) => {
       let personSearchBox = element.querySelector('.person-field-search')
       let personIdInput = element.querySelector('.person-field-id')
       let selectedPersonElement = element.querySelector(
@@ -27,8 +26,8 @@ export default class extends Controller {
 
       let populatePersonField = function (personId) {
         personIdInput.value = personId
-        ajax.get(person_tag_url + personId, function (name) {
-          personNameField.textContent = name
+        ajax.get(`${person_url}${personId}`, function (person) {
+          personNameField.textContent = person.title
           selectedPersonElement.style.display = 'inline'
           personSearchBox.style.display = 'none'
           closeBtn.style.display = 'inline'
