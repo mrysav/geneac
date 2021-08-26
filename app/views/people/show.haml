@@ -1,17 +1,13 @@
-:ruby
-  @title = @person.full_name
-  @edit_link = edit_admin_person_url(@person.id)
-  show_picture = @photos.count.positive?
+= render partial: 'header', locals: { person: @person, tab: :bio }
 
-.person-cover-image
-:javascript
-  var coverImg = "#{asset_path 'cover/house_grass_field.jpg'}"
-  document.querySelector('.person-cover-image').style.backgroundImage = "url('" + coverImg + "')"
+.container
+  .row.flex-row-reverse
+    - if @person.bio.present?
+      .col-12.col-lg-8.serif.person-bio.mb-4
+        = @person.bio
 
-.container.person-container
-  .row.name-header{ class: [(:photo if show_picture)] }
-    - if show_picture
-      = image_tag(@photos[0].image.variant(resize_to_limit: [200, 200]), class: 'img-fluid mx-auto main-photo')
-    %h2.col-lg-8.offset-lg-2.col-md-12.mt-3= @person.full_name
-
-  = render partial: @tab.to_s
+    - layout_classes = ['col-12', ('col-lg-4' if @person.bio.present?)]
+    = tag :div, class: layout_classes do
+      %table.table.table-borderless.table-hover.table-striped
+        - @events.each do |event|
+          = render partial: 'event', locals: { event: event }

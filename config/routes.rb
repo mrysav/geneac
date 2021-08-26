@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   get  '/photos/:friendly_url' => 'photos#show', as: :photo
   get  '/notes/:friendly_url'  => 'notes#show', as: :note
-  get  '/p/:friendly_url' => 'people#show', as: :person
+
+  scope '/p' do
+    get '/:friendly_url' => 'people#show', as: :person
+    get '/:friendly_url/family' => 'people#show_family', as: :person_family
+    get '/:friendly_url/gallery' => 'people#show_gallery', as: :person_gallery
+  end
 
   get '/search'      => 'search#search', as: :search
   get '/tagged/:tag' => 'search#tagged', as: :tagged

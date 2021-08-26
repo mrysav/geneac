@@ -27,4 +27,12 @@ class PersonPolicy < ApplicationPolicy
 
     true
   end
+
+  def show_family?
+    show?
+  end
+
+  def show_gallery?
+    show?
+  end
 end

@@ -1,0 +1,15 @@
+= render partial: 'header', locals: { person: @person, tab: :gallery }
+
+.container
+  - if @notes.count > 0
+    .row
+      .col-12.col-lg-8.offset-lg-2
+        %h3.text-center= t('people.notes')
+        - for note in @notes
+          = render partial: 'shared/search_doc', locals: { doc: note }
+
+  - if @photos.count > 0
+    .row
+      .col-12.col-lg-8.offset-lg-2
+        %h3.text-center= t('people.photos')
+        = render partial: 'photos/thumbnail_grid', locals: { photos: @photos }
