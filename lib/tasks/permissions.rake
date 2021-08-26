@@ -15,7 +15,7 @@ namespace :admin do
     user = User.find_by(email: email)
     user.admin = is_admin
     user.save!
-    puts email + ' is admin: ' + is_admin.to_s
+    puts "#{email} is admin: #{is_admin}"
   rescue StandardError => e
     puts e
   end
