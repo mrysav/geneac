@@ -1,7 +1,8 @@
-%tr
-  %td.w-25.text-right
+.row
+  .border-top.col-12
+  .col-sm-4.col-md-2.offset-md-2.text-right.py-2
     %i= event.date_string
-  %td.pl-4
+  .col-sm-8.col-md-6.pl-4.py-2
     - if event.preview_photo_attachment
       .media
         = image_tag(event.preview_photo_attachment.variant(resize_to_limit: [100, 100]),
@@ -20,9 +21,11 @@
         = link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener'
         %i.fas.fa-external-link-alt
     - else
-      %div{ type: 'button', 'data-toggle': 'collapse',
+      %div{ style: 'cursor: pointer',
+            'data-toggle': 'collapse',
             'data-target': "#extra-#{event_id}",
-            'aria-expanded': false, 'aria-controls': "extra-#{event_id}" }
+            'aria-expanded': false,
+            'aria-controls': "extra-#{event_id}" }
         %h5.mt-0= event.title
         = event.location
         .collapse{ id: "extra-#{event_id}" }
