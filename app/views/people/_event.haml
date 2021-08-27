@@ -21,26 +21,31 @@
         = link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener'
         %i.fas.fa-external-link-alt
     - else
-      %div{ style: 'cursor: pointer',
+      :ruby
+        tagged_people = policy_scope(event.tagged_people)
+        show_collapsible = event.description.presence || tagged_people.count.positive? || event.citations&.count > 0
+      %div{ style: show_collapsible ? 'cursor: pointer' : '',
             'data-toggle': 'collapse',
             'data-target': "#extra-#{event_id}",
             'aria-expanded': false,
             'aria-controls': "extra-#{event_id}" }
         %h5.mt-0= event.title
         = event.location
-        .collapse{ id: "extra-#{event_id}" }
-          .card.card-body
-            - tagged_people = policy_scope(event.tagged_people)
-            - if tagged_people
-              .mb-2
-                %strong= t('people.tagged_people')
-                - tagged_people.each do |p|
-                  %div
-                    = link_to p.title, p.friendly_url, target: '_blank', rel: 'noopener'
-                    %i.fas.fa-external-link-alt
-            - if event.citations
-              .mb-2
-                %strong= t('people.citations')
-                %ol
-                  - event.citations&.each do |c|
-                    %li= render_citation c
+        - if show_collapsible
+          .collapse{ id: "extra-#{event_id}" }
+            .card.card-body
+              - if event.description.presence
+                .mb-2.pb-2.border-bottom= event.description
+              - if tagged_people&.count > 0
+                .mb-2
+                  %strong= t('people.tagged_people')
+                  - tagged_people.each do |p|
+                    %div
+                      = link_to p.title, p.friendly_url, target: '_blank', rel: 'noopener'
+                      %i.fas.fa-external-link-alt
+              - if event.citations&.count > 0
+                .mb-2
+                  %strong= t('people.citations')
+                  %ol
+                    - event.citations&.each do |c|
+                      %li= render_citation c

@@ -14,7 +14,8 @@ module Events
         events.push(Event.new(title: fact.fact_type.capitalize, date: fact.date,
                               date_string: format_date(fact.date),
                               location: fact.place, citations: fact.citations,
-                              tagged_people: fact.resolved_people))
+                              tagged_people: fact.resolved_people,
+                              description: fact.description))
       end
 
       Fact.tagged_with(@person.id.to_s).each do |fact|
@@ -25,7 +26,8 @@ module Events
         events.push(Event.new(title: title, title_link: title_link, date: fact.date,
                               date_string: format_date(fact.date),
                               location: fact.place, citations: fact.citations,
-                              tagged_people: fact.resolved_people))
+                              tagged_people: fact.resolved_people,
+                              description: fact.description))
       end
 
       Photo.tagged_with(@person.id.to_s).each do |photo|
