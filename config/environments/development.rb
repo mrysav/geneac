@@ -34,7 +34,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # ActiveJob executes inline
-  config.active_job.queue_adapter = :inline
+  config.active_job.queue_adapter = :resque
 
   # Raise delivery errors locally since this is development after all.
   config.action_mailer.raise_delivery_errors = true

@@ -11,17 +11,14 @@ module Geneac
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    # optimize autoloader
+    # OPTIMIZE: autoloader
     # https://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-5-2-to-rails-6-0
     config.add_autoload_paths_to_load_path = false
-
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-
-    config.active_job.queue_adapter = :resque
 
     config.generators.assets = false
     config.generators.helper = false
