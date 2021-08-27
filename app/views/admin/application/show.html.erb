@@ -24,7 +24,7 @@ as well as a link to its edit page.
       t("administrate.actions.view_page"),
       page.resource.url_path,
       class: "button button--alt",
-    ) if page.resource.responds_to?(:friendly_url) && page.resource.friendly_url.present? %>
+    ) if page.resource.respond_to?(:friendly_url) && page.resource.friendly_url.present? %>
 
     <%= link_to(
       t("administrate.actions.edit_resource", name: page.page_title),
