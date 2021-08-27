@@ -1,12 +1,14 @@
 = render partial: 'header', locals: { person: @person, tab: :bio }
 
-.container
+.container.person-container
   .row
     - if @person.bio.present?
-      .col-8.offset-2.serif.person-bio.mb-4
-        = @person.bio
-        %hr
+      .col-8.offset-2.serif.my-4
+        .person-bio.border.rounded.p-2.bg-light
+          %h4.mb-4= t('people.bio')
+          = @person.bio
   .row
-    %table.table.table-borderless.table-hover.table-striped
-      - @events.each do |event|
-        = render partial: 'event', locals: { event: event }
+    .col-8.offset-2
+      %table.table.table-hover.my-2
+        - @events.each_with_index do |event, idx|
+          = render partial: 'event', locals: { event: event, event_id: idx }

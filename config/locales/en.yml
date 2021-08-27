@@ -63,6 +63,9 @@ en:
     with_and: 'With %{p1} and %{p2}'
     married_to: 'Married to %{spouse}'
     marriages: 'Marriages'
+    view: 'View'
+    tagged_people: 'Tags'
+    citations: 'Citations'
   search:
     total_results: 'Total results: %{total}'
     type: 'Type: %{type}'

@@ -9,11 +9,8 @@
 }
 
 .person-container {
-
-  .row {
-    position: relative;
-    top: -80px;
-  }
+  position: relative;
+  top: -80px;
 
   :not(.photo) {
     h2 {

@@ -1,19 +1,43 @@
 %tr
-  %td.w-25
-    %strong= event.date_string
-  %td
-    .person-event-title
-      - if event.title_link
-        = link_to event.title, event.title_link
-      - else
-        = event.title
-    - if event.location
-      .person-event-location
-        = event.location
-    - if event.tagged_people
-      .person-event-tagged-people
-        - policy_scope(event.tagged_people).each do |p|
-          .person-event-tagged-person= link_to p.title, p.friendly_url
+  %td.w-25.text-right
+    %i= event.date_string
+  %td.pl-4
     - if event.preview_photo_attachment
-      .person-event-preview-photo
-        = image_tag(event.preview_photo_attachment.variant(resize_to_limit: [150, 150]), class: 'img-fluid')
+      .media
+        = image_tag(event.preview_photo_attachment.variant(resize_to_limit: [100, 100]),
+                    class: 'img-fluid border rounded mr-2')
+        .media-body
+          %h5.mt-0= event.title
+          = event.location
+          - if event.title_link
+            .mb-0.align-text-bottom
+              = link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener'
+              %i.fas.fa-external-link-alt
+    - elsif event.title_link
+      %h5.mt-0= event.title
+      = event.location
+      .mb-0.align-text-bottom
+        = link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener'
+        %i.fas.fa-external-link-alt
+    - else
+      %div{ type: 'button', 'data-toggle': 'collapse',
+            'data-target': "#extra-#{event_id}",
+            'aria-expanded': false, 'aria-controls': "extra-#{event_id}" }
+        %h5.mt-0= event.title
+        = event.location
+        .collapse{ id: "extra-#{event_id}" }
+          .card.card-body
+            - tagged_people = policy_scope(event.tagged_people)
+            - if tagged_people
+              .mb-2
+                %strong= t('people.tagged_people')
+                - tagged_people.each do |p|
+                  %div
+                    = link_to p.title, p.friendly_url, target: '_blank', rel: 'noopener'
+                    %i.fas.fa-external-link-alt
+            - if event.citations
+              .mb-2
+                %strong= t('people.citations')
+                %ol
+                  - event.citations&.each do |c|
+                    %li= render_citation c

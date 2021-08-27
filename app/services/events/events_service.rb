@@ -12,7 +12,7 @@ module Events
 
       @person.facts.each do |fact|
         events.push(Event.new(title: fact.fact_type.capitalize, date: fact.date,
-                              date_string: fact.date_string&.capitalize,
+                              date_string: format_date(fact.date),
                               location: fact.place, citations: fact.citations,
                               tagged_people: fact.resolved_people))
       end
@@ -23,7 +23,7 @@ module Events
         title = fact.fact_type.capitalize unless fact.factable
 
         events.push(Event.new(title: title, title_link: title_link, date: fact.date,
-                              date_string: fact.date_string&.capitalize,
+                              date_string: format_date(fact.date),
                               location: fact.place, citations: fact.citations,
                               tagged_people: fact.resolved_people))
       end
@@ -32,7 +32,7 @@ module Events
         next unless photo.date
 
         events.push(Event.new(title: photo.title, title_link: photo.url_path,
-                              date: photo.date, date_string: photo.date_string&.capitalize,
+                              date: photo.date, date_string: format_date(photo.date),
                               preview_photo_attachment: photo.image))
       end
 
@@ -40,10 +40,18 @@ module Events
         next unless note.date
 
         events.push(Event.new(title: note.title, title_link: note.url_path, date: note.date,
-                              date_string: note.date_string&.capitalize))
+                              date_string: format_date(note.date)))
       end
 
       events.sort
+    end
+
+    private
+
+    def format_date(date)
+      return date.to_s unless date.respond_to?(:strftime)
+
+      date.strftime('%B %-d, %Y')
     end
   end
 end
