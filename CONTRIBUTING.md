@@ -35,39 +35,7 @@ coverage and (where necessary) have internationalisation support.
 
 ### Running the application locally
 
-For local development, it is recommended you have:
-
-- Ruby & Bundler (see `.ruby-version` for current supported version)
-  - [rbenv](https://github.com/sstephenson/rbenv) is recommended.
-- NodeJS + Yarn (see `.node-version` for current supported version)
-  - [nodenv](https://github.com/nodenv/nodenv) is recommended.
-- [foreman](https://github.com/ddollar/foreman)-compatible launcher for Procfile-based launch
-- Docker
-
-Before doing anything else, you need to start the Postgres and Redis Docker containers:
-
-```bash
-docker-compose up -d
-```
-
-If this is your first time running geneac, you need to configure the database:
-
-```bash
-rails db:create db:schema:load
-```
-
-For local development I also recommend generating simulated test data that you can browse. There is a rake task for doing this:
-
-```bash
-rails generate:testdata
-```
-
-Finally, you can start the server and worker processes with:
-
-```bash
-# Starts server and webpack-dev-server
-foreman start -f Procfile.dev
-```
+You can find the most up-to-date instructions for running the application locally on the [documentation website](https://mrysav.github.io/geneac/developer_quickstart/).
 
 ## Repository Structure
 
