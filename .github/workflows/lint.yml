@@ -1,0 +1,52 @@
+name: Lint changes
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 2.7.4
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install NPM modules
+        run: bin/yarn install
+  ruby:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rubocop
+        run: |
+          git diff --name-only main | grep -E '.(rb|rake)' | xargs bundle exec rubocop
+
+  haml:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Haml
+        run: |
+          git diff --name-only main | grep -E '.(haml)' | xargs bundle exec haml-lint
+
+  erb:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: ERB
+        run: |
+          git diff --name-only main | grep -E '.(rb|rake)' | xargs bundle exec erblint
