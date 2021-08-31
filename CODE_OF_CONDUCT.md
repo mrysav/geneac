@@ -1,5 +1,33 @@
 # Contributor Covenant Code of Conduct
 
+## Preamble
+
+First things first, it should be noted that this project is solely my own
+work and not the work of whatever my current employer is, and similarly,
+the views expressed in this file are my own.
+
+I (Mitchell Rysavy, @mrysav) added this code of conduct in the fall of 2020 in order to
+make sure I had my ducks in a row for Hacktoberfest. Clearly, I used a template.
+
+I stand by the contents of this file, but I want to state my intentions a
+bit more clearly here. Codes of Conduct have become something of a
+lightning rod in the open source community over the last few years, and
+while I am the main (and often only) contributor to this repository,
+if anyone else wants to contribute I want them to know what to expect.
+
+Be nice. I am the [BDFL](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life)
+of Geneac and I _strongly_ want others to contribute, but at the end of the day
+I make Geneac for my own benefit, and I don't want to deal with a lot of
+conflict.
+
+My pledge to you is to do my best at bringing my best self to whatever PRs
+or comments you have. If I do something that you regard as undeserved hostility,
+you are free to call that out. If I violate any of the below conduct guidelines
+myself that demonstrate non-inclusive behavior, I _absolutely_ want to know about
+it and you can either call it out or email me privately at mitchell.rysavy@gmail.com
+
+Thank you for understanding. And thank you for using or contributing to Geneac!
+
 ## Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as
@@ -14,22 +42,22 @@ appearance, race, religion, or sexual identity and orientation.
 Examples of behavior that contributes to creating a positive environment
 include:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
 
 Examples of unacceptable behavior by participants include:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
- advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
- address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
- professional setting
+- The use of sexualized language or imagery and unwelcome sexual attention or
+  advances
+- Trolling, insulting/derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information, such as a physical or electronic
+  address, without explicit permission
+- Other conduct which could reasonably be considered inappropriate in a
+  professional setting
 
 ## Our Responsibilities
 
