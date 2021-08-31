@@ -3,4 +3,10 @@
 
 require_relative 'config/application'
 
+require 'rubocop/rake_task'
+RuboCop::RakeTask.new
+
+require 'haml_lint/rake_task'
+HamlLint::RakeTask.new
+
 Rails.application.load_tasks
