@@ -10,7 +10,7 @@ agree to abide by the [code of conduct](CODE_OF_CONDUCT.md).
 Geneac is a genealogy CMS (Content Management System) built on [Ruby on Rails](https://rubyonrails.org).
 
 As much as possible Geneac attemps to do things "The Rails Way." To that end, the best way to learn about
-Ruby on Rails is the [official Rails documentation.](https://guides.rubyonrails.org/getting_started.html).
+Ruby on Rails is the [official Rails documentation](https://guides.rubyonrails.org/getting_started.html).
 
 A few key libraries/gems that would also be helpful to learn about before contributing would be:
 
