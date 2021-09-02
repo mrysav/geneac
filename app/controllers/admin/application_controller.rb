@@ -29,5 +29,17 @@ module Admin
     # def records_per_page
     #   params[:per_page] || 20
     # end
+
+    def add_create_history
+      current_user.add_edit_history(action: :create, editable: requested_resource,
+                                    date: requested_resource.created_at)
+      current_user.save!
+    end
+
+    def add_update_history
+      current_user.add_edit_history(action: :update, editable: requested_resource,
+                                    date: requested_resource.updated_at)
+      current_user.save!
+    end
   end
 end
