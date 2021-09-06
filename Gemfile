@@ -108,9 +108,6 @@ gem 'administrate-field-nested_has_many'
 # For content tagging
 gem 'acts-as-taggable-on', '~> 7.0'
 
-# Rendering markdown
-gem 'commonmarker'
-
 gem 'aws-sdk-rails'
 group :production do
   # For S3
