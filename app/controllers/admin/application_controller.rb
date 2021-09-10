@@ -31,15 +31,13 @@ module Admin
     # end
 
     def add_create_history
-      current_user.add_edit_history(action: :create, editable: requested_resource,
-                                    date: requested_resource.created_at)
-      current_user.save!
+      EditHistory.new(action: :create, editable: requested_resource, edited_at: requested_resource.created_at,
+                      user: current_user).save!
     end
 
     def add_update_history
-      current_user.add_edit_history(action: :update, editable: requested_resource,
-                                    date: requested_resource.updated_at)
-      current_user.save!
+      EditHistory.new(action: :update, editable: requested_resource, edited_at: requested_resource.updated_at,
+                      user: current_user).save!
     end
   end
 end

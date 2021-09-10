@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_02_020913) do
+ActiveRecord::Schema.define(version: 2021_09_07_000955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
@@ -62,6 +62,18 @@ ActiveRecord::Schema.define(version: 2021_09_02_020913) do
     t.jsonb "attrs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "edit_histories", force: :cascade do |t|
+    t.string "action"
+    t.string "editable_type"
+    t.integer "editable_id"
+    t.datetime "edited_at"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["editable_id"], name: "index_edit_histories_on_editable_id"
+    t.index ["user_id"], name: "index_edit_histories_on_user_id"
   end
 
   create_table "facts", force: :cascade do |t|
@@ -176,11 +188,11 @@ ActiveRecord::Schema.define(version: 2021_09_02_020913) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "edit_history"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "edit_histories", "users"
 end
