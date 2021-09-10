@@ -46,6 +46,10 @@ en:
     recent_updates: 'Recent Updates'
   users:
     edit_profile: 'Edit Profile'
+    edit_history: 'Recent Edits'
+    edit:
+      create: 'Created %{title}'
+      update: 'Updated %{title}'
   content:
     citation_header: 'Citation:'
   people:

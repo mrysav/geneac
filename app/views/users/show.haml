@@ -1,0 +1,26 @@
+.container
+  .row.mt-3
+    .col-md-4.py-4.px-2.text-center.bg-light
+      = image_tag @user.profile_image(200), class: 'img-fluid'
+      - if current_user && current_user.id == @user.id
+        %div
+          = link_to t('users.edit_profile'), edit_user_registration_path
+    .col-md-8
+      %h1= @user.name
+      %hr
+      %h3= t('users.edit_history')
+      %container.row
+        - policy_scope(@user.edit_histories).first(10).each do |e|
+          .col-sm-4.text-right
+            %b= e.edited_at.strftime('%B %-d, %Y')
+            %br
+            %em= e.edited_at.strftime('%-I:%M %p')
+          .col-sm-8
+            :ruby
+              obj = if e.editable.respond_to? :factable
+                      # it's a Fact, so we have to do some massaging
+                      e.editable.factable
+                    else
+                      e.editable
+                    end
+            = t("users.edit.#{e.action}", title: link_to(obj.title, obj.url_path)).html_safe
