@@ -2,12 +2,14 @@
 
 # Controller for any 'home' actions
 class HomeController < ApplicationController
+  RECENT_BIRTHDAYS_LIMIT = 5
+  RECENT_BIRTHDAYS_RANGE = 1.month
+
   def index
-    if Setting.show_recent_updates
-      @recent_updates = recent_updates
-    else
-      skip_authorization
-    end
+    @recent_updates = recent_updates if Setting.show_recent_updates
+    @recent_birthdays = recent_birthdays if Setting.show_recent_birthdays
+
+    skip_authorization if @recent_updates.nil? && @recent_birthdays.nil?
   end
 
   private
@@ -27,4 +29,11 @@ class HomeController < ApplicationController
     updates
   end
 
+  def recent_birthdays
+    birthdays = Fact.birthdays_in_range(
+      Time.zone.today, Time.zone.today + RECENT_BIRTHDAYS_RANGE, RECENT_BIRTHDAYS_LIMIT
+    )
+    authorize_list birthdays.to_a
+    birthdays
+  end
 end

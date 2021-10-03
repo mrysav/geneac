@@ -14,7 +14,12 @@
           %button.btn.btn-secondary{ type: 'submit' }= t('nav.search')
   .row
     - if setting(:show_recent_updates) && @recent_updates
-      .recent-updates.col-4.p-4.frosted-background
+      .recent-widgets.col-4.p-4.frosted-background
         %h2.text-center= t('home.recent_updates')
         - @recent_updates.each do |recent_update|
           = render partial: 'shared/search_doc', locals: { doc: recent_update }
+    - if setting(:show_recent_birthdays) && @recent_birthdays
+      .recent-widgets.col-4.p-4.frosted-background
+        %h2.text-center= t('home.recent_birthdays')
+        - @recent_birthdays.each do |recent_birthday|
+          = render partial: 'shared/birthday', locals: { birthday: recent_birthday }
