@@ -4,6 +4,7 @@
 class Person < ApplicationRecord
   include ParseableDate
   include FriendlyUrlName
+  include RecordHistory
 
   has_many :facts, as: :factable, dependent: :destroy
   accepts_nested_attributes_for :facts

@@ -4,6 +4,7 @@
 # Factable objects: Person
 class Fact < ApplicationRecord
   include ParseableDate
+  include RecordHistory
 
   belongs_to :factable, polymorphic: true, optional: true
   validates :fact_type, presence: true

@@ -4,6 +4,7 @@
 class Photo < ApplicationRecord
   include ParseableDate
   include FriendlyUrlName
+  include RecordHistory
 
   include PgSearch::Model
   multisearchable against: %i[title description date]

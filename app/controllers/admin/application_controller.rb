@@ -13,6 +13,7 @@ module Admin
     before_action :authenticate_user!
     before_action :authenticate_admin
     before_action :authorize_miniprofiler
+    around_action :set_current_user
 
     helper SettingHelper
 
@@ -30,14 +31,11 @@ module Admin
     #   params[:per_page] || 20
     # end
 
-    def add_create_history
-      EditHistory.new(action: :create, editable: requested_resource, edited_at: requested_resource.created_at,
-                      user: current_user).save!
-    end
-
-    def add_update_history
-      EditHistory.new(action: :update, editable: requested_resource, edited_at: requested_resource.updated_at,
-                      user: current_user).save!
+    def set_current_user
+      User.current_user = current_user
+      yield
+    ensure
+      User.current_user = nil
     end
   end
 end
