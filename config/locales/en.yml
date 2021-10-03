@@ -44,6 +44,7 @@ en:
     edit_page: 'Edit Page'
   home:
     recent_updates: 'Recent Updates'
+    recent_birthdays: 'Recent Birthdays'
   users:
     edit_profile: 'Edit Profile'
     edit_history: 'Recent Edits'
@@ -77,6 +78,8 @@ en:
     attributes:
       show_recent_updates:
         name: 'Show "Recent Updates" on home page'
+      show_recent_birthdays:
+        name: 'Show "Recent Birthdays" on home page'
       require_login:
         name: 'Require users to be signed in to view all data'
       restrict_living_info:
