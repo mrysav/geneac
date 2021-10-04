@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Fact, type: :model do
   describe '.birth_dates' do
-    let!(:birth_dates) { create_list(:fact, 2, fact_type: described_class::Types::BIRTH_DATE) }
+    let!(:birth_dates) { create_list(:fact, 2, fact_type: described_class::Types::BIRTH) }
 
     it 'returns birth date facts' do
       expect(described_class.birth_dates).to match_array birth_dates
@@ -27,7 +27,7 @@ RSpec.describe Fact, type: :model do
       Array.new(3) do |i|
         create(
           :fact,
-          fact_type: described_class::Types::BIRTH_DATE,
+          fact_type: described_class::Types::BIRTH,
           date_string: (Time.zone.today + i.days).strftime('%B %-d, %Y')
         )
       end
@@ -53,8 +53,8 @@ RSpec.describe Fact, type: :model do
     context 'when there are birthdays with invalid date formats' do
       let!(:invalid_birthdays) do
         [
-          create(:fact, fact_type: described_class::Types::BIRTH_DATE, date_string: 'text'),
-          create(:fact, fact_type: described_class::Types::BIRTH_DATE, date_string: '1998')
+          create(:fact, fact_type: described_class::Types::BIRTH, date_string: 'text'),
+          create(:fact, fact_type: described_class::Types::BIRTH, date_string: '1998')
         ]
       end
 
@@ -66,20 +66,20 @@ RSpec.describe Fact, type: :model do
     context 'when there are birthdays in a variety of date formats' do
       let!(:in_range_birthdays) do
         [
-          create(:fact, fact_type: described_class::Types::BIRTH_DATE, date_string: Time.zone.today.strftime('%F')),
+          create(:fact, fact_type: described_class::Types::BIRTH, date_string: Time.zone.today.strftime('%F')),
           create(
             :fact,
-            fact_type: described_class::Types::BIRTH_DATE,
+            fact_type: described_class::Types::BIRTH,
             date_string: (Time.zone.today + 1.day).strftime('%v')
           ),
           create(
             :fact,
-            fact_type: described_class::Types::BIRTH_DATE,
+            fact_type: described_class::Types::BIRTH,
             date_string: (Time.zone.today + 2.days).strftime('%A %-d %B %Y')
           ),
           create(
             :fact,
-            fact_type: described_class::Types::BIRTH_DATE,
+            fact_type: described_class::Types::BIRTH,
             date_string: (Time.zone.today + 3.days).strftime('%D')
           )
         ]
@@ -95,7 +95,7 @@ RSpec.describe Fact, type: :model do
         Array.new(3) do |i|
           create(
             :fact,
-            fact_type: described_class::Types::BIRTH_DATE,
+            fact_type: described_class::Types::BIRTH,
             date_string: (Time.zone.today + (i + 10).days).strftime('%B %-d, %Y')
           )
         end
