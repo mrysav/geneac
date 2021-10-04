@@ -7,7 +7,7 @@ class Fact < ApplicationRecord
   include SqlFunctions
 
   module Types
-    BIRTH_DATE = 'birth'
+    BIRTH = 'birth'
   end
 
   belongs_to :factable, polymorphic: true, optional: true
@@ -20,7 +20,7 @@ class Fact < ApplicationRecord
 
   before_save :update_normalized_type
 
-  scope :birth_dates, -> { where(fact_type: Types::BIRTH_DATE) }
+  scope :birth_dates, -> { where(fact_type: Types::BIRTH) }
   scope :birthdays_in_range, lambda { |start_date, end_date, limit|
     add_valid_date_function
     date_in_current_year =
