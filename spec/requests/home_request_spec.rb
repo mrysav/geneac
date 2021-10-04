@@ -8,7 +8,7 @@ RSpec.describe 'Home', type: :request do
     let(:recent_birthdays) do
       Array.new(3) do |i|
         Fact.new(
-          fact_type: Fact::Types::BIRTH_DATE,
+          fact_type: Fact::Types::BIRTH,
           date_string: (Time.zone.today + i.days - 100.years).strftime('%B %-d, %Y'),
           factable: Person.new
         )
