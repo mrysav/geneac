@@ -13,12 +13,12 @@
         .input-group-append
           %button.btn.btn-secondary{ type: 'submit' }= t('nav.search')
   .row
-    - if setting(:show_recent_updates) && @recent_updates
+    - if setting(:show_recent_updates) && @recent_updates.present?
       .recent-widgets.col-4.p-4.frosted-background
         %h2.text-center= t('home.recent_updates')
         - @recent_updates.each do |recent_update|
           = render partial: 'shared/search_doc', locals: { doc: recent_update }
-    - if setting(:show_recent_birthdays) && @recent_birthdays
+    - if setting(:show_recent_birthdays) && @recent_birthdays.present?
       .recent-widgets.col-4.p-4.frosted-background
         %h2.text-center= t('home.recent_birthdays')
         - @recent_birthdays.each do |recent_birthday|
