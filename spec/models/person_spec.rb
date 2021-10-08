@@ -63,13 +63,13 @@ RSpec.describe Person, type: :model do
       child = create(:person)
 
       child.mother = mother
-      child.save!
+      child.save_without_history!
 
       expect(mother.children).to include child
 
       child.mother = nil
       child.father = father
-      child.save!
+      child.save_without_history!
 
       expect(father.children).to include child
     end
@@ -80,9 +80,9 @@ RSpec.describe Person, type: :model do
       child2 = create(:person)
 
       child1.mother = parent
-      child1.save!
+      child1.save_without_history!
       child2.mother = parent
-      child2.save!
+      child2.save_without_history!
 
       expect(child1.siblings).to include child2
       expect(child2.siblings).to include child1

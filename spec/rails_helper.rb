@@ -77,3 +77,8 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# Allow RSpec stubbing in FactoryBot factories
+FactoryBot::SyntaxRunner.class_eval do
+  include RSpec::Mocks::ExampleMethods
+end

@@ -16,5 +16,13 @@ FactoryBot.define do
         'image/jpg'
       )
     end
+
+    after(:build) { |photo|
+      allow(photo).to receive(:add_create_history).and_return(true)
+    }
+
+    after(:create) do |photo|
+      allow(photo).to receive(:add_create_history).and_call_original
+    end
   end
 end

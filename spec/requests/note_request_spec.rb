@@ -39,7 +39,7 @@ RSpec.describe Note, type: :request do
           context 'when at least one tagged person associated to note' do
             before do
               note.tagged_person_list.add(person.id)
-              note.save!
+              note.save_without_history!
             end
 
             it 'returns forbidden' do
@@ -113,7 +113,7 @@ RSpec.describe Note, type: :request do
         context 'when at least one tagged person associated to note' do
           before do
             note.tagged_person_list.add(person.id)
-            note.save!
+            note.save_without_history!
           end
 
           it 'returns forbidden' do
@@ -155,7 +155,7 @@ RSpec.describe Note, type: :request do
         context 'when at least one tagged person associated to note' do
           before do
             note.tagged_person_list.add(person.id)
-            note.save!
+            note.save_without_history!
           end
 
           it 'returns forbidden' do
@@ -204,7 +204,7 @@ RSpec.describe Note, type: :request do
         context 'when at least one tagged person associated to note' do
           before do
             note.tagged_person_list.add(person.id)
-            note.save!
+            note.save_without_history!
           end
 
           it 'returns success' do
@@ -246,7 +246,7 @@ RSpec.describe Note, type: :request do
         context 'when at least one tagged person associated to note' do
           before do
             note.tagged_person_list.add(person.id)
-            note.save!
+            note.save_without_history!
           end
 
           it 'returns success' do
