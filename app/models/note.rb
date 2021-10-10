@@ -4,6 +4,7 @@
 class Note < ApplicationRecord
   include ParseableDate
   include FriendlyUrlName
+  include RecordHistory
 
   has_rich_text :rich_content
 

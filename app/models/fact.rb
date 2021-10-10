@@ -4,6 +4,7 @@
 # Factable objects: Person
 class Fact < ApplicationRecord
   include ParseableDate
+  include RecordHistory
   include SqlFunctions
 
   module Types

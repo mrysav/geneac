@@ -9,7 +9,7 @@ RSpec.describe Photo, type: :request do
 
   before do
     photo.image.attach(io: file, filename: 'image.jpg')
-    photo.save!
+    photo.save_without_history!
   end
 
   describe '#GET show' do
@@ -45,7 +45,7 @@ RSpec.describe Photo, type: :request do
           context 'when at least one tagged person associated to photo' do
             before do
               photo.tagged_person_list.add(person.id)
-              photo.save!
+              photo.save_without_history!
             end
 
             it 'returns forbidden' do
@@ -119,7 +119,7 @@ RSpec.describe Photo, type: :request do
         context 'when at least one tagged person associated to photo' do
           before do
             photo.tagged_person_list.add(person.id)
-            photo.save!
+            photo.save_without_history!
           end
 
           it 'returns forbidden' do
@@ -161,7 +161,7 @@ RSpec.describe Photo, type: :request do
         context 'when at least one tagged person associated to photo' do
           before do
             photo.tagged_person_list.add(person.id)
-            photo.save!
+            photo.save_without_history!
           end
 
           it 'returns forbidden' do
@@ -210,7 +210,7 @@ RSpec.describe Photo, type: :request do
         context 'when at least one tagged person associated to photo' do
           before do
             photo.tagged_person_list.add(person.id)
-            photo.save!
+            photo.save_without_history!
           end
 
           it 'returns success' do
@@ -252,7 +252,7 @@ RSpec.describe Photo, type: :request do
         context 'when at least one tagged person associated to photo' do
           before do
             photo.tagged_person_list.add(person.id)
-            photo.save!
+            photo.save_without_history!
           end
 
           it 'returns success' do

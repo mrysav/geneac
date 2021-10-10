@@ -16,4 +16,12 @@ class User < ApplicationRecord
     hash = Digest::MD5.hexdigest(email.downcase)
     "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
   end
+
+  def self.current_user
+    Thread.current[:current_user]
+  end
+
+  def self.current_user=(user)
+    Thread.current[:current_user] = user
+  end
 end

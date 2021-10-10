@@ -34,7 +34,7 @@ class RestoreSnapshotJob < ApplicationJob
           # Hack! We want to preserve the original updated_at, so save it here
           updated_at = n.updated_at
           n.rich_content = v
-          n.save!
+          n.save_without_history!
           n.update_columns(updated_at: updated_at)
         end
 
@@ -57,7 +57,8 @@ class RestoreSnapshotJob < ApplicationJob
 
   def batch_create(model_type, obj_list)
     obj_list.each do |obj|
-      model_type.create! obj
+      instance = model_type.new(obj)
+      instance.save_without_history!
     end
   end
 

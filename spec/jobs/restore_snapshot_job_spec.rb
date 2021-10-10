@@ -7,10 +7,10 @@ require 'zip'
 require 'rails_helper'
 
 RSpec.describe RestoreSnapshotJob, type: :job do
-  before :all do
+  before :each do
     Snapshot.drop_em_all!
 
-    10.times do
+    5.times do
       create(:note, :with_date)
     end
 
@@ -18,19 +18,17 @@ RSpec.describe RestoreSnapshotJob, type: :job do
       create(:photo)
     end
 
-    10.times do
+    5.times do
       create(:fact, :attached_to_person)
     end
 
-    5.times do
+    3.times do
       create(:person)
     end
 
     CreateSnapshotJob.perform_now
     expect(Snapshot.count).to eq(1)
-  end
 
-  before :each do
     Note.drop_em_all!
     expect(Note.count).to eq(0)
 
@@ -48,13 +46,14 @@ RSpec.describe RestoreSnapshotJob, type: :job do
     it 'restores notes' do
       RestoreSnapshotJob.perform_now(Snapshot.find(1))
 
-      expect(Note.count).to eq(10)
+      expect(Note.count).to eq(5)
 
       note = Note.all.first
 
       expect(note.title).not_to be_empty
       expect(note.rich_content.body.to_s).to match(%r{<b>.+</b>.+})
     end
+
     skip 'restores the database from reference snapshot' do
       expect(Snapshot.count).to eq(0)
       RestoreSnapshotJob.perform_now(create(:snapshot, :v1))

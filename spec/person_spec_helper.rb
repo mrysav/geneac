@@ -6,8 +6,8 @@ def create_person(*facts)
   person = create(:person)
   facts.each do |fact|
     fact.factable = person
-    fact.save!
+    fact.save_without_history!
   end
-  person.save!
+  person.save_without_history!
   person
 end

@@ -11,7 +11,7 @@ RSpec.describe 'People', type: :request do
 
     # Create a relationship so policy_scope on @children will work
     @alive.mother = @dead
-    @alive.save!
+    @alive.save_without_history!
 
     @user = create(:user)
     @admin = create(:user, :admin)
