@@ -5,7 +5,7 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def self.drop_em_all!
-    all.each(&:destroy!)
+    all.find_each(&:destroy!)
     update_seq!
   end
 
