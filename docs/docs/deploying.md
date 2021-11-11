@@ -1,6 +1,6 @@
 # Deploying Geneac in Production
 
-**If you just want to run Geneac locally for testing, you should be looking at [Developer Quickstart](../developer_quickstart) instead!**
+**If you just want to run Geneac locally for testing, you should be looking at [Developer Quickstart](Development/quickstart.md) instead!**
 
 ## Heroku + AWS
 

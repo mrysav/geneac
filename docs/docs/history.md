@@ -1,6 +1,6 @@
 # History
 
-I started working on a website to store and share my genealogy research while I was an undergraduate student
+I ([Mitchell Rysavy](https://mitchellrysavy.com)) started working on a website to store and share my genealogy research while I was an undergraduate student
 at the [University of Minnesota-Duluth](https://d.umn.edu/). Originally, the project was called 'familiar,' and
 I used this as the basis for a capstone project in the Honors program.
 
