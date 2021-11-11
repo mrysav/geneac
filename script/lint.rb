@@ -11,6 +11,7 @@ files_to_lint = changed_files + untracked_files
 RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/.freeze
 MARKDOWN = /\.md/.freeze
 CLOUDFORMATION = %r{script/geneac-aws\.yml}.freeze
+VENDOR = %r{vendor/}.freeze
 
 unchecked_files = []
 all_pass = true
@@ -22,6 +23,8 @@ def run_linter(name, file)
 end
 
 files_to_lint.each do |f|
+  next if VENDOR.match(f)
+
   if RUBY.match(f)
     command, success, output = run_linter('rubocop', f)
   elsif MARKDOWN.match(f)
