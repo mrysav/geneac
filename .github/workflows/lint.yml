@@ -9,7 +9,7 @@ on:
       - 'main'
 
 jobs:
-  setup:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,11 +27,6 @@ jobs:
         run: |
           pip3 install cfn-lint
           npm install -g markdownlint-cli
-
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Run script/lint.rb
         run: |
           script/lint.rb
