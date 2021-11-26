@@ -21,6 +21,7 @@ class Person < ApplicationRecord
 
   include PgSearch::Model
   multisearchable against: %i[first_name last_name alternate_names]
+  pg_search_scope :search_by_full_name, against: [:first_name, :last_name]
 
   before_save :update_special_fact_types
   before_save :update_probably_alive
