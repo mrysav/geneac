@@ -7,8 +7,6 @@
       %h2.text-center.pt-4= @note.title
       %hr
       .note_content.serif.mb-2= @note.rich_content
-      - if @note.citation
-        %p.font-weight-bold= t('content.citation_header')
-        %p= render_citation @note.citation
+      = render @note.citation if @note.citation
       = render partial: 'shared/tag_list', locals: { list: @note.tag_list, class_list: 'mt-5' }
       = render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: 'mt-3' }

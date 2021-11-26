@@ -15,9 +15,7 @@
       - if @photo.description.present?
         %p= @photo.description
 
-      - if @photo.citation
-        %p.font-weight-bold= t('content.citation_header')
-        %p= render_citation @photo.citation
+      = render @photo.citation if @photo.citation
 
       = render partial: 'shared/tag_list', locals: { list: @photo.tag_list, class_list: 'mt-5' }
       = render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: 'mt-3' }

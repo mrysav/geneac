@@ -52,7 +52,7 @@ en:
       create: 'Created %{title}'
       update: 'Updated %{title}'
   content:
-    citation_header: 'Citation:'
+    citation_header: 'Citation'
   people:
     bio: 'Biography'
     timeline: 'Timeline'
