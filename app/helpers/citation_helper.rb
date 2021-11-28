@@ -14,11 +14,11 @@ module CitationHelper
     return citation.text unless citation.attrs && citation.attrs['links']
 
     citation_text = html_escape(citation.text)
-    citation.attrs['links'].each do |link|
-      citation_text.sub!(
-        html_escape(link['text']),
-        link_to(link['text'], link['url'])
-      )
+    citation.attrs['links'].reverse_each do |link|
+      split = link['index']
+      before = html_escape(citation_text.slice(0, split))
+      after = citation_text.slice(split + link['text'].length, citation_text.length)
+      citation_text = "#{before}#{link_to(link['text'], link['url'])}#{after}"
     end
 
     citation_text
