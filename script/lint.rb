@@ -9,7 +9,7 @@ untracked_files = `git ls-files --others --exclude-standard`.lines
 files_to_lint = changed_files + untracked_files
 
 CLOUDFORMATION = %r{script/geneac-aws\.yml}.freeze
-HAML = /\.haml/.freeze
+HAML = /\.haml$/.freeze
 MARKDOWN = /\.md/.freeze
 RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/.freeze
 VENDOR = %r{vendor/}.freeze

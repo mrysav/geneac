@@ -23,27 +23,28 @@
     - else
       :ruby
         tagged_people = policy_scope(event.tagged_people)
-        show_collapsible = event.description.presence || tagged_people.count.positive? || event.citations&.count > 0
+        citation_count = event.citations&.count
+        show_collapsible = event.description.presence || tagged_people.count.positive? || citation_count.positive?
       %div{ style: show_collapsible ? 'cursor: pointer' : '',
             'data-toggle': 'collapse',
             'data-target': "#extra-#{event_id}",
             'aria-expanded': false,
             'aria-controls': "extra-#{event_id}" }
-        %h5.mt-0= event.title
+        %h5.mt-0{ style: show_collapsible ? 'text-decoration: underline' : '' }= event.title
         = event.location
         - if show_collapsible
           .collapse{ id: "extra-#{event_id}" }
             .card.card-body
               - if event.description.presence
                 .mb-2.pb-2.border-bottom= event.description
-              - if tagged_people&.count > 0
+              - if tagged_people.count.positive?
                 .mb-2
                   %strong= t('people.tagged_people')
                   - tagged_people.each do |p|
                     %div
                       = link_to p.title, p.friendly_url, target: '_blank', rel: 'noopener'
                       %i.fas.fa-external-link-alt
-              - if event.citations&.count > 0
+              - if citation_count.positive?
                 .mb-2
                   %strong= t('people.citations')
                   %ol
