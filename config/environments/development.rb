@@ -83,8 +83,7 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # always log to stdout in development
-  logger = ActiveSupport::Logger.new($stdout)
-  logger.formatter = config.log_formatter
-  config.logger = ActiveSupport::TaggedLogging.new(logger)
+  # Log to stdout at the info level in development (debug is dumped to file)
+  $stdout.sync = true
+  config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format, level: :info)
 end

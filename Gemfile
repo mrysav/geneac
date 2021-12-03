@@ -142,7 +142,12 @@ gem 'haml-rails'
 # Parses links out of strings
 gem 'linkify-it-rb'
 
+# Profiler and perf
 gem 'flamegraph'
 gem 'memory_profiler'
 gem 'rack-mini-profiler', '~> 2.0'
 gem 'stackprof'
+
+# Semantic logging
+gem 'amazing_print'
+gem 'rails_semantic_logger'
