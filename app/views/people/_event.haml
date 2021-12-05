@@ -49,4 +49,4 @@
                   %strong= t('people.citations')
                   %ol
                     - event.citations&.each do |c|
-                      %li= render_citation c
+                      %li= sanitize render_citation(c)

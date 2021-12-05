@@ -29,9 +29,9 @@ RSpec.describe CitationHelper, type: :helper do
       expect(rendered_text).to match %r{<a href="http://www.example.com"}
     end
 
-    it 'escapes html' do
+    it 'does not escape html' do
       rendered_text = helper.render_citation citation
-      expect(rendered_text).not_to match %r{<i>.+</i>}
+      expect(rendered_text).to match %r{<i>.+</i>}
     end
   end
 end
