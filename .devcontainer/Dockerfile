@@ -33,6 +33,6 @@ RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmi
   && chmod +x /usr/local/bin/overmind
 
 COPY . /tmp/workspace
-RUN cd /tmp/workspace && bundle install && yarn install
+RUN cd /tmp/workspace && bundle install && su vscode -c "yarn install"
 RUN rm -rf /tmp/workspace
 
