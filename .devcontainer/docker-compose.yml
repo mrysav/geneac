@@ -2,11 +2,7 @@ version: '3'
 
 services:
   app:
-    build:
-      cache_from:
-        - "ghcr.io/mrysav/geneac-devcontainer:latest"
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+    image: "ghcr.io/mrysav/geneac-devcontainer:latest"
 
     environment:
       PORT: 5000
