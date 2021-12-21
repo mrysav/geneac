@@ -4,7 +4,7 @@ services:
   app:
     build:
       cache_from:
-        - "docker.io/mrysav/geneac-devcontainer:latest"
+        - "ghcr.io/mrysav/geneac-devcontainer:latest"
       context: ..
       dockerfile: .devcontainer/Dockerfile
 
