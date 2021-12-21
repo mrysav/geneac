@@ -3,13 +3,10 @@ version: '3'
 services:
   app:
     build:
+      cache_from:
+        - "docker.io/mrysav/geneac-devcontainer:latest"
       context: ..
       dockerfile: .devcontainer/Dockerfile
-      args:
-        # [Choice] Ruby version: 3, 3.0, 2, 2.7, 2.6, 2.5
-        VARIANT: 2
-        # [Choice] Node.js version: lts/*, 16, 14, 12, 10
-        NODE_VERSION: 'lts/*'
 
     environment:
       PORT: 5000

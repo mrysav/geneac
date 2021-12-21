@@ -31,3 +31,6 @@ RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmi
   && gunzip /tmp/overmind.gz \
   && mv /tmp/overmind /usr/local/bin \
   && chmod +x /usr/local/bin/overmind
+
+COPY Gemfile* /tmp/
+RUN bash -c "cd /tmp && bundle install && rm /tmp/Gemfile*"
