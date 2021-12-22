@@ -1,9 +1,6 @@
 # [Choice] Ruby version: 2, 2.7, 2.6, 2.5
 ARG VARIANT=2
-FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
-
-# Install Rails
-RUN gem install rails webdrivers
+FROM mcr.microsoft.com/vscode/devcontainers/ruby:${VARIANT}
 
 # Default value to allow debug server to serve content over GitHub Codespaces' port forwarding service
 # The value is a comma-separated list of allowed domains
@@ -32,7 +29,15 @@ RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmi
   && mv /tmp/overmind /usr/local/bin \
   && chmod +x /usr/local/bin/overmind
 
+# Copy all the files into the container
 COPY . /tmp/workspace
-RUN cd /tmp/workspace && bundle install && su vscode -c "yarn install"
+RUN chown -R vscode /tmp/workspace
+WORKDIR /tmp/workspace
+USER vscode
+
+RUN bundle install
+RUN yarn install
+
 RUN rm -rf /tmp/workspace
 
+WORKDIR /home/vscode
