@@ -77,7 +77,9 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # Log to stdout at the info level in development (debug is dumped to file)
+  # Log to stdout at the info level in development
   $stdout.sync = true
+  # Comment to write development debug logs to file
+  config.rails_semantic_logger.add_file_appender = false
   config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format, level: :info)
 end
