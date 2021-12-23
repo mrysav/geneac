@@ -1,25 +1,25 @@
 - @nav_hide_search = true
 .page-background
-  .container
-    .row
-      .py-5.mx-auto.text-center
-        %h1.display-4= setting(:site_title)
-        - if setting(:site_tagline)
-          %i.lead= setting(:site_tagline)
-    .row.search-bar-opacity
-      %form.py-5.col-md-8.offset-md-2.col-sm-12{ action: '/search' }
-        .input-group
-          %input.form-control{ type: 'search', 'aria-label': t('nav.search'), name: 's', id: 's' }
-          .input-group-append
-            %button.btn.btn-secondary{ type: 'submit' }= t('nav.search')
-    .row
-      - if setting(:show_recent_updates) && @recent_updates.present?
-        .recent-widgets.col-4.p-4.frosted-background
-          %h2.text-center= t('home.recent_updates')
-          - @recent_updates.each do |recent_update|
-            = render partial: 'shared/search_doc', locals: { doc: recent_update }
-      - if setting(:show_recent_birthdays) && @recent_birthdays.present?
-        .recent-widgets.col-4.p-4.frosted-background
-          %h2.text-center= t('home.recent_birthdays')
-          - @recent_birthdays.each do |recent_birthday|
-            = render partial: 'shared/birthday', locals: { birthday: recent_birthday }
+.container
+  .row
+    .py-5.mx-auto.text-center
+      %h1.display-4= setting(:site_title)
+      - if setting(:site_tagline)
+        %i.lead= setting(:site_tagline)
+  .row.search-bar-opacity
+    %form.py-5.col-md-8.offset-md-2.col-sm-12{ action: '/search' }
+      .input-group
+        %input.form-control{ type: 'search', 'aria-label': t('nav.search'), name: 's', id: 's' }
+        .input-group-append
+          %button.btn.btn-secondary{ type: 'submit' }= t('nav.search')
+  .row
+    - if setting(:show_recent_updates) && @recent_updates.present?
+      .recent-widgets.col-4.p-4.frosted-background
+        %h2.text-center= t('home.recent_updates')
+        - @recent_updates.each do |recent_update|
+          = render partial: 'shared/search_doc', locals: { doc: recent_update }
+    - if setting(:show_recent_birthdays) && @recent_birthdays.present?
+      .recent-widgets.col-4.p-4.frosted-background
+        %h2.text-center= t('home.recent_birthdays')
+        - @recent_birthdays.each do |recent_birthday|
+          = render partial: 'shared/birthday', locals: { birthday: recent_birthday }
