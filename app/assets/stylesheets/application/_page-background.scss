@@ -7,7 +7,7 @@
     right: 0;
     bottom: 0;
 
-    background-image: url("<%= asset_path 'bg_lonelytree.jpg' %>");
+    background-image: url('bg_lonelytree.jpg');
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: cover;
