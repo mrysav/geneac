@@ -1,5 +1,5 @@
 # [Choice] Ruby version: 2, 2.7, 2.6, 2.5
-ARG VARIANT=2
+ARG VARIANT=3
 FROM mcr.microsoft.com/vscode/devcontainers/ruby:${VARIANT}
 
 # Default value to allow debug server to serve content over GitHub Codespaces' port forwarding service
