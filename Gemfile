@@ -55,8 +55,7 @@ group :test do
   gem 'webdrivers'
 
   # Code coverage
-  # CodeClimate doesn't support 0.18+
-  gem 'simplecov', '< 0.18', require: false
+  gem 'simplecov', require: false
 
   # Fancier matchers!
   gem 'shoulda-matchers', '~> 5.0'
