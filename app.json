@@ -28,10 +28,6 @@
     "MAILER_SENDER": {
       "description": "The email address this application will send email from."
     },
-    "NODE_MODULES_CACHE": {
-      "description": "Force node_modules cache in Heroku builds.",
-      "value": true
-    },
     "S3_BUCKET_NAME": {
       "description": "The S3 bucket name this application will use for storage."
     },
@@ -64,6 +60,9 @@
   "buildpacks": [
     {
       "url": "heroku/ruby"
+    },
+    {
+      "url": "heroku/nodejs"
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
