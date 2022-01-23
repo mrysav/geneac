@@ -109,8 +109,7 @@ gem 'administrate', '~> 0.13'
 gem 'administrate-field-nested_has_many'
 
 # For content tagging
-# TODO: pin this on a stable version once a version is released with rails 7 support
-gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 9.0'
 
 gem 'aws-sdk-rails'
 group :production do

@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/mbleigh/acts-as-taggable-on.git
-  revision: 6fbd9d1434f3b628653cb9c5616f2cfe70892b89
-  specs:
-    acts-as-taggable-on (9.0.0)
-      activerecord (>= 6.0, < 7.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -67,6 +60,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    acts-as-taggable-on (9.0.1)
+      activerecord (>= 6.0, < 7.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     administrate (0.16.0)
@@ -518,7 +513,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on!
+  acts-as-taggable-on (~> 9.0)
   administrate (~> 0.13)
   administrate-field-nested_has_many
   amazing_print
