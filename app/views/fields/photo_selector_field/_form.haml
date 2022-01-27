@@ -1,0 +1,30 @@
+-# Photo Selector Partial
+
+.field-unit__label
+  = f.label field.attribute
+
+.field-unit__field
+  - if field.photos.size.positive?
+    .photo-selector
+      - field.photos.each do |photo|
+        = image_tag photo.image.variant(resize_to_limit: [200, 200]),
+          class: "img-thumbnail img-preview #{field.data.id == photo.id ? 'selected' : ''}"
+  - else
+    %div This person is not tagged in any photos to choose from.
+
+
+-# <div class="field-unit__label">
+-#   <%= f.label field.attribute %>
+-# </div>
+-# <div class="field-unit__field">
+-#   <%= f.text_field field.attribute %>
+-# </div>
+
+
+-# <div class="field-unit__label">
+-#   <%= f.label field.attribute %>
+-# </div>
+
+-# <div class="field-unit__field" data-controller="person-tag-list-field">
+-#   <%= f.text_field field.attribute, value: (field.data || []).join(', ') + ', ', data: {'person-tag-list-field-target': 'value'} %>
+-# </div>

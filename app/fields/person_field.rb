@@ -9,6 +9,6 @@ class PersonField < Administrate::Field::Base
   end
 
   def to_s
-    Person.find(data).title if Person.exists?(data)
+    Person.find_by(id: data)&.title
   end
 end

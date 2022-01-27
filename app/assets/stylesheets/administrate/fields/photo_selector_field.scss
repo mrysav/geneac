@@ -1,0 +1,14 @@
+.photo-selector {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  img {
+    padding: 5px;
+
+    &.selected {
+      background: blue;
+    }
+  }
+
+}

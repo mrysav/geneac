@@ -10,6 +10,7 @@ files_to_lint = changed_files + untracked_files
 
 CLOUDFORMATION = %r{script/geneac-aws\.yml}.freeze
 HAML = /\.haml$/.freeze
+ERB = /\.erb$/.freeze
 MARKDOWN = /\.md/.freeze
 RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/.freeze
 VENDOR = %r{vendor/}.freeze
@@ -19,6 +20,10 @@ all_pass = true
 
 def run_linter(name, file)
   command = "#{name} #{file}"
+  unless File.exist?(file)
+    # file was deleted
+    return [command, true, 'File was deleted.']
+  end
   stdout, stderr, status = Open3.capture3(command)
   [command, status.success?, [stdout, stderr].join("\n")]
 end
@@ -34,6 +39,8 @@ files_to_lint.each do |f|
     command, success, output = run_linter('cfn-lint', f)
   elsif HAML.match(f)
     command, success, output = run_linter('haml-lint', f)
+  elsif ERB.match(f)
+    command, success, output = run_linter('erblint', f)
   else
     unchecked_files << f
     next
