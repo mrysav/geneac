@@ -7,8 +7,9 @@
     .person-field-selected {
       display: none;
 
-      i {
+      .close {
         cursor: pointer;
+        font-weight: bold;
       }
     }
   }

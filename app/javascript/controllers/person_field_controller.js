@@ -22,7 +22,7 @@ export default class extends Controller {
         '.person-field-selected'
       )
       let personNameField = selectedPersonElement.querySelector('.name')
-      let closeBtn = selectedPersonElement.querySelector('i')
+      let closeBtn = selectedPersonElement.querySelector('.close')
 
       let populatePersonField = function (personId) {
         personIdInput.value = personId

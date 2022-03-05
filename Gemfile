@@ -132,9 +132,6 @@ gem 'pagy'
 # Backup/restore with zip file
 gem 'rubyzip'
 
-# FontAwesome - using Rails/Sprockets version since there is no JS
-gem 'font-awesome-sass', '~> 5.12.0'
-
 # Haml templating
 gem 'haml'
 gem 'haml-rails'

@@ -195,8 +195,6 @@ GEM
       i18n (>= 1.6, < 2)
     ffi (1.15.5)
     flamegraph (0.9.5)
-    font-awesome-sass (5.12.0)
-      sassc (>= 1.11)
     globalid (1.0.0)
       activesupport (>= 5.0)
     haml (5.2.2)
@@ -558,7 +556,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   flamegraph
-  font-awesome-sass (~> 5.12.0)
   haml
   haml-rails
   haml_lint

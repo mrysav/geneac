@@ -62,10 +62,10 @@ export default class extends Controller {
       }
 
       let li = document.createElement('li')
-      li.innerHTML = name + ' <a href="#"><i class="fas fa-times"></i></a>'
+      li.innerHTML = name + ' <span class="close">X</a>'
       li.classList.add('tag-' + value)
 
-      li.querySelector('a').addEventListener('click', function (event) {
+      li.querySelector('.close').addEventListener('click', function (event) {
         event.preventDefault()
         deleteTag(value)
       })
