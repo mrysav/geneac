@@ -9,9 +9,11 @@ untracked_files = `git ls-files --others --exclude-standard`.lines
 files_to_lint = changed_files + untracked_files
 
 CLOUDFORMATION = %r{script/geneac-aws\.yml}.freeze
+ERB = /\.erb$/.freeze
 HAML = /\.haml$/.freeze
 MARKDOWN = /\.md/.freeze
 RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/.freeze
+
 VENDOR = %r{vendor/}.freeze
 
 unchecked_files = []
@@ -34,6 +36,8 @@ files_to_lint.each do |f|
     command, success, output = run_linter('cfn-lint', f)
   elsif HAML.match(f)
     command, success, output = run_linter('haml-lint', f)
+  elsif ERB.match(f)
+    command, success, output = run_linter('erblint', f)
   else
     unchecked_files << f
     next
