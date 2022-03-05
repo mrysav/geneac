@@ -1,14 +1,15 @@
-.person-field {
+.field-unit--person-field {
+  .field-unit__field {
+    .person-field-search {
+      display: none;
+    }
 
-  .person-field-search {
-    display: none;
-  }
+    .person-field-selected {
+      display: none;
 
-  .person-field-selected {
-    display: none;
-
-    i {
-      cursor: pointer;
+      i {
+        cursor: pointer;
+      }
     }
   }
 }
