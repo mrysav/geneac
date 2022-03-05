@@ -3,9 +3,6 @@
   @edit_link = edit_admin_person_url(person.id)
 
 .person-cover-image
-:javascript
-  var coverImg = "#{asset_path 'cover/house_grass_field.jpg'}"
-  document.querySelector('.person-cover-image').style.backgroundImage = "url('" + coverImg + "')"
 
 .container.person-container
   .row.name-header{ class: [(:photo if person.profile_photo)] }
