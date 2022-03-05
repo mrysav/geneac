@@ -1,7 +1,5 @@
 //= link_tree ../images
 
-//= link application.css
-
 //= link administrate.css
 //= link administrate.js
 
