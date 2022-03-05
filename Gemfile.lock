@@ -160,6 +160,8 @@ GEM
       countries (~> 4.2)
       sort_alphabetical (~> 1.1)
     crass (1.0.6)
+    cssbundling-rails (1.1.0)
+      railties (>= 6.0.0)
     database_cleaner-active_record (2.0.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
@@ -550,6 +552,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   chronic
   country_select
+  cssbundling-rails (~> 1.0)
   database_cleaner-active_record
   devise (~> 4.7)
   erb_lint

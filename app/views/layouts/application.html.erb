@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title><%= (@title + ' - ') if @title %><%= setting(:site_title) || t('nav.geneac') %></title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <title><%= (@title + ' - ') if @title %><%= setting(:site_title) || t('nav.geneac') %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application.bootstrap' %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>

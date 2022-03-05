@@ -8,11 +8,13 @@
     "@rails/ujs": "^7.0.0",
     "@rails/webpacker": "^5.4.0",
     "awesomplete": "^1.1.4",
-    "bootstrap": "~4",
+    "bootstrap": "< 5",
+    "bootstrap-icons": "^1.8.1",
     "chrono-node": "~2",
     "jquery": "^3.4.0",
     "moment": "^2.24.0",
     "popper.js": "^1.14.3",
+    "sass": "^1.49.9",
     "stimulus": "~2",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
@@ -32,5 +34,8 @@
     "prettier": "^2.2.1",
     "webpack-dev-server": "^3.11.2"
   },
-  "packageManager": "yarn@2.4.2"
+  "packageManager": "yarn@2.4.2",
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.bootstrap.css --no-source-map --load-path=node_modules"
+  }
 }
