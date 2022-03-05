@@ -1,11 +1,5 @@
 @import 'bootstrap/scss/bootstrap';
-
 @import '**/*';
-
-// Local styles
-
-$font-primary: black;
-$secondary: #c9c9c9;
 
 .serif {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -13,19 +7,19 @@ $secondary: #c9c9c9;
 
 a.tag {
   text-decoration: none;
-  color: $font-primary;
-  background-color: $secondary;
+  color: black;
+  background-color: #c9c9c9;
   font-size: small;
   display: inline-block;
 
   &:hover {
     text-decoration: none;
-    color: $font-primary;
+    color: black;
     opacity: 0.8;
   }
 
   &:visited {
-    color: $font-primary;
+    color: black;
   }
 }
 

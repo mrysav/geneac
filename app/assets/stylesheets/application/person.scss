@@ -40,6 +40,17 @@
       background-color: white;
     }
   }
+
+  .person-nav {
+    a.person-top-link {
+      font-size: large;
+      color: black;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .family-tile {

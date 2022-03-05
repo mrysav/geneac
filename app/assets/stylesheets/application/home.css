@@ -1,5 +1,13 @@
-.page-background {
-  &::before {
+.search-bar-opacity input {
+  opacity: 0.65;
+}
+
+.recent-widgets {
+  min-width: 500px;
+  margin: 5px;
+}
+
+.page-background::before {
     content: '';
     position: absolute;
     top: 0;
@@ -17,6 +25,7 @@
     z-index: -1;
   }
 
+.page-background {
   position: fixed;
   height: 100vh;
   width: 100vw;
