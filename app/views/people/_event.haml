@@ -13,13 +13,13 @@
           - if event.title_link
             .mb-0.align-text-bottom
               = link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener'
-              %span &#x1f517;
+              %i.bi.bi-box-arrow-up-right
     - elsif event.title_link
       %h5.mt-0= event.title
       = event.location
       .mb-0.align-text-bottom
         = link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener'
-        %span &#x1f517;
+        %i.bi.bi-box-arrow-up-right
     - else
       :ruby
         tagged_people = policy_scope(event.tagged_people)
@@ -43,7 +43,7 @@
                   - tagged_people.each do |p|
                     %div
                       = link_to p.title, p.friendly_url, target: '_blank', rel: 'noopener'
-                      %span &#x1f517;
+                      %i.bi.bi-box-arrow-up-right
               - if citation_count.positive?
                 .mb-2
                   %strong= t('people.citations')
