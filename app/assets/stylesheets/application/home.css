@@ -2,11 +2,6 @@
   opacity: 0.65;
 }
 
-.recent-widgets {
-  min-width: 500px;
-  margin: 5px;
-}
-
 .page-background::before {
     content: '';
     position: absolute;

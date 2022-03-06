@@ -12,14 +12,16 @@
         %input.form-control{ type: 'search', 'aria-label': t('nav.search'), name: 's', id: 's' }
         .input-group-append
           %button.btn.btn-secondary{ type: 'submit' }= t('nav.search')
-  .row
+  .row.mb-4
     - if setting(:show_recent_updates) && @recent_updates.present?
-      .recent-widgets.col-4.p-4.frosted-background
-        %h2.text-center= t('home.recent_updates')
-        - @recent_updates.each do |recent_update|
-          = render partial: 'shared/search_doc', locals: { doc: recent_update }
+      .col-sm-12.col-md-6.col-lg-4.offset-lg-2
+        .frosted-background.p-4
+          %h2.text-center= t('home.recent_updates')
+          - @recent_updates.each do |recent_update|
+            = render partial: 'shared/search_doc', locals: { doc: recent_update }
     - if setting(:show_recent_birthdays) && @recent_birthdays.present?
-      .recent-widgets.col-4.p-4.frosted-background
-        %h2.text-center= t('home.recent_birthdays')
-        - @recent_birthdays.each do |recent_birthday|
-          = render partial: 'shared/birthday', locals: { birthday: recent_birthday }
+      .col-sm-12.col-md-6.col-lg-4
+        .frosted-background.p-4
+          %h2.text-center= t('home.recent_birthdays')
+          - @recent_birthdays.each do |recent_birthday|
+            = render partial: 'shared/birthday', locals: { birthday: recent_birthday }
