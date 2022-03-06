@@ -71,6 +71,7 @@ en:
     view: 'View'
     tagged_people: 'Tags'
     citations: 'Citations'
+    show_more: 'Show more'
   search:
     total_results: 'Total results: %{total}'
     type: 'Type: %{type}'

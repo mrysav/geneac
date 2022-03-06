@@ -7,8 +7,9 @@
 .container.person-container
   .row.name-header{ class: [(:photo if person.profile_photo)] }
     - if person.profile_photo
-      = image_tag(person.profile_photo.image.variant(resize_to_limit: [200, 200]),
-                  class: 'img-fluid mx-auto main-photo')
+      .col-sm-12
+        = image_tag(person.profile_photo.image.variant(resize_to_limit: [200, 200]),
+                    class: 'img-fluid mx-auto main-photo')
     %h2.col-lg-8.offset-lg-2.col-md-12.mt-3= person.full_name
   .row.mt-3.person-nav
     .col-4.col-lg-2.offset-lg-3.text-center

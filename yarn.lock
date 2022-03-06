@@ -1282,6 +1282,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:^2.11.2":
+  version: 2.11.2
+  resolution: "@popperjs/core@npm:2.11.2"
+  checksum: 6e89d94f6bec0116ea191b3cd3bb830a6b6670141c45373f2b242a4780cce1564cd8ff7a584f2f4017dc9a4f67ed899f99bcc5f07de1da1c0f8f2c6804fc45fe
+  languageName: node
+  linkType: hard
+
 "@rails/actioncable@npm:^7.0.0":
   version: 7.0.0
   resolution: "@rails/actioncable@npm:7.0.0"
@@ -2273,13 +2280,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:< 5":
-  version: 4.6.1
-  resolution: "bootstrap@npm:4.6.1"
+"bootstrap@npm:^5.0":
+  version: 5.1.3
+  resolution: "bootstrap@npm:5.1.3"
   peerDependencies:
-    jquery: 1.9.1 - 3
-    popper.js: ^1.16.1
-  checksum: e08169f438a67af698053e3c58735526166a692c395ab33b24e3a689539135d1198ab72567f6cece90348e5e00acaf5181272b3dd47ce2b8bab8339968bbe2b0
+    "@popperjs/core": ^2.10.2
+  checksum: 7d5d67897ccbcef1e282b75561b0d5e6bdc7ab1008e3680bff5979905949cd4414d08eb526c2b1437c2087f6b80f3543b029d1c5c55658029b648ef265aa1b32
   languageName: node
   linkType: hard
 
@@ -4648,6 +4654,7 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "geneac@workspace:."
   dependencies:
+    "@popperjs/core": ^2.11.2
     "@rails/actioncable": ^7.0.0
     "@rails/actiontext": ^7.0.0
     "@rails/activestorage": ^7.0.0
@@ -4655,7 +4662,7 @@ fsevents@~2.3.2:
     "@rails/webpacker": ^5.4.0
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
-    bootstrap: < 5
+    bootstrap: ^5.0
     bootstrap-icons: ^1.8.1
     chrono-node: ~2
     eslint: ^7.22.0
@@ -4666,9 +4673,7 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: ^3.1.2
     eslint-plugin-promise: ^4.0.1
     eslint-plugin-standard: ^5.0.0
-    jquery: ^3.4.0
     moment: ^2.24.0
-    popper.js: ^1.14.3
     prettier: ^2.2.1
     sass: ^1.49.9
     stimulus: ~2
@@ -5798,13 +5803,6 @@ fsevents@~2.3.2:
     merge-stream: ^2.0.0
     supports-color: ^7.0.0
   checksum: 5eb349833b5e9750ce8700388961dfd5d5e207c913122221e418e48b9cda3c17b0fb418f6a90f1614cfdc3ca836158b720c5dc1de82cb1e708266b4d76e31a38
-  languageName: node
-  linkType: hard
-
-"jquery@npm:^3.4.0":
-  version: 3.6.0
-  resolution: "jquery@npm:3.6.0"
-  checksum: a0a819022a1bdff5efa79bbd9d4d7352de5bd32dabe42108e6ec0797238dba36c09c108e0eea2724f5d03acc1b30ee87d76bec80e15b9510106532292ebe6ba4
   languageName: node
   linkType: hard
 
@@ -7350,13 +7348,6 @@ fsevents@~2.3.2:
   dependencies:
     ts-pnp: ^1.1.6
   checksum: 756163c5d0460a22353606dc44c2041fbb15e235cc9aac063755c885b090fc68c7c4d9dac68bdd3970716bd98bf2fae521a62ba97146f489cd5d8c08d84fa2f3
-  languageName: node
-  linkType: hard
-
-"popper.js@npm:^1.14.3":
-  version: 1.16.1
-  resolution: "popper.js@npm:1.16.1"
-  checksum: eb53806fb7680e31c7d1db096f95438a40a7cb869f7ee0e27100c0860f11583a0d322606c6073618e7fe8865f834ec36482901b547256d9a0cf2b22434bca75d
   languageName: node
   linkType: hard
 

@@ -25,12 +25,15 @@
         tagged_people = policy_scope(event.tagged_people)
         citation_count = event.citations&.count
         show_collapsible = event.description.presence || tagged_people.count.positive? || citation_count.positive?
-      %div{ style: show_collapsible ? 'cursor: pointer' : '',
-            'data-toggle': 'collapse',
-            'data-target': "#extra-#{event_id}",
-            'aria-expanded': false,
-            'aria-controls': "extra-#{event_id}" }
-        %h5.mt-0{ style: show_collapsible ? 'text-decoration: underline' : '' }= event.title
+      %div
+        - if show_collapsible
+          %button.btn.btn-link.float-end{
+              'data-bs-toggle': 'collapse',
+              'data-bs-target': "#extra-#{event_id}",
+              'aria-expanded': false,
+              'aria-controls': "extra-#{event_id}"
+          }= t('people.show_more')
+        %h5.mt-0= event.title
         = event.location
         - if show_collapsible
           .collapse{ id: "extra-#{event_id}" }
