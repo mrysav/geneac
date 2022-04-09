@@ -12,7 +12,7 @@
     "bootstrap": "^5.0",
     "bootstrap-icons": "^1.8.1",
     "chrono-node": "~2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "sass": "^1.49.9",
     "stimulus": "~2",
     "trix": "^1.0.0",
