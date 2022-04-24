@@ -603,7 +603,7 @@ DEPENDENCIES
   yard
 
 RUBY VERSION
-   ruby 3.1.1p18
+   ruby 3.1.2
 
 BUNDLED WITH
    2.2.32

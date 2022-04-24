@@ -8,7 +8,7 @@ ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev"
 
 # [Choice] Node.js version: lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="lts/*"
-RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"
+RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} && npm install -g markdownlint-cli 2>&1"
 
 # Install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -16,12 +16,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 # Install python packages
 RUN pip3 install mkdocs mkdocs-material cfn-lint
-
-# Install additional gems.
-RUN gem install foreman
-
-# Install global node packages.
-RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g markdownlint-cli" 2>&1
 
 # Install overmind
 RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmind-v2.2.2-linux-amd64.gz > /tmp/overmind.gz \
@@ -35,9 +29,9 @@ RUN chown -R vscode /tmp/workspace
 WORKDIR /tmp/workspace
 USER vscode
 
-RUN bundle install
-RUN yarn install
+RUN rbenv install && bundle install && yarn install && rm -rf /tmp/workspace
 
-RUN rm -rf /tmp/workspace
+# Install additional gems.
+RUN gem install foreman
 
 WORKDIR /home/vscode
