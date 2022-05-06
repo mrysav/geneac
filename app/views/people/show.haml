@@ -1,8 +1,8 @@
 = render partial: 'header', locals: { person: @person, tab: :bio }
 
 .container.person-container
-  .row
-    - if @person.bio.present?
+  - if @person.bio.present?
+    .row
       .col-sm-12.col-md-8.offset-md-2.serif.my-4
         .person-bio.border.rounded.p-2.bg-light
           %h4.mb-4= t('people.bio')
