@@ -24,8 +24,11 @@ export default class extends Controller {
 
       lastValue = text
       const url = suggestionsUrlTemplate.replace('%s', encodeURIComponent(text))
-      ajax.get(url, (response) => {
-        completer.list = response
+      ajax.get({
+        endpoint: url,
+        callback: (response) => {
+          completer.list = response
+        },
       })
     })
   }

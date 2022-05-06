@@ -15,55 +15,61 @@ export default class extends Controller {
   connect() {
     const element = this.valueTarget
 
-    ajax.get(people_tags_url, (peopleList) => {
-      let personSearchBox = element.querySelector('.person-field-search')
-      let personIdInput = element.querySelector('.person-field-id')
-      let selectedPersonElement = element.querySelector(
-        '.person-field-selected'
-      )
-      let personNameField = selectedPersonElement.querySelector('.name')
-      let closeBtn = selectedPersonElement.querySelector('.close')
+    ajax.get({
+      endpoint: people_tags_url,
+      callback: (peopleList) => {
+        let personSearchBox = element.querySelector('.person-field-search')
+        let personIdInput = element.querySelector('.person-field-id')
+        let selectedPersonElement = element.querySelector(
+          '.person-field-selected'
+        )
+        let personNameField = selectedPersonElement.querySelector('.name')
+        let closeBtn = selectedPersonElement.querySelector('.close')
 
-      let populatePersonField = function (personId) {
-        personIdInput.value = personId
-        ajax.get(`${person_url}${personId}`, function (person) {
-          personNameField.textContent = person.title
-          selectedPersonElement.style.display = 'inline'
-          personSearchBox.style.display = 'none'
-          closeBtn.style.display = 'inline'
-        })
-      }
-
-      closeBtn.addEventListener('click', function (event) {
-        personIdInput.value = ''
-        selectedPersonElement.style.display = 'none'
-        personSearchBox.style.display = 'block'
-        closeBtn.style.display = 'none'
-      })
-
-      if (personIdInput.value) {
-        populatePersonField(personIdInput.value)
-      } else {
-        personSearchBox.style.display = 'block'
-      }
-
-      let initializeAwesomplete = function () {
-        return new Awesomplete(personSearchBox, {
-          list: peopleList,
-          replace: function () {
-            this.input.value = ''
-          },
-        })
-      }
-
-      personSearchBox.addEventListener(
-        'awesomplete-selectcomplete',
-        function (event) {
-          populatePersonField(event.text.value)
+        let populatePersonField = function (personId) {
+          personIdInput.value = personId
+          ajax.get({
+            endpoint: `${person_url}${personId}`,
+            callback: function (person) {
+              personNameField.textContent = person.title
+              selectedPersonElement.style.display = 'inline'
+              personSearchBox.style.display = 'none'
+              closeBtn.style.display = 'inline'
+            },
+          })
         }
-      )
 
-      initializeAwesomplete()
+        closeBtn.addEventListener('click', function (event) {
+          personIdInput.value = ''
+          selectedPersonElement.style.display = 'none'
+          personSearchBox.style.display = 'block'
+          closeBtn.style.display = 'none'
+        })
+
+        if (personIdInput.value) {
+          populatePersonField(personIdInput.value)
+        } else {
+          personSearchBox.style.display = 'block'
+        }
+
+        let initializeAwesomplete = function () {
+          return new Awesomplete(personSearchBox, {
+            list: peopleList,
+            replace: function () {
+              this.input.value = ''
+            },
+          })
+        }
+
+        personSearchBox.addEventListener(
+          'awesomplete-selectcomplete',
+          function (event) {
+            populatePersonField(event.text.value)
+          }
+        )
+
+        initializeAwesomplete()
+      },
     })
   }
 }

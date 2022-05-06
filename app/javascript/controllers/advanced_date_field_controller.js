@@ -1,6 +1,7 @@
 import { Controller } from 'stimulus'
-import chrono from '../lib/custom_chrono'
-import moment from 'moment'
+import ajax from '../lib/ajax'
+
+const parse_date_url = '/ajax/parse_date'
 
 export default class extends Controller {
   static targets = ['help', 'value']
@@ -16,13 +17,18 @@ export default class extends Controller {
     const parsedStr = help.dataset.parsed
     const unknownStr = help.dataset.unknown
 
-    const date = moment(chrono.parseDate(dateText))
-    if (date.isValid()) {
-      help.textContent = `${parsedStr}${date.format('LL')}`
-    } else if (dateText.trim() !== '') {
-      help.textContent = `${parsedStr}${unknownStr}`
-    } else {
-      help.textContent = ''
-    }
+    ajax.get({
+      endpoint: `${parse_date_url}?d=${encodeURI(dateText)}`,
+      callback: (date, error) => {
+        if (date.trim() !== '') {
+          help.textContent = `${parsedStr}${date}`
+        } else if (dateText.trim() !== '') {
+          help.textContent = `${parsedStr}${unknownStr}`
+        } else {
+          help.textContent = ''
+        }
+      },
+      parse_json: false,
+    })
   }
 }

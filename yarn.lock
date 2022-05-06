@@ -2698,15 +2698,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chrono-node@npm:~2":
-  version: 2.3.1
-  resolution: "chrono-node@npm:2.3.1"
-  dependencies:
-    dayjs: ^1.10.0
-  checksum: fa35270c8728ec69d36197370b85d2d5c9f624c6816e7912509f426cc65d7d7d92c53f476fb885a27708ee53ec0842c1cc04f513ad32b4b7c84ae32e75524714
-  languageName: node
-  linkType: hard
-
 "cipher-base@npm:^1.0.0, cipher-base@npm:^1.0.1, cipher-base@npm:^1.0.3":
   version: 1.0.4
   resolution: "cipher-base@npm:1.0.4"
@@ -3368,13 +3359,6 @@ __metadata:
   version: 1.0.1
   resolution: "cyclist@npm:1.0.1"
   checksum: 74bc0a48c37bed8a430f103d0a880902768b7e3bcc0f9e098c4bd9630438c6b053b88e33c127e41316bb2da8d642a937015961a6cd563641ad2a5798dfecadd9
-  languageName: node
-  linkType: hard
-
-"dayjs@npm:^1.10.0":
-  version: 1.10.6
-  resolution: "dayjs@npm:1.10.6"
-  checksum: 474d21162c12d269d40e90cb3ce049bb2d987b8038c173224c8eb5805d6f38f07d11875779a81e282d8f889d3803c4bbb91d09b6ee08a1a44ae60ec26afd8f45
   languageName: node
   linkType: hard
 
@@ -4664,7 +4648,6 @@ fsevents@~2.3.2:
     babel-eslint: ^10.0.3
     bootstrap: ^5.0
     bootstrap-icons: ^1.8.1
-    chrono-node: ~2
     eslint: ^7.22.0
     eslint-config-prettier: ^8.1.0
     eslint-config-standard: ^16.0.2
@@ -4673,7 +4656,6 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: ^3.1.2
     eslint-plugin-promise: ^4.0.1
     eslint-plugin-standard: ^5.0.0
-    moment: ^2.24.0
     prettier: ^2.2.1
     sass: ^1.49.9
     stimulus: ~2
@@ -6495,13 +6477,6 @@ fsevents@~2.3.2:
   bin:
     mkdirp: bin/cmd.js
   checksum: 1aa3a6a2d7514f094a91329ec09994f5d32d2955a4985ecbb3d86f2aaeafc4aa11521f98d606144c1d49cd9835004d9a73342709b8c692c92e59eacf37412468
-  languageName: node
-  linkType: hard
-
-"moment@npm:^2.24.0":
-  version: 2.29.1
-  resolution: "moment@npm:2.29.1"
-  checksum: 86729013febf7160de5b93da69273dd304d674b0224f9544b3abd09a87671ddd2cdd57598261ce57588910d63747ffd5590965e83c790d8bf327083c0e0a06e0
   languageName: node
   linkType: hard
 

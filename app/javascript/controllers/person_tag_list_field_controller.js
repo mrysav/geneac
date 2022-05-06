@@ -93,12 +93,15 @@ export default class extends Controller {
     for (let t = 0; t < tags.length; t++) {
       let pid = parseInt(tags[t], 10)
       if (pid > 0) {
-        ajax.get(`${person_tag_url}/${pid}`, function (person) {
-          addTag(person.title, pid)
+        ajax.get({
+          endpoint: `${person_tag_url}/${pid}`,
+          callback: function (person) {
+            addTag(person.title, pid)
+          },
         })
       }
     }
 
-    ajax.get(people_tags_url, initializeAwesomplete)
+    ajax.get({ endpoint: people_tags_url, callback: initializeAwesomplete })
   }
 }

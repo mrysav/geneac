@@ -5,9 +5,17 @@ module Ajax
   class AjaxController < ApplicationController
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+    include ParseableDate
+
     def tags
       authorize :ajax, :tags?
       render json: ActsAsTaggableOn::Tag.all.map(&:name)
+    end
+
+    def parse_date
+      authorize :ajax, :parse_date?
+      parsed = parse(params[:d])&.strftime('%F %R:%S %p')
+      render json: parsed
     end
 
     def people_tags
@@ -18,7 +26,7 @@ module Ajax
     private
 
     def user_not_authorized
-      head 401
+      head :unauthorized
     end
   end
 end

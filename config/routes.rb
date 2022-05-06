@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   namespace :ajax do
     get 'tags' => 'ajax#tags'
     get 'people_tags' => 'ajax#people_tags'
-    get 'people_tag/:id' => 'ajax#people_tag', as: :people_tag
+    get 'parse_date' => 'ajax#parse_date'
   end
 
   authenticate :user do
