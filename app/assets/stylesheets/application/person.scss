@@ -50,6 +50,14 @@
       }
     }
   }
+
+  .media {
+    display: flex;
+
+    .media-body {
+      padding: 1rem;
+    }
+  }
 }
 
 .family-tile {
