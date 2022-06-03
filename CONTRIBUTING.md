@@ -35,7 +35,7 @@ coverage and (where necessary) have internationalisation support.
 
 ### Running the application locally
 
-You can find the most up-to-date instructions for running the application locally on the [documentation website](https://mrysav.github.io/geneac/developer_quickstart/).
+You can find the most up-to-date instructions for running the application locally on the [documentation website](https://www.mitchellrysavy.com/geneac/Development/quickstart/).
 
 ## Repository Structure
 
