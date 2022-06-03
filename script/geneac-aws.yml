@@ -10,18 +10,6 @@ Resources:
   ApplicationUser:
     Type: AWS::IAM::User
 
-  ApplicationCredentials:
-    Type: AWS::IAM::AccessKey
-    Properties:
-      Status: Active
-      UserName: !Ref ApplicationUser
-
-  ApplicationCredentialsStored:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Name: !Sub /credentials/${ApplicationCredentials}
-      SecretString: !Sub '{"ACCESS_KEY":"${ApplicationCredentials}","SECRET_KEY":"${ApplicationCredentials.SecretAccessKey}"}'
-
   ManagedApplicationPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
