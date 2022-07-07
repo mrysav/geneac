@@ -1,6 +1,6 @@
 import { Controller } from 'stimulus'
 import Awesomplete from 'awesomplete'
-import ajax from '../lib/ajax'
+import ajax from './ajax'
 
 export default class extends Controller {
   static targets = ['value']

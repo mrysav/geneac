@@ -1,13 +1,25 @@
 /* eslint no-console:0 */
 
-require('trix')
-require('@rails/actiontext')
+import 'trix'
+
+// import '@rails/actiontext'
+// Workaround: https://github.com/rails/rails/issues/43973#issuecomment-1001877734
+import { AttachmentUpload } from '@rails/actiontext/app/javascript/actiontext/attachment_upload'
+
+addEventListener('trix-attachment-add', (event) => {
+  const { attachment, target } = event
+
+  if (attachment.file) {
+    const upload = new AttachmentUpload(attachment, target)
+    upload.start()
+  }
+})
 
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
 const application = Application.start()
-const context = require.context('../controllers', true, /\.js$/)
+const context = require.context('./', true, /\.js$/)
 application.load(definitionsFromContext(context))
 
 // These two functions are used by some customized Administrate views and

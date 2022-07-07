@@ -18,8 +18,8 @@ gem 'puma', '~> 5.6'
 gem 'sass-rails', '>= 6'
 # Use sprockets for legacy asset delivery
 gem 'sprockets-rails'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
+# Transpile app-like JavaScript. Read more: https://github.com/shakacode/shakapacker
+gem 'shakapacker', '< 7'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
