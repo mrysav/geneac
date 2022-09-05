@@ -20,7 +20,7 @@
     "css-minimizer-webpack-plugin": "^4.0.0",
     "mini-css-extract-plugin": "^2.6.1",
     "sass": "^1.49.9",
-    "shakapacker": "6.5.0",
+    "shakapacker": "6.5.1",
     "stimulus": "~2",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "5",
