@@ -30,7 +30,5 @@ function do_deploy {
 
 validate_cfn
 echo "----------"
-do_deploy "geneac-beta" "https://geneac-beta.herokuapp.com"
-echo "----------"
 do_deploy "geneac-prod" "https://geneac.herokuapp.com"
 echo "----------"
