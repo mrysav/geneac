@@ -5,29 +5,6 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "sqltools.connections": [
-      {
-        "name": "Rails Development Database",
-        "driver": "PostgreSQL",
-        "previewLimit": 50,
-        "server": "localhost",
-        "port": 5432,
-        "database": "geneac_development",
-        "username": "vscode"
-      },
-      {
-        "name": "Rails Test Database",
-        "driver": "PostgreSQL",
-        "previewLimit": 50,
-        "server": "localhost",
-        "port": 5432,
-        "database": "geneac_test",
-        "username": "vscode"
-      }
-    ]
-  },
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "aki77.haml-lint",
@@ -40,12 +17,10 @@
     "manuelpuyol.erb-linter",
     "misogi.ruby-rubocop",
     "ms-azuretools.vscode-docker",
-    "mtxr.sqltools-driver-pg",
-    "mtxr.sqltools",
     "rebornix.Ruby",
     "robinbentley.sass-indented",
     "tyriar.sort-lines",
-    "vortizhe.simple-ruby-erb",
+    "vortizhe.simple-ruby-erb"
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
