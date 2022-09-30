@@ -1,0 +1,98 @@
+{"0": {
+    "doc": "Deploying Geneac in Production",
+    "title": "Heroku + AWS",
+    "content": "Let’s be clear: I want to pay as little as possible to host my own Geneac while also offloading as much of the burden of managing infrastructure as I can. This has led me to deploy Geneac to Heroku for the main app servers and AWS for the other stuff. This allows me to run my personal Geneac instances for at most, a few dollars per month. Step 1: Provision Infrastructure . In order to deploy to AWS, you need to have a few things: . | An AWS account (duh) | A domain registered with Route 53 and verified to send email in SES (optional, but recommended) | . The easiest way to get going is to deploy the CloudFormation template located in script/geneac-aws.yml. This will create all the resources you need, in addition to an IAM user. The credentials for that user will be stored in a secret deployed to AWS Secrets Manager, which you can view on the AWS Console. Step 2: Deploy to Heroku . If you already have a Heroku account you can click this to get up and running: . However, the app.json might not be fully up to date with the environment variables you need. Here is a list of variables that are currently required to deploy Geneac: . AWS configuration values: . | AWS_ACCESS_KEY_ID | AWS_REGION | AWS_SECRET_ACCESS_KEY | S3_BUCKET_NAME - This is just the bucket name, not the full URL to the bucket. You can get this after deploying the resources in Step #1. | . Values that configure email sending: . | MAILER_HOSTNAME - This is the hostname that will be used in ActionMailer to generate links back your instance. If you’re deploying to Heroku without a custom domain, that would look like my-geneac.herokuapp.com | MAILER_SENDER - This is the full email address that your AWS user is able to send mail via SES from, such as no-reply@geneac.net. | . App configuration values: . | RACK_ENV, RAILS_ENV - Both of these should probably be production. | RAILS_LOG_TO_STDOUT - This should probably be set to enabled if you are on Heroku so you can view all of the logs. | RAILS_SERVE_STATIC_FILES - This should be enabled. | SECRET_KEY_BASE - You can generate this with rake secret if it is not already generated for you. | . ",
+    "url": "/geneac/deploying#heroku--aws",
+    "relUrl": "/deploying#heroku--aws"
+  },"1": {
+    "doc": "Deploying Geneac in Production",
+    "title": "Docker (unsupported)",
+    "content": "Previously, I had deployed things with Docker and set up containers with things like MinIO to replace S3. You can find those efforts in docker/, but I don’t support anything there. I’d be happy to review a PR to improve it, though. ",
+    "url": "/geneac/deploying#docker-unsupported",
+    "relUrl": "/deploying#docker-unsupported"
+  },"2": {
+    "doc": "Deploying Geneac in Production",
+    "title": "Deploying Geneac in Production",
+    "content": "If you just want to run Geneac locally for testing, you should be looking at Developer Quickstart instead! . ",
+    "url": "/geneac/deploying",
+    "relUrl": "/deploying"
+  },"3": {
+    "doc": "Development",
+    "title": "Development",
+    "content": " ",
+    "url": "/geneac/development/index",
+    "relUrl": "/development/index"
+  },"4": {
+    "doc": "Quickstart",
+    "title": "Updating the documentation",
+    "content": "The documentation is generated with mkdocs and mkdocs-material. If you are using the devcontainer, these are installed automatically for you. You can start a development server with: . cd docs/ ; mkdocs serve . ",
+    "url": "/geneac/development/quickstart#updating-the-documentation",
+    "relUrl": "/development/quickstart#updating-the-documentation"
+  },"5": {
+    "doc": "Quickstart",
+    "title": "Quickstart",
+    "content": "Although you can run all of the components for Geneac natively, by far the easiest way to get up and running to make a change is to leverage Visual Studio Code devcontainers. As long as you have Visual Studio Code and Docker Desktop (or, on Linux, just Docker) installed, you can open the Geneac repository as a container and the setup flow will be triggered. After the container is set up, you can run: . # using foreman foreman start -f Procfile.dev # or using overmind, which does fancy tmux stuff overmind start -f Procfile.dev . and then visit http://localhost:5000/ and log in with the test credentials that the setup procedure prints. An alternative to having all of this done locally is to use GitHub Codespaces. This is a browser-based way to create a developer environment using the devcontainer setup described above. If you don’t like the idea of using a browser, you can also use VS Code natively to connect to your codespace. Keep in mind though, this is not free. ",
+    "url": "/geneac/development/quickstart",
+    "relUrl": "/development/quickstart"
+  },"6": {
+    "doc": "Creating Test Data",
+    "title": "generate:test:accounts",
+    "content": "Creates 2 test user accounts. You can find the credentials in the source of the task itself. Running this task more than once will not create more accounts. ",
+    "url": "/geneac/development/test_data#generatetestaccounts",
+    "relUrl": "/development/test_data#generatetestaccounts"
+  },"7": {
+    "doc": "Creating Test Data",
+    "title": "generate:test:people",
+    "content": "Generates 100 people and adds various relationships between them to create large groups of families. ",
+    "url": "/geneac/development/test_data#generatetestpeople",
+    "relUrl": "/development/test_data#generatetestpeople"
+  },"8": {
+    "doc": "Creating Test Data",
+    "title": "generate:test:photos",
+    "content": "Generates 20 photos and tags them with random text tags and people from the database. ",
+    "url": "/geneac/development/test_data#generatetestphotos",
+    "relUrl": "/development/test_data#generatetestphotos"
+  },"9": {
+    "doc": "Creating Test Data",
+    "title": "generate:test:notes",
+    "content": "Generates 20 notes and tags them with random text tags and people from the database. ",
+    "url": "/geneac/development/test_data#generatetestnotes",
+    "relUrl": "/development/test_data#generatetestnotes"
+  },"10": {
+    "doc": "Creating Test Data",
+    "title": "generate:all",
+    "content": "Runs all of the commands listed above to generate all the data at once. ",
+    "url": "/geneac/development/test_data#generateall",
+    "relUrl": "/development/test_data#generateall"
+  },"11": {
+    "doc": "Creating Test Data",
+    "title": "generate:reset",
+    "content": "Deletes all data from the database except for user accounts and snapshots. Be careful with this one! You should not run it in any production environment. ",
+    "url": "/geneac/development/test_data#generatereset",
+    "relUrl": "/development/test_data#generatereset"
+  },"12": {
+    "doc": "Creating Test Data",
+    "title": "Creating Test Data",
+    "content": "While developing locally, you might want to seed the database with a bunch of data so you can test various pages without having to create data yourself. You can use these rake tasks to generate a lot of realistic-looking data to test with. ",
+    "url": "/geneac/development/test_data",
+    "relUrl": "/development/test_data"
+  },"13": {
+    "doc": "History",
+    "title": "History",
+    "content": "I (Mitchell Rysavy) started working on a website to store and share my genealogy research while I was an undergraduate student at the University of Minnesota-Duluth. Originally, the project was called ‘familiar,’ and I used this as the basis for a capstone project in the Honors program. You can see the original paper and poster on the University of Minnesota Library’s Digital Conservancy. ",
+    "url": "/geneac/history",
+    "relUrl": "/history"
+  },"14": {
+    "doc": "Home",
+    "title": "Home",
+    "content": "Geneac is a sitebuilder for people who are interested in sharing their genealogy. Check out the links to the left to read about the history of the project, or to see some screenshots. If you want to set up the development environment making a contribution, you can start by reading the CONTRIBUTING.md in the repository. Then you can check out the developer quickstart. ",
+    "url": "/geneac/index",
+    "relUrl": "/index"
+  },"15": {
+    "doc": "Screenshots",
+    "title": "Screenshots",
+    "content": ". The ‘person’ page shows the details of a particular person, including a timeline of events in their lives and relevant media. The admin interface allows you to manage all the content on the site. ",
+    "url": "/geneac/screenshots",
+    "relUrl": "/screenshots"
+  }
+}
