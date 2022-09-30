@@ -15,7 +15,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends vim tmux imagemagick python3-pip python3-setuptools
 
 # Install python packages
-RUN pip3 install mkdocs mkdocs-material cfn-lint
+RUN pip3 install cfn-lint
 
 # Install overmind
 RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmind-v2.2.2-linux-amd64.gz > /tmp/overmind.gz \
@@ -29,7 +29,7 @@ RUN chown -R vscode /tmp/workspace
 WORKDIR /tmp/workspace
 USER vscode
 
-RUN rbenv install && bundle install && yarn install && rm -rf /tmp/workspace
+RUN rbenv install && bundle install && cd docs/ && bundle install && cd .. && yarn install && rm -rf /tmp/workspace
 
 # Install additional gems.
 RUN gem install foreman
