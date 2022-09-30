@@ -1,4 +1,8 @@
-# Home
+---
+layout: home
+title: Home
+nav_order: 1
+---
 
 **Geneac** is a sitebuilder for people who are interested in sharing their genealogy.
 

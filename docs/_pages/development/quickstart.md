@@ -1,4 +1,9 @@
-# Quickstart
+---
+layout: default
+title: Quickstart
+nav_order: 1
+parent: Development
+---
 
 Although you can run all of the components for Geneac natively, by far the easiest
 way to get up and running to make a change is to leverage [Visual Studio Code devcontainers](https://code.visualstudio.com/docs/remote/containers). As long as you have Visual Studio Code and Docker Desktop (or, on Linux, just Docker) installed, you can open the Geneac repository as a container and the setup flow will be triggered.

@@ -1,4 +1,8 @@
-# History
+---
+layout: default
+title: History
+nav_order: 2
+---
 
 I ([Mitchell Rysavy](https://mitchellrysavy.com)) started working on a website to store and share my genealogy research while I was an undergraduate student
 at the [University of Minnesota-Duluth](https://d.umn.edu/). Originally, the project was called 'familiar,' and

@@ -12,8 +12,12 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v2
 
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG_FILE: docs/mkdocs.yml
+      # Specify the Jekyll source location as a parameter
+      - name: Build and deploy
+        uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          jekyll_src: 'docs/'
+          target_branch: 'gh-pages'
+
+

@@ -1,4 +1,9 @@
-# Creating Test Data
+---
+layout: default
+title: Creating Test Data
+nav_order: 1
+parent: Development
+---
 
 While developing locally, you might want to seed the database with a bunch of data
 so you can test various pages without having to create data yourself.

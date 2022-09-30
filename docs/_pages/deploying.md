@@ -1,4 +1,8 @@
-# Deploying Geneac in Production
+---
+layout: default
+title: Deploying Geneac in Production
+nav_order: 3
+---
 
 **If you just want to run Geneac locally for testing, you should be looking at [Developer Quickstart](Development/quickstart.md) instead!**
 
