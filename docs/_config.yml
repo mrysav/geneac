@@ -30,7 +30,12 @@ twitter_username: beatlefreak9
 github_username:  mrysav
 
 # Build settings
+
+# used for pages deployment
 remote_theme: just-the-docs/just-the-docs
+# used by local development
+theme: just-the-docs
+
 plugins:
   - jekyll-feed
 
