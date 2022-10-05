@@ -40,8 +40,9 @@ Rails.application.configure do
   # Store uploaded files on S3-compatible storage (see config/storage.yml for options)
   config.active_storage.service = ENV['USE_MINIO'].present? ? :minio : :amazon
 
-  # Proxy requests!
-  config.active_storage.resolve_model_to_route = :rails_storage_proxy
+  # Proxy requests for Active Storage objects through application.
+  # Disabled by default to slightly reduce traffic through app
+  # config.active_storage.resolve_model_to_route = :rails_storage_proxy
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
