@@ -141,7 +141,7 @@ gem 'pagy'
 gem 'rubyzip'
 
 # Haml templating
-gem 'haml'
+gem 'haml', '< 6'
 gem 'haml-rails'
 
 # Parses links out of strings
