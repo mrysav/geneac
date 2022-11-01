@@ -12,13 +12,13 @@ RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSI
 
 # Install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends vim tmux imagemagick python3-pip python3-setuptools
+  && apt-get -y install --no-install-recommends vim tmux imagemagick python3-pip python3-setuptools libvips42 poppler-utils
 
 # Install python packages
 RUN pip3 install cfn-lint
 
 # Install overmind
-RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmind-v2.2.2-linux-amd64.gz > /tmp/overmind.gz \
+RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.3.0/overmind-v2.3.0-linux-amd64.gz > /tmp/overmind.gz \
   && gunzip /tmp/overmind.gz \
   && mv /tmp/overmind /usr/local/bin \
   && chmod +x /usr/local/bin/overmind
