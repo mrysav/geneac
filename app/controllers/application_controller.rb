@@ -10,8 +10,6 @@ class ApplicationController < ActionController::Base
   helper SettingHelper
   helper CitationHelper
 
-  protect_from_forgery prepend: true
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
