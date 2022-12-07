@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
       - name: Install linters
