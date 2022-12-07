@@ -97,7 +97,7 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rspec-rails', '~> 6.0.1'
   gem 'timecop'
 end
 
