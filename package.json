@@ -15,7 +15,7 @@
     "babel-loader": "8",
     "bootstrap": "^5.0",
     "bootstrap-icons": "^1.8.1",
-    "compression-webpack-plugin": "9",
+    "compression-webpack-plugin": "10",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "mini-css-extract-plugin": "^2.6.1",

@@ -2614,15 +2614,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compression-webpack-plugin@npm:9":
-  version: 9.2.0
-  resolution: "compression-webpack-plugin@npm:9.2.0"
+"compression-webpack-plugin@npm:10":
+  version: 10.0.0
+  resolution: "compression-webpack-plugin@npm:10.0.0"
   dependencies:
     schema-utils: ^4.0.0
     serialize-javascript: ^6.0.0
   peerDependencies:
     webpack: ^5.1.0
-  checksum: eb9fea39b6169e39debf133559726de3cdbab1edb7fffaa0d1e86fc0bf0ba770a89826648b8286087cbd128487c0897be55100c9e687ecaa4dddd58f69e53995
+  checksum: 2d9296fa3d256bbc54a4246f01b7a26023686230f973ae4dbf8ab986163c1c4b51f4217e2b0cdeb6158397a5b1d2aebe5fe2cb0cc986871a6f7e05226ab58d98
   languageName: node
   linkType: hard
 
@@ -3847,7 +3847,7 @@ fsevents@~2.3.2:
     babel-loader: 8
     bootstrap: ^5.0
     bootstrap-icons: ^1.8.1
-    compression-webpack-plugin: 9
+    compression-webpack-plugin: 10
     css-loader: ^6.7.1
     css-minimizer-webpack-plugin: ^4.0.0
     eslint: ^7.22.0
