@@ -3340,18 +3340,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^3.1.2":
-  version: 3.4.1
-  resolution: "eslint-plugin-prettier@npm:3.4.1"
+"eslint-plugin-prettier@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "eslint-plugin-prettier@npm:4.2.1"
   dependencies:
     prettier-linter-helpers: ^1.0.0
   peerDependencies:
-    eslint: ">=5.0.0"
-    prettier: ">=1.13.0"
+    eslint: ">=7.28.0"
+    prettier: ">=2.0.0"
   peerDependenciesMeta:
     eslint-config-prettier:
       optional: true
-  checksum: 191173e52fafb168af6ac65a9b882f2fc1b2dc979d7c893cec26637c612c7b62dc69df22faf4e80d4e17e5320ba061fc627b59d29512e5ddb42dedcd72966613
+  checksum: ff1b4155f247f09e1560ec13981ea6f512e858af13b9378f9d80fb1fe9fa89d0ffbc031c1f8390492e4579e79c278a34f361f2a7d4ffd80e677b4b80afb96056
   languageName: node
   linkType: hard
 
@@ -3855,7 +3855,7 @@ fsevents@~2.3.2:
     eslint-config-standard: ^16.0.2
     eslint-plugin-import: ^2.14.0
     eslint-plugin-node: ^11.1.0
-    eslint-plugin-prettier: ^3.1.2
+    eslint-plugin-prettier: ^4.2.1
     eslint-plugin-promise: ^4.0.1
     eslint-plugin-standard: ^5.0.0
     mini-css-extract-plugin: ^2.6.1
