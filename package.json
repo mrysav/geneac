@@ -19,7 +19,7 @@
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "mini-css-extract-plugin": "^2.7.2",
-    "sass": "^1.56.1",
+    "sass": "^1.56.2",
     "shakapacker": "^6.5.4",
     "stimulus": "~3",
     "style-loader": "^3.3.1",
