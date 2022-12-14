@@ -18,7 +18,7 @@
     "compression-webpack-plugin": "10",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
-    "mini-css-extract-plugin": "^2.6.1",
+    "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.56.1",
     "shakapacker": "^6.5.4",
     "stimulus": "~2",
