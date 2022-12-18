@@ -30,9 +30,9 @@ github_username:  mrysav
 # Build settings
 
 # used for pages deployment
-# remote_theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs/just-the-docs
 # used by local development, when you need it
-theme: just-the-docs
+# theme: just-the-docs
 
 plugins:
   - jekyll-feed
