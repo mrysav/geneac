@@ -10,9 +10,12 @@ ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev"
 ARG NODE_VERSION="lts/*"
 RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} && npm install -g markdownlint-cli 2>&1"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends vim tmux imagemagick python3-pip python3-setuptools libvips42 poppler-utils openssh-server
+RUN apt-get update && \
+    apt-get -y install --no-install-recommends vim tmux imagemagick \
+    python3-pip python3-setuptools libvips42 poppler-utils openssh-server
 
 # Install python packages
 RUN pip3 install cfn-lint
@@ -29,7 +32,10 @@ RUN chown -R vscode /tmp/workspace
 WORKDIR /tmp/workspace
 USER vscode
 
-RUN rbenv install && bundle install && cd docs/ && bundle install && cd .. && yarn install && rm -rf /tmp/workspace
+RUN rbenv install && bundle install && \
+    cd docs/ && bundle install && \
+    cd .. && yarn install && \
+    rm -rf /tmp/workspace
 
 # Install additional gems.
 RUN gem install foreman
