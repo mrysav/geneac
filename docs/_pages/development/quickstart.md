@@ -24,8 +24,8 @@ An alternative to having all of this done locally is to use [GitHub Codespaces](
 
 ## Updating the documentation
 
-The documentation is generated with [mkdocs](https://www.mkdocs.org/) and [mkdocs-material](https://squidfunk.github.io/mkdocs-material/). If you are using the devcontainer, these are installed automatically for you. You can start a development server with:
+The documentation is generated with [just-the-docs](https://just-the-docs.github.io/just-the-docs/). If you are using the devcontainer, these are installed automatically for you. You can start a development server with:
 
 ```bash
-cd docs/ ; mkdocs serve
+cd docs/ ; bundle exec jekyll serve
 ```

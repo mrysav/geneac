@@ -1,59 +1,106 @@
 ---
 layout: default
-title: Deploying Geneac in Production
+title: Deploying to Docker
 nav_order: 3
 ---
 
-**If you just want to run Geneac locally for testing, you should be looking at [Developer Quickstart](development/quickstart) instead!**
+{: .warn }
+If you just want to run Geneac locally for testing, you should be looking at [Developer Quickstart](development/quickstart) instead!
 
-## Heroku + AWS
+{: .info }
+Geneac used to run easily on Heroku. It should _still_ run easily on Heroku, but I
+no longer run it there and can't guarantee that it will be easy.
 
-Let's be clear: I want to pay as little as possible to host my own Geneac while also offloading
-as much of the burden of managing infrastructure as I can. This has led me to deploy Geneac
-to Heroku for the main app servers and AWS for the other stuff. This allows me to run my
-personal Geneac instances for at most, a few dollars per month.
+## Cloud Infrastructure
 
-### Step 1: Provision Infrastructure
+Geneac requires an S3 (or S3-compatible) bucket, and optionally, it can use SES for sending email.
 
-In order to deploy to AWS, you need to have a few things:
+`script/geneac-aws.yml` is a CloudFormation template that you can use to create the required IAM User, Bucket,
+and policy associated with each to get going. **This will not reveal the credentials to you,** so to get those you
+will need to go into the AWS console and create new credentials for the user manually, and copy them down.
 
-1. An AWS account (duh)
-1. A domain registered with Route 53 and verified to send email in SES (optional, but recommended)
+## Docker
 
-The easiest way to get going is to deploy the CloudFormation template located in `script/geneac-aws.yml`.
+Docker's not just for experts!
 
-This will create all the resources you need, in addition to an IAM user. The credentials for that user
-will be stored in a secret deployed to AWS Secrets Manager, which you can view on the AWS Console.
+Geneac is bundled up into a nice ~~little~~ container hosted on the GitHub Container Registry,
+which you can pull yourself.
 
-### Step 2: Deploy to Heroku
+```bash
+$ docker pull ghcr.io/mrysav/geneac:latest
+```
 
-If you already have a [Heroku](https://heroku.com) account you can click this to get up and running:
+You can run the container as-is, but there are some environment variables you'll want to configure first.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mrysav/geneac)
-
-However, the `app.json` might not be fully up to date with the environment variables you need.
-
-Here is a list of variables that are currently required to deploy Geneac:
+## Environment Variables
 
 AWS configuration values:
 
 1. `AWS_ACCESS_KEY_ID`
 1. `AWS_REGION`
 1. `AWS_SECRET_ACCESS_KEY`
-1. `S3_BUCKET_NAME` - This is just the bucket name, not the full URL to the bucket. You can get this after deploying the resources in Step \#1.
+1. `S3_BUCKET_NAME`
+
+Infrastructure:
+
+1. `DATABASE_URL` - in the form of `postgres://[username]:[password]@[hostname]:[port]/[database_name]`
+1. `REDIS_URL` - in the form of `redis://[hostname]:[port]`
 
 Values that configure email sending:
 
-1. `MAILER_HOSTNAME` - This is the hostname that will be used in ActionMailer to generate links back your instance. If you're deploying to Heroku without a custom domain, that would look like `my-geneac.herokuapp.com`
+1. `MAILER_HOSTNAME` - This is the hostname that will be used in ActionMailer to generate links back your instance.
 1. `MAILER_SENDER` - This is the full email address that your AWS user is able to send mail via SES from, such as `no-reply@geneac.net`.
 
 App configuration values:
 
 1. `RACK_ENV`, `RAILS_ENV` - Both of these should probably be `production`.
-1. `RAILS_LOG_TO_STDOUT` - This should probably be set to `enabled` if you are on Heroku so you can view all of the logs.
+1. `RAILS_LOG_TO_STDOUT` - This should probably be set to `enabled` so you don't miss any logs.
 1. `RAILS_SERVE_STATIC_FILES` - This should be `enabled`.
 1. `SECRET_KEY_BASE` - You can generate this with `rake secret` if it is not already generated for you.
 
-## Docker (unsupported)
+## Example
 
-Previously, I had deployed things with Docker and set up containers with things like MinIO to replace S3. You can find those efforts in `docker/`, but I don't support anything there. I'd be happy to review a PR to improve it, though.
+I use Docker Compose to manage my containers, so here is my setup:
+
+```yaml
+version: '3'
+
+volumes:
+  pg_data:
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      # this can be anything you want. Make sure the file permissions are
+      # restrictive enough that the file can't be seen by anyone else though!
+      POSTGRES_PASSWORD: my-postgres-password-here
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    ports:
+      - ':6379'
+
+  prod-web:
+    image: ghcr.io/mrysav/geneac:latest
+    command: ['sh', '/usr/bin/rails_web.sh']
+    ports:
+      - '3001:3001'
+    depends_on:
+      - postgres
+      - redis
+    # This file contains all my environment variables, as above
+    env_file: docker.prod.env
+
+  prod-worker:
+    image: ghcr.io/mrysav/geneac:latest
+    command: ['sh', '/usr/bin/rails_worker.sh']
+    depends_on:
+      - postgres
+      - redis
+    env_file: docker.prod.env
+```
