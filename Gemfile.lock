@@ -162,6 +162,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.3.3)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -261,11 +262,12 @@ GEM
     multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    net-imap (0.3.1)
+    net-imap (0.3.2)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.0)
+    net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
       net-protocol
@@ -324,8 +326,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.4)
       loofah (~> 2.19, >= 2.19.1)
-    rails-settings-cached (2.8.2)
-      rails (>= 5.0.0)
+    rails-settings-cached (2.8.3)
+      activerecord (>= 5.0.0)
+      railties (>= 5.0.0)
     rails_semantic_logger (4.10.0)
       rack
       railties (>= 5.1)
@@ -547,7 +550,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 7.0.4)
   rails-controller-testing
-  rails-settings-cached (~> 2.0)
+  rails-settings-cached (~> 2.8)
   rails_semantic_logger
   redis (~> 5.0)
   resque
