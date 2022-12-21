@@ -2300,10 +2300,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-icons@npm:^1.8.1":
-  version: 1.8.3
-  resolution: "bootstrap-icons@npm:1.8.3"
-  checksum: 0ce4293c82fbba9ea1a878f478857597fb11b10b6db8a250712c336065d4f41e86c169750c02825d662f7c9b0a717787be31684cab50b61632a4905eb5f613f3
+"bootstrap-icons@npm:^1.10.2":
+  version: 1.10.2
+  resolution: "bootstrap-icons@npm:1.10.2"
+  checksum: 91fc7dbe8c614b074a6f0c7ed2b6d0d827a6d6afcdc1a7b84f028afc56f484ed8e2c18950e1384f4d5dd67232ac71d7f7e5b71e90f4f9a04e77f8dd04b30d17f
   languageName: node
   linkType: hard
 
@@ -3830,7 +3830,7 @@ fsevents@~2.3.2:
     babel-eslint: ^10.0.3
     babel-loader: 8
     bootstrap: ^5.2
-    bootstrap-icons: ^1.8.1
+    bootstrap-icons: ^1.10.2
     compression-webpack-plugin: 10
     css-loader: ^6.7.1
     css-minimizer-webpack-plugin: ^4.0.0
