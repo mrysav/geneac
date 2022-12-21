@@ -14,7 +14,7 @@
     "awesomplete": "^1.1.4",
     "babel-loader": "8",
     "bootstrap": "^5.2",
-    "bootstrap-icons": "^1.8.1",
+    "bootstrap-icons": "^1.10.2",
     "compression-webpack-plugin": "10",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
