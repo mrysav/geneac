@@ -11,8 +11,7 @@ namespace :dump do
     logger = Rails.logger
     Rails.logger = Logger.new($stderr)
 
-    db = Rails.configuration.database_configuration[Rails.env]
-    Backup::PostgresDumper.new.dump(db) do |io|
+    Backup::PostgresDumper.new.dump do |io|
       puts io.read
     end
 
@@ -39,8 +38,7 @@ namespace :dump do
 
     Zip::OutputStream.open(args[:zip]) do |zio|
       zio.put_next_entry 'database.sql'
-      db = Rails.configuration.database_configuration[Rails.env]
-      Backup::PostgresDumper.new.dump(db) do |io|
+      Backup::PostgresDumper.new.dump do |io|
         zio.write(io.read)
       end
 
