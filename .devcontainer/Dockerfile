@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install additional OS packages.
 RUN apt-get update && \
     apt-get -y install --no-install-recommends vim tmux imagemagick \
-    python3-pip python3-setuptools libvips42 poppler-utils openssh-server
+    python3-pip python3-setuptools libvips42 poppler-utils openssh-server postgresql-client
 
 # Install python packages
 RUN pip3 install cfn-lint

@@ -7,7 +7,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
   && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null \
   && echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && DEBIAN_FRONTEND=noninteractive apt-get update \
-  && apt-get install -y --no-install-recommends imagemagick nodejs yarn poppler-utils libvips42
+  && apt-get install -y --no-install-recommends imagemagick nodejs yarn poppler-utils libvips42 postgresql-client
 
 # Add things to the docker entrypoint script if you want
 COPY docker/docker-entrypoint.sh /usr/bin/
