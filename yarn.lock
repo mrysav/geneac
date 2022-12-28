@@ -3945,7 +3945,7 @@ fsevents@~2.3.2:
     webpack: 5
     webpack-assets-manifest: 5
     webpack-cli: 4
-    webpack-dev-server: ^4.9.3
+    webpack-dev-server: ^4.11.1
     webpack-merge: 5
   languageName: unknown
   linkType: soft
@@ -6327,12 +6327,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"selfsigned@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "selfsigned@npm:2.0.1"
+"selfsigned@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "selfsigned@npm:2.1.1"
   dependencies:
     node-forge: ^1
-  checksum: 908fc2c7ffbb9e8dad4137823984501656445b159ebc85851923a70b3f518511470b4976ecaf64f0a2794281a7c67a165d2e8f804fed2fd9e42690d207e91274
+  checksum: 377f281c45af56680df09f03b461b23e5a68c846ab7db102ff2a2418ddb741f8fbf3e078c3a2ac46b5d41ee2d45ddbbe00ec53383d9dfcaa60c35500452a58f9
   languageName: node
   linkType: hard
 
@@ -7225,9 +7225,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"webpack-dev-server@npm:^4.9.3":
-  version: 4.9.3
-  resolution: "webpack-dev-server@npm:4.9.3"
+"webpack-dev-server@npm:^4.11.1":
+  version: 4.11.1
+  resolution: "webpack-dev-server@npm:4.11.1"
   dependencies:
     "@types/bonjour": ^3.5.9
     "@types/connect-history-api-fallback": ^1.3.5
@@ -7252,7 +7252,7 @@ fsevents@~2.3.2:
     p-retry: ^4.5.0
     rimraf: ^3.0.2
     schema-utils: ^4.0.0
-    selfsigned: ^2.0.1
+    selfsigned: ^2.1.1
     serve-index: ^1.9.1
     sockjs: ^0.3.24
     spdy: ^4.0.2
@@ -7265,7 +7265,7 @@ fsevents@~2.3.2:
       optional: true
   bin:
     webpack-dev-server: bin/webpack-dev-server.js
-  checksum: 102995ec541168c150acf5b1917f88b7f4ea477e249c0c4809a8ea5edf11fc9ed066558d4fd8017a08d3b981b31d1f39cf616809aab74a5c6a5c2794265a7bb2
+  checksum: 80ed3e08fc0537880c967104fef0619cd374edae9a0c310a8d2ac7ea2d8b69a71480e8dde7f6f6e6eee0a4c0a33592eec341c793abca4a463883c50a72cdb74a
   languageName: node
   linkType: hard
 
