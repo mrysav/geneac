@@ -70,7 +70,10 @@ volumes:
 
 services:
   postgres:
-    image: postgres:14
+    # The version of postgres used should match the version of the client in
+    # the Geneac container for the backup rake task to work.
+    # As of writing this is version 13.
+    image: postgres:13
     environment:
       # this can be anything you want. Make sure the file permissions are
       # restrictive enough that the file can't be seen by anyone else though!
