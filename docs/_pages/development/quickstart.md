@@ -12,10 +12,10 @@ After the container is set up, you can run:
 
 ```bash
 # using foreman
-foreman start -f Procfile.dev
+foreman start
 
 # or using overmind, which does fancy tmux stuff
-overmind start -f Procfile.dev
+overmind start
 ```
 
 and then visit http://localhost:5000/ and log in with the test credentials that the setup procedure prints.
