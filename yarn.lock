@@ -2809,21 +2809,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.7.1":
-  version: 6.7.1
-  resolution: "css-loader@npm:6.7.1"
+"css-loader@npm:^6.7.3":
+  version: 6.7.3
+  resolution: "css-loader@npm:6.7.3"
   dependencies:
     icss-utils: ^5.1.0
-    postcss: ^8.4.7
+    postcss: ^8.4.19
     postcss-modules-extract-imports: ^3.0.0
     postcss-modules-local-by-default: ^4.0.0
     postcss-modules-scope: ^3.0.0
     postcss-modules-values: ^4.0.0
     postcss-value-parser: ^4.2.0
-    semver: ^7.3.5
+    semver: ^7.3.8
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 0acc999a77adef164a506756f1c2006677d4f803c7e3b6a634007b21745b3c7f387443557e8b6418ae336d6e17ae992805cc40bc87b978b6bc2df08aa363d9be
+  checksum: 7776beafbae0d631f44da25d92edc32d855427a609222b0ca385517443c55766167cc3ef0a228ffddeb6bf27a87f2c146d7c205161bb0d4f9758c4cec8fd1824
   languageName: node
   linkType: hard
 
@@ -3923,7 +3923,7 @@ fsevents@~2.3.2:
     bootstrap: ^5.2
     bootstrap-icons: ^1.10.2
     compression-webpack-plugin: 10
-    css-loader: ^6.7.1
+    css-loader: ^6.7.3
     css-minimizer-webpack-plugin: ^4.2.2
     eslint: ^7.22.0
     eslint-config-prettier: ^8.1.0
@@ -5906,7 +5906,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.17":
+"postcss@npm:^8.4.17, postcss@npm:^8.4.19":
   version: 8.4.20
   resolution: "postcss@npm:8.4.20"
   dependencies:
@@ -5914,17 +5914,6 @@ fsevents@~2.3.2:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: e5f46d5ee171af35b4c138c6f8571a1d42836e4f83996e09011686206c8d976813a933c767f7b398bfb1bcfcb2d44ac118ccf5d4a6616fa0589ed3495eca6898
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.7":
-  version: 8.4.14
-  resolution: "postcss@npm:8.4.14"
-  dependencies:
-    nanoid: ^3.3.4
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 537ba033a691b88a334b3f89d67a6fc16cae920c86aafed30414db5c1243c1d210aec69bb0fd86795b3638c62213dd9a6108106e9b936479a5ba2bf16f49331e
   languageName: node
   linkType: hard
 
@@ -6362,6 +6351,17 @@ fsevents@~2.3.2:
   bin:
     semver: bin/semver.js
   checksum: a9e88cefbcf047c03988182d11bba5a3cacd5216da0803302988b4e8cf08a7cadab1f96d578712c20d906cf4f5f6e76cfa27ae21ac65f63d396015ffe1da1eed
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.3.8":
+  version: 7.3.8
+  resolution: "semver@npm:7.3.8"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: cfb9c2101dae4ee93c415471f48797c750174d65def4e06ff691bf910194cc6ca92793e597be8302175ceb640100a3da36451e7656320da53b51167eeaf11eb5
   languageName: node
   linkType: hard
 
