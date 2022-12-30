@@ -43,9 +43,6 @@ yarn-debug.log*
 # Ignore vagrant working dir
 /.vagrant/
 
-# Ignore SimpleCov dir
-/coverage/
-
 # Webpacker
 /public/packs
 /public/packs-test
