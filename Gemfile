@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.3'
+ruby '3.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.0.4'
@@ -132,7 +132,7 @@ gem 'rails-settings-cached', '~> 2.0'
 gem 'pagy'
 
 # Backup/restore with zip file
-gem 'rubyzip'
+gem 'rubyzip', '~> 2.3'
 
 # Haml templating
 gem 'haml', '< 6'

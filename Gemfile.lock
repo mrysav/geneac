@@ -549,7 +549,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rake
   rubocop-rspec
-  rubyzip
+  rubyzip (~> 2.3)
   sass-rails (>= 6)
   selenium-webdriver
   shakapacker (< 7)
@@ -566,7 +566,7 @@ DEPENDENCIES
   yard
 
 RUBY VERSION
-   ruby 3.1.3p185
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.2.32
