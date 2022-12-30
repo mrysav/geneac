@@ -64,9 +64,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 
-  # Code coverage
-  gem 'simplecov', require: false
-
   # Fancier matchers!
   gem 'shoulda-matchers', '~> 5.3'
 end
