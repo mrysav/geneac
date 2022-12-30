@@ -70,14 +70,6 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
 end
 
-# Setup shoulda matchers!
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
-end
-
 # Allow RSpec stubbing in FactoryBot factories
 FactoryBot::SyntaxRunner.class_eval do
   include RSpec::Mocks::ExampleMethods

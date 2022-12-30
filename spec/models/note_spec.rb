@@ -5,10 +5,6 @@ require 'rails_helper'
 RSpec.describe Note, type: :model do
   let(:note) { described_class.new(id: 1, title: 'Test note!', rich_content: 'Hello world!', date_string: date_string) }
 
-  describe 'validations' do
-    it { is_expected.to validate_presence_of(:title) }
-  end
-
   describe '#date' do
     context 'with no date_string' do
       let(:date_string) { nil }
