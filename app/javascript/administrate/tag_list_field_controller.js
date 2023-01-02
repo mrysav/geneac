@@ -1,6 +1,6 @@
 import { Controller } from 'stimulus'
 import Awesomplete from 'awesomplete'
-import ajax from './ajax'
+import ajax from '../ajax'
 
 const tag_url = '/ajax/tags'
 

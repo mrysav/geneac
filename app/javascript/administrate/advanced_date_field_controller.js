@@ -1,5 +1,5 @@
 import { Controller } from 'stimulus'
-import ajax from './ajax'
+import ajax from '../ajax'
 
 const parse_date_url = '/ajax/parse_date'
 
