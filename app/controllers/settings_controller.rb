@@ -13,6 +13,7 @@ class SettingsController < ApplicationController
 
   def show
     authorize :settings, :use?
+    @env_vars = ['HOSTNAME', 'MAILER_SENDER', 'AWS_REGION', 'S3_BUCKET_NAME']
   end
 
   private

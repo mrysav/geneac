@@ -150,3 +150,6 @@ gem 'stackprof'
 # Semantic logging
 gem 'amazing_print'
 gem 'rails_semantic_logger'
+
+# For Ruby 3.2.0 compatibility
+gem 'nokogiri', '~> 1.14.0.rc1'

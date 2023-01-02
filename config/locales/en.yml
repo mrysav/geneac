@@ -89,6 +89,18 @@ en:
         name: 'Site Title'
       site_tagline:
         name: 'Site Tagline'
+    env_vars:
+      title: 'Environment Variables'
+      disclaimer: 'This is not a complete list of environment variables required to start the application. Please refer to the documentation.'
+      HOSTNAME:
+        name: 'Hostname'
+      MAILER_SENDER:
+        name: 'Email Sender'
+      AWS_REGION:
+        name: 'AWS Region'
+      S3_BUCKET_NAME:
+        name: 'S3 Bucket Name'
+
     title: 'Site Settings'
     update: 'Update Settings'
     settings_updated: Settings updated successfully.

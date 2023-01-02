@@ -14,7 +14,17 @@
           .form-group
             = f.label field[:key], t("settings.attributes.#{field[:key]}.name")
             = f.text_field field[:key], value: Setting.send(field[:key]),
-                                        placeholder: field.default, class: 'form-control'
+                                        placeholder: field.default, class: 'form-control mb-2'
 
       .text-center.mt-3
         = f.submit t('settings.update'), class: 'btn btn-primary mx-auto'
+    %hr.my-3
+  .row.col-12.text-center
+    %h3.mx-auto= t('settings.env_vars.title')
+  .row
+    %p= t('settings.env_vars.disclaimer')
+    - @env_vars.each do |env|
+      .env_var
+        %label.form-label{ for: "env_#{env}" }= t("settings.env_vars.#{env}.name")
+        %input.form-control.mb-2{ id: "env_#{env}", type: 'text', placeholder: env, disabled: '',
+                                  value: ENV.fetch(env, '') }
