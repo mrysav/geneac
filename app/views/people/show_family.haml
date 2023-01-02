@@ -1,6 +1,9 @@
 = render partial: 'header', locals: { person: @person, tab: :family }
 
 .container.person-container
+  - if Setting.enable_family_tree
+    = render partial: 'tree', locals: { person: @person }
+
   - if @person.father_id || @person.mother_id
     .row
       .col-12.col-lg-8.offset-lg-2

@@ -77,3 +77,26 @@
     margin-bottom: 0;
   }
 }
+
+#graph {
+  .linage {
+    fill: none;
+    stroke: black;
+  }
+  .marriage {
+    fill: none;
+    stroke: black;
+  }
+  .node {
+    background-color: lightblue;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .nodeText {
+    font: 10px sans-serif;
+  }
+  .marriageNode {
+    background-color: black;
+    border-radius: 50%;
+  }
+}

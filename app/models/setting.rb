@@ -12,4 +12,6 @@ class Setting < RailsSettings::Base
   field :restrict_living_info, type: :boolean, default: true
   field :show_recent_updates, type: :boolean, default: true
   field :show_recent_birthdays, type: :boolean, default: true
+
+  field :enable_family_tree, type: :boolean, default: false
 end

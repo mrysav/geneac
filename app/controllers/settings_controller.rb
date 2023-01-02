@@ -2,6 +2,11 @@
 
 # Basic controller for updating site settings
 class SettingsController < ApplicationController
+  def show
+    authorize :settings, :use?
+    @env_vars = %w[HOSTNAME MAILER_SENDER AWS_REGION S3_BUCKET_NAME]
+  end
+
   def create
     authorize :settings, :use?
 
@@ -9,11 +14,6 @@ class SettingsController < ApplicationController
       Setting.send("#{key}=", setting_params[key].strip) unless setting_params[key].nil?
     end
     redirect_to settings_path, notice: I18n.t('settings.settings_updated')
-  end
-
-  def show
-    authorize :settings, :use?
-    @env_vars = ['HOSTNAME', 'MAILER_SENDER', 'AWS_REGION', 'S3_BUCKET_NAME']
   end
 
   private

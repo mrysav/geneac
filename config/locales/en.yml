@@ -77,6 +77,8 @@ en:
     type: 'Type: %{type}'
   settings:
     attributes:
+      enable_family_tree:
+        name: 'Enable experimental Family Tree view'
       show_recent_updates:
         name: 'Show "Recent Updates" on home page'
       show_recent_birthdays:

@@ -36,7 +36,7 @@ class PeopleController < ApplicationController
       authorize @person
     rescue Pundit::NotDefinedError
       render file: 'public/404.html', status: :not_found, layout: false
-      nil
+      return nil
     end
 
     @current_spouse = authorize_or_nil(@person.current_spouse) if @person.current_spouse
@@ -50,7 +50,12 @@ class PeopleController < ApplicationController
       authorize person
     rescue Pundit::NotDefinedError
       render json: { error: 'Not found' }, status: :not_found, layout: false
-      nil
+      return nil
+    end
+
+    unless Setting.enable_family_tree
+      render json: { error: 'Not found' }, status: :not_found, layout: false
+      return nil
     end
 
     render json: serialize_person(person)
