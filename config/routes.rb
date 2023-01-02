@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   scope '/p' do
     get '/:friendly_url' => 'people#show', as: :person
+    get '/:friendly_url/family.json' => 'people#family_json', as: :person_family_json
     get '/:friendly_url/family' => 'people#show_family', as: :person_family
     get '/:friendly_url/gallery' => 'people#show_gallery', as: :person_gallery
   end

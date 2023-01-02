@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require 'dtree/person_serializer'
+
 # Controller for displaying people
 class PeopleController < ApplicationController
+  include DTree::Person
+
   before_action :redirect_to_friendly_url
 
   def show
@@ -38,6 +42,18 @@ class PeopleController < ApplicationController
     @current_spouse = authorize_or_nil(@person.current_spouse) if @person.current_spouse
     @children = policy_scope(@person.children)
     @siblings = policy_scope(@person.siblings)
+  end
+
+  def family_json
+    person = Person.where(friendly_url: params[:friendly_url]).first
+    begin
+      authorize person
+    rescue Pundit::NotDefinedError
+      render json: { error: 'Not found' }, status: :not_found, layout: false
+      nil
+    end
+
+    render json: serialize_person(person)
   end
 
   def show_gallery

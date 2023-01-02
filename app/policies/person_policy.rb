@@ -35,4 +35,8 @@ class PersonPolicy < ApplicationPolicy
   def show_gallery?
     show?
   end
+
+  def family_json?
+    show?
+  end
 end
