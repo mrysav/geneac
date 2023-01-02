@@ -139,7 +139,7 @@ gem 'haml', '< 6'
 gem 'haml-rails'
 
 # Parses links out of strings
-gem 'linkify-it-rb'
+gem 'linkify-it-rb', github: 'mrysav/linkify-it-rb'
 
 # Profiler and perf
 gem 'flamegraph'

@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mrysav/linkify-it-rb.git
+  revision: 31792d554f7339a55e94b932b9ede0d9d0808a34
+  specs:
+    linkify-it-rb (2.0.3)
+      uc.micro-rb (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -234,8 +241,6 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    linkify-it-rb (2.0.3)
-      uc.micro-rb (~> 1.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -527,7 +532,7 @@ DEPENDENCIES
   haml_lint
   image_processing (~> 1.12)
   jbuilder (~> 2.7)
-  linkify-it-rb
+  linkify-it-rb!
   listen (~> 3.3)
   memory_profiler
   nokogiri (~> 1.14.0.rc1)
