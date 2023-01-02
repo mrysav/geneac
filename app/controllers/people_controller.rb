@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'dtree/person_serializer'
+require 'dtree/person'
 
 # Controller for displaying people
 class PeopleController < ApplicationController
