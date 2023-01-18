@@ -1659,7 +1659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
+"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.11
   resolution: "@types/json-schema@npm:7.0.11"
   checksum: 5f32333a4f4e3c1824dd098f366822df4ebe56fed9c3880beec91f4d18b4c242d6d3a458bfcc7df9ddcd2a5f042bb612d70b56a91d54c67fecc7ee33b6db3dc7
@@ -2253,18 +2253,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:8":
-  version: 8.2.5
-  resolution: "babel-loader@npm:8.2.5"
+"babel-loader@npm:9":
+  version: 9.1.2
+  resolution: "babel-loader@npm:9.1.2"
   dependencies:
-    find-cache-dir: ^3.3.1
-    loader-utils: ^2.0.0
-    make-dir: ^3.1.0
-    schema-utils: ^2.6.5
+    find-cache-dir: ^3.3.2
+    schema-utils: ^4.0.0
   peerDependencies:
-    "@babel/core": ^7.0.0
-    webpack: ">=2"
-  checksum: 6e4d2a308061903437ca70e469bc34ea701d7889ba2943f1992cf10a04c94a182fe747571f32e0da5fa6b0a97dfa8433d6c3a69dfbc315d35fd19d4b700c998e
+    "@babel/core": ^7.12.0
+    webpack: ">=5"
+  checksum: d59fdd7179834aadd59a435fbee09a972ddb418d2acc6ad2cadaf38aab87a32325aa487b31c2394bd90ed65d47cd4923322a07efb45184bc0397f5708b6fc901
   languageName: node
   linkType: hard
 
@@ -2324,13 +2322,6 @@ __metadata:
   version: 0.6.1
   resolution: "batch@npm:0.6.1"
   checksum: 4ec2d961e6af6e944e164eb1b8c5885bc4c85846d110ce2d55156ab2903dd1593f3c4a7b71c2cff81464a2973e1b91cc1bf86239a9ba44435a319eeae3346a91
-  languageName: node
-  linkType: hard
-
-"big.js@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "big.js@npm:5.2.2"
-  checksum: ea33d7d25674df4253ae3667da7f48ade6cc8828cb4f2c3a7753f53975f10cebae57e0d1ecf84f1b920b5467262dc0d4f357e5e497b138472d0e64992a8402a4
   languageName: node
   linkType: hard
 
@@ -3626,13 +3617,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emojis-list@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "emojis-list@npm:3.0.0"
-  checksum: a79126b55bc86ee8fd938235a6adf9d457c05fb5bb934e8608b7d35c878d9d1e312a67759244f5c3fba0810b508eb5617e5e6ad6886496ebcfa6832d1c8de3c4
-  languageName: node
-  linkType: hard
-
 "encodeurl@npm:~1.0.2":
   version: 1.0.2
   resolution: "encodeurl@npm:1.0.2"
@@ -4206,7 +4190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.3.1":
+"find-cache-dir@npm:^3.3.2":
   version: 3.3.2
   resolution: "find-cache-dir@npm:3.3.2"
   dependencies:
@@ -4382,7 +4366,7 @@ fsevents@~2.3.2:
     "@rails/ujs": ^7.0.4
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
-    babel-loader: 8
+    babel-loader: 9
     bootstrap: ^5.2
     bootstrap-icons: ^1.10.3
     compression-webpack-plugin: 10
@@ -5207,7 +5191,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2, json5@npm:^2.2.1":
+"json5@npm:^2.2.1":
   version: 2.2.1
   resolution: "json5@npm:2.2.1"
   bin:
@@ -5244,17 +5228,6 @@ fsevents@~2.3.2:
   version: 4.3.0
   resolution: "loader-runner@npm:4.3.0"
   checksum: c2ef7e094bc5c048d1cebf256451b2c4e5c51f5d3bd1d6792413d3b2cc6f85665abcdf24fe9e0dbf6409693f12b77d6e82161878d2f3959b8f06e2dfb8bdc07f
-  languageName: node
-  linkType: hard
-
-"loader-utils@npm:^2.0.0":
-  version: 2.0.2
-  resolution: "loader-utils@npm:2.0.2"
-  dependencies:
-    big.js: ^5.2.2
-    emojis-list: ^3.0.0
-    json5: ^2.1.2
-  checksum: c1df0ff0fb52787011b8d19b1e38ee1b67e31d8b301703e6f791256377ce71a6180f40c34a597dfafe76fe621139fea0ee4669344d98b939d9042ea1c32f1ba9
   languageName: node
   linkType: hard
 
@@ -5358,7 +5331,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"make-dir@npm:^3.0.2, make-dir@npm:^3.1.0":
+"make-dir@npm:^3.0.2":
   version: 3.1.0
   resolution: "make-dir@npm:3.1.0"
   dependencies:
@@ -6750,17 +6723,6 @@ fsevents@~2.3.2:
   bin:
     sass: sass.js
   checksum: 918c65e084d23e764e16d23f4160695acadcd7a2d9c96097b8299d8df03341194073b33a2e2624a85ad4563f85b523852510425e83f56d70a762a18f0a15d96b
-  languageName: node
-  linkType: hard
-
-"schema-utils@npm:^2.6.5":
-  version: 2.7.1
-  resolution: "schema-utils@npm:2.7.1"
-  dependencies:
-    "@types/json-schema": ^7.0.5
-    ajv: ^6.12.4
-    ajv-keywords: ^3.5.2
-  checksum: 3851bcc7e44a3f35d3ca96e460c598aa24cec9fe395b196395316a043dc111d25735a9a49b1a115e4b52d5ed0d8bbcfb9fe1bfd077610f192b613e020d3f3ef2
   languageName: node
   linkType: hard
 
