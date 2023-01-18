@@ -1,5 +1,4 @@
-# [Choice] Ruby version: 2, 2.7, 2.6, 2.5
-ARG VARIANT=3
+ARG VARIANT=3.2
 FROM mcr.microsoft.com/vscode/devcontainers/ruby:${VARIANT}
 
 # Default value to allow debug server to serve content over GitHub Codespaces' port forwarding service
@@ -27,12 +26,13 @@ RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.3.0/overmi
   && chmod +x /usr/local/bin/overmind
 
 # Copy all the files into the container
-COPY . /tmp/workspace
+COPY Gemfile* /tmp/workspace/
+COPY docs/Gemfile* /tmp/workspace/docs/
 RUN chown -R vscode /tmp/workspace
 WORKDIR /tmp/workspace
 USER vscode
 
-RUN rbenv install && bundle install && \
+RUN bundle install && \
     cd docs/ && bundle install && \
     cd .. && yarn install && \
     rm -rf /tmp/workspace
