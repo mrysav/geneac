@@ -1,9 +1,6 @@
 name: Lint changes
 
 on:
-  workflow_dispatch:
-    branches:
-      - 'main'
   pull_request:
     branches:
       - 'main'
@@ -15,6 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version: '3.2'
           bundler-cache: true
       - uses: actions/setup-node@v3
         with:
