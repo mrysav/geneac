@@ -34,7 +34,7 @@ USER vscode
 
 RUN bundle install && \
     cd docs/ && bundle install && \
-    cd .. && yarn install && \
+    cd /home/vscode && \
     rm -rf /tmp/workspace
 
 # Install additional gems.
