@@ -31,4 +31,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
+            ghcr.io/${{ github.repository_owner }}/geneac:latest
             ghcr.io/${{ github.repository_owner }}/geneac:${{ github.sha }}
