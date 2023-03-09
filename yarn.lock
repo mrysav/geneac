@@ -3846,14 +3846,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.6.0":
-  version: 8.6.0
-  resolution: "eslint-config-prettier@npm:8.6.0"
+"eslint-config-prettier@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "eslint-config-prettier@npm:8.7.0"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: 410fefb9747543acfd4f2c214b2d9f9dfde3f7a76c1c51367a772b2fc31e24aa6320f369e9d2ec18476822495774a18535fe6ea463f5b6fa529f6d8cb6eb48a1
+  checksum: 6409d2b04e32594c86e2e6d83a074e57b21f706e8f7df3011bd9e7f9412037071a63a80488ed269c2fd7a693ed0578a10e6a0f03eb4ecffed8221faf039b3a59
   languageName: node
   linkType: hard
 
@@ -4457,7 +4457,7 @@ fsevents@~2.3.2:
     css-minimizer-webpack-plugin: ^4.2.2
     d3-dtree: ^2.4.1
     eslint: ^7.22.0
-    eslint-config-prettier: ^8.6.0
+    eslint-config-prettier: ^8.7.0
     eslint-config-standard: ^16.0.2
     eslint-plugin-import: ^2.27.5
     eslint-plugin-node: ^11.1.0
