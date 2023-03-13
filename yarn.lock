@@ -4469,7 +4469,7 @@ fsevents@~2.3.2:
     sass: ^1.58.3
     shakapacker: ^6.5.6
     stimulus: ~3
-    style-loader: ^3.3.1
+    style-loader: ^3.3.2
     terser-webpack-plugin: ^5.3.6
     trix: ^1.0.0
     turbolinks: ^5.2.0
@@ -7366,12 +7366,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"style-loader@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "style-loader@npm:3.3.1"
+"style-loader@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "style-loader@npm:3.3.2"
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 98fa3139c0eebeec26f39da774a6f6c3bd69fef9331bc52a94fc792be4265771d3c041d2e26a1c1c7bd61d927ec6419600a1471a0cbb54b20d8ae9b36a93a7da
+  checksum: 6451d2f2c7cb853c1b90479f74f615660210e59840d2aabc6e7fc7ccad2859cbf92e121012856249998a2f034b80b6c242ad571402d94c89aa8fa7c0b488b9ef
   languageName: node
   linkType: hard
 

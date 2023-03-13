@@ -23,7 +23,7 @@
     "sass": "^1.58.3",
     "shakapacker": "^6.5.6",
     "stimulus": "~3",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.6",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
