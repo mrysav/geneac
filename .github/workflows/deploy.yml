@@ -18,7 +18,7 @@ jobs:
           pip install cfn-lint
 
       - name: Configure AWS credentials from Test account
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AwsAccessKeyId }}
           aws-secret-access-key: ${{ secrets.AwsSecretAccessKey }}
