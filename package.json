@@ -19,7 +19,7 @@
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "d3-dtree": "^2.4.1",
-    "mini-css-extract-plugin": "^2.7.2",
+    "mini-css-extract-plugin": "^2.7.3",
     "sass": "^1.58.3",
     "shakapacker": "^6.5.6",
     "stimulus": "~3",
