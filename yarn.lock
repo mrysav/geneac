@@ -4464,7 +4464,7 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-promise: ^4.0.1
     eslint-plugin-standard: ^5.0.0
-    mini-css-extract-plugin: ^2.7.3
+    mini-css-extract-plugin: ^2.7.5
     prettier: ^2.8.4
     sass: ^1.59.3
     shakapacker: ^6.5.6
@@ -5610,14 +5610,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^2.7.3":
-  version: 2.7.3
-  resolution: "mini-css-extract-plugin@npm:2.7.3"
+"mini-css-extract-plugin@npm:^2.7.5":
+  version: 2.7.5
+  resolution: "mini-css-extract-plugin@npm:2.7.5"
   dependencies:
     schema-utils: ^4.0.0
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 2fd63dceb36dee6961686d08d616dad4097b950cbdd5deceb9278eb3dbf9c3c74835b6726b23851b07a9927505fbb53686604dc36c817165c43ba64882e1805a
+  checksum: b25ce642e4c132028fd99520fc803d487fec2c50e7d04989a05366cf8552f55b78922b494b322ed2d5aad02dd5a27534ff6fd4d71dd3cae08ce0996f7cd5c3bd
   languageName: node
   linkType: hard
 
