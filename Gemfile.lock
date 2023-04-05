@@ -468,7 +468,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stackprof (0.2.23)
+    stackprof (0.2.24)
     sysexits (1.2.0)
     temple (0.10.0)
     thor (1.2.1)
