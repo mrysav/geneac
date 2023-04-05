@@ -96,7 +96,7 @@ group :development, :test do
 end
 
 # Use Devise for authentication
-gem 'devise', '~> 4.7'
+gem 'devise', '~> 4.9'
 
 # Pundit for policies
 gem 'pundit'
