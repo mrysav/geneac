@@ -1459,10 +1459,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.6":
-  version: 2.11.6
-  resolution: "@popperjs/core@npm:2.11.6"
-  checksum: 10acbe5f2f5da384063f057a3c9d3f9166c24f93603ddf4141e1fb231e42a9a64c647785733769dba41ee31c008ae9903541ee03f20c03c7b68122933b2875cc
+"@popperjs/core@npm:^2.11.7":
+  version: 2.11.7
+  resolution: "@popperjs/core@npm:2.11.7"
+  checksum: 2474e230c1f6b8daf07f6865cc916e17fb69e7d2afd978840472422ed4d2849606b51edf928d6e3611cbf9c63cf04cfd987adef57b0db16096615dd6f5819886
   languageName: node
   linkType: hard
 
@@ -4442,7 +4442,7 @@ fsevents@~2.3.2:
     "@babel/plugin-transform-runtime": 7
     "@babel/preset-env": 7
     "@babel/runtime": 7
-    "@popperjs/core": ^2.11.6
+    "@popperjs/core": ^2.11.7
     "@rails/actioncable": ^7.0.4
     "@rails/actiontext": ^7.0.4
     "@rails/activestorage": ^7.0.4
