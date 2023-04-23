@@ -1,4 +1,4 @@
-name: Build Docker Images
+name: Build Container
 
 on:
   push:
@@ -30,6 +30,8 @@ jobs:
           file: docker/Dockerfile
           platforms: linux/amd64
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ghcr.io/${{ github.repository_owner }}/geneac:latest
             ghcr.io/${{ github.repository_owner }}/geneac:${{ github.sha }}
