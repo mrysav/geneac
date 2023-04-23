@@ -9,11 +9,11 @@ on:
       - 'main'
 
 jobs:
-  brakeman:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - name: Brakeman code scanning
-        uses: standardnotes/brakeman-action@0a31f7dcd4ac5bbd0b15271b0dd88720db0611ae
-        with:
-          options: "--color -q"
+    - uses: actions/checkout@v3
+    - name: Brakeman
+      uses: devmasx/brakeman-linter-action@35a5a3de5330fead60055f952a90cc324fd68295
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
