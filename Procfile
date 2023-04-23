@@ -1,4 +1,4 @@
 web: bundle exec rails server
-worker: QUEUE=* bundle exec rake resque:work
+worker: bundle exec sidekiq -q default -q mailers
 webpacker: ./bin/webpacker-dev-server
 css: yarn build:css --watch

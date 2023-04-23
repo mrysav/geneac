@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-QUEUE="*" bundle exec rake resque:work
+bundle exec sidekiq -q default -q mailers

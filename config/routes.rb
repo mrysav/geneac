@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'resque/server'
-
 Rails.application.routes.draw do
   root 'home#index'
 
@@ -29,8 +27,6 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resource :settings
-
-    mount Resque::Server, at: 'jobs'
   end
 
   namespace :admin do
