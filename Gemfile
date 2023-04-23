@@ -79,7 +79,7 @@ group :development do
 end
 
 # Workin' jobs
-gem 'sidekiq'
+gem 'resque'
 
 # For generating fake data - used in a rake task as well as tests
 gem 'faker'
@@ -147,3 +147,4 @@ gem 'stackprof'
 # Semantic logging
 gem 'amazing_print'
 gem 'rails_semantic_logger'
+
