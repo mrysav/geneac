@@ -1,0 +1,19 @@
+name: Brakeman
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  brakeman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Brakeman code scanning
+        uses: standardnotes/brakeman-action@0a31f7dcd4ac5bbd0b15271b0dd88720db0611ae
+        with:
+          options: "--color -q"
