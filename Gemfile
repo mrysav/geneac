@@ -67,7 +67,6 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
-  gem 'brakeman', '>= 4.0', require: false
   gem 'erb_lint', require: false
   gem 'haml_lint', require: false
   gem 'rubocop', require: false

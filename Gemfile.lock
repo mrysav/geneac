@@ -137,7 +137,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
-    brakeman (5.4.1)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -520,7 +519,6 @@ DEPENDENCIES
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.9.2)
-  brakeman (>= 4.0)
   capybara (>= 3.26)
   chronic
   country_select
