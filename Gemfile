@@ -141,7 +141,7 @@ gem 'linkify-it-rb', '~> 4.0'
 # Profiler and perf
 gem 'flamegraph'
 gem 'memory_profiler'
-gem 'rack-mini-profiler', '~> 3.0'
+gem 'rack-mini-profiler', '~> 3.1'
 gem 'stackprof'
 
 # Semantic logging

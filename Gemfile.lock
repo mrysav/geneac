@@ -297,7 +297,7 @@ GEM
       activesupport (>= 3.0.0)
     racc (1.6.2)
     rack (2.2.6.4)
-    rack-mini-profiler (3.0.0)
+    rack-mini-profiler (3.1.0)
       rack (>= 1.2.0)
     rack-protection (3.0.5)
       rack
@@ -543,7 +543,7 @@ DEPENDENCIES
   pg_search
   puma (~> 6.2)
   pundit
-  rack-mini-profiler (~> 3.0)
+  rack-mini-profiler (~> 3.1)
   rails (~> 7.0.4)
   rails-controller-testing
   rails-settings-cached (~> 2.0)
