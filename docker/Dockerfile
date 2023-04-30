@@ -40,7 +40,7 @@ RUN chmod +x /usr/bin/docker-entrypoint.sh \
 RUN useradd -s /bin/bash geneac && mkdir /home/geneac && chown geneac /home/geneac
 
 # Copy assets built in the asset-builder stage on over here
-COPY --from=asset-builder /app/public/assets /app/public/assets
+COPY --from=asset-builder /app/public /app/public
 
 RUN chown -R geneac /app
 USER geneac
