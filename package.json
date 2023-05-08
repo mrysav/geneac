@@ -24,7 +24,7 @@
     "shakapacker": "^6.6.0",
     "stimulus": "~3",
     "style-loader": "^3.3.2",
-    "terser-webpack-plugin": "^5.3.7",
+    "terser-webpack-plugin": "^5.3.8",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
     "webpack": "5",
