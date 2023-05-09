@@ -4513,7 +4513,7 @@ fsevents@~2.3.2:
     webpack: 5
     webpack-assets-manifest: 5
     webpack-cli: 5
-    webpack-dev-server: ^4.13.3
+    webpack-dev-server: ^4.15.0
     webpack-merge: 5
   languageName: unknown
   linkType: soft
@@ -7941,9 +7941,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"webpack-dev-server@npm:^4.13.3":
-  version: 4.13.3
-  resolution: "webpack-dev-server@npm:4.13.3"
+"webpack-dev-server@npm:^4.15.0":
+  version: 4.15.0
+  resolution: "webpack-dev-server@npm:4.15.0"
   dependencies:
     "@types/bonjour": ^3.5.9
     "@types/connect-history-api-fallback": ^1.3.5
@@ -7984,7 +7984,7 @@ fsevents@~2.3.2:
       optional: true
   bin:
     webpack-dev-server: bin/webpack-dev-server.js
-  checksum: 40e9860f8d86d0a77c00ebf96d705d0ad363e08185b6c9520a9dd76e918369f22e6ece6f53af9c2ea0ca2ada5aaaef13bb43a7cacba28a49a13854cccb9c8bf6
+  checksum: 6a4fc18be538ffb64e8b6b761d6f16860e656f362427130a6bfd6c6028d40f65581a6a85473f84da19ec57ccb7fe3ad3c38fcf2b0dd9f98c3b30ca40c7fb7a92
   languageName: node
   linkType: hard
 
