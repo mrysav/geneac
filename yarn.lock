@@ -4507,7 +4507,7 @@ fsevents@~2.3.2:
     shakapacker: ^6.6.0
     stimulus: ~3
     style-loader: ^3.3.2
-    terser-webpack-plugin: ^5.3.7
+    terser-webpack-plugin: ^5.3.8
     trix: ^1.0.0
     turbolinks: ^5.2.0
     webpack: 5
@@ -7566,15 +7566,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:^5.3.7":
-  version: 5.3.7
-  resolution: "terser-webpack-plugin@npm:5.3.7"
+"terser-webpack-plugin@npm:^5.3.8":
+  version: 5.3.8
+  resolution: "terser-webpack-plugin@npm:5.3.8"
   dependencies:
     "@jridgewell/trace-mapping": ^0.3.17
     jest-worker: ^27.4.5
     schema-utils: ^3.1.1
     serialize-javascript: ^6.0.1
-    terser: ^5.16.5
+    terser: ^5.16.8
   peerDependencies:
     webpack: ^5.1.0
   peerDependenciesMeta:
@@ -7584,13 +7584,13 @@ fsevents@~2.3.2:
       optional: true
     uglify-js:
       optional: true
-  checksum: 2a9c6ceb7ba3ee5fc78124ec11cb1a89e4bf7e25b885c5379ecfb123b3bcea6a11fe97655d1baebab7211211641d527837987af15102c7ba7706a32d752ed6da
+  checksum: df9c304d520bc82ab9dbdf5399c78c3ef6315627b0dc22e6494dc4763beee38c50cff4f43bd1ffdeef9169315ccb0c081a8440351aed95c02ff3a201c7688678
   languageName: node
   linkType: hard
 
-"terser@npm:^5.16.5":
-  version: 5.16.6
-  resolution: "terser@npm:5.16.6"
+"terser@npm:^5.16.8":
+  version: 5.17.2
+  resolution: "terser@npm:5.17.2"
   dependencies:
     "@jridgewell/source-map": ^0.3.2
     acorn: ^8.5.0
@@ -7598,7 +7598,7 @@ fsevents@~2.3.2:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: 686eaa9a90c24d67488d3de07bb62003fdf8024a66ad865067bc894e55f300275778d0d86b14b4d7bc90a591d2edbb13922462c2f9890ba9b2f0be3aa999ea07
+  checksum: 024d5d96f7312fb55894a9627eed41d0feb2479ca5c21b9e65ce207e9fcb030968b485600670aef1ba53c034b7c4937184a6a4f4dab42c994f576af4ff3f5bf2
   languageName: node
   linkType: hard
 
