@@ -25,5 +25,4 @@ jobs:
           pip3 install cfn-lint
           npm install -g markdownlint-cli
       - name: Run script/lint.rb
-        run: |
-          script/lint.rb
+        run: script/lint.rb

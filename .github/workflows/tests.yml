@@ -2,18 +2,15 @@ name: RSpec Tests
 
 on:
   pull_request:
-    branches:
-      - 'main'
+    branches: ['main']
   push:
-    branches:
-      - 'main'
+    branches: ['main']
 
 jobs:
-  run:
+  test:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
-
     services:
       postgres:
         image: postgres
@@ -27,37 +24,28 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Install PostgreSQL client
-        run: |
-          sudo apt-get -yqq install libpq-dev
-
+        run: sudo apt-get -yqq install libpq-dev
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
-
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
       - name: Install NPM modules
         run: bin/yarn install
-
       - name: Build App
         run: |
           mv config/database.cicd.yml config/database.yml
           bin/rails db:setup
           bin/rails webpacker:compile
-
       - name: Run Tests
         run: |
           bundle exec rails spec

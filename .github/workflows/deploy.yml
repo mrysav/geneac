@@ -2,11 +2,10 @@ name: Deploy AWS Resources
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: ['main']
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,8 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install cfn-lint
-        run: |
-          pip install cfn-lint
+        run: pip install cfn-lint
 
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v2
