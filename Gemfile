@@ -41,7 +41,7 @@ gem 'image_processing', '~> 1.12'
 gem 'bootsnap', '>= 1.9.2', require: false
 
 group :development, :test do
-  gem 'debug', '~> 1.7', '>= 1.7.1'
+  gem 'debug', '~> 1.8'
 end
 
 group :development do
