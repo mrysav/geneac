@@ -4507,7 +4507,7 @@ fsevents@~2.3.2:
     shakapacker: ^6.6.0
     stimulus: ~3
     style-loader: ^3.3.2
-    terser-webpack-plugin: ^5.3.8
+    terser-webpack-plugin: ^5.3.9
     trix: ^1.0.0
     turbolinks: ^5.2.0
     webpack: 5
@@ -7566,9 +7566,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:^5.3.8":
-  version: 5.3.8
-  resolution: "terser-webpack-plugin@npm:5.3.8"
+"terser-webpack-plugin@npm:^5.3.9":
+  version: 5.3.9
+  resolution: "terser-webpack-plugin@npm:5.3.9"
   dependencies:
     "@jridgewell/trace-mapping": ^0.3.17
     jest-worker: ^27.4.5
@@ -7584,7 +7584,7 @@ fsevents@~2.3.2:
       optional: true
     uglify-js:
       optional: true
-  checksum: df9c304d520bc82ab9dbdf5399c78c3ef6315627b0dc22e6494dc4763beee38c50cff4f43bd1ffdeef9169315ccb0c081a8440351aed95c02ff3a201c7688678
+  checksum: 6d3d33e5ac6798a3cd946e2a41cb9bd4dd70918cfa669920085fcb16015473ade8051c3d74a900d5b2bd69bace0c8b65a1ff42ec2b96749a0d80ebd0aaa4bdb8
   languageName: node
   linkType: hard
 
