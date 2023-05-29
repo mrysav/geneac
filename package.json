@@ -16,7 +16,7 @@
     "bootstrap": "^5.2",
     "bootstrap-icons": "^1.10.5",
     "compression-webpack-plugin": "10",
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "d3-dtree": "^2.4.1",
     "mini-css-extract-plugin": "^2.7.5",
