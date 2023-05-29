@@ -247,9 +247,9 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.20.0)
+    loofah (2.21.3)
       crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
+      nokogiri (>= 1.12.0)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -278,7 +278,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.0)
+    nokogiri (1.15.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -326,9 +326,10 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.5.0)
-      loofah (~> 2.19, >= 2.19.1)
-    rails-settings-cached (2.8.3)
+    rails-html-sanitizer (1.6.0)
+      loofah (~> 2.21)
+      nokogiri (~> 1.14)
+    rails-settings-cached (2.9.0)
       activerecord (>= 5.0.0)
       railties (>= 5.0.0)
     rails_semantic_logger (4.12.0)
@@ -478,7 +479,7 @@ GEM
     stackprof (0.2.25)
     sysexits (1.2.0)
     temple (0.10.0)
-    thor (1.2.1)
+    thor (1.2.2)
     tilt (2.1.0)
     timecop (0.9.6)
     timeout (0.3.2)
@@ -549,7 +550,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 3.1)
   rails (~> 7.0.4)
   rails-controller-testing
-  rails-settings-cached (~> 2.0)
+  rails-settings-cached (~> 2.9)
   rails_semantic_logger
   redis (~> 5.0)
   resque

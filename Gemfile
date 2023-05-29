@@ -123,7 +123,7 @@ gem 'chronic'
 gem 'pg_search'
 
 # Settings
-gem 'rails-settings-cached', '~> 2.0'
+gem 'rails-settings-cached', '~> 2.9'
 
 # Pagination
 gem 'pagy'
