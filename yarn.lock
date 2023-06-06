@@ -2397,12 +2397,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^5.2":
-  version: 5.2.3
-  resolution: "bootstrap@npm:5.2.3"
+"bootstrap@npm:^5.3":
+  version: 5.3.0
+  resolution: "bootstrap@npm:5.3.0"
   peerDependencies:
-    "@popperjs/core": ^2.11.6
-  checksum: 817dcdeeca27148e8234f8c54193f6abe03cf4e7b0812ad17562fd772b4057ba52b6ee38e09d0cee7765d73971cec18f71a671f85f8e60a1f12a762a63112ccf
+    "@popperjs/core": ^2.11.7
+  checksum: 8f0e9f5ae799edc9c3f0399d042972ca8160cc102444f3186e428b133531f8ab8f2ea30c69d805a73f1094e88bc934f3a43c69920b289a8e64010569b290ebef
   languageName: node
   linkType: hard
 
@@ -4487,7 +4487,7 @@ fsevents@~2.3.2:
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
     babel-loader: 9
-    bootstrap: ^5.2
+    bootstrap: ^5.3
     bootstrap-icons: ^1.10.5
     compression-webpack-plugin: 10
     css-loader: ^6.8.1
