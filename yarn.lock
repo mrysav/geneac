@@ -1493,12 +1493,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/activestorage@npm:^7.0.4":
-  version: 7.0.4
-  resolution: "@rails/activestorage@npm:7.0.4"
+"@rails/activestorage@npm:^7.0.5":
+  version: 7.0.5
+  resolution: "@rails/activestorage@npm:7.0.5"
   dependencies:
     spark-md5: ^3.0.1
-  checksum: 00ddb9ada4235b47d7784d76bbc886d8992ead02d8e439048f51a22336f2d82bef72b88bc74d70cc227cf978749bb26dffa6268713834024f754479498619b21
+  checksum: e13d85041917c1b36906669714b827e066739d3f9d41a729a153a3780a420d1c4a4e2f0a23e7a0a9872bda8886fc17276a85db692688c29779250e05365537f6
   languageName: node
   linkType: hard
 
@@ -4482,7 +4482,7 @@ fsevents@~2.3.2:
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.0.4
     "@rails/actiontext": ^7.0.4
-    "@rails/activestorage": ^7.0.4
+    "@rails/activestorage": ^7.0.5
     "@rails/ujs": ^7.0.4
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
