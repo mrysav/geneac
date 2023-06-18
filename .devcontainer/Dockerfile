@@ -17,7 +17,7 @@ RUN apt-get update && \
     python3-pip python3-setuptools libvips42 poppler-utils openssh-server postgresql-client
 
 # Install python packages
-RUN pip3 install cfn-lint
+RUN pip3 install --break-system-packages cfn-lint
 
 # Install overmind
 RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.3.0/overmind-v2.3.0-linux-amd64.gz > /tmp/overmind.gz \
