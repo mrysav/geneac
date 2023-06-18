@@ -1736,12 +1736,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.5.1":
-  version: 8.5.3
-  resolution: "@types/ws@npm:8.5.3"
+"@types/ws@npm:^8.5.5":
+  version: 8.5.5
+  resolution: "@types/ws@npm:8.5.5"
   dependencies:
     "@types/node": "*"
-  checksum: d2cb8f983358971398504814ad1e65109ec1e1efe19d9d744e64d733074c1e792a12fd1cd6554d5025cc55802db546fe28240a7e55bc50c22f85072c54fb9f78
+  checksum: 0a8c976de605a9e7d20b5d56a8f0a850d0dc1015cbb23ed241f84b061e0c6387e43160f42878a568587418a38d365a91f682a58d31e16ca5befd2b5f25779373
   languageName: node
   linkType: hard
 
@@ -4513,7 +4513,7 @@ fsevents@~2.3.2:
     webpack: 5
     webpack-assets-manifest: 5
     webpack-cli: 5
-    webpack-dev-server: ^4.15.0
+    webpack-dev-server: ^4.15.1
     webpack-merge: 5
   languageName: unknown
   linkType: soft
@@ -7930,9 +7930,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"webpack-dev-server@npm:^4.15.0":
-  version: 4.15.0
-  resolution: "webpack-dev-server@npm:4.15.0"
+"webpack-dev-server@npm:^4.15.1":
+  version: 4.15.1
+  resolution: "webpack-dev-server@npm:4.15.1"
   dependencies:
     "@types/bonjour": ^3.5.9
     "@types/connect-history-api-fallback": ^1.3.5
@@ -7940,7 +7940,7 @@ fsevents@~2.3.2:
     "@types/serve-index": ^1.9.1
     "@types/serve-static": ^1.13.10
     "@types/sockjs": ^0.3.33
-    "@types/ws": ^8.5.1
+    "@types/ws": ^8.5.5
     ansi-html-community: ^0.0.8
     bonjour-service: ^1.0.11
     chokidar: ^3.5.3
@@ -7973,7 +7973,7 @@ fsevents@~2.3.2:
       optional: true
   bin:
     webpack-dev-server: bin/webpack-dev-server.js
-  checksum: 6a4fc18be538ffb64e8b6b761d6f16860e656f362427130a6bfd6c6028d40f65581a6a85473f84da19ec57ccb7fe3ad3c38fcf2b0dd9f98c3b30ca40c7fb7a92
+  checksum: 58f0c4ce97a68d206984562f1d5c114890021f344e7ae30ad78bfd96d9e0466c55664d3258ad2e49bce51757912d03274a500d202bb7dff512b37248fc2f9821
   languageName: node
   linkType: hard
 
