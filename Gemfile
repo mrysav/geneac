@@ -23,7 +23,7 @@ gem 'shakapacker', '~> 6.6.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
-gem 'cssbundling-rails', '~> 1.1'
+gem 'cssbundling-rails', '~> 1.2'
 
 # ---------------
 
