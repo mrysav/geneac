@@ -1,4 +1,4 @@
-ARG VARIANT=3.2
+ARG VARIANT=3.2-bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/ruby:${VARIANT}
 
 # Default value to allow debug server to serve content over GitHub Codespaces' port forwarding service
@@ -11,16 +11,23 @@ RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSI
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Add Terraform and Azure CLI repositories
+RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg \
+  && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list \
+  && wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/azure-cli.list
+
 # Install additional OS packages.
 RUN apt-get update && \
     apt-get -y install --no-install-recommends vim tmux imagemagick \
-    python3-pip python3-setuptools libvips42 poppler-utils openssh-server postgresql-client
+    python3-pip python3-setuptools libvips42 poppler-utils openssh-server postgresql-client \
+    terraform azure-cli
 
 # Install python packages
-RUN pip3 install --break-system-packages cfn-lint
+RUN pip3 install cfn-lint
 
 # Install overmind
-RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.3.0/overmind-v2.3.0-linux-amd64.gz > /tmp/overmind.gz \
+RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.4.0/overmind-v2.4.0-linux-amd64.gz > /tmp/overmind.gz \
   && gunzip /tmp/overmind.gz \
   && mv /tmp/overmind /usr/local/bin \
   && chmod +x /usr/local/bin/overmind
