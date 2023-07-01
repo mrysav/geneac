@@ -125,7 +125,7 @@ GEM
     aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
     backport (1.2.0)
-    bcrypt (3.1.18)
+    bcrypt (3.1.19)
     benchmark (0.2.1)
     better_html (2.0.1)
       actionview (>= 6.0)
@@ -522,7 +522,7 @@ DEPENDENCIES
   amazing_print
   aws-sdk-rails
   aws-sdk-s3
-  bcrypt (~> 3.1.7)
+  bcrypt (~> 3.1.19)
   bootsnap (>= 1.9.2)
   capybara (>= 3.26)
   chronic
