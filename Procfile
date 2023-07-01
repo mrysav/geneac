@@ -1,4 +1,4 @@
 web: bundle exec rails server
 worker: QUEUE=* bundle exec rake resque:work
-webpacker: ./bin/webpacker-dev-server
+shakapacker: ./bin/shakapacker-dev-server
 css: yarn build:css --watch

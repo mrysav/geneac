@@ -439,7 +439,7 @@ GEM
     semantic_logger (4.13.0)
       concurrent-ruby (~> 1.0)
     semantic_range (3.0.0)
-    shakapacker (6.6.0)
+    shakapacker (7.0.1)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -564,7 +564,7 @@ DEPENDENCIES
   rubyzip (~> 2.3)
   sass-rails (>= 6)
   selenium-webdriver
-  shakapacker (~> 6.6.0)
+  shakapacker (~> 7.0.0)
   simple_form (~> 5.2)
   solargraph
   spring (>= 3.0.0)

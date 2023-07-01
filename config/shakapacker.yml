@@ -8,6 +8,7 @@ default: &default
   cache_path: tmp/webpacker
   webpack_compile_output: true
   ensure_consistent_versioning: true
+  nested_entries: false
 
   # Additional paths webpack should look up modules
   # ['app/assets', 'engine/foo/app/assets']
