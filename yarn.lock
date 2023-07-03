@@ -1476,10 +1476,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^7.0.5":
-  version: 7.0.5
-  resolution: "@rails/actioncable@npm:7.0.5"
-  checksum: ebf17427f09b2630d1e02df17563b24038d033c87bc531cb94ab307ebc18e9c372594548f2895ad13a46f0a3424a18a843f8dcbd45f8cc54877aceda89eb5d6f
+"@rails/actioncable@npm:^7.0.6":
+  version: 7.0.6
+  resolution: "@rails/actioncable@npm:7.0.6"
+  checksum: e14d2b97c7eb49f598b8aee1ce66d903dc0bac4e943e9d3706a8d6a2fecf622616538a83be05cb080244963534a83e650f8dfa6f72665abfc0db9801b3f6473a
   languageName: node
   linkType: hard
 
@@ -4502,7 +4502,7 @@ fsevents@~2.3.2:
     "@babel/preset-env": 7
     "@babel/runtime": 7
     "@popperjs/core": ^2.11.8
-    "@rails/actioncable": ^7.0.5
+    "@rails/actioncable": ^7.0.6
     "@rails/actiontext": ^7.0.5
     "@rails/activestorage": ^7.0.5
     "@rails/ujs": ^7.0.5
