@@ -21,7 +21,7 @@
     "d3-dtree": "^2.4.1",
     "mini-css-extract-plugin": "^2.7.6",
     "sass": "^1.63.6",
-    "shakapacker": "^7.0.0",
+    "shakapacker": "^7.0.2",
     "stimulus": "~3",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
