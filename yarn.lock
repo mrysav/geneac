@@ -4524,7 +4524,7 @@ fsevents@~2.3.2:
     eslint-plugin-promise: ^4.0.1
     eslint-plugin-standard: ^5.0.0
     mini-css-extract-plugin: ^2.7.6
-    prettier: ^3.0.0
+    prettier: ^3.0.2
     sass: ^1.63.6
     shakapacker: ^7.0.2
     stimulus: ~3
@@ -6629,12 +6629,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "prettier@npm:3.0.0"
+"prettier@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "prettier@npm:3.0.2"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 4e7b2674a825ae3b2cc4c41524d5474e4bed6bf1f00f3684d37da5974795a20cb60d6e02141662b0daf557aac6b3f3f4dfa1658d22df12f171a3838aa2845ecb
+  checksum: 41b36df5d63e8b77c39bfc11601600eda675f11d9cb7c67d052bf5de51cce394fb27e85d743660509740763eba2abb7ea38548d94d25155a27948f1eee276735
   languageName: node
   linkType: hard
 
