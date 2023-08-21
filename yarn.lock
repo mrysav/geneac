@@ -4525,7 +4525,7 @@ fsevents@~2.3.2:
     eslint-plugin-standard: ^5.0.0
     mini-css-extract-plugin: ^2.7.6
     prettier: ^3.0.0
-    sass: ^1.63.6
+    sass: ^1.66.1
     shakapacker: ^7.0.2
     stimulus: ~3
     style-loader: ^3.3.3
@@ -6976,16 +6976,16 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.63.6":
-  version: 1.63.6
-  resolution: "sass@npm:1.63.6"
+"sass@npm:^1.66.1":
+  version: 1.66.1
+  resolution: "sass@npm:1.66.1"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: f27234e58e7cf2cbe9d361f0b97331d8b28a19fd0a4980c828c971f52af63102d4e5e3b91a9fb006566d8764335cd9d32b35474cd16835689d45d7b0ded18385
+  checksum: a389b00e122a5e8e8cbe86242d0df049b6fd6360ce84dff2a7ba01259b4466234dadfbbb0b519e936c4ac399261156c68e4af0516f15534e710f5f40cafa137b
   languageName: node
   linkType: hard
 
