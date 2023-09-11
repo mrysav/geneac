@@ -10,7 +10,7 @@
     "@rails/actioncable": "^7.0.6",
     "@rails/actiontext": "^7.0.6",
     "@rails/activestorage": "^7.0.7",
-    "@rails/ujs": "^7.0.6",
+    "@rails/ujs": "^7.0.8",
     "awesomplete": "^1.1.4",
     "babel-loader": "9",
     "bootstrap": "^5.3",
