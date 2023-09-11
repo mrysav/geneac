@@ -19,7 +19,7 @@ gem 'sass-rails', '>= 6'
 # Use sprockets for legacy asset delivery
 gem 'sprockets-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/shakacode/shakapacker
-gem 'shakapacker', '~> 7.0.2'
+gem 'shakapacker', '~> 7.0.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
