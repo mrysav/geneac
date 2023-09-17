@@ -4622,7 +4622,7 @@ fsevents@~2.3.2:
     mini-css-extract-plugin: ^2.7.6
     prettier: ^3.0.0
     sass: ^1.66.1
-    shakapacker: ^7.0.2
+    shakapacker: ^7.0.3
     stimulus: ~3
     style-loader: ^3.3.3
     terser-webpack-plugin: ^5.3.9
@@ -7368,9 +7368,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"shakapacker@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "shakapacker@npm:7.0.2"
+"shakapacker@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "shakapacker@npm:7.0.3"
   dependencies:
     glob: ^7.2.0
     js-yaml: ^4.1.0
@@ -7380,6 +7380,8 @@ fsevents@~2.3.2:
     "@babel/plugin-transform-runtime": ^7.17.0
     "@babel/preset-env": ^7.16.11
     "@babel/runtime": ^7.17.9
+    "@types/babel__core": ^7.0.0
+    "@types/webpack": ^5.0.0
     babel-loader: ^8.2.4 || ^9.0.0
     compression-webpack-plugin: ^9.0.0 || ^10.0.0
     terser-webpack-plugin: ^5.3.1
@@ -7388,7 +7390,12 @@ fsevents@~2.3.2:
     webpack-cli: ^4.9.2 || ^5.0.0
     webpack-dev-server: ^4.9.0
     webpack-merge: ^5.8.0
-  checksum: 5b597f5acf1450170eee5c27f167fe8e9728cb23b2b4e55b86d87fdd1264189746f3a9426f337965e6825b82e736e0665a9b04f26942bc951149e2c432e05475
+  peerDependenciesMeta:
+    "@types/babel__core":
+      optional: true
+    "@types/webpack":
+      optional: true
+  checksum: a58ff671ca7860f1fd0a818c23fd8f066375dfc08774a822ebbad161b73780914b235b6cbe1042d887430ed3b521223d2bf942fd04b541ffdd35b7aa463e2847
   languageName: node
   linkType: hard
 
