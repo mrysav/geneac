@@ -8,7 +8,7 @@
     "@babel/runtime": "7",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^7.0.8",
-    "@rails/actiontext": "^7.0.8",
+    "@rails/actiontext": "^7.1.0",
     "@rails/activestorage": "^7.0.8",
     "@rails/ujs": "^7.0.8",
     "awesomplete": "^1.1.4",
