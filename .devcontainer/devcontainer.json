@@ -9,17 +9,14 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "aki77.haml-lint",
-        "castwide.solargraph",
         "dbaeumer.vscode-eslint",
-        "eamodio.gitlens",
         "editorconfig.editorconfig",
         "esbenp.prettier-vscode",
         "karunamurti.haml",
         "manuelpuyol.erb-linter",
-        "misogi.ruby-rubocop",
         "ms-azuretools.vscode-docker",
-        "rebornix.Ruby",
         "robinbentley.sass-indented",
+        "Shopify.ruby-lsp",
         "tyriar.sort-lines",
         "vortizhe.simple-ruby-erb"
       ]
