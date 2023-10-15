@@ -1,2 +1,0 @@
-CREATE USER vscode CREATEDB IN GROUP postgres;
-CREATE DATABASE vscode WITH OWNER vscode;

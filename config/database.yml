@@ -24,6 +24,7 @@ default: &default
 development: &development
   <<: *default
   username: vscode
+  password: vscode
   host: localhost
   port: 5432
   database: geneac_development
