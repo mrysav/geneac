@@ -9,8 +9,6 @@ ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev"
 ARG NODE_VERSION="lts/*"
 RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} && npm install -g markdownlint-cli 2>&1"
 
-ENV DEBIAN_FRONTEND=noninteractive
-
 # Add Terraform and Azure CLI repositories
 RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg \
   && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list \
@@ -19,12 +17,9 @@ RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/shar
 
 # Install additional OS packages.
 RUN apt-get update && \
-    apt-get -y install --no-install-recommends vim tmux imagemagick \
-    python3-pip python3-setuptools libvips42 poppler-utils openssh-server postgresql-client \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends vim tmux imagemagick \
+    libvips42 poppler-utils openssh-server postgresql-client \
     terraform azure-cli
-
-# Install python packages
-RUN pip3 install cfn-lint
 
 # Install overmind
 RUN curl -L https://github.com/DarthSim/overmind/releases/download/v2.4.0/overmind-v2.4.0-linux-amd64.gz > /tmp/overmind.gz \
@@ -43,8 +38,5 @@ RUN bundle install && \
     cd docs/ && bundle install && \
     cd /home/vscode && \
     rm -rf /tmp/workspace
-
-# Install additional gems.
-RUN gem install foreman
 
 WORKDIR /home/vscode
