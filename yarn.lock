@@ -4622,7 +4622,7 @@ fsevents@~2.3.2:
     mini-css-extract-plugin: ^2.7.6
     prettier: ^3.0.3
     sass: ^1.69.5
-    shakapacker: ^7.0.3
+    shakapacker: ^7.1.0
     stimulus: ~3
     style-loader: ^3.3.3
     terser-webpack-plugin: ^5.3.9
@@ -7368,9 +7368,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"shakapacker@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "shakapacker@npm:7.0.3"
+"shakapacker@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "shakapacker@npm:7.1.0"
   dependencies:
     glob: ^7.2.0
     js-yaml: ^4.1.0
@@ -7395,7 +7395,7 @@ fsevents@~2.3.2:
       optional: true
     "@types/webpack":
       optional: true
-  checksum: a58ff671ca7860f1fd0a818c23fd8f066375dfc08774a822ebbad161b73780914b235b6cbe1042d887430ed3b521223d2bf942fd04b541ffdd35b7aa463e2847
+  checksum: 090ec49824de9bd5519d2b4241076d2df1c025cc5aacbec25dfb1dec67643dce6d1e7f1d8141f325cf7d96f89d296f072d7ed2f074bdd697e50568f7c395aa44
   languageName: node
   linkType: hard
 
