@@ -4,7 +4,7 @@
 class SettingsController < ApplicationController
   def show
     authorize :settings, :use?
-    @env_vars = %w[HOSTNAME MAILER_SENDER AWS_REGION S3_BUCKET_NAME]
+    @env_vars = %w[HOSTNAME MAILER_SENDER AZURE_STORAGE_ACCOUNT_NAME AZURE_STORAGE_CONTAINER]
   end
 
   def create

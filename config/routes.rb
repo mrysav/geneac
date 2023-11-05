@@ -5,6 +5,8 @@ require 'resque/server'
 Rails.application.routes.draw do
   root 'home#index'
 
+  get '/up' => 'home#up', as: :up
+
   devise_for :users
   get '/u/:id' => 'users#show', as: :user
 

@@ -37,8 +37,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-  # Store uploaded files on S3-compatible storage (see config/storage.yml for options)
-  config.active_storage.service = ENV['USE_MINIO'].present? ? :minio : :amazon
+  # Store uploaded files on Azure Blob Store (see config/storage.yml for options)
+  config.active_storage.service = :microsoft
 
   # Proxy requests for Active Storage objects through application.
   # Disabled by default to slightly reduce traffic through app
@@ -50,7 +50,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = ENV['RAILS_FORCE_SSL'].present?
+  # config.force_ssl = ENV['RAILS_FORCE_SSL'].present?
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -59,9 +59,9 @@ Rails.application.configure do
   config.active_job.queue_adapter     = :resque
   config.active_job.queue_name_prefix = 'geneac_production'
 
-  config.action_mailer.delivery_method = :ses
+  # config.action_mailer.delivery_method = :ses
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: ENV['HOSTNAME'] }
+  config.action_mailer.default_url_options = { host: ENV.fetch('HOSTNAME') }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -75,7 +75,7 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  # config.log_formatter = ::Logger::Formatter.new
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     $stdout.sync = true
@@ -83,7 +83,7 @@ Rails.application.configure do
     config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
   end
 
-  config.log_level = ENV['LOG_LEVEL'].downcase.strip.to_sym if ENV['LOG_LEVEL'].present?
+  config.log_level = ENV.fetch('LOG_LEVEL', 'info').downcase.strip.to_sym
 
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]

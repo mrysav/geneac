@@ -8,7 +8,6 @@ untracked_files = `git ls-files --others --exclude-standard`.lines
 
 files_to_lint = changed_files + untracked_files
 
-CLOUDFORMATION = %r{script/geneac-aws\.yml}.freeze
 ERB = /\.erb$/.freeze
 HAML = /\.haml$/.freeze
 MARKDOWN = /\.md/.freeze
@@ -32,8 +31,6 @@ files_to_lint.each do |f|
     command, success, output = run_linter('rubocop', f)
   elsif MARKDOWN.match(f)
     command, success, output = run_linter('markdownlint', f)
-  elsif CLOUDFORMATION.match(f)
-    command, success, output = run_linter('cfn-lint', f)
   elsif HAML.match(f)
     command, success, output = run_linter('haml-lint', f)
   elsif ERB.match(f)

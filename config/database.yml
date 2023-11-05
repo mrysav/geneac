@@ -23,8 +23,8 @@ default: &default
 
 development: &development
   <<: *default
-  username: vscode
-  password: vscode
+  username: postgres
+  password: postgres
   host: localhost
   port: 5432
   database: geneac_development

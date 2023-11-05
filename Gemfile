@@ -42,6 +42,12 @@ gem 'bootsnap', '>= 1.9.2', require: false
 
 group :development, :test do
   gem 'debug', '~> 1.8'
+
+  gem 'database_cleaner-active_record'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0.3'
+  gem 'timecop'
 end
 
 group :development do
@@ -53,6 +59,15 @@ group :development do
   gem 'listen', '~> 3.8'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '>= 3.0.0'
+
+  # Linters and other tools
+  gem 'erb_lint', require: false
+  gem 'haml_lint', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rake', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :test do
@@ -66,31 +81,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-group :development do
-  gem 'erb_lint', require: false
-  gem 'haml_lint', require: false
-  gem 'rubocop', require: false
-  gem 'rubocop-performance', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rake', require: false
-  gem 'rubocop-rspec', require: false
-  gem 'solargraph', require: false
-  gem 'yard', require: false
-end
-
 # Workin' jobs
 gem 'resque'
 
 # For generating fake data - used in a rake task as well as tests
 gem 'faker'
-
-group :development, :test do
-  gem 'database_cleaner-active_record'
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 6.0.3'
-  gem 'timecop'
-end
 
 # Use Devise for authentication
 gem 'devise', '~> 4.9'
@@ -110,10 +105,9 @@ gem 'administrate-field-nested_has_many'
 # For content tagging
 gem 'acts-as-taggable-on', '~> 9.0'
 
-gem 'aws-sdk-rails'
 group :production do
-  # For S3
-  gem 'aws-sdk-s3'
+  # For azure
+  gem 'azure-storage-blob', '~> 2.0'
 end
 
 # Date parsing
@@ -148,3 +142,4 @@ gem 'stackprof'
 gem 'amazing_print'
 gem 'rails_semantic_logger'
 
+gem 'kamal', '~> 0.16', require: false

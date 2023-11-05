@@ -98,10 +98,10 @@ en:
         name: 'Hostname'
       MAILER_SENDER:
         name: 'Email Sender'
-      AWS_REGION:
-        name: 'AWS Region'
-      S3_BUCKET_NAME:
-        name: 'S3 Bucket Name'
+      AZURE_STORAGE_ACCOUNT_NAME:
+        name: 'Azure Storage Account Name'
+      AZURE_STORAGE_CONTAINER:
+        name: 'Azure Storage Container Name'
 
     title: 'Site Settings'
     update: 'Update Settings'
