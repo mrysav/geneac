@@ -12,6 +12,11 @@ class HomeController < ApplicationController
     skip_authorization if @recent_updates.nil? && @recent_birthdays.nil?
   end
 
+  def up
+    skip_authorization
+    render plain: 'OK'
+  end
+
   private
 
   def recent_updates

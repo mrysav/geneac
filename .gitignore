@@ -65,8 +65,8 @@ spec/examples.txt
 /doc/
 .idea/
 
-# mkdocs files
-/docs/site
-
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+/config/deploy.yml
+
