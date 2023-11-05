@@ -1503,10 +1503,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/ujs@npm:^7.0.8":
-  version: 7.0.8
-  resolution: "@rails/ujs@npm:7.0.8"
-  checksum: fb81500fb9029032b7c3b79cdf8fcb1685b0afc2c59ef86316b19eda461463999a799b028f5e7d008567bd192103028f29528b6704eeae36b680944db96ccced
+"@rails/ujs@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "@rails/ujs@npm:7.1.1"
+  checksum: 9fd3472a683c870cfb32418bb4b6e49e33793087c58ee72978a10afa6b3d86042cc76b6ef8f231098020a786ae237fab19e01caad1ad61cd1b13131fcd97b10d
   languageName: node
   linkType: hard
 
@@ -4592,7 +4592,7 @@ fsevents@~2.3.2:
     "@rails/actioncable": ^7.1.1
     "@rails/actiontext": ^7.1.1
     "@rails/activestorage": ^7.1.1
-    "@rails/ujs": ^7.0.8
+    "@rails/ujs": ^7.1.1
     awesomplete: ^1.1.4
     babel-eslint: ^10.0.3
     babel-loader: 9
