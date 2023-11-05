@@ -26,8 +26,9 @@ class NoteDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :title,
-    :date_string,
     :tag_list,
+    :date_string,
+    :updated_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
