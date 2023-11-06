@@ -43,6 +43,5 @@ workers ENV.fetch('WEB_CONCURRENCY', 2)
 plugin :tmp_restart
 
 on_worker_boot do
-  # Re-open appenders after forking the process
-  SemanticLogger.reopen
+  # Put statements here to execute on worker boot
 end

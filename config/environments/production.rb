@@ -75,12 +75,11 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  # config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = ::Logger::Formatter.new
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     $stdout.sync = true
-    config.rails_semantic_logger.add_file_appender = false
-    config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
+    config.logger = Logger.new($stdout)
   end
 
   config.log_level = ENV.fetch('LOG_LEVEL', 'info').downcase.strip.to_sym

@@ -79,7 +79,8 @@ Rails.application.configure do
 
   # Log to stdout at the info level in development (debug is dumped to file)
   $stdout.sync = true
-  config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format, level: :info)
+  config.logger = Logger.new($stdout)
+  config.log_level = :info
 
   config.file_watcher = ActiveSupport::FileUpdateChecker
 end
