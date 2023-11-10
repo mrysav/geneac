@@ -15,6 +15,8 @@ class Citation < ApplicationRecord
   private
 
   def parse_attrs
+    return unless text
+
     parsed_links = linkify.match(text)
 
     self.attrs = {
