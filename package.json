@@ -2,38 +2,25 @@
   "name": "geneac",
   "private": true,
   "dependencies": {
-    "@babel/core": "7",
-    "@babel/plugin-transform-runtime": "7",
-    "@babel/preset-env": "7",
-    "@babel/runtime": "7",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.0-beta.1",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^7.1.1",
     "@rails/actiontext": "^7.1.1",
     "@rails/activestorage": "^7.1.1",
-    "@rails/ujs": "^7.1.1",
+    "autoprefixer": "^10.4.16",
     "awesomplete": "^1.1.4",
-    "babel-loader": "9",
-    "bootstrap": "^5.3",
-    "bootstrap-icons": "^1.11.1",
-    "compression-webpack-plugin": "10",
-    "css-loader": "^6.8.1",
-    "css-minimizer-webpack-plugin": "^5.0.1",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.2",
     "d3-dtree": "^2.4.1",
-    "mini-css-extract-plugin": "^2.7.6",
+    "esbuild": "^0.19.7",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.69.5",
-    "shakapacker": "^7.1.0",
-    "stimulus": "~3",
-    "style-loader": "^3.3.3",
-    "terser-webpack-plugin": "^5.3.9",
-    "trix": "~> 2.0",
-    "turbolinks": "^5.2.0",
-    "webpack": "5",
-    "webpack-assets-manifest": "5",
-    "webpack-cli": "5",
-    "webpack-merge": "5"
+    "trix": "~> 2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^16.0.2",
@@ -42,19 +29,17 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^5.0.0",
-    "prettier": "^3.1.0",
-    "webpack-dev-server": "^4.15.1"
-  },
-  "babel": {
-    "presets": [
-      "./node_modules/shakapacker/package/babel/preset.js"
-    ]
+    "prettier": "^3.0.3"
   },
   "browserslist": [
     "defaults"
   ],
   "packageManager": "yarn@2.4.2",
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
+    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
+    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   }
 }

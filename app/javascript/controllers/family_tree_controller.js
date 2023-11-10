@@ -1,7 +1,7 @@
-import { Controller } from 'stimulus'
+import { Controller } from '@hotwired/stimulus'
 import ajax from '../ajax'
 import _ from 'lodash'
-import 'd3'
+import * as d3 from 'd3'
 import dTree from 'd3-dtree'
 
 export default class extends Controller {

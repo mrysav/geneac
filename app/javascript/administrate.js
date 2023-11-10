@@ -1,13 +1,11 @@
-/* eslint no-console:0 */
+import "@hotwired/turbo-rails"
+import "./controllers"
 
-import 'trix'
-import '@rails/actiontext'
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
+import "trix"
+import "@rails/actiontext"
 
-const application = Application.start()
-const context = require.context('./administrate/', true, /\.js$/)
-application.load(definitionsFromContext(context))
+import * as ActiveStorage from "@rails/activestorage"
+ActiveStorage.start()
 
 // These two functions are used by some customized Administrate views and
 // should probably be removed or moved to a Stimulus component

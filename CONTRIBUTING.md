@@ -17,7 +17,6 @@ A few key libraries/gems that would also be helpful to learn about before contri
 - [Devise](https://github.com/heartcombo/devise)
 - [Administrate](https://github.com/thoughtbot/administrate)
 - [Pundit](https://github.com/varvet/pundit)
-- [Webpacker](https://github.com/rails/webpacker)
 - [RSpec](https://rspec.info/)
 
 Finally, since Heroku is the primary deployment target, I also recommend reading about [twelve-factor apps](https://12factor.net/).

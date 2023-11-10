@@ -45,7 +45,6 @@ jobs:
         run: |
           mv config/database.cicd.yml config/database.yml
           bin/rails db:setup
-          bin/rails webpacker:compile
       - name: Run Tests
         run: |
           bundle exec rails spec

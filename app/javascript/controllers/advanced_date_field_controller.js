@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus'
+import { Controller } from '@hotwired/stimulus'
 import ajax from '../ajax'
 
 const parse_date_url = '/ajax/parse_date'
