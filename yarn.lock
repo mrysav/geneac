@@ -1483,14 +1483,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actiontext@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "@rails/actiontext@npm:7.1.1"
+"@rails/actiontext@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "@rails/actiontext@npm:7.1.2"
   dependencies:
     "@rails/activestorage": ">= 7.1.0-alpha"
   peerDependencies:
     trix: ^2.0.0
-  checksum: 001b63583c5ea27eabf48185a470198dbea321dfa545279a56e2f946989c4e313df528c351151a5d1ac8e5b45c7c109f4ea113ed21e89ee427207b0b564aee49
+  checksum: 9a4c756424bd7ab2f40b2f86f407b11ea352d1d545e8d4abcb0de34ae43f8d51119798169b55e1380591eb9d95ff1a74adc2164273bd9fb39025259a9cde9d28
   languageName: node
   linkType: hard
 
@@ -4548,7 +4548,7 @@ fsevents@~2.3.2:
     "@babel/runtime": 7
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.1.1
-    "@rails/actiontext": ^7.1.1
+    "@rails/actiontext": ^7.1.2
     "@rails/activestorage": ^7.1.1
     "@rails/ujs": ^7.1.1
     awesomplete: ^1.1.4
