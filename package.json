@@ -9,7 +9,7 @@
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^7.1.1",
     "@rails/actiontext": "^7.1.1",
-    "@rails/activestorage": "^7.1.1",
+    "@rails/activestorage": "^7.1.2",
     "@rails/ujs": "^7.1.1",
     "awesomplete": "^1.1.4",
     "babel-loader": "9",
