@@ -1,14 +1,17 @@
 {
-  "extends": ["plugin:prettier/recommended"],
-
-  "plugins": ["prettier"],
-
-  "parser": "babel-eslint",
-
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": "error"
   },
-
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
   "env": {
     "browser": true
   }
