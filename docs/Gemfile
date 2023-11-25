@@ -1,5 +1,8 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'github-pages'
-gem 'just-the-docs', '~> 0.4.0.rc3'
-gem 'webrick'
+gem "jekyll"
+gem "jekyll-feed"
+gem "just-the-docs"
+gem "kramdown"
+gem "kramdown-parser-gfm"
+gem "webrick"

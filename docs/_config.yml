@@ -24,15 +24,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   Geneac is a CMS for people who want to share their genealogy.
 baseurl: "/geneac" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: beatlefreak9
 github_username:  mrysav
 
 # Build settings
 
-# used for pages deployment
-remote_theme: just-the-docs/just-the-docs
 # used by local development, when you need it
-# theme: just-the-docs
+theme: just-the-docs
 
 plugins:
   - jekyll-feed
