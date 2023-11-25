@@ -12,20 +12,15 @@ class HomeController < ApplicationController
     skip_authorization if @recent_updates.nil? && @recent_birthdays.nil?
   end
 
-  def up
-    skip_authorization
-    render plain: 'OK'
-  end
-
   private
 
   def recent_updates
     updates = []
-    Person.order('updated_at desc').limit(5)
+    Person.order("updated_at desc").limit(5)
           .each { |p| updates.push(p) }
-    Photo.order('updated_at desc').limit(5)
+    Photo.order("updated_at desc").limit(5)
          .each { |p| updates.push(p) }
-    Note.order('updated_at desc').limit(5)
+    Note.order("updated_at desc").limit(5)
         .each { |n| updates.push(n) }
 
     updates.sort_by!(&:updated_at).reverse!
