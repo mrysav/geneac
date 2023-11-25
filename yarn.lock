@@ -166,7 +166,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint-community/eslint-utils@npm:^4.2.0":
+"@eslint-community/eslint-utils@npm:^4.1.2, @eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
   dependencies:
@@ -177,7 +177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint-community/regexpp@npm:^4.6.1":
+"@eslint-community/regexpp@npm:^4.6.0, @eslint-community/regexpp@npm:^4.6.1":
   version: 4.10.0
   resolution: "@eslint-community/regexpp@npm:4.10.0"
   checksum: 6e22c091b20e10edf6e4868e16d5447ea503e97f8081ef892fc4e8d15628816734ff8cb2c9a7c023360601bbeed4344baaa400fd2c5d1e056b52da775cfcbc33
@@ -698,6 +698,22 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: c9db6e28037a66e170c6e26fdc960f56895d85433cca54f9e7c3ea6ad0aaecd6d7ab5c48a4e1b9692120efbf456b4232d7d674b2a75af96c6cb94e073abf830e
+  languageName: node
+  linkType: hard
+
+"builtin-modules@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "builtin-modules@npm:3.3.0"
+  checksum: c4392c62cf823151e845e208bae9a9d5dd947e58cd96513cef44ed43538c70984ddfe9654453160b869972cc10e301f54c7fd023d19164daeed335c16acbcaad
+  languageName: node
+  linkType: hard
+
+"builtins@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "builtins@npm:5.0.1"
+  dependencies:
+    semver: ^7.0.0
+  checksum: 84f830260b5388a0d058aa693f0d8b256edebf10049cf40e40cca999dfdfd698c6d75d909d8c03acfe006ea1f3b2499a0f7bef389b10afcad968449c79056c84
   languageName: node
   linkType: hard
 
@@ -1687,6 +1703,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-compat-utils@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "eslint-compat-utils@npm:0.1.2"
+  peerDependencies:
+    eslint: ">=6.0.0"
+  checksum: 3a03234e2beb98a64d5387b37e7b2af4ee25a7fb87e2c36f2dbd49fe7a72455693834d788383c74b3c35bb17d5932dee5ee4e4809fed2e14266ad2fd164e167d
+  languageName: node
+  linkType: hard
+
 "eslint-config-prettier@npm:^9.0.0":
   version: 9.0.0
   resolution: "eslint-config-prettier@npm:9.0.0"
@@ -1698,15 +1723,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-standard@npm:^16.0.2":
-  version: 16.0.3
-  resolution: "eslint-config-standard@npm:16.0.3"
+"eslint-config-standard@npm:^17.1.0":
+  version: 17.1.0
+  resolution: "eslint-config-standard@npm:17.1.0"
   peerDependencies:
-    eslint: ^7.12.1
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-node: ^11.1.0
-    eslint-plugin-promise: ^4.2.1 || ^5.0.0
-  checksum: bac061664b12d830c1413005c109ecfe40a4fb89985295a4f2592b6c0649e65a75be2c096ef887d0ae8e904faef2bb79dd6ff6cef0976040c346faff34c2e5cb
+    eslint: ^8.0.1
+    eslint-plugin-import: ^2.25.2
+    eslint-plugin-n: "^15.0.0 || ^16.0.0 "
+    eslint-plugin-promise: ^6.0.0
+  checksum: e21673594b5fb2a0959445cb8e285b213672f15422501f314317b8c3e06f7e31f1be9483c71f57a411438758b9947163c9700634b10c5cde2b3692bdb0334e22
   languageName: node
   linkType: hard
 
@@ -1730,6 +1755,19 @@ __metadata:
     eslint:
       optional: true
   checksum: 6d8311dee8ec8de6fdbea1b5cc616900af73ba7934d8a821ad1ae02a77026d5cc1e7c9b76eeb22ff91ddd6b8d30ab7591cb90eef93af55232b8bf9fb38836169
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-es-x@npm:^7.1.0":
+  version: 7.4.0
+  resolution: "eslint-plugin-es-x@npm:7.4.0"
+  dependencies:
+    "@eslint-community/eslint-utils": ^4.1.2
+    "@eslint-community/regexpp": ^4.6.0
+    eslint-compat-utils: ^0.1.2
+  peerDependencies:
+    eslint: ">=8"
+  checksum: 78df01fc5d79a1f4f593a2ffd5d8f649d1fd7093e4222e3c2bc6815e06418056976721214a41c63ba77cf32378daaee41704e03df271eb1ccd80aa312313bca0
   languageName: node
   linkType: hard
 
@@ -1772,6 +1810,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-n@npm:^16.3.1":
+  version: 16.3.1
+  resolution: "eslint-plugin-n@npm:16.3.1"
+  dependencies:
+    "@eslint-community/eslint-utils": ^4.4.0
+    builtins: ^5.0.1
+    eslint-plugin-es-x: ^7.1.0
+    get-tsconfig: ^4.7.0
+    ignore: ^5.2.4
+    is-builtin-module: ^3.2.1
+    is-core-module: ^2.12.1
+    minimatch: ^3.1.2
+    resolve: ^1.22.2
+    semver: ^7.5.3
+  peerDependencies:
+    eslint: ">=7.0.0"
+  checksum: 5cfa17d09c078a4033b4814ae0bfeda28a256f95c406c9fc54dfd6fbac043f21a238f9e66e8b974ef69816c145969db2dd172667c7f218711752c48a15020674
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-node@npm:^11.1.0":
   version: 11.1.0
   resolution: "eslint-plugin-node@npm:11.1.0"
@@ -1788,7 +1846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.0.0":
+"eslint-plugin-prettier@npm:^5.0.1":
   version: 5.0.1
   resolution: "eslint-plugin-prettier@npm:5.0.1"
   dependencies:
@@ -1807,10 +1865,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:^4.0.1":
-  version: 4.3.1
-  resolution: "eslint-plugin-promise@npm:4.3.1"
-  checksum: 01aa61c2bea6cfd2e612cda9aaaf079c7652503dd613248a251c99b58414245ee999a8f5ca0a15f62c6b1605aca4dcbace272d67f22d79aac3f698547eb75d9a
+"eslint-plugin-promise@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "eslint-plugin-promise@npm:6.1.1"
+  peerDependencies:
+    eslint: ^7.0.0 || ^8.0.0
+  checksum: fa6f418bcc402683c573f6cfb4a8816fec1f2c34323c575bfe12dbf31e78bd4b85cb28c7efa5d6412812896ec23b612449a4f37587650336f03e504109a18b1a
   languageName: node
   linkType: hard
 
@@ -2204,11 +2264,12 @@ fsevents@~2.3.2:
     esbuild: ^0.19.7
     eslint: ^8.0.0
     eslint-config-prettier: ^9.0.0
-    eslint-config-standard: ^16.0.2
+    eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.29.0
+    eslint-plugin-n: ^16.3.1
     eslint-plugin-node: ^11.1.0
-    eslint-plugin-prettier: ^5.0.0
-    eslint-plugin-promise: ^4.0.1
+    eslint-plugin-prettier: ^5.0.1
+    eslint-plugin-promise: ^6.1.1
     eslint-plugin-standard: ^5.0.0
     nodemon: ^3.0.1
     postcss: ^8.4.31
@@ -2293,6 +2354,15 @@ fsevents@~2.3.2:
     call-bind: ^1.0.2
     get-intrinsic: ^1.1.1
   checksum: 18f90e08b5f8ef01ec109a50b0ef44d24382439388678e82808f0699ea57863eb0242b805f12db5afed2447d90f3db36ea2fd676d9776eb57844ebda4a285db7
+  languageName: node
+  linkType: hard
+
+"get-tsconfig@npm:^4.7.0":
+  version: 4.7.2
+  resolution: "get-tsconfig@npm:4.7.2"
+  dependencies:
+    resolve-pkg-maps: ^1.0.0
+  checksum: f93fcf923d9c8196149b8a91b845d5f1a95af9d82da82985cba511dbb0eced42656e7b8f48e49ddc7ce72396438806134478922021eecee30d114b0f631aa931
   languageName: node
   linkType: hard
 
@@ -2700,6 +2770,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"is-builtin-module@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "is-builtin-module@npm:3.2.1"
+  dependencies:
+    builtin-modules: ^3.3.0
+  checksum: bbeb0a1aff297b0d362fde31c5993a92b257f87cd88f4b68fa07b893c292fad60b89b328880a889abfb0dd2d608ae61f128801f7d75ae0e8eef6ee08a6b5a947
+  languageName: node
+  linkType: hard
+
 "is-callable@npm:^1.1.3, is-callable@npm:^1.2.7":
   version: 1.2.7
   resolution: "is-callable@npm:1.2.7"
@@ -2714,21 +2793,21 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"is-core-module@npm:^2.12.1, is-core-module@npm:^2.13.1":
+  version: 2.13.1
+  resolution: "is-core-module@npm:2.13.1"
+  dependencies:
+    hasown: ^2.0.0
+  checksum: a19e63cd9a1c0b8f1dee0ed3d7c4b0ac80319155f41e117fee6133b41c93f77bedf5c7ce77f93b3fbe3b8e855e94f608266aff7c79b6d9a0704d981c3a29968e
+  languageName: node
+  linkType: hard
+
 "is-core-module@npm:^2.13.0":
   version: 2.13.0
   resolution: "is-core-module@npm:2.13.0"
   dependencies:
     has: ^1.0.3
   checksum: 7743f92ec0b8e6e8c4246b152a6affd2be9defec0a611ff2e7bccbf281121f6855ad0cdc6761968cd4730a2222ac3f2dec6da9fe309503171eff4aa56996430b
-  languageName: node
-  linkType: hard
-
-"is-core-module@npm:^2.13.1":
-  version: 2.13.1
-  resolution: "is-core-module@npm:2.13.1"
-  dependencies:
-    hasown: ^2.0.0
-  checksum: a19e63cd9a1c0b8f1dee0ed3d7c4b0ac80319155f41e117fee6133b41c93f77bedf5c7ce77f93b3fbe3b8e855e94f608266aff7c79b6d9a0704d981c3a29968e
   languageName: node
   linkType: hard
 
@@ -3787,6 +3866,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"resolve-pkg-maps@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "resolve-pkg-maps@npm:1.0.0"
+  checksum: 067747fa3518753134e3efccbcb4e99e934adc32af43cb1301e8cae187056cf335d2ebe76cd42baf395397488e4220e0d1c90b321acb08ba2defbd65c8491938
+  languageName: node
+  linkType: hard
+
 resolve@^1.10.1:
   version: 1.22.1
   resolution: "resolve@npm:1.22.1"
@@ -3800,7 +3886,7 @@ resolve@^1.10.1:
   languageName: node
   linkType: hard
 
-resolve@^1.22.4:
+"resolve@^1.22.2, resolve@^1.22.4":
   version: 1.22.8
   resolution: "resolve@npm:1.22.8"
   dependencies:
@@ -3826,7 +3912,7 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.22.4#builtin<compat/resolve>":
+"resolve@patch:resolve@^1.22.2#builtin<compat/resolve>, resolve@patch:resolve@^1.22.4#builtin<compat/resolve>":
   version: 1.22.8
   resolution: "resolve@patch:resolve@npm%3A1.22.8#builtin<compat/resolve>::version=1.22.8&hash=3388aa"
   dependencies:
@@ -3957,6 +4043,17 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
+"semver@npm:^7.0.0, semver@npm:^7.5.3":
+  version: 7.5.4
+  resolution: "semver@npm:7.5.4"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 9bc02fd8e2b3c9e5dea66f0d733a3c801c67f3c7f0190efa03112a7b516e39845456ae107214d7972c4be9c67bbc50c0f27bbaf49a79a0234de83717cdaf2058
+  languageName: node
+  linkType: hard
+
 "semver@npm:^7.3.5":
   version: 7.3.7
   resolution: "semver@npm:7.3.7"
@@ -3965,17 +4062,6 @@ resolve@^1.22.4:
   bin:
     semver: bin/semver.js
   checksum: a9e88cefbcf047c03988182d11bba5a3cacd5216da0803302988b4e8cf08a7cadab1f96d578712c20d906cf4f5f6e76cfa27ae21ac65f63d396015ffe1da1eed
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.5.3":
-  version: 7.5.4
-  resolution: "semver@npm:7.5.4"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 9bc02fd8e2b3c9e5dea66f0d733a3c801c67f3c7f0190efa03112a7b516e39845456ae107214d7972c4be9c67bbc50c0f27bbaf49a79a0234de83717cdaf2058
   languageName: node
   linkType: hard
 

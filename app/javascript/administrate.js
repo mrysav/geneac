@@ -20,7 +20,7 @@ window.confirmWithMessage = function (message) {
 }
 
 window.readImagePreview = function (input) {
-  var preview = document.querySelector('#' + input.dataset.preview)
+  var preview = document.querySelector("#" + input.dataset.preview)
   if (input.files && input.files[0]) {
     var reader = new FileReader()
     reader.onload = function (e) {
