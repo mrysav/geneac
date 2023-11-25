@@ -334,37 +334,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^7.0":
+"@rails/actioncable@npm:^7.0, @rails/actioncable@npm:^7.1.2":
   version: 7.1.2
   resolution: "@rails/actioncable@npm:7.1.2"
   checksum: da2962c5c979f1be6ab5b0d70be5dd03f77c147f0ba952c992d420c421efb0ebc94b4050ce28921f27fc30c6da90af5475f3d84db9fe8182ef66c2701c01009e
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "@rails/actioncable@npm:7.1.1"
-  checksum: 95926bebcb69160c1365409f6c5c2316c34fb449bff4cccaf1e79ab4887714c9337e37f4b12638ac237a502df034b609d3848fbcbdd68be805e3ace687845225
-  languageName: node
-  linkType: hard
-
-"@rails/actiontext@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "@rails/actiontext@npm:7.1.1"
+"@rails/actiontext@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "@rails/actiontext@npm:7.1.2"
   dependencies:
     "@rails/activestorage": ">= 7.1.0-alpha"
   peerDependencies:
     trix: ^2.0.0
-  checksum: 001b63583c5ea27eabf48185a470198dbea321dfa545279a56e2f946989c4e313df528c351151a5d1ac8e5b45c7c109f4ea113ed21e89ee427207b0b564aee49
+  checksum: 9a4c756424bd7ab2f40b2f86f407b11ea352d1d545e8d4abcb0de34ae43f8d51119798169b55e1380591eb9d95ff1a74adc2164273bd9fb39025259a9cde9d28
   languageName: node
   linkType: hard
 
-"@rails/activestorage@npm:>= 7.1.0-alpha, @rails/activestorage@npm:^7.1.1":
+"@rails/activestorage@npm:>= 7.1.0-alpha":
   version: 7.1.1
   resolution: "@rails/activestorage@npm:7.1.1"
   dependencies:
     spark-md5: ^3.0.1
   checksum: acbac63ed943e27d73b8d76b74dc9475e07bb63e6c170fa010c2bede4f5451f990da50dc8a7165b2830644f060ecf8634289c78100acea2918105c414da0a014
+  languageName: node
+  linkType: hard
+
+"@rails/activestorage@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "@rails/activestorage@npm:7.1.2"
+  dependencies:
+    spark-md5: ^3.0.1
+  checksum: 3f502bc00cd50159d6b4fdec753ecf6168119fb78c08a42fd2e2c2a4685fdc88ce822db18de12219d605870ce7dbd35b1ddaba0dab68444ee21d1aeff3c8760b
   languageName: node
   linkType: hard
 
@@ -2253,9 +2255,9 @@ fsevents@~2.3.2:
     "@hotwired/stimulus": ^3.2.2
     "@hotwired/turbo-rails": ^8.0.0-beta.1
     "@popperjs/core": ^2.11.8
-    "@rails/actioncable": ^7.1.1
-    "@rails/actiontext": ^7.1.1
-    "@rails/activestorage": ^7.1.1
+    "@rails/actioncable": ^7.1.2
+    "@rails/actiontext": ^7.1.2
+    "@rails/activestorage": ^7.1.2
     autoprefixer: ^10.4.16
     awesomplete: ^1.1.4
     bootstrap: ^5.3.2
