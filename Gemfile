@@ -144,4 +144,4 @@ gem "memory_profiler"
 gem "rack-mini-profiler", "~> 3.1"
 gem "stackprof"
 
-gem "kamal", "~> 1.2", require: false
+gem "kamal", "~> 1.3", require: false
