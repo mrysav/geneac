@@ -109,7 +109,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.1.4)
+    bigdecimal (3.1.5)
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
@@ -430,7 +430,7 @@ GEM
     rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.22.2)
+    rubocop-rails (2.23.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
