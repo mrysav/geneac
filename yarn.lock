@@ -222,22 +222,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hotwired/turbo-rails@npm:^8.0.0-beta.1":
-  version: 8.0.0-beta.1
-  resolution: "@hotwired/turbo-rails@npm:8.0.0-beta.1"
+"@hotwired/turbo-rails@npm:^8.0.0-beta.2":
+  version: 8.0.0-beta.2
+  resolution: "@hotwired/turbo-rails@npm:8.0.0-beta.2"
   dependencies:
-    "@hotwired/turbo": ^8.0.0-beta.1
+    "@hotwired/turbo": ^8.0.0-beta.2
     "@rails/actioncable": ^7.0
-  checksum: 4b69f2953390ab5c62cbb62ca000859075bd4cfd88431820ed9daafe0e16847c990d6e5e0198216ad1b790484532a699ec0329b385430027916159e3a795d8eb
+  checksum: 0c037fb986e347875c96b692731a5d7840e105bf86eaebd04c9cd73457e7928bd05f37ddc93be7f9cfe314d330ef89ed26b88013f98124a09841301c0fe41946
   languageName: node
   linkType: hard
 
-"@hotwired/turbo@npm:^8.0.0-beta.1":
-  version: 8.0.0-beta.1
-  resolution: "@hotwired/turbo@npm:8.0.0-beta.1"
-  dependencies:
-    idiomorph: "git+https://github.com/basecamp/idiomorph.git#rollout-build"
-  checksum: 2bc327e62af0ca888f5b85d03780412768e552aeb86c30b72cd5c900401f6c35b8bc77874c89dabc1bed5eb0990d3ac3ef4dd944f19e9f86d60b49e63c87e7cc
+"@hotwired/turbo@npm:^8.0.0-beta.2":
+  version: 8.0.0-beta.2
+  resolution: "@hotwired/turbo@npm:8.0.0-beta.2"
+  checksum: 18c5539e9359bf9684f75c15db2274c0b154686bad5a1b8078d18fadd7f8105614453e4b8bd429ba3cb75ab6faff50e738474424f405d343ada9ab14b335895d
   languageName: node
   linkType: hard
 
@@ -2253,7 +2251,7 @@ fsevents@~2.3.2:
   resolution: "geneac@workspace:."
   dependencies:
     "@hotwired/stimulus": ^3.2.2
-    "@hotwired/turbo-rails": ^8.0.0-beta.1
+    "@hotwired/turbo-rails": ^8.0.0-beta.2
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.1.2
     "@rails/actiontext": ^7.1.2
@@ -2618,13 +2616,6 @@ fsevents@~2.3.2:
   dependencies:
     safer-buffer: ">= 2.1.2 < 3.0.0"
   checksum: 9b4f24db662b717340ae20ec9ebbaf0648b378a2d0fc64aef83c6bccdd9918b622216c020e177ddf2d02eeff8456a732e85b6d989eb2cd3a40519f3e179b273c
-  languageName: node
-  linkType: hard
-
-"idiomorph@git+https://github.com/basecamp/idiomorph.git#rollout-build":
-  version: 0.0.8
-  resolution: "idiomorph@https://github.com/basecamp/idiomorph.git#commit=e906820368e4c9c52489a3336b8c3826b1bf6de5"
-  checksum: 60858016e6a2037af52375fab5f3a0a11aaaf8c5333e3ce57b5b1b085b43f26e3343728df5007f94941f6c42f0e401c683b3717fe2a6db6b64308df982742764
   languageName: node
   linkType: hard
 
