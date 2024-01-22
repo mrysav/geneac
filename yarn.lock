@@ -332,10 +332,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^7.0, @rails/actioncable@npm:^7.1.2":
+"@rails/actioncable@npm:^7.0":
   version: 7.1.2
   resolution: "@rails/actioncable@npm:7.1.2"
   checksum: da2962c5c979f1be6ab5b0d70be5dd03f77c147f0ba952c992d420c421efb0ebc94b4050ce28921f27fc30c6da90af5475f3d84db9fe8182ef66c2701c01009e
+  languageName: node
+  linkType: hard
+
+"@rails/actioncable@npm:^7.1.3":
+  version: 7.1.3
+  resolution: "@rails/actioncable@npm:7.1.3"
+  checksum: 0a7a12334489452721c6af8c413c8ef4f249080cbd9811431f6bffcd2601c72dde5bdab2bf4472149e911536f420b3b5f4cdeb1a763486ae700ce26134ee4347
   languageName: node
   linkType: hard
 
@@ -2253,7 +2260,7 @@ fsevents@~2.3.2:
     "@hotwired/stimulus": ^3.2.2
     "@hotwired/turbo-rails": ^8.0.0-beta.2
     "@popperjs/core": ^2.11.8
-    "@rails/actioncable": ^7.1.2
+    "@rails/actioncable": ^7.1.3
     "@rails/actiontext": ^7.1.2
     "@rails/activestorage": ^7.1.2
     autoprefixer: ^10.4.16
