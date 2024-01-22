@@ -1758,16 +1758,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-es-x@npm:^7.1.0":
-  version: 7.4.0
-  resolution: "eslint-plugin-es-x@npm:7.4.0"
+"eslint-plugin-es-x@npm:^7.5.0":
+  version: 7.5.0
+  resolution: "eslint-plugin-es-x@npm:7.5.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.1.2
     "@eslint-community/regexpp": ^4.6.0
     eslint-compat-utils: ^0.1.2
   peerDependencies:
     eslint: ">=8"
-  checksum: 78df01fc5d79a1f4f593a2ffd5d8f649d1fd7093e4222e3c2bc6815e06418056976721214a41c63ba77cf32378daaee41704e03df271eb1ccd80aa312313bca0
+  checksum: f46ccbdc6ad187728ab0ff037c40ff9a0ecf9dc3a2089c235fdf62a317c08d8950d95844c8a0fb6eb57aec2eadb069a7348c1b592b3640900f89e39deeed7adb
   languageName: node
   linkType: hard
 
@@ -1810,14 +1810,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-n@npm:^16.3.1":
-  version: 16.3.1
-  resolution: "eslint-plugin-n@npm:16.3.1"
+"eslint-plugin-n@npm:^16.6.2":
+  version: 16.6.2
+  resolution: "eslint-plugin-n@npm:16.6.2"
   dependencies:
     "@eslint-community/eslint-utils": ^4.4.0
     builtins: ^5.0.1
-    eslint-plugin-es-x: ^7.1.0
+    eslint-plugin-es-x: ^7.5.0
     get-tsconfig: ^4.7.0
+    globals: ^13.24.0
     ignore: ^5.2.4
     is-builtin-module: ^3.2.1
     is-core-module: ^2.12.1
@@ -1826,7 +1827,7 @@ __metadata:
     semver: ^7.5.3
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: 5cfa17d09c078a4033b4814ae0bfeda28a256f95c406c9fc54dfd6fbac043f21a238f9e66e8b974ef69816c145969db2dd172667c7f218711752c48a15020674
+  checksum: 2d384e5b3a06de2e1305a922d2ea0c4d4e468e74127996d029c11a9865a6b1c6912256d574160d55e2f8816a2076d3b59fb5b8a57fe9cadbf47368918cfc1faf
   languageName: node
   linkType: hard
 
@@ -2266,7 +2267,7 @@ fsevents@~2.3.2:
     eslint-config-prettier: ^9.0.0
     eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.29.0
-    eslint-plugin-n: ^16.3.1
+    eslint-plugin-n: ^16.6.2
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^5.0.1
     eslint-plugin-promise: ^6.1.1
@@ -2417,6 +2418,15 @@ fsevents@~2.3.2:
   dependencies:
     type-fest: ^0.20.2
   checksum: cc6f8a86c5499f73cf7f02ba25a5576987e053da350b446d805a0b451decffa31d11a53d7d218bfa76c42ac852e41234b5503c956eb52c70167936a275d7da19
+  languageName: node
+  linkType: hard
+
+"globals@npm:^13.24.0":
+  version: 13.24.0
+  resolution: "globals@npm:13.24.0"
+  dependencies:
+    type-fest: ^0.20.2
+  checksum: a7fe566b29e255a43bc91c3a02668c3bca69779ac41fead9ee628d91669d042a49c1efb6709c5cd0586bedee4d6e4ff6ca6fd04a473cee07667d1812af741718
   languageName: node
   linkType: hard
 
