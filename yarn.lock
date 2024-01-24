@@ -368,6 +368,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sindresorhus/merge-streams@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@sindresorhus/merge-streams@npm:1.0.0"
+  checksum: 38c43c2d7dfaa0237a77ed4d38f016cd0d9de15dabe4b01d155ed6778f0e9b3a5fbbfb14f08da92fb383a0ba85338ce3d581115f5d805e99ce70555ef962ba03
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -1416,15 +1423,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dir-glob@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "dir-glob@npm:3.0.1"
-  dependencies:
-    path-type: ^4.0.0
-  checksum: 687fa3bd604f264042f325d9460e1298447fb32782f30cddc47cb302b742684d13e8ffce4c6f455e0ae92099d71e29f72387379c10b8fd3f6f1bf8992d7c0997
-  languageName: node
-  linkType: hard
-
 "doctrine@npm:^2.1.0":
   version: 2.1.0
   resolution: "doctrine@npm:2.1.0"
@@ -1969,7 +1967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.0":
+"fast-glob@npm:^3.3.2":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -2187,7 +2185,7 @@ fsevents@~2.3.2:
     eslint-plugin-standard: ^5.0.0
     nodemon: ^3.0.1
     postcss: ^8.4.31
-    postcss-cli: ^10.1.0
+    postcss-cli: ^11.0.0
     prettier: ^3.1.0
     sass: ^1.70.0
     trix: ~> 2.0
@@ -2345,16 +2343,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"globby@npm:^13.0.0":
-  version: 13.2.2
-  resolution: "globby@npm:13.2.2"
+"globby@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "globby@npm:14.0.0"
   dependencies:
-    dir-glob: ^3.0.1
-    fast-glob: ^3.3.0
+    "@sindresorhus/merge-streams": ^1.0.0
+    fast-glob: ^3.3.2
     ignore: ^5.2.4
-    merge2: ^1.4.1
-    slash: ^4.0.0
-  checksum: 50db7517e2ff382b287c46fdd2729a99158275ca8dedc3fb1d1ca773a1030e0ecbd7bba11b4429ce3c749d9646f74984e7b3cef85e94d1226b130f484f34f59f
+    path-type: ^5.0.0
+    slash: ^5.1.0
+    unicorn-magic: ^0.1.0
+  checksum: 475ef48894538ae27de421963d164751b1dccdf48e4568c4031e1492e4dcc2a6687f48dd95c058aec56905b43bfaed867140288b5643c473bea393899c9e6ce8
   languageName: node
   linkType: hard
 
@@ -2995,7 +2994,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"merge2@npm:^1.3.0, merge2@npm:^1.4.1":
+"merge2@npm:^1.3.0":
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
   checksum: 7ad40d8b140a5ed4e621b916858410e4f0dd4ced1e5a2b675563347e70f0661d95ba6c3c8007dd3c4e242d0b8eee44559fa75bb90a146cf168debffc0cbc18f3
@@ -3402,10 +3401,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"path-type@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "path-type@npm:4.0.0"
-  checksum: ef5835f2eb47e4d06004c7ec7bd51175c0455eaecd5ee99a9774bca5ef43242616e25b44ccc0ba86a0bf42b9f197550fcc0dfa7580e5ff9dca53c035e9bd86a9
+"path-type@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "path-type@npm:5.0.0"
+  checksum: 2bb9d23b848efa4073b274ec53f23fbbc62db666771523355d221d2e3a89940b2444abfc29e0e881393bea7e25cf909334c49ef714358a80442a96eaa9b663c4
   languageName: node
   linkType: hard
 
@@ -3430,17 +3429,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss-cli@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "postcss-cli@npm:10.1.0"
+"postcss-cli@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "postcss-cli@npm:11.0.0"
   dependencies:
     chokidar: ^3.3.0
     dependency-graph: ^0.11.0
     fs-extra: ^11.0.0
     get-stdin: ^9.0.0
-    globby: ^13.0.0
+    globby: ^14.0.0
     picocolors: ^1.0.0
-    postcss-load-config: ^4.0.0
+    postcss-load-config: ^5.0.0
     postcss-reporter: ^7.0.0
     pretty-hrtime: ^1.0.3
     read-cache: ^1.0.0
@@ -3450,25 +3449,25 @@ fsevents@~2.3.2:
     postcss: ^8.0.0
   bin:
     postcss: index.js
-  checksum: b523ab38fb3ed1330837a6696d8de0546cec74f7ee3b663b64553ab8f502001572dd68aeff6358bdffbef5c0814e55e315958a07a142696fe3bb4b1f34acf940
+  checksum: b73f66ec542059fe8e1cca130d0b04e0f3c147e54075d2247d740decaea657e9db892a1b41224f328c3cbc246e005cc042f7e3b70f114d5a9031db38c5862669
   languageName: node
   linkType: hard
 
-"postcss-load-config@npm:^4.0.0":
-  version: 4.0.2
-  resolution: "postcss-load-config@npm:4.0.2"
+"postcss-load-config@npm:^5.0.0":
+  version: 5.0.2
+  resolution: "postcss-load-config@npm:5.0.2"
   dependencies:
     lilconfig: ^3.0.0
     yaml: ^2.3.4
   peerDependencies:
+    jiti: ">=1.21.0"
     postcss: ">=8.0.9"
-    ts-node: ">=9.0.0"
   peerDependenciesMeta:
+    jiti:
+      optional: true
     postcss:
       optional: true
-    ts-node:
-      optional: true
-  checksum: efbe2cf7bd66cdfdea0602c749829524fd1b6bf1eaa2649f0efdc22e87f474341252a2a26e33d02e9bbd5f612d3eedd7d75fa9f79b516ce9c7eaff7f4a13d8ad
+  checksum: 7f5528777e3dbf52e43e60861c9cb09dc0965b66e04f4bd12f090dd228d124b4b589df2e3f6e829b31d15c889a6242e12511d9fa037465a78cc2b4d3cb73d524
   languageName: node
   linkType: hard
 
@@ -3896,14 +3895,7 @@ resolve@^1.10.1:
   languageName: node
   linkType: hard
 
-"slash@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "slash@npm:4.0.0"
-  checksum: 714b10473dd5efce5ebaad47c74d69201baf7715fa58e8049d3d2716d9da25a9571bfd3ecc50c3b7f4165948e2d8d5a1aa7faeaeca4891ee71a2fbd408268091
-  languageName: node
-  linkType: hard
-
-"slash@npm:^5.0.0":
+"slash@npm:^5.0.0, slash@npm:^5.1.0":
   version: 5.1.0
   resolution: "slash@npm:5.1.0"
   checksum: ea80668a9e1df1d65f46a0f223330f98f0248bcada788ba5b06884e54f37bc11082d3a455ce6bd16ff50986ceb363906c8ab985c235000f1c03a28aa65c1cf5a
@@ -4225,6 +4217,13 @@ resolve@^1.10.1:
   version: 2.0.5
   resolution: "undefsafe@npm:2.0.5"
   checksum: 25dece24e2fff8d1d5938467f85906e58e80a3ef6bcbf38effa9e9fe67a21b313a7dec438425b620cb839b187f35cff513fc550ba32bfdb85d089c591770d230
+  languageName: node
+  linkType: hard
+
+"unicorn-magic@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "unicorn-magic@npm:0.1.0"
+  checksum: 3d56a21b6afc3e8a29b6daf58c15b1f9e29d5f30a5533fa5120d16a9c3e160b84c74c5b53e586145d98eb5983410609f1abae3b3e71e1f8e59451b75c3623ac3
   languageName: node
   linkType: hard
 
