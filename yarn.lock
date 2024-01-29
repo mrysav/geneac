@@ -1737,9 +1737,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.29.0":
-  version: 2.29.0
-  resolution: "eslint-plugin-import@npm:2.29.0"
+"eslint-plugin-import@npm:^2.29.1":
+  version: 2.29.1
+  resolution: "eslint-plugin-import@npm:2.29.1"
   dependencies:
     array-includes: ^3.1.7
     array.prototype.findlastindex: ^1.2.3
@@ -1757,10 +1757,10 @@ __metadata:
     object.groupby: ^1.0.1
     object.values: ^1.1.7
     semver: ^6.3.1
-    tsconfig-paths: ^3.14.2
+    tsconfig-paths: ^3.15.0
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
-  checksum: 1e60cfaa3611d219cbc6f66422268b7fb073574c41e6f4317418e2051b28fc6f29409f828629af9f6df24f76e87f53d8f09821ed00b6d8942b02d92d23fe4cb9
+  checksum: 436b20bc8fdbf3256c869ff240d209b237625ff70983d720f2f3fbb5676f79d5de19226fa92314a0e74d25ebcd43fb64603a1e893b63d31c2d0b761b53def243
   languageName: node
   linkType: hard
 
@@ -2187,7 +2187,7 @@ fsevents@~2.3.2:
     eslint: ^8.0.0
     eslint-config-prettier: ^9.0.0
     eslint-config-standard: ^17.1.0
-    eslint-plugin-import: ^2.29.0
+    eslint-plugin-import: ^2.29.1
     eslint-plugin-n: ^16.6.2
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^5.1.3
@@ -4129,15 +4129,15 @@ resolve@^1.10.1:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^3.14.2":
-  version: 3.14.2
-  resolution: "tsconfig-paths@npm:3.14.2"
+"tsconfig-paths@npm:^3.15.0":
+  version: 3.15.0
+  resolution: "tsconfig-paths@npm:3.15.0"
   dependencies:
     "@types/json5": ^0.0.29
     json5: ^1.0.2
     minimist: ^1.2.6
     strip-bom: ^3.0.0
-  checksum: edaf5cab53d66708fc4fe3480a8fd81cc9a4d53bca516eb3fe001dcd98f0d2d2a86351668b464a63be780ee6dbac373f28f8eaa5c86fc645821f18ac34eb2658
+  checksum: 62036a33dfb42628773b99a6c26cfbe15327adbd0689f26102493f97395dee3ac7e001d1bb533a6c9fc4120fd5f9ab9a5c86e2155cf1025afe277521ce13ef84
   languageName: node
   linkType: hard
 
