@@ -634,10 +634,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-icons@npm:^1.11.2":
-  version: 1.11.2
-  resolution: "bootstrap-icons@npm:1.11.2"
-  checksum: cbe684cf69b505bd7703ad1a20efabf0c7b8cfe9b0fdcf40d45c5876e6dd95badcc4ba3c9ca2f8db428ef1215f2acc4accf4e0a074a3dd797bcfbee8ffad09a3
+"bootstrap-icons@npm:^1.11.3":
+  version: 1.11.3
+  resolution: "bootstrap-icons@npm:1.11.3"
+  checksum: d8ed42ec58c4a324a8745a09f0d524e6fe7c6c083623c9eb164c590bf300916a8bcbddd34a8b0ce7f7c92999b11ef83427ac3990487afac9e059508dac25156a
   languageName: node
   linkType: hard
 
@@ -2171,7 +2171,7 @@ fsevents@~2.3.2:
     autoprefixer: ^10.4.16
     awesomplete: ^1.1.4
     bootstrap: ^5.3.2
-    bootstrap-icons: ^1.11.2
+    bootstrap-icons: ^1.11.3
     d3-dtree: ^2.4.1
     esbuild: ^0.19.7
     eslint: ^8.0.0
