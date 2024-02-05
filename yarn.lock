@@ -229,20 +229,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hotwired/turbo-rails@npm:^8.0.0-beta.2":
-  version: 8.0.0-beta.2
-  resolution: "@hotwired/turbo-rails@npm:8.0.0-beta.2"
+"@hotwired/turbo-rails@npm:^8.0.0-rc.2":
+  version: 8.0.0-rc.2
+  resolution: "@hotwired/turbo-rails@npm:8.0.0-rc.2"
   dependencies:
-    "@hotwired/turbo": ^8.0.0-beta.2
+    "@hotwired/turbo": ^8.0.0-rc.2
     "@rails/actioncable": ^7.0
-  checksum: 0c037fb986e347875c96b692731a5d7840e105bf86eaebd04c9cd73457e7928bd05f37ddc93be7f9cfe314d330ef89ed26b88013f98124a09841301c0fe41946
+  checksum: 4a000f0e8222edf94e1d2ee966b7f741e86b80f1fa501997442ad4854b0fd44004534abf29d10da1505ce656839b130d35757a8e188000112b74ad2cb21e6536
   languageName: node
   linkType: hard
 
-"@hotwired/turbo@npm:^8.0.0-beta.2":
-  version: 8.0.0-beta.2
-  resolution: "@hotwired/turbo@npm:8.0.0-beta.2"
-  checksum: 18c5539e9359bf9684f75c15db2274c0b154686bad5a1b8078d18fadd7f8105614453e4b8bd429ba3cb75ab6faff50e738474424f405d343ada9ab14b335895d
+"@hotwired/turbo@npm:^8.0.0-rc.2":
+  version: 8.0.0-rc.2
+  resolution: "@hotwired/turbo@npm:8.0.0-rc.2"
+  checksum: 6585d9bc38391f729299510f08dd5edaec9724f9b0054f279d03391ecc4d1d4d5643c93d1f4cd9912b20a173ee869c42a4f858ee4c52eb13d0cd866d1fd015af
   languageName: node
   linkType: hard
 
@@ -2173,7 +2173,7 @@ fsevents@~2.3.2:
   resolution: "geneac@workspace:."
   dependencies:
     "@hotwired/stimulus": ^3.2.2
-    "@hotwired/turbo-rails": ^8.0.0-beta.2
+    "@hotwired/turbo-rails": ^8.0.0-rc.2
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.1.3
     "@rails/actiontext": ^7.1.2
