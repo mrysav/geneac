@@ -191,9 +191,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^2.1.3":
-  version: 2.1.3
-  resolution: "@eslint/eslintrc@npm:2.1.3"
+"@eslint/eslintrc@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "@eslint/eslintrc@npm:2.1.4"
   dependencies:
     ajv: ^6.12.4
     debug: ^4.3.2
@@ -204,14 +204,14 @@ __metadata:
     js-yaml: ^4.1.0
     minimatch: ^3.1.2
     strip-json-comments: ^3.1.1
-  checksum: 1635f1e9966c36418796448803491e10ce59287aa2b38a7c7f4c90a3895274c0dc74d5fdf65cc23cc3b469a0e367651da9001853f71bcbdb0695141201701d96
+  checksum: a42baaad38b1da55a5857b1e139847bd9486f661d22adc82ce4478d451d9334d7466d75a87af3589c2b47a0693ee86a4f6d7c685bfbb601d64fd0ca6d502974a
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:8.54.0":
-  version: 8.54.0
-  resolution: "@eslint/js@npm:8.54.0"
-  checksum: ccb3747b1b3249f273ad9218a637acc51de647fedb89e104ac4976ebc2ca6a2324efd2fd1b05ddcc7861fa65322464b4d7be2667cce5b699af4dd725c3483e73
+"@eslint/js@npm:8.56.0":
+  version: 8.56.0
+  resolution: "@eslint/js@npm:8.56.0"
+  checksum: 29d96a9a43a08d53c464d81939e1b7d7771b5d73532c6d685f56659f2748b4651fab3bd33e8d8b857fcf3f14d7762f22022690c1c99ceaa89239e38125d80040
   languageName: node
   linkType: hard
 
@@ -1872,14 +1872,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.54.0, eslint@npm:^8.0.0":
-  version: 8.54.0
-  resolution: "eslint@npm:8.54.0"
+"eslint@npm:8.56.0, eslint@npm:^8.56.0":
+  version: 8.56.0
+  resolution: "eslint@npm:8.56.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.6.1
-    "@eslint/eslintrc": ^2.1.3
-    "@eslint/js": 8.54.0
+    "@eslint/eslintrc": ^2.1.4
+    "@eslint/js": 8.56.0
     "@humanwhocodes/config-array": ^0.11.13
     "@humanwhocodes/module-importer": ^1.0.1
     "@nodelib/fs.walk": ^1.2.8
@@ -1916,7 +1916,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: fdd4dfd8c02a61f661d351478c15e7e2c79101c6ea90252a48b37d5d37b8d282356fe288fbccad1a6edf682357cafef4104208704064cde661498ee72cf35ccf
+  checksum: 3470ea84ab6bd7832425ff3caf5442744d0549fbdfbc825174e785afe772c1c1553884aa0fd7fa6c38d61dc9a0339fd48c045467af3c1d57539ceeaf3fc669b7
   languageName: node
   linkType: hard
 
@@ -2184,7 +2184,7 @@ fsevents@~2.3.2:
     bootstrap-icons: ^1.11.3
     d3-dtree: ^2.4.1
     esbuild: ^0.20.0
-    eslint: ^8.0.0
+    eslint: ^8.56.0
     eslint-config-prettier: ^9.0.0
     eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.29.1
