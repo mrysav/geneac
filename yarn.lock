@@ -346,14 +346,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actiontext@npm:^7.1.2":
-  version: 7.1.2
-  resolution: "@rails/actiontext@npm:7.1.2"
+"@rails/actiontext@npm:^7.1.3":
+  version: 7.1.3
+  resolution: "@rails/actiontext@npm:7.1.3"
   dependencies:
     "@rails/activestorage": ">= 7.1.0-alpha"
   peerDependencies:
     trix: ^2.0.0
-  checksum: 9a4c756424bd7ab2f40b2f86f407b11ea352d1d545e8d4abcb0de34ae43f8d51119798169b55e1380591eb9d95ff1a74adc2164273bd9fb39025259a9cde9d28
+  checksum: fd3bcd1198a2b321e5a393ec4d634af6bc0993f27ef2ce921b75e038d8b3942d001224571bec26ceaccfa25df954cc9d178c0bba19be1fd1a6b14919fef18eab
   languageName: node
   linkType: hard
 
@@ -2176,7 +2176,7 @@ fsevents@~2.3.2:
     "@hotwired/turbo-rails": ^8.0.2
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.1.3
-    "@rails/actiontext": ^7.1.2
+    "@rails/actiontext": ^7.1.3
     "@rails/activestorage": ^7.1.2
     autoprefixer: ^10.4.17
     awesomplete: ^1.1.4
