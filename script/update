@@ -1,0 +1,16 @@
+#!/bin/bash
+
+nodenv install -s
+rbenv install -s
+
+bin/bundle install
+
+pushd "$(dirname "$0")/../docs" || exit
+bundle install
+popd || exit
+
+bin/yarn install
+
+docker compose up -d --wait
+
+bin/rails db:migrate

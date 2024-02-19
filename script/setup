@@ -1,0 +1,12 @@
+#!/bin/bash
+
+nodenv install -s
+npm install -g yarn
+
+rbenv install -s
+
+docker compose up -d --wait
+
+bin/rails db:create
+
+exec "$(dirname "$0")/update"

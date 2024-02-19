@@ -19,7 +19,7 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git pkg-config libpq-dev libvips curl node-gyp python-is-python3
 
 # Install JavaScript dependencies
-ARG NODE_VERSION=18.17.0
+ARG NODE_VERSION=20.11.1
 ARG YARN_VERSION=latest
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
