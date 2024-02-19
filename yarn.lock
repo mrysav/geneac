@@ -1350,7 +1350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
+"debug@npm:4, debug@npm:^4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -2193,7 +2193,7 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: ^5.1.3
     eslint-plugin-promise: ^6.1.1
     eslint-plugin-standard: ^5.0.0
-    nodemon: ^3.0.1
+    nodemon: ^3.0.3
     postcss: ^8.4.31
     postcss-cli: ^11.0.0
     prettier: ^3.2.5
@@ -3189,12 +3189,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "nodemon@npm:3.0.1"
+"nodemon@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "nodemon@npm:3.0.3"
   dependencies:
     chokidar: ^3.5.2
-    debug: ^3.2.7
+    debug: ^4
     ignore-by-default: ^1.0.1
     minimatch: ^3.1.2
     pstree.remy: ^1.1.8
@@ -3205,7 +3205,7 @@ fsevents@~2.3.2:
     undefsafe: ^2.0.5
   bin:
     nodemon: bin/nodemon.js
-  checksum: 4fec22e16c6dca4510447dc332989cf2fedb5bd734d0fa6ff7d92feb7496bf7b4e075599825c1d3a2912c917ea7833275617c3da0c84e1f1e8cf06c6178198d3
+  checksum: 8ef929de95940b1f0ac270ba46832536b01aaf0ee556a88cc854e6e8bde454890ad52591b56000e14652b5bf8e6629b93c907acd51d9aa3853d70677fe83976e
   languageName: node
   linkType: hard
 
