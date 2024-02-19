@@ -102,9 +102,9 @@ gem "country_select"
 gem "simple_form", "~> 5.2"
 
 # administrate for content management
-gem "administrate", "~> 0.19" #github: "mrysav/administrate", branch: "main"
+gem "administrate", "~> 0.20"
 # administrate plugins
-gem "administrate-field-nested_has_many"
+gem "administrate-field-nested_has_many", github: "nickcharlton/administrate-field-nested_has_many"
 # administrate-field-nested_has_many has an undeclared hard dependency on sassc
 gem "sassc-rails"
 
