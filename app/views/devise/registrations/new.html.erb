@@ -1,14 +1,21 @@
 <div class="container col-md-6 col-lg-4 pt-5">
   <h2>Sign up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { :"data-turbo" => false }) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :name, required: true, autofocus: true %>
-      <%= f.input :email, required: true %>
-      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, required: true %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
     </div>
 
     <div class="form-actions">
