@@ -1666,14 +1666,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "eslint-config-prettier@npm:9.0.0"
+"eslint-config-prettier@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "eslint-config-prettier@npm:9.1.0"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: 6d05431ac791e96706b6565db2fa6b492ecec4f1fc6946116f118af5949cbc25681d6f81624e7f34d864bf56e74f570d3d5de07d9bc233c7e99d96d7c5bfe63a
+  checksum: 8b796eb984cb674356659c5bab80785937091ae5fd0a847e46ef19a17b36a6b050dddd06ce933cd1f9263b42f36a40565774279f36fd1522b121134558d5d954
   languageName: node
   linkType: hard
 
@@ -2185,7 +2185,7 @@ fsevents@~2.3.2:
     d3-dtree: ^2.4.1
     esbuild: ^0.20.0
     eslint: ^8.56.0
-    eslint-config-prettier: ^9.0.0
+    eslint-config-prettier: ^9.1.0
     eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.29.1
     eslint-plugin-n: ^16.6.2
