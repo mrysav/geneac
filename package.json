@@ -13,7 +13,7 @@
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
     "d3-dtree": "^2.4.1",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.20.1",
     "nodemon": "^3.0.3",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
