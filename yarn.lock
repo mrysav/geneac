@@ -648,12 +648,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^5.3.2":
-  version: 5.3.2
-  resolution: "bootstrap@npm:5.3.2"
+"bootstrap@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "bootstrap@npm:5.3.3"
   peerDependencies:
     "@popperjs/core": ^2.11.8
-  checksum: f01ee2a6cde4a1dab9e52080d0ca811c727c6804272e99eabc993436dd15e47f571002104d2ae9f0458b9ee3b1c72eff03037729ebdbd05bd05ac94ab21555de
+  checksum: c8170b9a6904d36781836a49561944b5784d5b834cfd98aa6d7e29a387ef252fd224a695ecca39e32996e39d29ec7a791100e63f79338c218c370fd9236925aa
   languageName: node
   linkType: hard
 
@@ -2180,7 +2180,7 @@ fsevents@~2.3.2:
     "@rails/activestorage": ^7.1.3
     autoprefixer: ^10.4.17
     awesomplete: ^1.1.4
-    bootstrap: ^5.3.2
+    bootstrap: ^5.3.3
     bootstrap-icons: ^1.11.3
     d3-dtree: ^2.4.1
     esbuild: ^0.20.1
