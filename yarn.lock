@@ -208,10 +208,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:8.56.0":
-  version: 8.56.0
-  resolution: "@eslint/js@npm:8.56.0"
-  checksum: 29d96a9a43a08d53c464d81939e1b7d7771b5d73532c6d685f56659f2748b4651fab3bd33e8d8b857fcf3f14d7762f22022690c1c99ceaa89239e38125d80040
+"@eslint/js@npm:8.57.0":
+  version: 8.57.0
+  resolution: "@eslint/js@npm:8.57.0"
+  checksum: 407aae75c77e83ce60188501793bb926db0b46f8861fd3a65fbba2cadf0ece20d44bba22a9fab2b3c916cfd5ea243de95f624e54cdaa9d4ee8649dbee3947eb6
   languageName: node
   linkType: hard
 
@@ -246,14 +246,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/config-array@npm:^0.11.13":
-  version: 0.11.13
-  resolution: "@humanwhocodes/config-array@npm:0.11.13"
+"@humanwhocodes/config-array@npm:^0.11.14":
+  version: 0.11.14
+  resolution: "@humanwhocodes/config-array@npm:0.11.14"
   dependencies:
-    "@humanwhocodes/object-schema": ^2.0.1
-    debug: ^4.1.1
+    "@humanwhocodes/object-schema": ^2.0.2
+    debug: ^4.3.1
     minimatch: ^3.0.5
-  checksum: ae7be49d59ba0cccc3ca19a1cfc865abe99a4d760c56a22294c96af9766d0eaf34958d1433ba7288ab219dbf9f61a3ca6715171752ea2592d6cd6c7002d86b8b
+  checksum: f34e986189833023fc37daff2588adf3bb6982eeb94b7b1d6ac37a083bb8214359aaa327ec5e4d7d2449fe33ebc64df85b8a042bd6db848575292aa5db684122
   languageName: node
   linkType: hard
 
@@ -264,10 +264,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/object-schema@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@humanwhocodes/object-schema@npm:2.0.1"
-  checksum: 6dcac88d2857515f407723c043926f0226ff0f161303e032d58fb3b5652263d15111b74e3b42a8626168614f5873d3bb21b4e59a2279f2ff5c2f440d39c9fdb2
+"@humanwhocodes/object-schema@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@humanwhocodes/object-schema@npm:2.0.2"
+  checksum: 61e565644ad92c74f87c879d753bc417c4a784eb2495bdcfdcd4206cfb922673d6dddc287fa2f089c1b12ec956d6b889d6a6af4e494b8d05a2ce70ffbd5189fb
   languageName: node
   linkType: hard
 
@@ -1350,7 +1350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
+"debug@npm:4, debug@npm:^4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -1872,15 +1872,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.56.0, eslint@npm:^8.56.0":
-  version: 8.56.0
-  resolution: "eslint@npm:8.56.0"
+"eslint@npm:8.57.0, eslint@npm:^8.57.0":
+  version: 8.57.0
+  resolution: "eslint@npm:8.57.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.6.1
     "@eslint/eslintrc": ^2.1.4
-    "@eslint/js": 8.56.0
-    "@humanwhocodes/config-array": ^0.11.13
+    "@eslint/js": 8.57.0
+    "@humanwhocodes/config-array": ^0.11.14
     "@humanwhocodes/module-importer": ^1.0.1
     "@nodelib/fs.walk": ^1.2.8
     "@ungap/structured-clone": ^1.2.0
@@ -1916,7 +1916,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: 3470ea84ab6bd7832425ff3caf5442744d0549fbdfbc825174e785afe772c1c1553884aa0fd7fa6c38d61dc9a0339fd48c045467af3c1d57539ceeaf3fc669b7
+  checksum: e0b93a3db62b6df8a33c1df5b19198e90a80bb3a57466e4847bdf09aa65a6554614b1fcedcde1db2fe9cb41ee7963b3c09e42d1a7e77e0f0d8883f4ce3b6b679
   languageName: node
   linkType: hard
 
@@ -2184,7 +2184,7 @@ fsevents@~2.3.2:
     bootstrap-icons: ^1.11.3
     d3-dtree: ^2.4.1
     esbuild: ^0.20.1
-    eslint: ^8.56.0
+    eslint: ^8.57.0
     eslint-config-prettier: ^9.1.0
     eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.29.1
