@@ -595,12 +595,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.17":
-  version: 10.4.17
-  resolution: "autoprefixer@npm:10.4.17"
+"autoprefixer@npm:^10.4.18":
+  version: 10.4.18
+  resolution: "autoprefixer@npm:10.4.18"
   dependencies:
-    browserslist: ^4.22.2
-    caniuse-lite: ^1.0.30001578
+    browserslist: ^4.23.0
+    caniuse-lite: ^1.0.30001591
     fraction.js: ^4.3.7
     normalize-range: ^0.1.2
     picocolors: ^1.0.0
@@ -609,7 +609,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 7e5077171e46cf3fd0ac3be859aed6e6bd80ba5a8fd9fc87283070859d8f0ba703ae2571f48743da90f2a43c06461ecbd9cd446621eca7b3674c3e90600e45bd
+  checksum: 62cfca85e7dbca76eee8c007ef89b9f7ddbb5e293dc2f08530815f37cdc12d17d1c511998f99148df2a2feb9b16416f8c29b7f64d773add13810ef80c088a177
   languageName: node
   linkType: hard
 
@@ -685,17 +685,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:4.22.3, browserslist@npm:^4.22.2":
-  version: 4.22.3
-  resolution: "browserslist@npm:4.22.3"
+"browserslist@npm:4.23.0, browserslist@npm:^4.23.0":
+  version: 4.23.0
+  resolution: "browserslist@npm:4.23.0"
   dependencies:
-    caniuse-lite: ^1.0.30001580
-    electron-to-chromium: ^1.4.648
+    caniuse-lite: ^1.0.30001587
+    electron-to-chromium: ^1.4.668
     node-releases: ^2.0.14
     update-browserslist-db: ^1.0.13
   bin:
     browserslist: cli.js
-  checksum: 86997d5ec8ab4aed031d7ead303b122be7d3cd54dae0eb1c2fdc0ef66cf61a8f01a6f85f34bab3e56e45aeec1b8af9833bff3eb84f272fdb5181fe1594e87b7f
+  checksum: 31933fd3528214071dd6957d2ae3c6041baf42df1011a6bbd52a94850fb3a5009af5928982fd8373c617af52bc372a88246c7a2090c50d6191a84823d9ce824e
   languageName: node
   linkType: hard
 
@@ -769,10 +769,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001578, caniuse-lite@npm:^1.0.30001580":
-  version: 1.0.30001581
-  resolution: "caniuse-lite@npm:1.0.30001581"
-  checksum: f8f081524ee790f994b82d8ed9532bdaf92fa72d87a652bd084274328482fa9f793885ffbaf4cffbbfc49ad97c758c81512a487d0147abc65fbe26081d0738ca
+"caniuse-lite@npm:^1.0.30001587, caniuse-lite@npm:^1.0.30001591":
+  version: 1.0.30001593
+  resolution: "caniuse-lite@npm:1.0.30001593"
+  checksum: 4ad2809899fd8912781b3953cec4e9ca9fc6dfed1ca461681e6faaf97e8b8c073a9081961de129ba5ad1593a45f6b878360e6e1d1391485cd2f189f6688f554c
   languageName: node
   linkType: hard
 
@@ -1448,10 +1448,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.4.648":
-  version: 1.4.649
-  resolution: "electron-to-chromium@npm:1.4.649"
-  checksum: 69739fd4c9e17585c1186ea5f354dc62ac83a1e7bf938bb2915b37b8e93362f4198223db09c2ab7f1edc51b4ec4b151e7376a6990d2af85806f3dada84d0800c
+"electron-to-chromium@npm:^1.4.668":
+  version: 1.4.691
+  resolution: "electron-to-chromium@npm:1.4.691"
+  checksum: 49bdae464b16c87556a77ba516e18a015d47093a66c1d1d0b00ba96c73b15657c42dee667a5f6717342511ce1efc98478169cc82178f4d1587cde977e3037118
   languageName: node
   linkType: hard
 
@@ -2178,7 +2178,7 @@ fsevents@~2.3.2:
     "@rails/actioncable": ^7.1.3
     "@rails/actiontext": ^7.1.3
     "@rails/activestorage": ^7.1.3
-    autoprefixer: ^10.4.17
+    autoprefixer: ^10.4.18
     awesomplete: ^1.1.4
     bootstrap: ^5.3.3
     bootstrap-icons: ^1.11.3
