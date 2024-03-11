@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted, ARM64
+    runs-on: [self-hosted, ARM64]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
