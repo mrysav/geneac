@@ -1,7 +1,7 @@
-name: Build Containers
+name: Build ARM64 Container
 
 on:
-  workflow_trigger:
+  workflow_run:
 
 jobs:
   production:
