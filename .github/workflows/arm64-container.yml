@@ -1,10 +1,10 @@
 name: Build ARM64 Container
 
 on:
-  workflow_run:
+  workflow_dispatch:
 
 jobs:
-  production:
+  build:
     runs-on: self-hosted, ARM64
     steps:
       - name: Checkout
