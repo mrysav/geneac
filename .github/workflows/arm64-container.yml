@@ -1,8 +1,7 @@
 name: Build Containers
 
 on:
-  push:
-    branches: ['main']
+  workflow_trigger:
 
 jobs:
   production:
