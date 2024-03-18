@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/nickcharlton/administrate-field-nested_has_many.git
-  revision: e2ee13011c910ad17cb41414455e5bfe1d279d85
+  revision: cccd786d14e5a1cbc69caec0f5f3a637cb32141b
   specs:
-    administrate-field-nested_has_many (2.0.0)
+    administrate-field-nested_has_many (2.1.0)
       administrate (>= 0.19, < 1)
       cocoon (~> 1.2, >= 1.2.11)
 
@@ -112,7 +112,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.1.6)
+    bigdecimal (3.1.7)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -266,7 +266,7 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.22.2)
+    minitest (5.22.3)
     mono_logger (1.1.2)
     msgpack (1.7.2)
     multi_json (1.15.0)
@@ -291,10 +291,10 @@ GEM
       net-protocol
     net-ssh (7.2.1)
     nio4r (2.7.0)
-    nokogiri (1.16.2)
+    nokogiri (1.16.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.16.2-x86_64-linux)
+    nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pagy (7.0.10)
