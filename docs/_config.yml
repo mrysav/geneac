@@ -22,7 +22,7 @@ title: Geneac
 email: mitchell.rysavy@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Geneac is a CMS for people who want to share their genealogy.
-baseurl: "/geneac" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  mrysav
 
