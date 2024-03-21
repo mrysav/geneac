@@ -1,6 +1,6 @@
 # Geneac
 
-- **[Homepage](https://mrysav.github.io/geneac)**
+- **[Homepage](https://www.geneac.net/)**
 
 ## Contributing
 
