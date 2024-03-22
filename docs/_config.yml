@@ -33,6 +33,7 @@ theme: just-the-docs
 
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 collections:
   pages:
@@ -53,6 +54,13 @@ callouts:
 aux_links:
   "mrysav/geneac":
     - "//github.com/mrysav/geneac"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "https://www.geneac.net/assets/geneac-social.jpg"
+      author: Mitchell Rysavy
 
 # Exclude from processing.
 # The following items will not be processed, by default.
