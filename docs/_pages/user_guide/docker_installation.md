@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Deploying to Docker
-nav_order: 3
+title: Installation with Docker
+nav_order: 1
+parent: User Guide
 ---
 
 {: .warn }
