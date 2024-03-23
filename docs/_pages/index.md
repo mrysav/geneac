@@ -4,7 +4,11 @@ title: Home
 nav_order: 1
 ---
 
-## Genealogy for maniacs!
+<div style="text-align: center;">
+<h1>Genealogy for maniacs!</h1>
+</div>
+
+---
 
 **Geneac** is a sitebuilder for people who are interested in sharing their genealogy.
 
@@ -12,7 +16,7 @@ If you are interested in using Geneac, check out the **User Guide** to the left.
 
 If you want to start hacking on Geneac, take a look at the [CONTRIBUTING.md](https://github.com/mrysav/geneac/blob/main/CONTRIBUTING.md) file in the repository. Then you can check out the [developer quickstart](development/quickstart).
 
-### History
+## History
 
 Geneac is a product written mostly by me, [Mitchell Rysavy](https://mitchellrysavy.com). I started working on a website to store and share my genealogy research while I was an undergraduate student
 at the [University of Minnesota-Duluth](https://d.umn.edu/). Originally, the project was called 'familiar,' and
