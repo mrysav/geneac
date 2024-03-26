@@ -595,12 +595,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.18":
-  version: 10.4.18
-  resolution: "autoprefixer@npm:10.4.18"
+"autoprefixer@npm:^10.4.19":
+  version: 10.4.19
+  resolution: "autoprefixer@npm:10.4.19"
   dependencies:
     browserslist: ^4.23.0
-    caniuse-lite: ^1.0.30001591
+    caniuse-lite: ^1.0.30001599
     fraction.js: ^4.3.7
     normalize-range: ^0.1.2
     picocolors: ^1.0.0
@@ -609,7 +609,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 62cfca85e7dbca76eee8c007ef89b9f7ddbb5e293dc2f08530815f37cdc12d17d1c511998f99148df2a2feb9b16416f8c29b7f64d773add13810ef80c088a177
+  checksum: 5766649d7b6bbb7ccf879c44ae34f54e1e515bbc4ad05046d4ed672e1cae6830d8887fc04374f2fcf6f76b36eecf0a60095f78962d595e7f4211ade3f0ae6230
   languageName: node
   linkType: hard
 
@@ -769,10 +769,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001587, caniuse-lite@npm:^1.0.30001591":
+"caniuse-lite@npm:^1.0.30001587":
   version: 1.0.30001593
   resolution: "caniuse-lite@npm:1.0.30001593"
   checksum: 4ad2809899fd8912781b3953cec4e9ca9fc6dfed1ca461681e6faaf97e8b8c073a9081961de129ba5ad1593a45f6b878360e6e1d1391485cd2f189f6688f554c
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001599":
+  version: 1.0.30001600
+  resolution: "caniuse-lite@npm:1.0.30001600"
+  checksum: eaeaf6da379293613bf341403bdc87c160894591598086cb5eb7b805d4d8fad80e793a865a5aa5a2707010545d176fd518c6eba6965d5c2d8e8dec608769e467
   languageName: node
   linkType: hard
 
@@ -2178,7 +2185,7 @@ fsevents@~2.3.2:
     "@rails/actioncable": ^7.1.3
     "@rails/actiontext": ^7.1.3
     "@rails/activestorage": ^7.1.3
-    autoprefixer: ^10.4.18
+    autoprefixer: ^10.4.19
     awesomplete: ^1.1.4
     bootstrap: ^5.3.3
     bootstrap-icons: ^1.11.3
