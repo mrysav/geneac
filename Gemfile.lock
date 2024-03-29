@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/nickcharlton/administrate-field-nested_has_many.git
-  revision: e2ee13011c910ad17cb41414455e5bfe1d279d85
-  specs:
-    administrate-field-nested_has_many (2.0.0)
-      administrate (>= 0.19, < 1)
-      cocoon (~> 1.2, >= 1.2.11)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -93,6 +85,9 @@ GEM
       kaminari (~> 1.2.2)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-nested_has_many (2.1.0)
+      administrate (>= 0.19, < 1)
+      cocoon (~> 1.2, >= 1.2.11)
     ast (2.4.2)
     azure-storage-blob (2.0.3)
       azure-storage-common (~> 2.0)
@@ -515,7 +510,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 10.0)
   administrate (~> 0.20)
-  administrate-field-nested_has_many!
+  administrate-field-nested_has_many (~> 2.1)
   azure-storage-blob (~> 2.0)
   bcrypt (~> 3.1.19)
   bootsnap
@@ -558,7 +553,6 @@ DEPENDENCIES
   rubocop-rspec
   ruby-lsp
   rubyzip (~> 2.3)
-  sassc-rails
   simple_form (~> 5.2)
   spring (>= 3.0.0)
   sprockets-rails

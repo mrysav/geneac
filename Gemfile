@@ -104,9 +104,7 @@ gem "simple_form", "~> 5.2"
 # administrate for content management
 gem "administrate", "~> 0.20"
 # administrate plugins
-gem "administrate-field-nested_has_many", github: "nickcharlton/administrate-field-nested_has_many"
-# administrate-field-nested_has_many has an undeclared hard dependency on sassc
-gem "sassc-rails"
+gem "administrate-field-nested_has_many", "~> 2.1"
 
 # For content tagging
 gem "acts-as-taggable-on", "~> 10.0"
