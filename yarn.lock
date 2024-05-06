@@ -2204,7 +2204,7 @@ fsevents@~2.3.2:
     postcss: ^8.4.38
     postcss-cli: ^11.0.0
     prettier: ^3.2.5
-    sass: ^1.75.0
+    sass: ^1.76.0
     trix: ~> 2.1
   languageName: unknown
   linkType: soft
@@ -3786,16 +3786,16 @@ resolve@^1.10.1:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.75.0":
-  version: 1.75.0
-  resolution: "sass@npm:1.75.0"
+"sass@npm:^1.76.0":
+  version: 1.76.0
+  resolution: "sass@npm:1.76.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 07b1b90de9e7a357a7c082527f13f9b86c0b2922d0678d6a1badd8c00efd6346088fbf33ecccdc7ea0dbba19def511cd9ec9b9555663747964ec5e9b9406bcce
+  checksum: 50bdc3ce12f1b5efdd7f95bb8f4e5e86ac2b34416307a05368b932192db140a836bad5608c6823477d2a1c0bc89557b06f4bf6f4b165b48e1073d5c7030c77f1
   languageName: node
   linkType: hard
 
