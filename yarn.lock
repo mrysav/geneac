@@ -1828,12 +1828,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "eslint-plugin-promise@npm:6.1.1"
+"eslint-plugin-promise@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "eslint-plugin-promise@npm:6.2.0"
   peerDependencies:
-    eslint: ^7.0.0 || ^8.0.0
-  checksum: fa6f418bcc402683c573f6cfb4a8816fec1f2c34323c575bfe12dbf31e78bd4b85cb28c7efa5d6412812896ec23b612449a4f37587650336f03e504109a18b1a
+    eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
+  checksum: dbf30c6098dbeb8680e0ba48548c9e708c8dc2df8a0f93a61a2f6328fc160130db3492265b421e46f3158fe74e273c6a56135690bea7fa38c362af2ed48ac247
   languageName: node
   linkType: hard
 
@@ -2198,7 +2198,7 @@ fsevents@~2.3.2:
     eslint-plugin-n: ^16.6.2
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^5.1.3
-    eslint-plugin-promise: ^6.1.1
+    eslint-plugin-promise: ^6.2.0
     eslint-plugin-standard: ^5.0.0
     nodemon: ^3.1.0
     postcss: ^8.4.38
