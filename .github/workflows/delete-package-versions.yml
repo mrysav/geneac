@@ -1,0 +1,19 @@
+name: Delete Old Containers
+
+on:
+  push:
+    branches: ['main']
+  workflow_run:
+
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete Package Versions
+      uses: actions/delete-package-versions@v5.0.0
+      with:   
+        package-name: 'geneac'    
+        package-type: 'container'
+        min-versions-to-keep: 10
+        delete-only-untagged-versions: 'false'
+          
