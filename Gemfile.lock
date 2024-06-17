@@ -259,7 +259,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    memory_profiler (1.0.1)
+    memory_profiler (1.0.2)
     mini_magick (4.13.1)
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
