@@ -15,13 +15,9 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v4
         with:
-          node-version: '16'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+          node-version-file: '.node-version'
       - name: Install linters
         run: |
-          pip3 install cfn-lint
           npm install -g markdownlint-cli
       - name: Run script/lint.rb
         run: script/lint.rb
