@@ -9,10 +9,6 @@ psql postgres://postgres:postgres@localhost:5432/ < script/create-db-user.sql
 
 echo -e "Installing dependencies..."
 
-cd docs || exit 1
-bundle install
-cd .. || exit 1
-
 bundle install
 yarn install
 
