@@ -75,8 +75,9 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    acts-as-taggable-on (10.0.0)
-      activerecord (>= 6.1, < 7.2)
+    acts-as-taggable-on (11.0.0)
+      activerecord (>= 7.0, < 8.0)
+      zeitwerk (>= 2.4, < 3.0)
     administrate (0.20.1)
       actionpack (>= 6.0, < 8.0)
       actionview (>= 6.0, < 8.0)
@@ -512,7 +513,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 10.0)
+  acts-as-taggable-on (~> 11.0)
   administrate (~> 0.20)
   administrate-field-nested_has_many (~> 2.1)
   azure-storage-blob (~> 2.0)
