@@ -6,9 +6,6 @@ class Photo < ApplicationRecord
   include FriendlyUrlName
   include RecordHistory
 
-  include PgSearch::Model
-  multisearchable against: %i[title description date]
-
   acts_as_taggable_on :tags, :tagged_people
 
   has_one_attached :image

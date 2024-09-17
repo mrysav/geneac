@@ -12,9 +12,8 @@
 
 ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "fuzzystrmatch"
-  enable_extension "pg_trgm"
-  enable_extension "plpgsql"
+  enable_extension "json1"
+  enable_extension "icu"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -58,7 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.string "citable_type"
     t.integer "citable_id"
     t.text "text"
-    t.jsonb "attrs"
+    t.json "attrs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,15 +113,6 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.string "sex"
   end
 
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text "content"
-    t.string "searchable_type"
-    t.bigint "searchable_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -147,7 +137,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "taggings", id: :serial, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -166,7 +156,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", id: :serial, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
@@ -181,8 +171,8 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at", precision: nil
     t.datetime "last_sign_in_at", precision: nil
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "name"
     t.boolean "admin", default: false
     t.datetime "created_at", precision: nil, null: false

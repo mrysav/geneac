@@ -9,29 +9,26 @@ class Person < ApplicationRecord
   has_many :facts, as: :factable, dependent: :destroy
   accepts_nested_attributes_for :facts
 
-  belongs_to :mother, class_name: 'Person', optional: true
-  has_many :mothered_children, class_name: 'Person', dependent: :nullify, foreign_key: 'mother_id', inverse_of: :mother
+  belongs_to :mother, class_name: "Person", optional: true
+  has_many :mothered_children, class_name: "Person", dependent: :nullify, foreign_key: "mother_id", inverse_of: :mother
 
-  belongs_to :father, class_name: 'Person', optional: true
-  has_many :fathered_children, class_name: 'Person', dependent: :nullify, foreign_key: 'father_id', inverse_of: :father
+  belongs_to :father, class_name: "Person", optional: true
+  has_many :fathered_children, class_name: "Person", dependent: :nullify, foreign_key: "father_id", inverse_of: :father
 
-  belongs_to :current_spouse, class_name: 'Person', optional: true
+  belongs_to :current_spouse, class_name: "Person", optional: true
 
-  belongs_to :profile_photo, class_name: 'Photo', optional: true
-
-  include PgSearch::Model
-  multisearchable against: %i[first_name last_name alternate_names]
+  belongs_to :profile_photo, class_name: "Photo", optional: true
 
   before_save :update_special_fact_types
   before_save :update_probably_alive
   before_save :update_profile_photo
   before_destroy :update_current_spouse
 
-  has_friendly_url_name field: :friendly_url, field_name: :full_name, url_root: 'p'
+  has_friendly_url_name field: :friendly_url, field_name: :full_name, url_root: "p"
 
   # title is used when this shows up in search results
   def title
-    [full_name, lifespan].reject(&:empty?).join(' ')
+    [full_name, lifespan].reject(&:empty?).join(" ")
   end
 
   def children
@@ -39,8 +36,8 @@ class Person < ApplicationRecord
   end
 
   def siblings
-    Person.where('id != ? AND ((father_id > 0 AND father_id = ?)'\
-                 ' OR (mother_id > 0 AND mother_id = ?))',
+    Person.where("id != ? AND ((father_id > 0 AND father_id = ?) " \
+                 "OR (mother_id > 0 AND mother_id = ?))",
                  id, father_id, mother_id)
   end
 
@@ -53,16 +50,16 @@ class Person < ApplicationRecord
   end
 
   def full_name
-    [first_name || '', last_name || ''].reject(&:empty?).join(' ')
+    [first_name || "", last_name || ""].reject(&:empty?).join(" ")
   end
 
   def lifespan
     birth_year = birth_date&.year
     death_year = death_date&.year
-    return '' unless birth_year || death_year
+    return "" unless birth_year || death_year
 
-    birth = birth_year || '?'
-    death = death_year || (probably_dead? ? '?' : 'Present')
+    birth = birth_year || "?"
+    death = death_year || (probably_dead? ? "?" : "Present")
     "(#{birth} - #{death})"
   end
 
@@ -97,8 +94,8 @@ class Person < ApplicationRecord
   # Uses first fact of the desired type that it finds
   def update_special_fact_types
     {
-      birth_fact_id: 'birth',
-      death_fact_id: 'death'
+      birth_fact_id: "birth",
+      death_fact_id: "death"
     }.each do |fact, fact_type|
       self[fact] = facts.where(fact_type: fact_type).limit(1)[0]&.id
     end

@@ -8,9 +8,6 @@ class Note < ApplicationRecord
 
   has_rich_text :rich_content
 
-  include PgSearch::Model
-  multisearchable against: %i[title rich_content date]
-
   has_one :citation, as: :citable, dependent: :destroy
   accepts_nested_attributes_for :citation
 

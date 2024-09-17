@@ -2,8 +2,6 @@
 
 # Controls search-related functions
 class SearchController < ApplicationController
-  include PgSearch::Model
-
   def search
     r = PgSearch.multisearch(params[:s]).map(&:searchable)
     authorize_list r
@@ -19,6 +17,6 @@ class SearchController < ApplicationController
     authorize_list r
     @total_results = r.count
     @pagy, @results = pagy_array(r, items: 10)
-    render 'search'
+    render "search"
   end
 end
