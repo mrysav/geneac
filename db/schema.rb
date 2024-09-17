@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "json1"
-  enable_extension "icu"
-
+ActiveRecord::Schema[7.1].define(version: 2024_09_17_202127) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -145,6 +141,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.integer "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at", precision: nil
+    t.string "tenant", limit: 128
     t.index ["context"], name: "index_taggings_on_context"
     t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
@@ -154,6 +151,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
     t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+    t.index ["tenant"], name: "index_taggings_on_tenant"
   end
 
   create_table "tags", force: :cascade do |t|
