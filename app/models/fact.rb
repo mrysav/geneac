@@ -5,10 +5,9 @@
 class Fact < ApplicationRecord
   include ParseableDate
   include RecordHistory
-  include SqlFunctions
 
   module Types
-    BIRTH = 'birth'
+    BIRTH = "birth"
   end
 
   belongs_to :factable, polymorphic: true, optional: true
@@ -23,18 +22,16 @@ class Fact < ApplicationRecord
 
   scope :birth_dates, -> { where(fact_type: Types::BIRTH) }
   scope :birthdays_in_range, lambda { |start_date, end_date, limit|
-    add_valid_date_function
-    date_in_current_year =
-      "make_date(date_part('year', current_date)::int, date_part('month', date_string::date)::int, " \
-      "date_part('day', date_string::date)::int)"
+    monthday_start = start_date.strftime("%m%d")
+    monthday_end = end_date.strftime("%m%d")
+
     includes(:factable)
       .birth_dates
       .where(
-        'CASE is_valid_date(date_string) WHEN true THEN ' \
-        "(#{date_in_current_year} >= ? AND #{date_in_current_year} <= ?) ELSE false END",
-        start_date, end_date
+        "strftime('%m%d',date_string) >= ? AND strftime('%m%d',date_string) <= ?",
+        monthday_start, monthday_end
       )
-      .order(Arel.sql(date_in_current_year))
+      .order(Arel.sql("date(date_string) ASC"))
       .limit(limit)
   }
 
@@ -52,6 +49,6 @@ class Fact < ApplicationRecord
   # ('birth' vs 'birthdate' etc)
   def update_normalized_type
     self.normalized_type = fact_type.downcase.strip
-    self.normalized_type = 'birth' if normalized_type.starts_with? 'birth'
+    self.normalized_type = "birth" if normalized_type.starts_with? "birth"
   end
 end

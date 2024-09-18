@@ -24,8 +24,6 @@ module Generator
 
       downloaded_img = URI.parse(Faker::LoremFlickr.image).open
       photo.image.attach(io: downloaded_img, filename: "photo_#{photo.id}.jpg")
-      require "debug"
-      debugger
       photo.save!
     end
   end
