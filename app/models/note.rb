@@ -6,6 +6,8 @@ class Note < ApplicationRecord
   include FriendlyUrlName
   include RecordHistory
 
+  after_save_commit :update_search_document
+
   has_rich_text :rich_content
 
   has_one :citation, as: :citable, dependent: :destroy
@@ -30,5 +32,12 @@ class Note < ApplicationRecord
 
   def parse_possible_names
     name_rgx = /([A-Z][a-z]+ ?){2}([A-Z][a-z]+ ?)*/
+  end
+
+  def update_search_document
+    content = "#{title} #{rich_content} #{tags.join(' ')}"
+    doc = SearchDocument.find_or_create_by!(searchable: self)
+    doc.content = content
+    doc.save!
   end
 end
