@@ -15,6 +15,8 @@ class Photo < ApplicationRecord
 
   has_friendly_url_name field: :friendly_url, field_name: :title
 
+  after_save_commit :update_search_document
+
   def date
     parse(date_string)
   end
@@ -22,5 +24,14 @@ class Photo < ApplicationRecord
   def resolved_people
     ids = tagged_people.map { |t| t.name.to_i }
     Person.where(id: ids)
+  end
+
+  private
+
+  def update_search_document
+    content = "#{title} #{description} #{tags.join(' ')}"
+    doc = SearchDocument.find_or_create_by!(searchable: self)
+    doc.content = content
+    doc.save!
   end
 end

@@ -10,22 +10,23 @@ class SearchDocument < ApplicationRecord
 
   attr_writer :content
 
+  # Internal class for accessing the fts_search_documents table
+  class FtsSearchDocument < ApplicationRecord
+    self.table_name = "fts_search_documents"
+    self.primary_key = :key
+  end
+
   def set_key
     self.key = searchable.to_s.foreign_key if key.blank?
   end
 
   def update_fts
     delete_fts
-    self.class.connection.execute <<~SQL.squish
-      INSERT INTO fts_search_documents(`key`, `content`)
-      VALUES ('#{key}', '#{content}');
-    SQL
+    SearchDocument::FtsSearchDocument.create!(key: key, content: content)
   end
 
   def delete_fts
-    self.class.connection.execute <<~SQL.squish
-      DELETE FROM fts_search_documents WHERE key = '#{key}';
-    SQL
+    SearchDocument::FtsSearchDocument.delete_by(key: key)
   end
 
   def self.search(search_query)

@@ -13,7 +13,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/micro
 # Install additional OS packages.
 sudo apt-get update
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-get -y install --no-install-recommends imagemagick libvips42 poppler-utils terraform azure-cli postgresql-client
+sudo apt-get -y install --no-install-recommends imagemagick libvips42 poppler-utils terraform azure-cli sqlite3
 
 # Install overmind
 curl -L https://github.com/DarthSim/overmind/releases/download/v2.4.0/overmind-v2.4.0-linux-amd64.gz > /tmp/overmind.gz

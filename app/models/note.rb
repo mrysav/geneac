@@ -35,7 +35,8 @@ class Note < ApplicationRecord
   end
 
   def update_search_document
-    content = "#{title} #{rich_content} #{tags.join(' ')}"
+    content = "#{title} #{rich_content.to_plain_text} #{tags.join(' ')}"
+    Rails.logger.info content
     doc = SearchDocument.find_or_create_by!(searchable: self)
     doc.content = content
     doc.save!

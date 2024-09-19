@@ -24,6 +24,8 @@ class Person < ApplicationRecord
   before_save :update_profile_photo
   before_destroy :update_current_spouse
 
+  after_save_commit :update_search_document
+
   has_friendly_url_name field: :friendly_url, field_name: :full_name, url_root: "p"
 
   # title is used when this shows up in search results
@@ -106,5 +108,12 @@ class Person < ApplicationRecord
 
     photos = Photo.tagged_with(id.to_s)
     self.profile_photo_id = photos[0].id if photos.size.positive?
+  end
+
+  def update_search_document
+    content = full_name
+    doc = SearchDocument.find_or_create_by!(searchable: self)
+    doc.content = content
+    doc.save!
   end
 end

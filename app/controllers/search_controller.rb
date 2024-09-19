@@ -3,7 +3,7 @@
 # Controls search-related functions
 class SearchController < ApplicationController
   def search
-    r = PgSearch.multisearch(params[:s]).map(&:searchable)
+    r = SearchDocument.search(params[:s]).map(&:searchable)
     authorize_list r
     @total_results = r.count
     @pagy, @results = pagy_array(r, items: 10)
