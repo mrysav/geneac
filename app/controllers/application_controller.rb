@@ -40,6 +40,6 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    render file: 'public/404.html', status: :forbidden, layout: false
+    render file: "public/404.html", status: :forbidden, layout: false
   end
 end

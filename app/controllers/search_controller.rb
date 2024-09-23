@@ -3,7 +3,8 @@
 # Controls search-related functions
 class SearchController < ApplicationController
   def search
-    r = SearchDocument.search(params[:s]).map(&:searchable)
+    search_results = SearchDocument.search(params[:s])
+    r = search_results.map(&:searchable)
     authorize_list r
     @total_results = r.count
     @pagy, @results = pagy_array(r, items: 10)

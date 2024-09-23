@@ -29,15 +29,15 @@ class SearchDocument < ApplicationRecord
     SearchDocument::FtsSearchDocument.delete_by(key: key)
   end
 
+  # This does some funky manuevering to query the fts_search_documents
+  # table for the query, but return an ActiveRecord::Relation of SearchDocuments.
   def self.search(search_query)
-    fts_query = <<~SQL.squish
-      SELECT s.* FROM fts_search_documents
-      LEFT JOIN search_documents s ON fts_search_documents.key = s.key
-      WHERE fts_search_documents MATCH ?
-      ORDER BY rank;
-    SQL
-
-    SearchDocument.find_by_sql(Arel.sql(fts_query, search_query))
+    SearchDocument
+      .select("s.*")
+      .from("fts_search_documents")
+      .joins("LEFT JOIN search_documents s ON fts_search_documents.key = s.key")
+      .where("fts_search_documents MATCH ?", search_query)
+      .order("rank")
   end
 
   private
