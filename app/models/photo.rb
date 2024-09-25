@@ -32,6 +32,7 @@ class Photo < ApplicationRecord
     content = "#{title} #{description} #{tags.join(' ')}"
     doc = SearchDocument.find_or_create_by!(searchable: self)
     doc.content = content
+    doc.privacy_scope = resolved_people.pluck(:probably_alive).any?
     doc.save!
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_09_19_015701) do
+ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -124,6 +124,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_19_015701) do
     t.string "searchable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "privacy_scope", default: 0, null: false
     t.index ["key"], name: "index_search_documents_on_key"
     t.index ["searchable_type", "searchable_id"], name: "index_search_documents_on_searchable_type_and_searchable_id"
   end

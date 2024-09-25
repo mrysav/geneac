@@ -114,6 +114,7 @@ class Person < ApplicationRecord
     content = full_name
     doc = SearchDocument.find_or_create_by!(searchable: self)
     doc.content = content
+    doc.privacy_scope = probably_alive? ? PrivacyScope::PRIVATE : PrivacyScope::PUBLIC
     doc.save!
   end
 end

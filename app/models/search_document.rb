@@ -31,12 +31,12 @@ class SearchDocument < ApplicationRecord
 
   # This does some funky manuevering to query the fts_search_documents
   # table for the query, but return an ActiveRecord::Relation of SearchDocuments.
-  def self.search(search_query)
+  def self.search(search_query, privacy_scope)
     SearchDocument
       .select("s.*")
       .from("fts_search_documents")
       .joins("LEFT JOIN search_documents s ON fts_search_documents.key = s.key")
-      .where("fts_search_documents MATCH ?", search_query)
+      .where("fts_search_documents MATCH ? AND s.privacy_scope = ?", search_query, privacy_scope)
       .order("rank")
   end
 
