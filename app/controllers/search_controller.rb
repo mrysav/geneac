@@ -30,7 +30,7 @@ class SearchController < ApplicationController
     Photo.tagged_with(tag).each { |p| r.push(p) }
     authorize_list r
     @total_results = r.count
-    @pagy, @results = pagy_array(r, items: 10)
+    @pagy, @results = pagy_array(r, limit: 10)
     render "search"
   end
 end
