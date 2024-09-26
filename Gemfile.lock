@@ -289,6 +289,7 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.8)
     prism (1.0.0)
     psych (5.1.2)
       stringio
@@ -505,6 +506,7 @@ DEPENDENCIES
   listen (~> 3.9)
   memory_profiler
   pagy
+  pg
   puma (~> 6.4)
   pundit
   rack-mini-profiler (~> 3.3)
