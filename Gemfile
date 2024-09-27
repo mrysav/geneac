@@ -136,5 +136,3 @@ gem "rack-mini-profiler", "~> 3.3"
 gem "stackprof"
 
 gem "kamal", "~> 1.8", require: false
-
-gem "pg" # delete this later

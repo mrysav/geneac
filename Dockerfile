@@ -16,7 +16,7 @@ FROM base AS build
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git pkg-config libpq-dev libvips curl node-gyp python-is-python3 libjemalloc2
+    apt-get install --no-install-recommends -y build-essential git pkg-config libvips curl node-gyp python-is-python3 libjemalloc2
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=20.11.1
@@ -52,7 +52,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl sqlite3 libvips poppler-utils postgresql-client && \
+    apt-get install --no-install-recommends -y curl sqlite3 libvips poppler-utils && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
