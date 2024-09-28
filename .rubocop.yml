@@ -23,6 +23,9 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Enabled: false
 
+RSpec/LineLength:
+  Enabled: false
+
 Style/StringLiterals:
   EnforcedStyle: "double_quotes"
 
