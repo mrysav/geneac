@@ -3,7 +3,7 @@
     %h2.mx-auto= t('settings.title')
     %hr.col-sm-12
   .row
-    = form_for(Setting.new, url: settings_path, html: { class: 'mx-auto' }) do |f|
+    = form_for(Setting.new, url: settings_path, html: { class: 'mx-auto' }, data: { turbo: false }) do |f|
       - Setting.keys.each do |key|
         - field = Setting.get_field(key)
         - if field[:type] == :boolean
