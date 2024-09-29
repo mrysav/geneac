@@ -15,6 +15,8 @@ class HomeController < ApplicationController
   private
 
   def recent_updates
+    skip_authorization
+
     updates = []
     Person.order("updated_at desc").limit(5)
           .each { |p| updates.push(p) }
@@ -30,6 +32,8 @@ class HomeController < ApplicationController
   end
 
   def recent_birthdays
+    skip_authorization
+
     birthdays = Fact.birthdays_in_range(
       Time.zone.today, Time.zone.today + RECENT_BIRTHDAYS_RANGE, RECENT_BIRTHDAYS_LIMIT
     )

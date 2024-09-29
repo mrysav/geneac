@@ -1,10 +1,20 @@
-# frozen_string_literal: true
-
+# Denies
 class PhotoPolicy < ApplicationPolicy
   def show?
     return true if admin?
+    return false if Setting.require_login && !logged_in?
+    return false if Setting.restrict_living_info && living_people?
 
-    (logged_in? || !Setting.require_login) &&
-      (record.tagged_person_list.empty? || !Setting.restrict_living_info)
+    true
+  end
+
+  private
+
+  def living_people?
+    record
+      .resolved_people
+      .where(probably_alive: true)
+      .count
+      .positive?
   end
 end

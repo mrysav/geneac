@@ -23,12 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_list(list, action = :show?)
-    skip_authorization if list.empty?
-    list.select! do |s|
-      authorize s, action
-    rescue Pundit::NotAuthorizedError => _e
-      false
-    end
+    list.select! { |s| policy(s).send(action) }
   end
 
   def authorize_or_nil(record)

@@ -20,17 +20,26 @@ class SearchController < ApplicationController
 
     search_results = SearchDocument.search(params[:s], privacy_scope)
     @total_results = search_results.count("s.id")
-    @pagy, @results = pagy_array(search_results, limit: 10)
+    @pagy, @results = pagy_arel(search_results, limit: 10)
   end
 
   def tagged
-    tag = params[:tag]
-    r = []
-    Note.tagged_with(tag).each { |n| r.push(n) }
-    Photo.tagged_with(tag).each { |p| r.push(p) }
-    authorize_list r
-    @total_results = r.count
-    @pagy, @results = pagy_array(r, limit: 10)
+    authenticate_user! if Setting.require_login
+
+    # Taggings are materialized and filtered... not ideal
+    skip_authorization
+
+    tag_name = params[:tag]
+    taggings = ActsAsTaggableOn::Tagging
+               .where(tag_id: ActsAsTaggableOn::Tag
+                 .where("LOWER(name) LIKE ? ESCAPE '!'", tag_name))
+               .filter do |tag|
+                 policy(tag.taggable).show?
+               end
+
+    @total_results = taggings.count
+    @pagy, @results = pagy_array(taggings, limit: 10)
+
     render "search"
   end
 end
