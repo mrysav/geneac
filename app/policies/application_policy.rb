@@ -2,7 +2,6 @@
 
 # Default access settings for all models
 class ApplicationPolicy
-
   # Default access settings for groups of objects
   class Scope
     attr_reader :user, :scope
@@ -37,7 +36,7 @@ class ApplicationPolicy
   end
 
   def show?
-    scope.where(id: record.id).exists?
+    scope.exists?(id: record.id)
   end
 
   def create?

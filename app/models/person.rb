@@ -99,7 +99,7 @@ class Person < ApplicationRecord
       birth_fact_id: "birth",
       death_fact_id: "death"
     }.each do |fact, fact_type|
-      self[fact] = facts.where(fact_type: fact_type).limit(1)[0]&.id
+      self[fact] = facts.where("LOWER(fact_type) = ?", fact_type.downcase).pick(:id)
     end
   end
 

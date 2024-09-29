@@ -1,4 +1,4 @@
-# Denies
+# Denies access to showing a photo based on site settings.
 class PhotoPolicy < ApplicationPolicy
   def show?
     return true if admin?
@@ -11,10 +11,6 @@ class PhotoPolicy < ApplicationPolicy
   private
 
   def living_people?
-    record
-      .resolved_people
-      .where(probably_alive: true)
-      .count
-      .positive?
+    record.resolved_people.exists?(probably_alive: true)
   end
 end
