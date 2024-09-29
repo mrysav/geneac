@@ -1,10 +1,14 @@
 <div class="col-lg-6 offset-lg-3 col-sm-12 search-results md-2 mt-4">
   <% @results.each do |d| %>
-    <%= render partial: 'shared/search_doc', locals: { doc: d }  %>
+    <%
+      doc = d.searchable if d.respond_to?(:searchable)
+      doc = d.taggable if d.respond_to?(:taggable)
+    %>
+    <%= render partial: 'shared/search_doc', locals: { doc: doc }  %>
   <% end %>
-  
+
   <%== pagy_bootstrap_nav(@pagy) %>
-  
+
   <div class="total-results">
     <i><%= t('search.total_results', total: @total_results) %></i>
   </div>

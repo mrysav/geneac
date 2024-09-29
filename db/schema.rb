@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "fuzzystrmatch"
-  enable_extension "pg_trgm"
-  enable_extension "plpgsql"
-
+ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -58,7 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.string "citable_type"
     t.integer "citable_id"
     t.text "text"
-    t.jsonb "attrs"
+    t.json "attrs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,15 +109,6 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.string "sex"
   end
 
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text "content"
-    t.string "searchable_type"
-    t.bigint "searchable_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -130,6 +116,17 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "friendly_url"
+  end
+
+  create_table "search_documents", force: :cascade do |t|
+    t.string "key"
+    t.bigint "searchable_id"
+    t.string "searchable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "privacy_scope", default: 0, null: false
+    t.index ["key"], name: "index_search_documents_on_key"
+    t.index ["searchable_type", "searchable_id"], name: "index_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -147,7 +144,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "taggings", id: :serial, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -155,6 +152,7 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.integer "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at", precision: nil
+    t.string "tenant", limit: 128
     t.index ["context"], name: "index_taggings_on_context"
     t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
@@ -164,9 +162,10 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
     t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+    t.index ["tenant"], name: "index_taggings_on_tenant"
   end
 
-  create_table "tags", id: :serial, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
@@ -181,8 +180,8 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at", precision: nil
     t.datetime "last_sign_in_at", precision: nil
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "name"
     t.boolean "admin", default: false
     t.datetime "created_at", precision: nil, null: false
@@ -194,4 +193,8 @@ ActiveRecord::Schema[7.1].define(version: 2021_12_23_174500) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "edit_histories", "users"
+
+  # Virtual tables defined in this database.
+  # Note that virtual tables may not work with other database engines. Be careful if changing database.
+  create_virtual_table "fts_search_documents", "fts5", ["content", "key"]
 end

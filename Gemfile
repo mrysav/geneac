@@ -1,34 +1,24 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.3.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 7.1.3"
-
+gem "rails", "8.0.0.beta1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.5"
-
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", ">= 2.1"
 # Use Puma as the app server
-gem "puma", "~> 6.4"
-
+gem "puma", ">= 6.4"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
-
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
-
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -37,31 +27,42 @@ gem "redis", ">= 5.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.19"
 
-# Use ActiveStorage variant
-gem "image_processing", "~> 1.12"
-
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-group :development, :test do
-  gem "debug", platforms: %i[mri windows]
+# Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
+gem "kamal", "~> 1.8", require: false
 
-  gem "database_cleaner-active_record"
+# Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
+gem "thruster", require: false
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem "image_processing", "~> 1.12"
+gem "ruby-vips"
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+
+  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem "brakeman", require: false
+
   gem "factory_bot_rails"
   gem "rails-controller-testing"
-  gem "rspec-rails", "~> 6.1.4"
+  gem "rspec-rails", "~> 7.0"
   gem "timecop"
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem "web-console", ">= 4.1.0"
+
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  # gem 'rack-mini-profiler', '~> 2.0'
-  gem "listen", "~> 3.9"
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem "spring", ">= 3.0.0"
+  gem "flamegraph"
+  gem "memory_profiler"
+  gem "rack-mini-profiler", "~> 3.3"
+  gem "stackprof"
 
   # Linters and other tools
   gem "erb_lint", require: false
@@ -71,15 +72,12 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-rake", require: false
   gem "rubocop-rspec", require: false
-  gem "ruby-lsp", require: false
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  # gem "capybara", ">= 3.26"
-  # gem "selenium-webdriver"
-  # Easy installation and use of web drivers to run system tests with browsers
-  # gem "webdrivers"
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -109,16 +107,8 @@ gem "administrate-field-nested_has_many", "~> 2.1"
 # For content tagging
 gem "acts-as-taggable-on", "~> 11.0"
 
-group :production do
-  # For azure
-  gem "azure-storage-blob", "~> 2.0"
-end
-
 # Date parsing
 gem "chronic"
-
-# Searching
-gem "pg_search"
 
 # Settings
 gem "rails-settings-cached", "~> 2.9"
@@ -135,11 +125,3 @@ gem "haml-rails"
 
 # Parses links out of strings
 gem "linkify-it-rb", "~> 4.0"
-
-# Profiler and perf
-gem "flamegraph"
-gem "memory_profiler"
-gem "rack-mini-profiler", "~> 3.3"
-gem "stackprof"
-
-gem "kamal", "~> 1.8", require: false

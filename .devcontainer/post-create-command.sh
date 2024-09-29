@@ -4,9 +4,6 @@ set -euo pipefail
 
 docker compose up -d --wait
 
-echo -e "Creating database user..."
-psql postgres://postgres:postgres@localhost:5432/ < script/create-db-user.sql
-
 echo -e "Installing dependencies..."
 
 bundle install

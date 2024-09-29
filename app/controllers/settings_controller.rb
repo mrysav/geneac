@@ -4,16 +4,16 @@
 class SettingsController < ApplicationController
   def show
     authorize :settings, :use?
-    @env_vars = %w[HOSTNAME MAILER_SENDER AZURE_STORAGE_ACCOUNT_NAME AZURE_STORAGE_CONTAINER]
+    @env_vars = %w[HOSTNAME MAILER_SENDER]
   end
 
   def create
     authorize :settings, :use?
 
     setting_params.each_key do |key|
-      Setting.send("#{key}=", setting_params[key].strip) unless setting_params[key].nil?
+      Setting.send(:"#{key}=", setting_params[key].strip) unless setting_params[key].nil?
     end
-    redirect_to settings_path, notice: I18n.t('settings.settings_updated')
+    redirect_to settings_path, notice: I18n.t("settings.settings_updated")
   end
 
   private

@@ -6,10 +6,9 @@ class Note < ApplicationRecord
   include FriendlyUrlName
   include RecordHistory
 
-  has_rich_text :rich_content
+  after_save_commit :update_search_document
 
-  include PgSearch::Model
-  multisearchable against: %i[title rich_content date]
+  has_rich_text :rich_content
 
   has_one :citation, as: :citable, dependent: :destroy
   accepts_nested_attributes_for :citation
@@ -33,5 +32,14 @@ class Note < ApplicationRecord
 
   def parse_possible_names
     name_rgx = /([A-Z][a-z]+ ?){2}([A-Z][a-z]+ ?)*/
+  end
+
+  def update_search_document
+    content = "#{title} #{rich_content.to_plain_text} #{tags.join(' ')}"
+    Rails.logger.info content
+    doc = SearchDocument.find_or_create_by!(searchable: self)
+    doc.content = content
+    doc.privacy_scope = resolved_people.pluck(:probably_alive).any?
+    doc.save!
   end
 end

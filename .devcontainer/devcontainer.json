@@ -13,24 +13,6 @@
   },
   "onCreateCommand": ".devcontainer/on-create-command.sh",
   "postCreateCommand": ".devcontainer/post-create-command.sh",
-  "customizations": {
-    "vscode": {
-      // Add the IDs of extensions you want installed when the container is created.
-      "extensions": [
-        "aki77.haml-lint",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
-        "karunamurti.haml",
-        "manuelpuyol.erb-linter",
-        "ms-azuretools.vscode-docker",
-        "robinbentley.sass-indented",
-        "Shopify.ruby-lsp",
-        "tyriar.sort-lines",
-        "vortizhe.simple-ruby-erb"
-      ]
-    }
-  },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
     3035,

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'faker'
+require "faker"
 
 module Generator
   # Defines a method that can be used in rake tasks to generate photos.
@@ -12,11 +12,11 @@ module Generator
       has_date = [true, false].sample
       date = if has_date
                Faker::Date.between(from: 100.years.ago,
-                                   to: Time.zone.today).strftime('%F')
+                                   to: Time.zone.today).strftime("%F")
              end
 
-      tags = sample_tags.sample(rand(sample_tags.count)).join(', ')
-      people_tags = person_ids.sample(rand(5)).join(', ')
+      tags = sample_tags.sample(rand(sample_tags.count)).join(", ")
+      people_tags = person_ids.sample(rand(5)).join(", ")
 
       photo = Photo.new(title: Faker::Movies::BackToTheFuture.character,
                         description: Faker::Movies::BackToTheFuture.quote,
