@@ -10,7 +10,7 @@
       %hr
       %h3= t('users.edit_history')
       %container.row
-        - policy_scope(@user.edit_histories).first(10).each do |e|
+        - policy_scope(@user.edit_histories.order('id DESC').limit(10)).each do |e|
           .col-sm-4.text-right
             %b= e.edited_at.strftime('%B %-d, %Y')
             %br
