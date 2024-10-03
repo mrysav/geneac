@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   authenticate :user do
     resource :settings
 
-    mount Resque::Server, at: "jobs"
+    mount MissionControl::Jobs::Engine, at: "/jobs"
   end
 
   namespace :admin do

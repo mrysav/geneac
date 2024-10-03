@@ -1,6 +1,6 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,5 +22,7 @@ module Geneac
 
     config.generators.assets = false
     config.generators.helper = false
+
+    config.mission_control.jobs.base_controller_class = "Jobs::MissionControlController"
   end
 end

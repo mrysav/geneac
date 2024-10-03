@@ -84,6 +84,7 @@ end
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Workin' jobs
+gem "mission_control-jobs"
 gem "resque"
 
 # For generating fake data - used in a rake task as well as tests
