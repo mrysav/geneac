@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Note do
-  let(:note) { described_class.new(id: 1, title: "Test note!", rich_content: "Hello world!", date_string: date_string) }
+  let(:note) { described_class.new(id: 1, title: "Test note!", rich_content: "Hello world!", date_string:) }
 
   describe "#date" do
     context "with no date_string" do

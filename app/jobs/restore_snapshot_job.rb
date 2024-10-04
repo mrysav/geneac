@@ -35,7 +35,7 @@ class RestoreSnapshotJob < ApplicationJob
           updated_at = n.updated_at
           n.rich_content = v
           n.save_without_history!
-          n.update_columns(updated_at: updated_at)
+          n.update_columns(updated_at:)
         end
 
         json_buffer.each do |k, v|
@@ -106,7 +106,7 @@ class RestoreSnapshotJob < ApplicationJob
         blob = ActiveStorage::Blob.create_and_upload!(
           io: StringIO.new(io.read),
           filename: fname,
-          content_type: content_type
+          content_type:
         )
         sgid = blob.to_sgid(expires_in: nil, for: "attachable")
         url = rails_blob_path(blob, disposition: :attachment, only_path: true)

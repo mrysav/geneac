@@ -16,7 +16,7 @@ class Citation < ApplicationRecord
     parsed_links = linkify.match(text)
 
     self.attrs = {
-      text: text,
+      text:,
       links: parsed_links
     }
   end

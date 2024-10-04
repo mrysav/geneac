@@ -22,11 +22,11 @@ class SearchDocument < ApplicationRecord
 
   def update_fts
     delete_fts
-    SearchDocument::FtsSearchDocument.create!(key: key, content: content)
+    SearchDocument::FtsSearchDocument.create!(key:, content:)
   end
 
   def delete_fts
-    SearchDocument::FtsSearchDocument.delete_by(key: key)
+    SearchDocument::FtsSearchDocument.delete_by(key:)
   end
 
   # This does some funky manuevering to query the fts_search_documents

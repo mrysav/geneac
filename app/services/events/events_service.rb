@@ -21,7 +21,7 @@ module Events
         title_link = fact.factable.friendly_url if fact.factable
         title = fact.fact_type.capitalize unless fact.factable
 
-        events.push(Event.new(title: title, title_link: title_link, date: fact.date,
+        events.push(Event.new(title:, title_link:, date: fact.date,
                               date_string: format_date(fact.date),
                               location: fact.place, citations: fact.citations,
                               tagged_people: fact.resolved_people,

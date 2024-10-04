@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Photo do
   let(:photo) do
-    described_class.new(id: 1, title: "Imageless photo", description: "*Here we go!*", date_string: date_string)
+    described_class.new(id: 1, title: "Imageless photo", description: "*Here we go!*", date_string:)
   end
 
   describe "#date" do

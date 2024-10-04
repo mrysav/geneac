@@ -12,7 +12,7 @@ namespace :admin do
   end
 
   def set_admin(email, is_admin)
-    user = User.find_by(email: email)
+    user = User.find_by(email:)
     user.admin = is_admin
     user.save!
     puts "#{email} is admin: #{is_admin}"

@@ -115,7 +115,7 @@ RSpec.describe RestoreSnapshotJob do
     digest_contents
   end
 
-  ACTION_TEXT_ATTACHMENT = %r{<action-text-attachment(.+?)>.+</action-text-attachment>}m.freeze
+  ACTION_TEXT_ATTACHMENT = %r{<action-text-attachment(.+?)>.+</action-text-attachment>}m
 
   def normalize_note_html(note_html)
     attachments = []
@@ -125,7 +125,7 @@ RSpec.describe RestoreSnapshotJob do
     normalized_text = note_html.gsub(ACTION_TEXT_ATTACHMENT, "")
 
     {
-      attachments: attachments,
+      attachments:,
       contents: normalized_text
     }
   end
