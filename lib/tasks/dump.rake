@@ -2,7 +2,7 @@
 
 require "fileutils"
 require "zip"
-require "backup/postgres_dumper"
+require "backup/sqlite3_dumper"
 require "backup/blob_dumper"
 
 namespace :dump do
@@ -11,7 +11,7 @@ namespace :dump do
     logger = Rails.logger
     Rails.logger = Logger.new($stderr)
 
-    Backup::PostgresDumper.new.dump do |io|
+    Backup::Sqlite3Dumper.new.dump do |io|
       puts io.read
     end
 
@@ -38,7 +38,7 @@ namespace :dump do
 
     Zip::OutputStream.open(args[:zip]) do |zio|
       zio.put_next_entry "database.sql"
-      Backup::PostgresDumper.new.dump do |io|
+      Backup::Sqlite3Dumper.new.dump do |io|
         zio.write(io.read)
       end
 
