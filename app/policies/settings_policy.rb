@@ -2,7 +2,6 @@
 
 # Policy for settings
 class SettingsPolicy < ApplicationPolicy
-
   # You can only see and update settings as an admin.
   def use?
     admin?

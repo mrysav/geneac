@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'administrate/field/base'
+require "administrate/field/base"
 
 class CompletableTextField < Administrate::Field::Base
   def suggestion_url

@@ -8,14 +8,12 @@ module Events
     end
 
     def events
-      events = []
-
-      @person.facts.each do |fact|
-        events.push(Event.new(title: fact.fact_type.capitalize, date: fact.date,
-                              date_string: format_date(fact.date),
-                              location: fact.place, citations: fact.citations,
-                              tagged_people: fact.resolved_people,
-                              description: fact.description))
+      events = @person.facts.map do |fact|
+        Event.new(title: fact.fact_type.capitalize, date: fact.date,
+                  date_string: format_date(fact.date),
+                  location: fact.place, citations: fact.citations,
+                  tagged_people: fact.resolved_people,
+                  description: fact.description)
       end
 
       Fact.tagged_with(@person.id.to_s).each do |fact|
@@ -53,7 +51,7 @@ module Events
     def format_date(date)
       return date.to_s unless date.respond_to?(:strftime)
 
-      date.strftime('%B %-d, %Y')
+      date.strftime("%B %-d, %Y")
     end
   end
 end

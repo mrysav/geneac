@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Ajax::AjaxController, type: :request do
+RSpec.describe Ajax::AjaxController do
   let(:person) { create(:person) }
 
   before do

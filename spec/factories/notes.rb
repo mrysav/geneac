@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require 'faker'
+require "faker"
 
 FactoryBot.define do
   factory :note do
     title { Faker::Music::GratefulDead.song }
     rich_content { "<b>#{Faker::Music::Prince.song}</b><br/>#{Faker::Lorem.paragraphs}" }
 
-    after(:build) { |photo|
+    after(:build) do |photo|
       allow(photo).to receive(:add_create_history).and_return(true)
-    }
+    end
 
     after(:create) do |photo|
       allow(photo).to receive(:add_create_history).and_call_original
@@ -17,7 +17,7 @@ FactoryBot.define do
 
     trait :with_date do
       date_string do
-        Faker::Date.between(from: 50.years.ago, to: Time.zone.today).strftime('%F')
+        Faker::Date.between(from: 50.years.ago, to: Time.zone.today).strftime("%F")
       end
     end
   end

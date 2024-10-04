@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'faker'
+require "faker"
 
 module Generator
   # Methods that can be used by Rake tasks to generate fake people.
@@ -8,9 +8,9 @@ module Generator
     def self.create_person
       person = Person.new(first_name: [true, false].sample ? Faker::Name.female_first_name : Faker::Name.male_first_name,
                           last_name: Faker::Name.last_name,
-                          gender: ['', 'male', 'female', 'transgender',
-                                   'gender neutral', 'non-binary', 'agender', 'polygender'].sample,
-                          sex: ['', 'male', 'female'].sample,
+                          gender: ["", "male", "female", "transgender",
+                                   "gender neutral", "non-binary", "agender", "polygender"].sample,
+                          sex: ["", "male", "female"].sample,
                           bio: Faker::Quote.famous_last_words)
 
       has_birthday = [true, false].sample
@@ -18,9 +18,9 @@ module Generator
 
       if has_birthday
         f = Fact.new
-        f.fact_type = 'birth'
+        f.fact_type = "birth"
         f.factable = person
-        f.date_string = Faker::Date.birthday(min_age: 0, max_age: 100).strftime('%F')
+        f.date_string = Faker::Date.birthday(min_age: 0, max_age: 100).strftime("%F")
         f.place = "#{Faker::Address.city}, #{Faker::Address.country}"
         f.save!
         person.birth_fact_id = f.id
@@ -28,11 +28,11 @@ module Generator
 
       if has_deathday
         f = Fact.new
-        f.fact_type = 'death'
+        f.fact_type = "death"
         f.factable = person
         f.date_string =
           Faker::Date.between(from: person.birth_date || 50.years.ago,
-                              to: Time.zone.today).strftime('%F')
+                              to: Time.zone.today).strftime("%F")
         f.place = "#{Faker::Address.city}, #{Faker::Address.country}"
         f.save!
         person.death_fact_id = f.id
@@ -48,8 +48,8 @@ module Generator
       parents = []
 
       count.times do
-        person = self.create_person
-        is_female = person.sex == 'female'
+        person = create_person
+        is_female = person.sex == "female"
 
         create_new_branch = rand(branchiness) <= 1
 

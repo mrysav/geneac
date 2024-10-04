@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'administrate/base_dashboard'
+require "administrate/base_dashboard"
 
 class CitationDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -14,7 +14,7 @@ class CitationDashboard < Administrate::BaseDashboard
     citable_type: Field::String,
     id: Field::Number,
     text: CompletableTextField.with_options(
-      suggestion_url: '/admin/suggestions/citation/%s'
+      suggestion_url: "/admin/suggestions/citation/%s"
     ),
     attrs: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,

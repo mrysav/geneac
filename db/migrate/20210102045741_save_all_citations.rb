@@ -1,5 +1,5 @@
 class SaveAllCitations < ActiveRecord::Migration[6.1]
   def change
-    Citation.all.each(&:save!)
+    Citation.find_each(&:save!)
   end
 end

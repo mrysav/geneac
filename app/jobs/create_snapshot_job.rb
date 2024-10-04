@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'zip'
+require "zip"
 
 # Job that creates a snapshot of all resources on the sites
 class CreateSnapshotJob < ApplicationJob
@@ -21,7 +21,7 @@ class CreateSnapshotJob < ApplicationJob
       archive: ActiveStorage::Blob.create_and_upload!(
         io: stringio,
         filename: "geneac_snapshot_#{Time.now.to_i}.zip",
-        content_type: 'application/zip'
+        content_type: "application/zip"
       )
     )
     snapshot.save!
@@ -32,20 +32,20 @@ class CreateSnapshotJob < ApplicationJob
       # Version 1/unversioned: Notes have markdown text
       # Version 2: Notes have rich text HTML file with them
       # Version 3: 'Person' models no longer have birth/death/burial dates
-      version: '3'
+      version: "3"
     }
 
-    zio.put_next_entry('manifest.json')
+    zio.put_next_entry("manifest.json")
     zio.write(manifest.to_json)
   end
 
   def add_photos(zio)
     return if Photo.count.zero?
 
-    zio.put_next_entry('Photo.json')
+    zio.put_next_entry("Photo.json")
     zio.write(Photo.all.to_json)
 
-    Photo.all.each do |photo|
+    Photo.find_each do |photo|
       zio.put_next_entry("Photos/#{photo.id}_#{photo.image.filename}")
       zio.write(photo.image.download)
     end
@@ -54,32 +54,32 @@ class CreateSnapshotJob < ApplicationJob
   def add_notes(zio)
     return if Note.count.zero?
 
-    zio.put_next_entry('Note.json')
+    zio.put_next_entry("Note.json")
     zio.write(Note.all.to_json)
 
-    Note.all.each do |n|
-      serialize_actiontext(n.rich_content, 'Notes', "note_#{n.id}", zio)
+    Note.find_each do |n|
+      serialize_actiontext(n.rich_content, "Notes", "note_#{n.id}", zio)
     end
   end
 
   def add_people(zio)
     return if Person.count.zero?
 
-    zio.put_next_entry('Person.json')
+    zio.put_next_entry("Person.json")
     zio.write(Person.all.to_json)
   end
 
   def add_facts(zio)
     return if Fact.count.zero?
 
-    zio.put_next_entry('Fact.json')
+    zio.put_next_entry("Fact.json")
     zio.write(Fact.all.to_json)
   end
 
   def add_citations(zio)
     return if Citation.count.zero?
 
-    zio.put_next_entry('Citation.json')
+    zio.put_next_entry("Citation.json")
     zio.write(Citation.all.to_json)
   end
 
@@ -95,20 +95,20 @@ class CreateSnapshotJob < ApplicationJob
 
     blobs = []
 
-    inner_html.css('action-text-attachment').each do |attachment|
-      blob = ActionText::Attachable.from_attachable_sgid(attachment['sgid'])
+    inner_html.css("action-text-attachment").each do |attachment|
+      blob = ActionText::Attachable.from_attachable_sgid(attachment["sgid"])
       blobs.push blob
 
-      img = attachment.css('img')[0]
-      img['src'] = "#{path}/#{blob.filename}" if img
+      img = attachment.css("img")[0]
+      img["src"] = "#{path}/#{blob.filename}" if img
 
       # Unset ActionText attrs - we'll infer them on deserialize
-      attachment['sgid'] = ''
-      attachment['url'] = ''
+      attachment["sgid"] = ""
+      attachment["url"] = ""
     end
 
     zio.put_next_entry("#{root}/#{path}.html")
-    zio.write(inner_html.css('div.trix-content').inner_html.to_s)
+    zio.write(inner_html.css("div.trix-content").inner_html.to_s)
 
     blobs.each do |blob|
       key = "#{root}/#{path}/#{blob.filename}"

@@ -31,7 +31,7 @@ class Note < ApplicationRecord
   private
 
   def parse_possible_names
-    name_rgx = /([A-Z][a-z]+ ?){2}([A-Z][a-z]+ ?)*/
+    /([A-Z][a-z]+ ?){2}([A-Z][a-z]+ ?)*/
   end
 
   def update_search_document

@@ -1,30 +1,22 @@
 # frozen_string_literal: true
 
-require 'digest'
-require 'json'
-require 'zip'
+require "digest"
+require "json"
+require "zip"
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe RestoreSnapshotJob, type: :job do
-  before :each do
+RSpec.describe RestoreSnapshotJob do
+  before do
     Snapshot.drop_em_all!
 
-    5.times do
-      create(:note, :with_date)
-    end
+    create_list(:note, 5, :with_date)
 
-    3.times do
-      create(:photo)
-    end
+    create_list(:photo, 3)
 
-    5.times do
-      create(:fact, :attached_to_person)
-    end
+    create_list(:fact, 5, :attached_to_person)
 
-    3.times do
-      create(:person)
-    end
+    create_list(:person, 3)
 
     CreateSnapshotJob.perform_now
     expect(Snapshot.count).to eq(1)
@@ -42,28 +34,28 @@ RSpec.describe RestoreSnapshotJob, type: :job do
     expect(Fact.count).to eq(0)
   end
 
-  context 'restoring a snapshot' do
-    it 'restores notes' do
-      RestoreSnapshotJob.perform_now(Snapshot.find(1))
+  context "restoring a snapshot" do
+    it "restores notes" do
+      described_class.perform_now(Snapshot.find(1))
 
       expect(Note.count).to eq(5)
 
-      note = Note.all.first
+      note = Note.first
 
       expect(note.title).not_to be_empty
       expect(note.rich_content.body.to_s).to match(%r{<b>.+</b>.+})
     end
 
-    skip 'restores the database from reference snapshot' do
+    skip "restores the database from reference snapshot" do
       expect(Snapshot.count).to eq(0)
-      RestoreSnapshotJob.perform_now(create(:snapshot, :v1))
+      described_class.perform_now(create(:snapshot, :v1))
 
       expect(Person.count).to eq(100)
 
       note_with_actiontext = Note.find(1)
       rich_text = note_with_actiontext.rich_content.body
-      expect(rich_text.attachments[0].filename).to eq('1_photo_1.jpg')
-      expect(rich_text.attachments[1].filename).to eq('cat_pdf.pdf')
+      expect(rich_text.attachments[0].filename).to eq("1_photo_1.jpg")
+      expect(rich_text.attachments[1].filename).to eq("cat_pdf.pdf")
 
       CreateSnapshotJob.perform_now
       expect(Snapshot.count).to eq(2)
@@ -80,8 +72,8 @@ RSpec.describe RestoreSnapshotJob, type: :job do
         when /[A-Z][a-z]+\.json/
           # Print the actual different contents of each json file
           # if they don't match.
-          ref_contents = reference_snapshot[:contents][file].sort_by { |a| a['id'] }
-          new_contents = new_snapshot[:contents][file].sort_by { |a| a['id'] }
+          ref_contents = reference_snapshot[:contents][file].sort_by { |a| a["id"] }
+          new_contents = new_snapshot[:contents][file].sort_by { |a| a["id"] }
 
           expect(new_contents.count).to eq(ref_contents.count)
           new_contents.each_with_index do |p, i|
@@ -92,8 +84,8 @@ RSpec.describe RestoreSnapshotJob, type: :job do
           normalized_new = normalize_note_html(new_snapshot[:contents][file])
 
           # This avoids matching the actual attachment inner text, which can change
-          expect(normalized_new[:attachments]).to match_array(normalized_ref[:attachments]), 'attachments'
-          expect(normalized_new[:contents]).to eq(normalized_ref[:contents]), 'note contents'
+          expect(normalized_new[:attachments]).to match_array(normalized_ref[:attachments]), "attachments"
+          expect(normalized_new[:contents]).to eq(normalized_ref[:contents]), "note contents"
         else
           expect(new_hash).to eq(ref_hash), file
         end
@@ -110,9 +102,9 @@ RSpec.describe RestoreSnapshotJob, type: :job do
       Zip::File.open_buffer(zipfile) do |zip|
         zip.each do |entry|
           file_name = entry.name
-          file_contents = zip.get_input_stream(entry).read.force_encoding('UTF-8')
+          file_contents = zip.get_input_stream(entry).read.force_encoding("UTF-8")
           digest_contents[:hashes][file_name] = Digest::MD5.hexdigest(file_contents)
-          digest_contents[:contents][file_name] = if file_name.ends_with?('.json')
+          digest_contents[:contents][file_name] = if file_name.ends_with?(".json")
                                                     JSON.parse(file_contents)
                                                   else
                                                     file_contents
@@ -130,7 +122,7 @@ RSpec.describe RestoreSnapshotJob, type: :job do
     captures = ACTION_TEXT_ATTACHMENT.match(note_html)&.captures
     attachments += captures if captures
 
-    normalized_text = note_html.gsub(ACTION_TEXT_ATTACHMENT, '')
+    normalized_text = note_html.gsub(ACTION_TEXT_ATTACHMENT, "")
 
     {
       attachments: attachments,

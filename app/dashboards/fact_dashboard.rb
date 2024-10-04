@@ -17,7 +17,7 @@ class FactDashboard < Administrate::BaseDashboard
     tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    citations: Field::NestedHasMany.with_options(skip: :citable),
+    citations: Field::NestedHasMany.with_options(skip: :citable)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,37 +25,37 @@ class FactDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :fact_type,
-    :factable,
-    :date_string,
-    :place
+  COLLECTION_ATTRIBUTES = %i[
+    fact_type
+    factable
+    date_string
+    place
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :factable,
-    :fact_type,
-    :date_string,
-    :place,
-    :description,
-    :tagged_person_list,
-    :citations,
-    :created_at,
-    :updated_at,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    factable
+    fact_type
+    date_string
+    place
+    description
+    tagged_person_list
+    citations
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :fact_type,
-    :date_string,
-    :place,
-    :description,
-    :tagged_person_list,
-    :citations,
+  FORM_ATTRIBUTES = %i[
+    fact_type
+    date_string
+    place
+    description
+    tagged_person_list
+    citations
   ].freeze
 
   # Overwrite this method to customize how facts are displayed

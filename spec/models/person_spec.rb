@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-require 'person_spec_helper'
+require "rails_helper"
+require "person_spec_helper"
 
-RSpec.describe Person, type: :model do
-  context 'with relationships' do
-    it 'is able to get and set a current_spouse' do
+RSpec.describe Person do
+  context "with relationships" do
+    it "is able to get and set a current_spouse" do
       person1 = create(:person)
       person2 = create(:person)
 
@@ -23,7 +23,7 @@ RSpec.describe Person, type: :model do
       expect(person2.current_spouse).to eq(person1)
     end
 
-    it 'is able to get and set a mother' do
+    it "is able to get and set a mother" do
       person = create(:person)
       mother = create(:person)
 
@@ -40,7 +40,7 @@ RSpec.describe Person, type: :model do
       expect(person.mother).to eq(mother)
     end
 
-    it 'is able to get and set a father' do
+    it "is able to get and set a father" do
       person = create(:person)
       father = create(:person)
 
@@ -57,7 +57,7 @@ RSpec.describe Person, type: :model do
       expect(person.father).to eq(father)
     end
 
-    it 'recognizes children' do
+    it "recognizes children" do
       mother = create(:person)
       father = create(:person)
       child = create(:person)
@@ -74,7 +74,7 @@ RSpec.describe Person, type: :model do
       expect(father.children).to include child
     end
 
-    it 'recognizes siblings' do
+    it "recognizes siblings" do
       parent = create(:person)
       child1 = create(:person)
       child2 = create(:person)
@@ -89,61 +89,61 @@ RSpec.describe Person, type: :model do
     end
   end
 
-  context 'with a name' do
-    it 'properly formats a full name' do
+  context "with a name" do
+    it "properly formats a full name" do
       person = build(:person)
       expect(person.full_name).to eq("#{person.first_name} #{person.last_name}")
     end
 
-    it 'properly formats a title' do
-      person = create_person(create(:fact, fact_type: 'birth'), create(:fact, fact_type: 'death'))
+    it "properly formats a title" do
+      person = create_person(create(:fact, fact_type: "birth"), create(:fact, fact_type: "death"))
       expect(person.title).to start_with person.full_name
       expect(person.title).to end_with person.lifespan
     end
   end
 
-  context 'with attached dates' do
-    it 'determines a very old person with no death date as dead' do
-      person = create_person(create(:fact, fact_type: 'birth', date_string: '1900-01-01'))
+  context "with attached dates" do
+    it "determines a very old person with no death date as dead" do
+      person = create_person(create(:fact, fact_type: "birth", date_string: "1900-01-01"))
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true
     end
 
-    it 'and a death date is dead' do
-      person = create_person(create(:fact, fact_type: 'death'))
+    it "and a death date is dead" do
+      person = create_person(create(:fact, fact_type: "death"))
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true
     end
 
-    it 'and a death date is dead' do
+    it "and a death date is dead" do
       person = create(:person)
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true
     end
 
-    it 'calculates lifespan correctly for no dates' do
+    it "calculates lifespan correctly for no dates" do
       known_neither = build(:person)
-      expect(known_neither.lifespan).to eq('')
+      expect(known_neither.lifespan).to eq("")
     end
 
-    it 'calculates lifespan correctly for birthdate only' do
-      known_birth = create_person(create(:fact, fact_type: 'birth', date_string: '1900-01-01'))
-      expect(known_birth.lifespan).to end_with '?)'
+    it "calculates lifespan correctly for birthdate only" do
+      known_birth = create_person(create(:fact, fact_type: "birth", date_string: "1900-01-01"))
+      expect(known_birth.lifespan).to end_with "?)"
     end
 
-    it 'calculates lifespan correctly for deathdate only' do
-      known_death = create_person(create(:fact, fact_type: 'death'))
-      expect(known_death.lifespan).to start_with '(?'
+    it "calculates lifespan correctly for deathdate only" do
+      known_death = create_person(create(:fact, fact_type: "death"))
+      expect(known_death.lifespan).to start_with "(?"
     end
 
-    it 'calculates lifespan correctly for alive person' do
-      alive = create_person(create(:fact, fact_type: 'birth', date_string: Time.zone.today))
+    it "calculates lifespan correctly for alive person" do
+      alive = create_person(create(:fact, fact_type: "birth", date_string: Time.zone.today))
       expect(alive.probably_alive?).to be true
-      expect(alive.lifespan).to end_with 'Present)'
+      expect(alive.lifespan).to end_with "Present)"
     end
 
-    it 'calculates lifespan correctly for known birth and death' do
-      known_both = create_person(create(:fact, fact_type: 'birth'), create(:fact, fact_type: 'death'))
+    it "calculates lifespan correctly for known birth and death" do
+      known_both = create_person(create(:fact, fact_type: "birth"), create(:fact, fact_type: "death"))
       expect(known_both.lifespan).to match(/\([0-9]{4} - [0-9]{4}\)/)
     end
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'open3'
-require 'stringio'
+require "open3"
+require "stringio"
 
 # rubocop:disable Style/StringLiterals
 module Backup

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Note, type: :request do
+RSpec.describe Note do
   let(:note) { create(:note) }
   let(:show_path) { note_path(note.friendly_url) }
   let(:person) do

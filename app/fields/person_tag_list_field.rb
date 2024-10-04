@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'administrate/field/base'
+require "administrate/field/base"
 
 # Custom field for person tag lists in Administrate dashboard.
 class PersonTagListField < Administrate::Field::Base

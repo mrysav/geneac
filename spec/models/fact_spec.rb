@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Fact, type: :model do
+RSpec.describe Fact do
   describe ".birth_dates" do
     let!(:birth_dates) { create_list(:fact, 2, fact_type: described_class::Types::BIRTH) }
 

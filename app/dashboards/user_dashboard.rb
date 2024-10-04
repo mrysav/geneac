@@ -22,7 +22,7 @@ class UserDashboard < Administrate::BaseDashboard
     name: Field::String,
     admin: Field::Boolean,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,40 +30,40 @@ class UserDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :name,
-    :email,
-    :admin,
-    :last_sign_in_at,
+  COLLECTION_ATTRIBUTES = %i[
+    name
+    email
+    admin
+    last_sign_in_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :name,
-    :email,
-    :admin,
-    :created_at,
-    :updated_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :current_sign_in_ip,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    id
+    name
+    email
+    admin
+    created_at
+    updated_at
+    sign_in_count
+    current_sign_in_at
+    current_sign_in_ip
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :email,
-    :name,
-    :admin,
+  FORM_ATTRIBUTES = %i[
+    email
+    name
+    admin
   ].freeze
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
   def display_resource(user)
-    "#{user.email}"
+    user.email.to_s
   end
 end

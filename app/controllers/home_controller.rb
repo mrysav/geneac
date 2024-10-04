@@ -17,9 +17,8 @@ class HomeController < ApplicationController
   def recent_updates
     skip_authorization
 
-    updates = []
-    Person.order("updated_at desc").limit(5)
-          .each { |p| updates.push(p) }
+    updates = Person.order("updated_at desc").limit(5)
+                    .map { |p| p }
     Photo.order("updated_at desc").limit(5)
          .each { |p| updates.push(p) }
     Note.order("updated_at desc").limit(5)

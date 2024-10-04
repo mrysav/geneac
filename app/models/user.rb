@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'digest/md5'
+require "digest/md5"
 
 # User record
 class User < ApplicationRecord

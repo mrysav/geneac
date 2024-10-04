@@ -14,7 +14,7 @@ module Ajax
 
     def parse_date
       authorize :ajax, :parse_date?
-      parsed = parse(params[:d])&.strftime('%F %R:%S %p')
+      parsed = parse(params[:d])&.strftime("%F %R:%S %p")
       render json: parsed
     end
 

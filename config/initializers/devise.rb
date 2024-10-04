@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
 
-  config.secret_key = ENV['SECRET_KEY_BASE'] if Rails.env.production?
+  config.secret_key = ENV.fetch("SECRET_KEY_BASE", nil) if Rails.env.production?
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -21,7 +21,7 @@ Devise.setup do |config|
   # with default "from" parameter.
 
   default_sender = "no-reply@#{ENV['HOSTNAME'] || 'localhost'}"
-  mailer_sender = ENV['MAILER_SENDER'] || default_sender
+  mailer_sender = ENV["MAILER_SENDER"] || default_sender
   config.mailer_sender = mailer_sender
 
   # Configure the class responsible to send e-mails.
@@ -34,7 +34,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

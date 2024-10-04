@@ -17,7 +17,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     tagged_person_list: PersonTagListField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    citation: Field::HasOne,
+    citation: Field::HasOne
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,39 +25,39 @@ class PhotoDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :image,
-    :title,
-    :date_string,
-    :tag_list,
-    :description,
+  COLLECTION_ATTRIBUTES = %i[
+    image
+    title
+    date_string
+    tag_list
+    description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :title,
-    :description,
-    :date_string,
-    :tag_list,
-    :tagged_person_list,
-    :created_at,
-    :updated_at,
-    :image,
-    :citation,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    title
+    description
+    date_string
+    tag_list
+    tagged_person_list
+    created_at
+    updated_at
+    image
+    citation
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :title,
-    :description,
-    :date_string,
-    :tag_list,
-    :tagged_person_list,
-    :image,
-    :citation,
+  FORM_ATTRIBUTES = %i[
+    title
+    description
+    date_string
+    tag_list
+    tagged_person_list
+    image
+    citation
   ].freeze
 
   # Overwrite this method to customize how photos are displayed

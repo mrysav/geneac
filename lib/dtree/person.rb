@@ -6,8 +6,6 @@ module DTree
     include Pundit::Authorization
 
     def serialize_person(person)
-      returned = []
-
       # Assume that `person` has already been authorized if the function has been called.
       # We will start with the mother as the root if there is one.
       # If not, then we will start with the father.
@@ -20,13 +18,13 @@ module DTree
       marriages = {}
       unknown_spouse = {
         spouse: {
-          name: 'Unknown',
-          textClass: 'nodeText'
+          name: "Unknown",
+          textClass: "nodeText"
         },
         children: []
       }
 
-      # todo need to authorize siblings
+      # TODO: need to authorize siblings
 
       policy_scope(root.children).each do |child|
         opposite_spouse = if child.father_id == root.id
@@ -46,7 +44,7 @@ module DTree
           marriages[opposite_spouse.id] = {
             spouse: {
               name: opposite_spouse.full_name,
-              textClass: 'nodeText'
+              textClass: "nodeText"
             },
             children: []
           }
@@ -56,14 +54,14 @@ module DTree
 
         marriage[:children] << {
           name: child.full_name,
-          textClass: 'nodeText'
+          textClass: "nodeText"
         }
       end
 
       [{
         name: root.full_name,
-        class: 'node',
-        textClass: 'nodeText',
+        class: "node",
+        textClass: "nodeText",
         marriages: marriages.values
       }]
     end

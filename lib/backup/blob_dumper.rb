@@ -5,7 +5,7 @@ module Backup
   # Block expects the key (filename) and an IO object to the file.
   class BlobDumper
     def dump
-      ActiveStorage::Blob.all.each do |blob|
+      ActiveStorage::Blob.find_each do |blob|
         blob.download do |io|
           yield(blob.key, io)
         end

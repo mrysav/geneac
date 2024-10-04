@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'open3'
+require "open3"
 
 changed_files = `git diff --name-only`.lines
 untracked_files = `git ls-files --others --exclude-standard`.lines
@@ -28,13 +28,13 @@ files_to_lint.each do |f|
   next if VENDOR.match(f)
 
   if RUBY.match(f)
-    command, success, output = run_linter('rubocop', f)
+    command, success, output = run_linter("rubocop", f)
   elsif MARKDOWN.match(f)
-    command, success, output = run_linter('markdownlint', f)
+    command, success, output = run_linter("markdownlint", f)
   elsif HAML.match(f)
-    command, success, output = run_linter('haml-lint', f)
+    command, success, output = run_linter("haml-lint", f)
   elsif ERB.match(f)
-    command, success, output = run_linter('erblint', f)
+    command, success, output = run_linter("erblint", f)
   else
     unchecked_files << f
     next

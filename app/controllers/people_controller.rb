@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'dtree/person'
+require "dtree/person"
 
 # Controller for displaying people
 class PeopleController < ApplicationController
@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
     begin
       authorize @person
     rescue Pundit::NotDefinedError
-      render file: 'public/404.html', status: :not_found, layout: false
+      render file: "public/404.html", status: :not_found, layout: false
       return
     end
 
@@ -35,7 +35,7 @@ class PeopleController < ApplicationController
     begin
       authorize @person
     rescue Pundit::NotDefinedError
-      render file: 'public/404.html', status: :not_found, layout: false
+      render file: "public/404.html", status: :not_found, layout: false
       return nil
     end
 
@@ -49,12 +49,12 @@ class PeopleController < ApplicationController
     begin
       authorize person
     rescue Pundit::NotDefinedError
-      render json: { error: 'Not found' }, status: :not_found, layout: false
+      render json: { error: "Not found" }, status: :not_found, layout: false
       return nil
     end
 
     unless Setting.enable_family_tree
-      render json: { error: 'Not found' }, status: :not_found, layout: false
+      render json: { error: "Not found" }, status: :not_found, layout: false
       return nil
     end
 
@@ -66,7 +66,7 @@ class PeopleController < ApplicationController
     begin
       authorize @person
     rescue Pundit::NotDefinedError
-      render file: 'public/404.html', status: :not_found, layout: false
+      render file: "public/404.html", status: :not_found, layout: false
       nil
     end
 

@@ -25,7 +25,7 @@ FactoryBot.define do
     end
 
     trait :attached_to_person do
-      association :factable, factory: :person
+      factable factory: %i[person]
     end
   end
 end

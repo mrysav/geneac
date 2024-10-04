@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe SearchDocument, type: :model do
+RSpec.describe SearchDocument do
   let(:note) { create(:note, title: "xyzzy") }
   let(:photo) { create(:photo, title: "xyzzy") }
 

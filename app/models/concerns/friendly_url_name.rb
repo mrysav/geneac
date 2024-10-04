@@ -15,13 +15,13 @@ module FriendlyUrlName
     def generate_friendly_url_name
       friendly_url_val = self[self.class.friendly_field]
 
-      return if friendly_url_val&.present?
+      return if friendly_url_val.present?
 
       slug = rand(10_000..1_000_000)
       model_name = send(self.class.friendly_field_name)
       url_name = model_name.downcase
-                           .gsub(/[^0-9a-z ]/, '')
-                           .tr(' ', '_')[0..20]
+                           .gsub(/[^0-9a-z ]/, "")
+                           .tr(" ", "_")[0..20]
       self[self.class.friendly_field] = "#{slug}_#{url_name}"
     end
 

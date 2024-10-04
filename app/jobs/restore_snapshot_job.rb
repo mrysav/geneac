@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'zip'
+require "zip"
 
 # Replaces the internal database contents with that of the snapshot.
 class RestoreSnapshotJob < ApplicationJob
@@ -18,15 +18,15 @@ class RestoreSnapshotJob < ApplicationJob
 
         zip.each do |entry|
           istream = zip.get_input_stream(entry)
-          if entry.name.end_with?('.json')
+          if entry.name.end_with?(".json")
             if %w[manifest.json Person.json Note.json Photo.json].include? entry.name
               handle_json(entry.name, istream)
             else
               json_buffer[entry.name] = istream.read
             end
           end
-          handle_photo(entry.name, istream) if entry.name.start_with?('Photos/')
-          handle_note(entry.name, istream, notes_buffer) if entry.name.start_with?('Notes/')
+          handle_photo(entry.name, istream) if entry.name.start_with?("Photos/")
+          handle_note(entry.name, istream, notes_buffer) if entry.name.start_with?("Notes/")
         end
 
         notes_buffer.each do |k, v|
@@ -63,10 +63,10 @@ class RestoreSnapshotJob < ApplicationJob
   end
 
   def handle_json(filename, io)
-    return if filename.end_with? 'manifest.json'
+    return if filename.end_with? "manifest.json"
 
     json_list = JSON.parse(io.read)
-    model_name = filename.gsub('.json', '').constantize
+    model_name = filename.gsub(".json", "").constantize
     batch_create(model_name, json_list)
   end
 
@@ -96,24 +96,24 @@ class RestoreSnapshotJob < ApplicationJob
       note = notes_buffer[note_id]
       inner_html = Nokogiri::HTML(note)
 
-      fname = filename.gsub!(%r{^Notes/note_[0-9]+/}, '')
+      fname = filename.gsub!(%r{^Notes/note_[0-9]+/}, "")
 
       # @todo Possible bug!
       # See the create_snapshot_job for the duplicate file/filename problem
       inner_html.css("action-text-attachment[filename='#{fname}']")
                 .each do |attachment|
-        content_type = attachment['content-type']
+        content_type = attachment["content-type"]
         blob = ActiveStorage::Blob.create_and_upload!(
           io: StringIO.new(io.read),
           filename: fname,
           content_type: content_type
         )
-        sgid = blob.to_sgid(expires_in: nil, for: 'attachable')
+        sgid = blob.to_sgid(expires_in: nil, for: "attachable")
         url = rails_blob_path(blob, disposition: :attachment, only_path: true)
 
-        attachment['sgid'] = sgid
-        attachment['url'] = url
-        attachment.inner_html = ''
+        attachment["sgid"] = sgid
+        attachment["url"] = url
+        attachment.inner_html = ""
       end
 
       notes_buffer[note_id] = inner_html.to_s

@@ -17,7 +17,7 @@ module Admin
     private
 
     def user_not_authorized
-      head 401
+      head :unauthorized
     end
   end
 end

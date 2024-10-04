@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe Photo, type: :request do
-  let(:photo) { Photo.new(title: "Hello world") }
+RSpec.describe Photo do
+  let(:photo) { described_class.new(title: "Hello world") }
   let(:file) { Rails.root.join("spec/fixtures/files/image.jpg").open }
   let(:show_path) { "/photos/#{photo.friendly_url}" }
   let(:person) do

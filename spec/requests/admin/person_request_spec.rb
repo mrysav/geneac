@@ -3,7 +3,7 @@
 require "rails_helper"
 require_relative "../helpers/history_helper"
 
-RSpec.describe Person, type: :request do
+RSpec.describe Person do
   let(:admin) { create(:user, :admin) }
 
   before do

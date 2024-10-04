@@ -3,10 +3,10 @@
 # RailsSettings Model
 class Setting < RailsSettings::Base
   # When this file is updated, bump the cache_prefix
-  cache_prefix { '2' }
+  cache_prefix { "2" }
 
-  field :site_title, default: 'Geneac'
-  field :site_tagline, default: 'Genealogy for maniacs!'
+  field :site_title, default: "Geneac"
+  field :site_tagline, default: "Genealogy for maniacs!"
 
   field :require_login, type: :boolean, default: false
   field :restrict_living_info, type: :boolean, default: true

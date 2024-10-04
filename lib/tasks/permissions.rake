@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 namespace :admin do
-  desc 'Grant admin permissions'
+  desc "Grant admin permissions"
   task :grant, [:user] => :environment do |_task, args|
     set_admin(args.user, true)
   end
 
-  desc 'Revoke admin permissions'
+  desc "Revoke admin permissions"
   task :revoke, [:user] => :environment do |_task, args|
     set_admin(args.user, false)
   end

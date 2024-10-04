@@ -1,4 +1,4 @@
-require 'administrate/base_dashboard'
+require "administrate/base_dashboard"
 
 class PersonDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -22,7 +22,7 @@ class PersonDashboard < Administrate::BaseDashboard
     mother_id: PersonField,
     current_spouse_id: PersonField,
     children: Field::HasMany.with_options(
-      class_name: 'Person'
+      class_name: "Person"
     ),
     facts: Field::NestedHasMany.with_options(skip: :factable)
   }.freeze
