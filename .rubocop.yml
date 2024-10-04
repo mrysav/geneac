@@ -3,6 +3,8 @@ require:
   - rubocop-rake
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
 
 AllCops:
   NewCops: enable
@@ -21,9 +23,6 @@ Metrics/MethodLength:
   Enabled: false
 
 Metrics/BlockLength:
-  Enabled: false
-
-RSpec/LineLength:
   Enabled: false
 
 Style/StringLiterals:

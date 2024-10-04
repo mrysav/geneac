@@ -1,4 +1,0 @@
-test:
-  adapter: sqlite3
-  encoding: unicode
-  database: storage/test.sqlite3
