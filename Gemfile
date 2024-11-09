@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.3.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "8.0.0.rc1"
+gem "rails", "8.0.0.rc2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
@@ -107,7 +107,7 @@ gem "administrate", "~> 0.20"
 gem "administrate-field-nested_has_many", "~> 2.1"
 
 # For content tagging
-gem "acts-as-taggable-on", "~> 11.0"
+gem "acts-as-taggable-on", "~> 12.0"
 
 # Date parsing
 gem "chronic"
