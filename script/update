@@ -7,6 +7,4 @@ bin/bundle install
 
 bin/yarn install
 
-docker compose up -d --wait
-
 bin/rails db:migrate

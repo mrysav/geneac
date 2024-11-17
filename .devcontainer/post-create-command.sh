@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-docker compose up -d --wait
-
 echo -e "Installing dependencies..."
 
 bundle install

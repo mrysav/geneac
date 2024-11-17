@@ -2,12 +2,11 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.191.1/containers/ruby-rails-postgres
 {
   "name": "Geneac",
-  "image": "mcr.microsoft.com/vscode/devcontainers/ruby:3",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/geneac",
+  "shutdownAction": "stopCompose",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "moby": true
-    },
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
@@ -15,7 +14,6 @@
   "postCreateCommand": ".devcontainer/post-create-command.sh",
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
-    3035,
     5000
   ]
 }

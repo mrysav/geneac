@@ -4,8 +4,4 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
 
-docker compose up -d --wait
-
-export OVERMIND_SKIP_ENV=1
-
 overmind start
