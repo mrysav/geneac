@@ -18,7 +18,7 @@
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "sass": "^1.77.4",
-    "trix": "^2.1.4"
+    "trix": "^2.1.9"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
