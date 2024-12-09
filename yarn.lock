@@ -403,6 +403,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/trusted-types@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@types/trusted-types@npm:2.0.7"
+  checksum: 34ce17ee40c88eaf81f463736665a7fe344a27b585bf6a05f6dc6acd4e2d4ae69ef8cf4c345d4a639fc36b9958c75618ff38d570909f35afe4d1b2139847e92c
+  languageName: node
+  linkType: hard
+
 "@ungap/structured-clone@npm:^1.2.0":
   version: 1.2.0
   resolution: "@ungap/structured-clone@npm:1.2.0"
@@ -1462,6 +1469,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "dompurify@npm:3.2.3"
+  dependencies:
+    "@types/trusted-types": ^2.0.7
+  dependenciesMeta:
+    "@types/trusted-types":
+      optional: true
+  checksum: 5ea9d20ed28bf721c151fb55fa0afe20faa445595b9207404a1b786682c04ebafc9ad48420540cc4d7c9d368fc78d414bb67c8dc8a2912b303fe65f4dc948b77
+  languageName: node
+  linkType: hard
+
 "electron-to-chromium@npm:^1.4.668":
   version: 1.4.691
   resolution: "electron-to-chromium@npm:1.4.691"
@@ -2215,7 +2234,7 @@ fsevents@~2.3.2:
     postcss-cli: ^11.0.0
     prettier: ^3.3.3
     sass: ^1.77.4
-    trix: ^2.1.4
+    trix: ^2.1.9
   languageName: unknown
   linkType: soft
 
@@ -4146,10 +4165,12 @@ resolve@^1.10.1:
   languageName: node
   linkType: hard
 
-"trix@npm:^2.1.4":
-  version: 2.1.6
-  resolution: "trix@npm:2.1.6"
-  checksum: 2ca82b7964025649401ca32437954309945fab13ff18c6e18507161d3ecc16f285290746682a46b7dc01bb3ea148ebad9d755e37473cd5c6037b1b18005bd703
+"trix@npm:^2.1.9":
+  version: 2.1.10
+  resolution: "trix@npm:2.1.10"
+  dependencies:
+    dompurify: ^3.2.3
+  checksum: 7ac9e3b74bb89d245bb733beded44a3be6a245c0cfc2b8d8cac4d3b25e2ccfa05dcaea19129bb6597761ae189e0b9939a48ff54c7584e44c452e35458f7c6a89
   languageName: node
   linkType: hard
 
