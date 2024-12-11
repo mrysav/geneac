@@ -371,23 +371,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actiontext@npm:^7.1.3":
-  version: 7.1.3
-  resolution: "@rails/actiontext@npm:7.1.3"
+"@rails/actiontext@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@rails/actiontext@npm:8.0.0"
   dependencies:
-    "@rails/activestorage": ">= 7.1.0-alpha"
+    "@rails/activestorage": ">= 8.0.0-alpha"
   peerDependencies:
     trix: ^2.0.0
-  checksum: fd3bcd1198a2b321e5a393ec4d634af6bc0993f27ef2ce921b75e038d8b3942d001224571bec26ceaccfa25df954cc9d178c0bba19be1fd1a6b14919fef18eab
+  checksum: e47045a896b196c66d1ebcfc43caf4f9604145d176c9d0ea0207e285f2fe018675a6a6b03e0e459820ad059add4af52683a9c0c5aa4a176e2f992a621824e737
   languageName: node
   linkType: hard
 
-"@rails/activestorage@npm:>= 7.1.0-alpha":
-  version: 7.1.1
-  resolution: "@rails/activestorage@npm:7.1.1"
+"@rails/activestorage@npm:>= 8.0.0-alpha":
+  version: 8.0.0
+  resolution: "@rails/activestorage@npm:8.0.0"
   dependencies:
     spark-md5: ^3.0.1
-  checksum: acbac63ed943e27d73b8d76b74dc9475e07bb63e6c170fa010c2bede4f5451f990da50dc8a7165b2830644f060ecf8634289c78100acea2918105c414da0a014
+  checksum: 2aa2b5b13162e5bf9ca2d331e022e1c2b50d126d5aca645da356c66348db064be08630cc7e395ebdb93c014534b573a563d4d6ef970a72f5c5834ffd76366895
   languageName: node
   linkType: hard
 
@@ -2223,7 +2223,7 @@ fsevents@~2.3.2:
     "@hotwired/turbo-rails": ^8.0.4
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.1.3
-    "@rails/actiontext": ^7.1.3
+    "@rails/actiontext": ^8.0.0
     "@rails/activestorage": ^7.1.3
     autoprefixer: ^10.4.19
     awesomplete: ^1.1.4
