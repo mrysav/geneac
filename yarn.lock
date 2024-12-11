@@ -662,21 +662,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.19":
-  version: 10.4.19
-  resolution: "autoprefixer@npm:10.4.19"
+"autoprefixer@npm:^10.4.20":
+  version: 10.4.20
+  resolution: "autoprefixer@npm:10.4.20"
   dependencies:
-    browserslist: ^4.23.0
-    caniuse-lite: ^1.0.30001599
+    browserslist: ^4.23.3
+    caniuse-lite: ^1.0.30001646
     fraction.js: ^4.3.7
     normalize-range: ^0.1.2
-    picocolors: ^1.0.0
+    picocolors: ^1.0.1
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 5766649d7b6bbb7ccf879c44ae34f54e1e515bbc4ad05046d4ed672e1cae6830d8887fc04374f2fcf6f76b36eecf0a60095f78962d595e7f4211ade3f0ae6230
+  checksum: f9edf8a6869abfe434fcc8a3c3913d8e774fd52884b22c0b4e5ca814a78e62a264501c7989ef889024dc0890ea48dea43285808284e5d88ff71f9564194ca9c7
   languageName: node
   linkType: hard
 
@@ -761,17 +761,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:4.23.0, browserslist@npm:^4.23.0":
-  version: 4.23.0
-  resolution: "browserslist@npm:4.23.0"
+"browserslist@npm:4.24.2, browserslist@npm:^4.23.3":
+  version: 4.24.2
+  resolution: "browserslist@npm:4.24.2"
   dependencies:
-    caniuse-lite: ^1.0.30001587
-    electron-to-chromium: ^1.4.668
-    node-releases: ^2.0.14
-    update-browserslist-db: ^1.0.13
+    caniuse-lite: ^1.0.30001669
+    electron-to-chromium: ^1.5.41
+    node-releases: ^2.0.18
+    update-browserslist-db: ^1.1.1
   bin:
     browserslist: cli.js
-  checksum: 31933fd3528214071dd6957d2ae3c6041baf42df1011a6bbd52a94850fb3a5009af5928982fd8373c617af52bc372a88246c7a2090c50d6191a84823d9ce824e
+  checksum: b1625a0333986877885e7d8289871344c51826100c47b6578cda2a39d5f0c99fdb2e8d8af19de9ccc3a22562c6bbac62190129731619d72c86efb9e8b2e0f700
   languageName: node
   linkType: hard
 
@@ -851,17 +851,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001587":
-  version: 1.0.30001593
-  resolution: "caniuse-lite@npm:1.0.30001593"
-  checksum: 4ad2809899fd8912781b3953cec4e9ca9fc6dfed1ca461681e6faaf97e8b8c073a9081961de129ba5ad1593a45f6b878360e6e1d1391485cd2f189f6688f554c
-  languageName: node
-  linkType: hard
-
-"caniuse-lite@npm:^1.0.30001599":
-  version: 1.0.30001600
-  resolution: "caniuse-lite@npm:1.0.30001600"
-  checksum: eaeaf6da379293613bf341403bdc87c160894591598086cb5eb7b805d4d8fad80e793a865a5aa5a2707010545d176fd518c6eba6965d5c2d8e8dec608769e467
+"caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001669":
+  version: 1.0.30001687
+  resolution: "caniuse-lite@npm:1.0.30001687"
+  checksum: cf6ca8e63ffd9622f55b3abe64591ed120aa12103267848eee82ba45298771af39c0f39843fa7904daa92417914b52838c86a7a9399bee4e92ea64ff30dab150
   languageName: node
   linkType: hard
 
@@ -1615,10 +1608,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.4.668":
-  version: 1.4.691
-  resolution: "electron-to-chromium@npm:1.4.691"
-  checksum: 49bdae464b16c87556a77ba516e18a015d47093a66c1d1d0b00ba96c73b15657c42dee667a5f6717342511ce1efc98478169cc82178f4d1587cde977e3037118
+"electron-to-chromium@npm:^1.5.41":
+  version: 1.5.72
+  resolution: "electron-to-chromium@npm:1.5.72"
+  checksum: 359489b4e3d9ce8ba268b9240c484f417d0176dced810a0139e5f64689377d7d96fe038daf4cbc42cfead0e2660b1b2d803df2751821074e2670c8ee18a7b5e1
   languageName: node
   linkType: hard
 
@@ -1924,6 +1917,13 @@ __metadata:
   version: 3.1.1
   resolution: "escalade@npm:3.1.1"
   checksum: 1e31ff50d66f47cd0dfffa702061127116ccf9886d1f54a802a7b3bc95b94cab0cbf5b145cc5ac199036df6fd9d1bb24af1fa1bfed87c94879e950fbee5f86d1
+  languageName: node
+  linkType: hard
+
+"escalade@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "escalade@npm:3.2.0"
+  checksum: 34f72e1a15bb8e36ce5b2778f38ce8657502a8ce28149251ff756742c850b93152775c32bc49dd00dede6e6a585de996d968e12b22b5c7cda96641bfb421ade7
   languageName: node
   linkType: hard
 
@@ -2456,7 +2456,7 @@ fsevents@~2.3.2:
     "@rails/actioncable": ^7.1.3
     "@rails/actiontext": ^8.0.0
     "@rails/activestorage": ^7.1.3
-    autoprefixer: ^10.4.19
+    autoprefixer: ^10.4.20
     awesomplete: ^1.1.4
     bootstrap: ^5.3.3
     bootstrap-icons: ^1.11.3
@@ -3665,10 +3665,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"node-releases@npm:^2.0.14":
-  version: 2.0.14
-  resolution: "node-releases@npm:2.0.14"
-  checksum: 612987be297bfd2dd546d4a5d7f5068c05fff2c184e098bae716899b13d69d63976e4e2b025374f56464faaba0276f41090df6f5606e3f588a22052b3da7fcfb
+"node-releases@npm:^2.0.18":
+  version: 2.0.19
+  resolution: "node-releases@npm:2.0.19"
+  checksum: f107a41a436e63dd8d99e2c21cb2164efbb04b7c39457ef683ca007de745e0c12ce9be9bc51846032c75c2375d76e15a0b0b9fb0a566c8c79c598eef5edc49fb
   languageName: node
   linkType: hard
 
@@ -3924,6 +3924,13 @@ fsevents@~2.3.2:
   version: 1.0.0
   resolution: "picocolors@npm:1.0.0"
   checksum: 6616d34dd03bde8881c63402dea34f0b5972845b04b791b234446d4a408bc3d7f932acea3970a6b671d8f5c5aae1b1ce9fc1f89b0ed9a363469cf9da8e916b71
+  languageName: node
+  linkType: hard
+
+"picocolors@npm:^1.0.1, picocolors@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "picocolors@npm:1.1.1"
+  checksum: d4d3ac853d52262f6fd97c99526a1fcbc526fb9cab33472c7c57a8dc9685c5b4ab854577455dbd1a417f44412a7c0a29bfc94d246c64cf1973fc35024cade97f
   languageName: node
   linkType: hard
 
@@ -4960,17 +4967,17 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"update-browserslist-db@npm:^1.0.13":
-  version: 1.0.13
-  resolution: "update-browserslist-db@npm:1.0.13"
+"update-browserslist-db@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "update-browserslist-db@npm:1.1.1"
   dependencies:
-    escalade: ^3.1.1
-    picocolors: ^1.0.0
+    escalade: ^3.2.0
+    picocolors: ^1.1.0
   peerDependencies:
     browserslist: ">= 4.21.0"
   bin:
     update-browserslist-db: cli.js
-  checksum: 9bd57f2b5890f7dae0ff13e93fba168345c77cca275350dfd6d851cb595acff50859bf387c968a6f4abdfeb49a5330283f0589e23e50b9f6626c7d071bd7c190
+  checksum: 82386dda59c1585a42b66deb2a915eb65938d6537a68eb810e226cb6b1578120f53566080819b41f715df454190a91f0c05d66a8810c6ebaaf2c37ef8f18cacc
   languageName: node
   linkType: hard
 
