@@ -1,0 +1,16 @@
+# Docker compose file for services used in development.
+# If you're using the .devcontainer, you don't need to use this.
+services:
+  valkey:
+    image: valkey/valkey:8-alpine
+    command: valkey-server --save 60 1 --loglevel warning
+    restart: on-failure
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ["CMD", "valkey-cli","ping"]
+    volumes:
+      - valkey-data:/data
+
+volumes:
+  valkey-data:
