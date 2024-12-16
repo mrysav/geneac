@@ -2471,7 +2471,7 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: ^5.1.3
     eslint-plugin-promise: ^6.2.0
     eslint-plugin-standard: ^5.0.0
-    nodemon: ^3.1.3
+    nodemon: ^3.1.9
     postcss: ^8.4.38
     postcss-cli: ^11.0.0
     prettier: ^3.4.2
@@ -3672,9 +3672,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "nodemon@npm:3.1.3"
+"nodemon@npm:^3.1.9":
+  version: 3.1.9
+  resolution: "nodemon@npm:3.1.9"
   dependencies:
     chokidar: ^3.5.2
     debug: ^4
@@ -3688,7 +3688,7 @@ fsevents@~2.3.2:
     undefsafe: ^2.0.5
   bin:
     nodemon: bin/nodemon.js
-  checksum: b30dfeb1811b99edbfc0cba821e89dce1f0035c85e6502f3416ad62986a3394ea5cbbd4fc9e5aeb46c0cd856b746716dfabf718000ebf61cb6b92fd797f91ca3
+  checksum: 8585d2ae877b8fd9fce3761d57e310ed8addd5e520be4365280ee2c50ddd003efe17095c8f443fd2fed657e704236eb8a5ac42679615e73bd51052e276b79495
   languageName: node
   linkType: hard
 
