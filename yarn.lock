@@ -840,10 +840,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"awesomplete@npm:^1.1.4":
-  version: 1.1.5
-  resolution: "awesomplete@npm:1.1.5"
-  checksum: f78a1c0618f78255fc34d9d42d6b6b1eea4774ea707e4ee4914b1b56afb83d4d2980d0109526eb212e6e7eaa3adfbdbbc2c6c9488c8df8c45447384e30a3fd77
+"awesomplete@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "awesomplete@npm:1.1.7"
+  checksum: 4cb78fbcdc86c211414486699d357f7576bc243acb040e7155048cdfa6b7d47de82ca3a00fbb7c1f8724a00bf8091eec478b8b36f99a56f1f65a7345bbf1d657
   languageName: node
   linkType: hard
 
@@ -2637,7 +2637,7 @@ fsevents@~2.3.2:
     "@rails/actiontext": ^8.0.0
     "@rails/activestorage": ^7.1.3
     autoprefixer: ^10.4.20
-    awesomplete: ^1.1.4
+    awesomplete: ^1.1.7
     bootstrap: ^5.3.3
     bootstrap-icons: ^1.11.3
     d3-dtree: ^2.4.1
