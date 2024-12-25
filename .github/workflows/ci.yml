@@ -38,7 +38,7 @@ jobs:
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/yarn npm audit
 
-  lint:
+  lint_rb:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -50,8 +50,38 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Lint code for consistent style
+      - name: Lint Ruby code for consistent style
         run: bin/rubocop
+
+  lint_haml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Lint Haml code for consistent style
+        run: bin/haml-lint
+
+  lint_erb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Lint ERB code for consistent style
+        run: bin/erb_lint .
 
   test:
     runs-on: ubuntu-latest
