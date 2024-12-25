@@ -40,6 +40,9 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.12"
 gem "ruby-vips"
 
+# Ruby core maintained gems
+gem "open-uri"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"

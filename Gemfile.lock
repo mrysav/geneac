@@ -262,6 +262,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
+    open-uri (0.5.0)
+      stringio
+      time
+      uri
     orm_adapter (0.5.0)
     ostruct (0.6.1)
     pagy (9.3.3)
@@ -456,6 +460,8 @@ GEM
     thruster (0.1.9)
     thruster (0.1.9-x86_64-linux)
     tilt (2.4.0)
+    time (0.4.1)
+      date
     timecop (0.9.10)
     timeout (0.4.3)
     turbo-rails (2.0.11)
@@ -515,6 +521,7 @@ DEPENDENCIES
   kamal (~> 2.2)
   linkify-it-rb (~> 4.0)
   memory_profiler
+  open-uri
   pagy
   puma (>= 6.4)
   pundit
