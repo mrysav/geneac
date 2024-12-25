@@ -2,7 +2,7 @@ import { Controller } from '@hotwired/stimulus'
 import ajax from '../ajax'
 import _ from 'lodash'
 import * as d3 from 'd3'
-import dTree from 'd3-dtree'
+import dTree from '../vendor/dTree/dtree.js'
 
 export default class extends Controller {
   static targets = ['tree']
