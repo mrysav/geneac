@@ -9,7 +9,7 @@
     "@rails/actiontext": "^8.0.0",
     "@rails/activestorage": "^7.1.3",
     "autoprefixer": "^10.4.20",
-    "awesomplete": "^1.1.4",
+    "awesomplete": "^1.1.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "d3-dtree": "^2.4.1",
