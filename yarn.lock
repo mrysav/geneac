@@ -191,7 +191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint-community/eslint-utils@npm:^4.4.1":
+"@eslint-community/eslint-utils@npm:^4.4.0, @eslint-community/eslint-utils@npm:^4.4.1":
   version: 4.4.1
   resolution: "@eslint-community/eslint-utils@npm:4.4.1"
   dependencies:
@@ -2165,12 +2165,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "eslint-plugin-promise@npm:6.2.0"
+"eslint-plugin-promise@npm:^7.2.1":
+  version: 7.2.1
+  resolution: "eslint-plugin-promise@npm:7.2.1"
+  dependencies:
+    "@eslint-community/eslint-utils": ^4.4.0
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: dbf30c6098dbeb8680e0ba48548c9e708c8dc2df8a0f93a61a2f6328fc160130db3492265b421e46f3158fe74e273c6a56135690bea7fa38c362af2ed48ac247
+  checksum: e0668b17af22f64fd5e9c02c9c88ea56c05bc67ed7122301e2d852b8969fd50fc0cdc59a2dc51ba73d7240ad08f04cf6ad890c1294ff345526282ed47b258b9a
   languageName: node
   linkType: hard
 
@@ -2546,7 +2548,7 @@ fsevents@~2.3.2:
     eslint-plugin-n: ^17.15.1
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^5.1.3
-    eslint-plugin-promise: ^6.2.0
+    eslint-plugin-promise: ^7.2.1
     eslint-plugin-standard: ^5.0.0
     lodash: ^4.0.0
     nodemon: ^3.1.9
