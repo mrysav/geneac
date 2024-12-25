@@ -2652,7 +2652,7 @@ fsevents@~2.3.2:
     eslint-plugin-promise: ^6.2.0
     eslint-plugin-standard: ^5.0.0
     nodemon: ^3.1.9
-    postcss: ^8.4.38
+    postcss: ^8.4.49
     postcss-cli: ^11.0.0
     prettier: ^3.4.2
     sass: ^1.83.0
@@ -4126,7 +4126,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.1, picocolors@npm:^1.1.0":
+"picocolors@npm:^1.0.1, picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: d4d3ac853d52262f6fd97c99526a1fcbc526fb9cab33472c7c57a8dc9685c5b4ab854577455dbd1a417f44412a7c0a29bfc94d246c64cf1973fc35024cade97f
@@ -4215,14 +4215,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.38":
-  version: 8.4.38
-  resolution: "postcss@npm:8.4.38"
+"postcss@npm:^8.4.49":
+  version: 8.4.49
+  resolution: "postcss@npm:8.4.49"
   dependencies:
     nanoid: ^3.3.7
-    picocolors: ^1.0.0
-    source-map-js: ^1.2.0
-  checksum: 031fc3a3a28d84fab064738971f60b3ad23707d1c47225dc9caee59c6abc0a250ec20bfeebda1a7f650369d6800aa3adca149c9af0f3d38df66322761ee6f58f
+    picocolors: ^1.1.1
+    source-map-js: ^1.2.1
+  checksum: 26ad2aa80f0381b75f903a582f6330d1a2f7021763f74efed107d23189ab20f6e46619709d9563a3be67f44c01252c7a37aa6e26b1452caa4755768dace88915
   languageName: node
   linkType: hard
 
@@ -4759,10 +4759,10 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "source-map-js@npm:1.2.0"
-  checksum: 921a2790f5f8b7530955bf17e57bf8f722c6d9b4ed913042e2666850ce80cf0633c8710331afaaed973c5d8e5651654295db4fc86b6f31c0f6cbfe5b1fecc4af
+"source-map-js@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "source-map-js@npm:1.2.1"
+  checksum: 728d8bd521c93d7a165fb7dfe20ae1038a4d780579498d21cdd353bcc59f2c27f2d4e390fa1825ee3977beed68868e395df79c14ca8a72a9c6fffdfb46a87eb6
   languageName: node
   linkType: hard
 
