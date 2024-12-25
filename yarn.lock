@@ -515,14 +515,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actiontext@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@rails/actiontext@npm:8.0.0"
+"@rails/actiontext@npm:^8.0.100":
+  version: 8.0.100
+  resolution: "@rails/actiontext@npm:8.0.100"
   dependencies:
     "@rails/activestorage": ">= 8.0.0-alpha"
   peerDependencies:
     trix: ^2.0.0
-  checksum: e47045a896b196c66d1ebcfc43caf4f9604145d176c9d0ea0207e285f2fe018675a6a6b03e0e459820ad059add4af52683a9c0c5aa4a176e2f992a621824e737
+  checksum: 9b793974c4bbb6d4393a9c3dccfb78cd2be180fe1a76d81e3677da5123391de8235286f3d321d0f88a43950cb39d41bec553905ee48d2be7e59341be3a1b0f34
   languageName: node
   linkType: hard
 
@@ -2529,7 +2529,7 @@ fsevents@~2.3.2:
     "@hotwired/turbo-rails": ^8.0.4
     "@popperjs/core": ^2.11.8
     "@rails/actioncable": ^7.1.3
-    "@rails/actiontext": ^8.0.0
+    "@rails/actiontext": ^8.0.100
     "@rails/activestorage": ^7.1.3
     "@types/eslint": ^9.6.1
     "@types/eslint-config-prettier": ^6.11.3
