@@ -3,3 +3,5 @@ glob: '**/*.{html,text,js}{+*,}.erb'
 exclude:
   - '**/vendor/**/*'
   - '**/node_modules/**/*'
+  - 'app/views/admin/**/*'
+  - 'app/views/devise/**/*'
