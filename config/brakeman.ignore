@@ -1,0 +1,29 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Command Injection",
+      "warning_code": 14,
+      "fingerprint": "6f9f53ca3d899e601ce239b39617ee5faee3b4d09b5cd56aca7139121dd539a0",
+      "check_name": "Execute",
+      "message": "Possible command injection",
+      "file": "lib/backup/sqlite3_dumper.rb",
+      "line": 23,
+      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+      "code": "Open3.capture3({}, \"echo \\\".dump\\\" | sqlite3 #{Rails.configuration.database_configuration[Rails.env][\"database\"]}\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Backup::Sqlite3Dumper",
+        "method": "dump"
+      },
+      "user_input": "Rails.configuration.database_configuration[Rails.env][\"database\"]",
+      "confidence": "Medium",
+      "cwe_id": [
+        77
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2024-12-24 22:01:54 -0500",
+  "brakeman_version": "6.2.2"
+}
