@@ -191,7 +191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint-community/eslint-utils@npm:^4.4.1":
+"@eslint-community/eslint-utils@npm:^4.4.0, @eslint-community/eslint-utils@npm:^4.4.1":
   version: 4.4.1
   resolution: "@eslint-community/eslint-utils@npm:4.4.1"
   dependencies:
@@ -508,21 +508,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^7.1.3":
-  version: 7.1.3
-  resolution: "@rails/actioncable@npm:7.1.3"
-  checksum: 0a7a12334489452721c6af8c413c8ef4f249080cbd9811431f6bffcd2601c72dde5bdab2bf4472149e911536f420b3b5f4cdeb1a763486ae700ce26134ee4347
+"@rails/actioncable@npm:^8.0.100":
+  version: 8.0.100
+  resolution: "@rails/actioncable@npm:8.0.100"
+  checksum: 882e1e6e60890e02ac914528c50398eb844c85d0e18be5cc2f90fd39b6080db6ed89b08af928e27b85d4ddb73aab3c9fbf30bfc2aa2caafe9a13d31dcded096f
   languageName: node
   linkType: hard
 
-"@rails/actiontext@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@rails/actiontext@npm:8.0.0"
+"@rails/actiontext@npm:^8.0.100":
+  version: 8.0.100
+  resolution: "@rails/actiontext@npm:8.0.100"
   dependencies:
     "@rails/activestorage": ">= 8.0.0-alpha"
   peerDependencies:
     trix: ^2.0.0
-  checksum: e47045a896b196c66d1ebcfc43caf4f9604145d176c9d0ea0207e285f2fe018675a6a6b03e0e459820ad059add4af52683a9c0c5aa4a176e2f992a621824e737
+  checksum: 9b793974c4bbb6d4393a9c3dccfb78cd2be180fe1a76d81e3677da5123391de8235286f3d321d0f88a43950cb39d41bec553905ee48d2be7e59341be3a1b0f34
   languageName: node
   linkType: hard
 
@@ -535,12 +535,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/activestorage@npm:^7.1.3":
-  version: 7.1.3
-  resolution: "@rails/activestorage@npm:7.1.3"
+"@rails/activestorage@npm:^8.0.100":
+  version: 8.0.100
+  resolution: "@rails/activestorage@npm:8.0.100"
   dependencies:
     spark-md5: ^3.0.1
-  checksum: 2e51527db3299034d4c13955cae1287e7013345f992f63557e73548caa54142833dae32a6e6425819dfeb7267f6945612a886fff91fd886197ac0ada5088fadb
+  checksum: 03cad106bb9a1e71c57f1891011efb953786443747c90e272d62d4fd84764c00b4d860d3557f9dca7d78a6a2a4aac4d103eef1b35ccff20a55854381ed26dc36
   languageName: node
   linkType: hard
 
@@ -2145,12 +2145,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.1.3":
-  version: 5.1.3
-  resolution: "eslint-plugin-prettier@npm:5.1.3"
+"eslint-plugin-prettier@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "eslint-plugin-prettier@npm:5.2.1"
   dependencies:
     prettier-linter-helpers: ^1.0.0
-    synckit: ^0.8.6
+    synckit: ^0.9.1
   peerDependencies:
     "@types/eslint": ">=8.0.0"
     eslint: ">=8.0.0"
@@ -2161,16 +2161,18 @@ __metadata:
       optional: true
     eslint-config-prettier:
       optional: true
-  checksum: 06b7cae83314c5e08ea43f1dbcb9daa8040a68a9ceaae5adfd975a944dece2111beccf5c111a8665761e7e05c843e821938e4084db64bbce3f0f5b1084c42deb
+  checksum: 2c00b2dab00459d489d89ba7935e45e01d76872e4d8bdb6a974c16d6df849951b4b6c8455c4969cbc617b4579e185607d5b7c18dbd9f9c6437d052b9d31463b2
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "eslint-plugin-promise@npm:6.2.0"
+"eslint-plugin-promise@npm:^7.2.1":
+  version: 7.2.1
+  resolution: "eslint-plugin-promise@npm:7.2.1"
+  dependencies:
+    "@eslint-community/eslint-utils": ^4.4.0
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: dbf30c6098dbeb8680e0ba48548c9e708c8dc2df8a0f93a61a2f6328fc160130db3492265b421e46f3158fe74e273c6a56135690bea7fa38c362af2ed48ac247
+  checksum: e0668b17af22f64fd5e9c02c9c88ea56c05bc67ed7122301e2d852b8969fd50fc0cdc59a2dc51ba73d7240ad08f04cf6ad890c1294ff345526282ed47b258b9a
   languageName: node
   linkType: hard
 
@@ -2528,9 +2530,9 @@ fsevents@~2.3.2:
     "@hotwired/stimulus": ^3.2.2
     "@hotwired/turbo-rails": ^8.0.4
     "@popperjs/core": ^2.11.8
-    "@rails/actioncable": ^7.1.3
-    "@rails/actiontext": ^8.0.0
-    "@rails/activestorage": ^7.1.3
+    "@rails/actioncable": ^8.0.100
+    "@rails/actiontext": ^8.0.100
+    "@rails/activestorage": ^8.0.100
     "@types/eslint": ^9.6.1
     "@types/eslint-config-prettier": ^6.11.3
     autoprefixer: ^10.4.20
@@ -2545,8 +2547,8 @@ fsevents@~2.3.2:
     eslint-plugin-import: ^2.31.0
     eslint-plugin-n: ^17.15.1
     eslint-plugin-node: ^11.1.0
-    eslint-plugin-prettier: ^5.1.3
-    eslint-plugin-promise: ^6.2.0
+    eslint-plugin-prettier: ^5.2.1
+    eslint-plugin-promise: ^7.2.1
     eslint-plugin-standard: ^5.0.0
     lodash: ^4.0.0
     nodemon: ^3.1.9
@@ -4820,13 +4822,13 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"synckit@npm:^0.8.6":
-  version: 0.8.8
-  resolution: "synckit@npm:0.8.8"
+"synckit@npm:^0.9.1":
+  version: 0.9.2
+  resolution: "synckit@npm:0.9.2"
   dependencies:
     "@pkgr/core": ^0.1.0
     tslib: ^2.6.2
-  checksum: b667be5afbc9fb0b01e15f6cca5f3ac6ad5f5f8cea8253d0f45a7e01803db387945234911028a87d460a36973b9a542b83758dbe6c572a7a99412eafa0c03577
+  checksum: c1f5f9dc1505dfd3629073b62d7e9af426106525513d5e0498cd8477d69b4a4b8507ad535d1fed6ae04a8f7862f938298742ecdad3c06c5a7095554958663692
   languageName: node
   linkType: hard
 
