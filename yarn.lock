@@ -2656,7 +2656,7 @@ fsevents@~2.3.2:
     postcss-cli: ^11.0.0
     prettier: ^3.4.2
     sass: ^1.83.0
-    trix: ^2.1.10
+    trix: ^2.1.12
   languageName: unknown
   linkType: soft
 
@@ -4982,12 +4982,12 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"trix@npm:^2.1.10":
-  version: 2.1.10
-  resolution: "trix@npm:2.1.10"
+"trix@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "trix@npm:2.1.12"
   dependencies:
     dompurify: ^3.2.3
-  checksum: 7ac9e3b74bb89d245bb733beded44a3be6a245c0cfc2b8d8cac4d3b25e2ccfa05dcaea19129bb6597761ae189e0b9939a48ff54c7584e44c452e35458f7c6a89
+  checksum: 607d447412ba4515a7a713120f6c198662aa2ed91c3efc8b3147a047018690c1d5f5d6978bf6a662ba04ae81c20535728cdeaf72711e5c00693949d84ab8d7a4
   languageName: node
   linkType: hard
 
