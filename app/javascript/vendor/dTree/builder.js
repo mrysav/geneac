@@ -3,6 +3,9 @@
  * https://github.com/ErikGartner/dTree
  */
 
+import _ from 'lodash';
+import * as d3 from 'd3';
+
 class TreeBuilder {
 
   constructor(root, siblings, opts) {
@@ -47,8 +50,8 @@ class TreeBuilder {
     // create zoom handler
     const zoom = this.zoom = d3.zoom()
       .scaleExtent([0.1, 10])
-      .on('zoom', function () {
-        g.attr('transform', d3.event.transform)
+      .on('zoom', function (event) {
+        g.attr('transform', event.transform)
       })
 
     // make a svg
@@ -66,7 +69,7 @@ class TreeBuilder {
     // Compute the layout.
     this.tree = d3.tree()
       .nodeSize([nodeSize[0] * 2,
-                 opts.callbacks.nodeHeightSeperation.call(this, nodeSize[0], nodeSize[1])]);
+      opts.callbacks.nodeHeightSeperation.call(this, nodeSize[0], nodeSize[1])]);
 
     this.tree.separation(function separation(a, b) {
       if (a.data.hidden || b.data.hidden) {
@@ -95,7 +98,7 @@ class TreeBuilder {
       .data(links)
       .enter()
       // filter links with no parents to prevent empty nodes
-      .filter(function(l) {
+      .filter(function (l) {
         return !l.target.data.noParent;
       })
       .append('path')
@@ -118,25 +121,25 @@ class TreeBuilder {
 
     // Create the node rectangles.
     nodes.append('foreignObject')
-      .filter(function(d) {
+      .filter(function (d) {
         return d.data.hidden ? false : true;
       })
-      .attr('x', function(d) {
+      .attr('x', function (d) {
         return Math.round(d.x - d.cWidth / 2) + 'px';
       })
-      .attr('y', function(d) {
+      .attr('y', function (d) {
         return Math.round(d.y - d.cHeight / 2) + 'px';
       })
-      .attr('width', function(d) {
+      .attr('width', function (d) {
         return d.cWidth + 'px';
       })
-      .attr('height', function(d) {
+      .attr('height', function (d) {
         return d.cHeight + 'px';
       })
-      .attr('id', function(d) {
+      .attr('id', function (d) {
         return d.id;
       })
-      .html(function(d) {
+      .html(function (d) {
         if (d.data.isMarriage) {
           return opts.callbacks.marriageRenderer.call(this,
             d.x,
@@ -162,14 +165,14 @@ class TreeBuilder {
           )
         }
       })
-      .on('dblclick', function () {
+      .on('dblclick', function (event) {
         // do not propagate a double click on a node
         // to prevent the zoom from being triggered
-        d3.event.stopPropagation()
+        event.stopPropagation()
       })
-      .on('click', function(d)  {
+      .on('click', function (event, d) {
         // ignore double-clicks and clicks on hidden nodes
-        if (d3.event.detail === 2 || d.data.hidden) {
+        if (event.detail === 2 || d.data.hidden) {
           return;
         }
         if (d.data.isMarriage) {
@@ -178,11 +181,11 @@ class TreeBuilder {
           opts.callbacks.nodeClick.call(this, d.data.name, d.data.extra, d.data.id)
         }
       })
-      .on('contextmenu', function(d)  {
+      .on('contextmenu', function (event, d) {
         if (d.data.hidden) {
           return;
         }
-        d3.event.preventDefault();
+        event.preventDefault();
         if (d.data.isMarriage) {
           opts.callbacks.marriageRightClick.call(this, d.data.extra, d.data.id)
         } else {
@@ -226,10 +229,10 @@ class TreeBuilder {
     }];
 
     let fun = d3.line().curve(d3.curveStepAfter)
-      .x(function(d) {
+      .x(function (d) {
         return d.x;
       })
-      .y(function(d) {
+      .y(function (d) {
         return d.y;
       });
     return fun(linedata);
@@ -239,11 +242,11 @@ class TreeBuilder {
 
     let allNodes = this.allNodes;
 
-    _.forEach(this.siblings, function(d) {
-      let start = allNodes.filter(function(v) {
+    _.forEach(this.siblings, function (d) {
+      let start = allNodes.filter(function (v) {
         return d.source.id == v.data.id;
       });
-      let end = allNodes.filter(function(v) {
+      let end = allNodes.filter(function (v) {
         return d.target.id == v.data.id;
       });
       d.source.x = start[0].x;
@@ -252,9 +255,9 @@ class TreeBuilder {
       d.target.y = end[0].y;
 
       let marriageId = (start[0].data.marriageNode != null ?
-                        start[0].data.marriageNode.id :
-                        end[0].data.marriageNode.id);
-      let marriageNode = allNodes.find(function(n) {
+        start[0].data.marriageNode.id :
+        end[0].data.marriageNode.id);
+      let marriageNode = allNodes.find(function (n) {
         return n.data.id == marriageId;
       });
       d.source.marriageNode = marriageNode;
@@ -295,10 +298,10 @@ class TreeBuilder {
     }];
 
     let fun = d3.line().curve(d3.curveStepAfter)
-      .x(function(d) {
+      .x(function (d) {
         return d.x;
       })
-      .y(function(d) {
+      .y(function (d) {
         return d.y;
       });
     return fun(linedata);
@@ -314,7 +317,7 @@ class TreeBuilder {
     let tmpSvg = document.createElement('svg');
     document.body.appendChild(tmpSvg);
 
-    _.map(nodes, function(n) {
+    _.map(nodes, function (n) {
       let container = document.createElement('div');
       container.setAttribute('class', n.data.class);
       container.style.visibility = 'hidden';
@@ -340,7 +343,7 @@ class TreeBuilder {
     return [width, maxHeight];
   }
 
-  static _marriageSize (nodes, size) {
+  static _marriageSize(nodes, size) {
     _.map(nodes, function (n) {
       if (!n.data.hidden) {
         n.cHeight = size
@@ -372,12 +375,12 @@ class TreeBuilder {
     return node;
   }
 
-  static _marriageRenderer (x, y, height, width, extra, id, nodeClass) {
+  static _marriageRenderer(x, y, height, width, extra, id, nodeClass) {
     return `<div style="height:100%" class="${nodeClass}" id="node${id}"></div>`
   }
 
   static _debug(msg) {
-    if (TreeBuilder.DEBUG_LEVEL > 0)  {
+    if (TreeBuilder.DEBUG_LEVEL > 0) {
       console.log(msg);
     }
   }

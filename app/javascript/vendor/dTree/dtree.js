@@ -3,13 +3,15 @@
  * https://github.com/ErikGartner/dTree
  */
 
+import _ from 'lodash';
+import * as d3 from 'd3';
 import TreeBuilder from './builder.js';
 
 const dTree = {
 
   VERSION: '2.4.1',
 
-  init: function(data, options = {}) {
+  init: function (data, options = {}) {
 
     var opts = _.defaultsDeep(options || {}, {
       target: '#graph',
@@ -18,22 +20,22 @@ const dTree = {
       height: 600,
       hideMarriageNodes: true,
       callbacks: {
-        nodeClick: function(name, extra, id) {},
-        nodeRightClick: function(name, extra, id) {},
-        marriageClick: function(extra, id) {},
-        marriageRightClick: function(extra, id) {},
-        nodeHeightSeperation: function(nodeWidth, nodeMaxHeight) {
+        nodeClick: function (name, extra, id) { },
+        nodeRightClick: function (name, extra, id) { },
+        marriageClick: function (extra, id) { },
+        marriageRightClick: function (extra, id) { },
+        nodeHeightSeperation: function (nodeWidth, nodeMaxHeight) {
           return TreeBuilder._nodeHeightSeperation(nodeWidth, nodeMaxHeight);
         },
-        nodeRenderer: function(name, x, y, height, width, extra, id, nodeClass, textClass, textRenderer) {
+        nodeRenderer: function (name, x, y, height, width, extra, id, nodeClass, textClass, textRenderer) {
           return TreeBuilder._nodeRenderer(name, x, y, height, width, extra,
-            id,nodeClass, textClass, textRenderer);
+            id, nodeClass, textClass, textRenderer);
         },
-        nodeSize: function(nodes, width, textRenderer) {
+        nodeSize: function (nodes, width, textRenderer) {
           return TreeBuilder._nodeSize(nodes, width, textRenderer);
         },
-        nodeSorter: function(aName, aExtra, bName, bExtra) {return 0;},
-        textRenderer: function(name, extra, textClass) {
+        nodeSorter: function (aName, aExtra, bName, bExtra) { return 0; },
+        textRenderer: function (name, extra, textClass) {
           return TreeBuilder._textRenderer(name, extra, textClass);
         },
         marriageRenderer: function (x, y, height, width, extra, id, nodeClass) {
@@ -64,7 +66,7 @@ const dTree = {
     var treeBuilder = new TreeBuilder(data.root, data.siblings, opts);
     treeBuilder.create();
 
-    function _zoomTo (x, y, zoom = 1, duration = 500) {
+    function _zoomTo(x, y, zoom = 1, duration = 500) {
       treeBuilder.svg
         .transition()
         .duration(duration)
@@ -89,7 +91,7 @@ const dTree = {
       },
       zoomTo: _zoomTo,
       zoomToNode: function (nodeId, zoom = 2, duration = 500) {
-        const node = _.find(treeBuilder.allNodes, {data: {id: nodeId}})
+        const node = _.find(treeBuilder.allNodes, { data: { id: nodeId } })
         if (node) {
           _zoomTo(node.x, node.y, zoom, duration)
         }
@@ -118,7 +120,7 @@ const dTree = {
     }
   },
 
-  _preprocess: function(data, opts) {
+  _preprocess: function (data, opts) {
 
     var siblings = [];
     var id = 0;
@@ -130,7 +132,7 @@ const dTree = {
       children: []
     };
 
-    var reconstructTree = function(person, parent) {
+    var reconstructTree = function (person, parent) {
 
       // convert to person to d3 node
       var node = {
@@ -165,7 +167,7 @@ const dTree = {
       dTree._sortPersons(person.children, opts);
 
       // add "direct" children
-      _.forEach(person.children, function(child) {
+      _.forEach(person.children, function (child) {
         reconstructTree(child, node);
       });
 
@@ -175,7 +177,7 @@ const dTree = {
       dTree._sortMarriages(person.marriages, opts);
 
       // go through marriage
-      _.forEach(person.marriages, function(marriage, index) {
+      _.forEach(person.marriages, function (marriage, index) {
         var m = {
           name: '',
           id: id++,
@@ -204,7 +206,7 @@ const dTree = {
         parent.children.push(m, spouse);
 
         dTree._sortPersons(marriage.children, opts);
-        _.forEach(marriage.children, function(child) {
+        _.forEach(marriage.children, function (child) {
           reconstructTree(child, m);
         });
 
@@ -221,7 +223,7 @@ const dTree = {
 
     };
 
-    _.forEach(data, function(person) {
+    _.forEach(data, function (person) {
       reconstructTree(person, root);
     });
 
@@ -232,18 +234,18 @@ const dTree = {
 
   },
 
-  _sortPersons: function(persons, opts) {
+  _sortPersons: function (persons, opts) {
     if (persons != undefined) {
-      persons.sort(function(a, b) {
+      persons.sort(function (a, b) {
         return opts.callbacks.nodeSorter.call(this, a.name, a.extra, b.name, b.extra);
       });
     }
     return persons;
   },
 
-  _sortMarriages: function(marriages, opts) {
+  _sortMarriages: function (marriages, opts) {
     if (marriages != undefined && Array.isArray(marriages)) {
-      marriages.sort(function(marriageA, marriageB) {
+      marriages.sort(function (marriageA, marriageB) {
         var a = marriageA.spouse;
         var b = marriageB.spouse;
         return opts.callbacks.nodeSorter.call(this, a.name, a.extra, b.name, b.extra);
