@@ -1,4 +1,5 @@
 require:
+  - rubocop-capybara
   - rubocop-performance
   - rubocop-rake
   - rubocop-rails
@@ -14,6 +15,7 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - 'bin/*'
+    - 'vendor/**/*'
 
 Layout/LineLength:
   Max: 120
