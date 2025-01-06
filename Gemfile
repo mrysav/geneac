@@ -123,7 +123,7 @@ gem "rails-settings-cached", "~> 2.9"
 gem "pagy"
 
 # Backup/restore with zip file
-gem "rubyzip", "~> 2.3"
+gem "rubyzip", "~> 2.4"
 
 # Haml templating
 gem "haml", "< 7"
