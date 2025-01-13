@@ -2596,7 +2596,7 @@ fsevents@~2.3.2:
     eslint-plugin-standard: ^5.0.0
     lodash: ^4.0.0
     nodemon: ^3.1.9
-    postcss: ^8.4.49
+    postcss: ^8.5.0
     postcss-cli: ^11.0.0
     prettier: ^3.4.2
     sass: ^1.83.1
@@ -3754,12 +3754,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.7":
-  version: 3.3.7
-  resolution: "nanoid@npm:3.3.7"
+"nanoid@npm:^3.3.8":
+  version: 3.3.8
+  resolution: "nanoid@npm:3.3.8"
   bin:
     nanoid: bin/nanoid.cjs
-  checksum: cf385d845762bbc9f71827889ccbfa828348d48919ef6745819f60cafa5df2f4ba45a20ffbd02d7a48dd87a4abfaf62b08e23e48fc8e0eba059b97bdd331b64c
+  checksum: 828e58f63d234b4b7f232628b6b41e7ab961d5d96620cf257937a52a6298bda7e2ad03c1b9d644829bf627a78d777e741c49b3ee68e64dc10548239405885f86
   languageName: node
   linkType: hard
 
@@ -4157,14 +4157,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.49":
-  version: 8.4.49
-  resolution: "postcss@npm:8.4.49"
+"postcss@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "postcss@npm:8.5.0"
   dependencies:
-    nanoid: ^3.3.7
+    nanoid: ^3.3.8
     picocolors: ^1.1.1
     source-map-js: ^1.2.1
-  checksum: 26ad2aa80f0381b75f903a582f6330d1a2f7021763f74efed107d23189ab20f6e46619709d9563a3be67f44c01252c7a37aa6e26b1452caa4755768dace88915
+  checksum: 7003b4d07b6c22f4adfc175d4711bf05f850ef1d2244a03380ef6ae27351164f021f4e674df7e598535120e72d92a80d86e1d9947db4a7054742fba61e82e06f
   languageName: node
   linkType: hard
 
