@@ -2182,9 +2182,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "eslint-plugin-prettier@npm:5.2.1"
+"eslint-plugin-prettier@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "eslint-plugin-prettier@npm:5.2.3"
   dependencies:
     prettier-linter-helpers: ^1.0.0
     synckit: ^0.9.1
@@ -2198,7 +2198,7 @@ __metadata:
       optional: true
     eslint-config-prettier:
       optional: true
-  checksum: 2c00b2dab00459d489d89ba7935e45e01d76872e4d8bdb6a974c16d6df849951b4b6c8455c4969cbc617b4579e185607d5b7c18dbd9f9c6437d052b9d31463b2
+  checksum: cb8823b2af17421a088c79f0e7e69dcc056b0e0f7514b4828afa609022f69fd16c31a6015a212d9841e42c280f9ecdb2b14569d2bec9a70c55aa54c868da989d
   languageName: node
   linkType: hard
 
@@ -2592,7 +2592,7 @@ fsevents@~2.3.2:
     eslint-plugin-import: ^2.31.0
     eslint-plugin-n: ^17.15.1
     eslint-plugin-node: ^11.1.0
-    eslint-plugin-prettier: ^5.2.1
+    eslint-plugin-prettier: ^5.2.3
     eslint-plugin-promise: ^7.2.1
     eslint-plugin-standard: ^5.0.0
     lodash: ^4.0.0
