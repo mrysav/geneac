@@ -2597,7 +2597,7 @@ fsevents@~2.3.2:
     eslint-plugin-standard: ^5.0.0
     lodash: ^4.0.0
     nodemon: ^3.1.9
-    postcss: ^8.5.0
+    postcss: ^8.5.1
     postcss-cli: ^11.0.0
     prettier: ^3.4.2
     sass: ^1.83.1
@@ -4158,14 +4158,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "postcss@npm:8.5.0"
+"postcss@npm:^8.5.1":
+  version: 8.5.1
+  resolution: "postcss@npm:8.5.1"
   dependencies:
     nanoid: ^3.3.8
     picocolors: ^1.1.1
     source-map-js: ^1.2.1
-  checksum: 7003b4d07b6c22f4adfc175d4711bf05f850ef1d2244a03380ef6ae27351164f021f4e674df7e598535120e72d92a80d86e1d9947db4a7054742fba61e82e06f
+  checksum: 0219fc38d64cbe2c787beab2ae5ee0cc9ea7ab9334dd163a95c6326ef46f43e00c643bbde22c946b8c580598fbbea55fd1f02fd7da02740fbf52d07f8be4d7c2
   languageName: node
   linkType: hard
 
