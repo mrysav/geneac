@@ -2600,7 +2600,7 @@ fsevents@~2.3.2:
     postcss: ^8.5.0
     postcss-cli: ^11.0.0
     prettier: ^3.4.2
-    sass: ^1.83.1
+    sass: ^1.83.4
     trix: ^2.1.12
   languageName: unknown
   linkType: soft
@@ -4502,9 +4502,9 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.83.1":
-  version: 1.83.1
-  resolution: "sass@npm:1.83.1"
+"sass@npm:^1.83.4":
+  version: 1.83.4
+  resolution: "sass@npm:1.83.4"
   dependencies:
     "@parcel/watcher": ^2.4.1
     chokidar: ^4.0.0
@@ -4515,7 +4515,7 @@ resolve@^1.22.4:
       optional: true
   bin:
     sass: sass.js
-  checksum: cc2f89b8e14dc6ff8c037a77ab14eaae0aca0b5cd47e1cd36e02aa2b16da76a4d4691cb81eab31dad1b7ef22aa38c110246aba73d375714478b81bacbe21ec5d
+  checksum: c335b02bc8d0436a392cb0003b50ea64f05233c11e4f362011be8d4830e9e6df434846f75b82365db0e9e22eaf2fb443f093c6bd0790437a611e82ce38874d86
   languageName: node
   linkType: hard
 
