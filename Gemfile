@@ -52,7 +52,7 @@ group :development, :test do
 
   gem "factory_bot_rails"
   gem "rails-controller-testing"
-  gem "rspec-rails", "~> 7.0"
+  gem "rspec-rails", "~> 7.1"
   gem "timecop"
 end
 
