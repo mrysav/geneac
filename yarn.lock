@@ -236,6 +236,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/core@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@eslint/core@npm:0.11.0"
+  dependencies:
+    "@types/json-schema": ^7.0.15
+  checksum: 1a955b211f27db9e88595aadb14bbb3215d6265a984ab6609d90a7c271ed60d0290dd1e515e801b7e9424f2f0ccbea95c23be74d8dea8a42f67a9ec541a88055
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^3.2.0":
   version: 3.2.0
   resolution: "@eslint/eslintrc@npm:3.2.0"
@@ -253,10 +262,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.19.0":
-  version: 9.19.0
-  resolution: "@eslint/js@npm:9.19.0"
-  checksum: 9019542f97beaf57eb82ed7d28ce9a0cffd018d617190dc9f58c61a528ceeb274e4ae2ca86888fa88b25a698c6edc271fae4ee37890a4c3985c4a57a2c19b6c8
+"@eslint/js@npm:9.20.0":
+  version: 9.20.0
+  resolution: "@eslint/js@npm:9.20.0"
+  checksum: 40f9824f6c8856c989752bb125d6d90f10168b3f5d23b5c6e4d57561fa397eb15388a55b30d76c01c98edb24b5ef303807e53184c50cff22ce4478fa596c9fb2
   languageName: node
   linkType: hard
 
@@ -2262,16 +2271,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.19.0":
-  version: 9.19.0
-  resolution: "eslint@npm:9.19.0"
+"eslint@npm:^9.20.1":
+  version: 9.20.1
+  resolution: "eslint@npm:9.20.1"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.12.1
     "@eslint/config-array": ^0.19.0
-    "@eslint/core": ^0.10.0
+    "@eslint/core": ^0.11.0
     "@eslint/eslintrc": ^3.2.0
-    "@eslint/js": 9.19.0
+    "@eslint/js": 9.20.0
     "@eslint/plugin-kit": ^0.2.5
     "@humanfs/node": ^0.16.6
     "@humanwhocodes/module-importer": ^1.0.1
@@ -2307,7 +2316,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 9db8775c6233ca7a29300849745968b057be84f18436c3d4b423b3f78067675a88b37ca9b7e7c195744832b8c27012c25b9f6e59f282de7e6144beb7a36cef17
+  checksum: 7003ccfa872a91647204b012bd3d6f74582905a1755994ed5a970212a9acfdb8c90befc8e8e4dc343573073cfe3056811e38c24ba074b1ff01cff9abb0cc404d
   languageName: node
   linkType: hard
 
@@ -2586,7 +2595,7 @@ fsevents@~2.3.2:
     bootstrap-icons: ^1.11.3
     d3: ^7.0.0
     esbuild: ^0.25.0
-    eslint: ^9.19.0
+    eslint: ^9.20.1
     eslint-config-prettier: ^10.0.1
     eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.31.0
