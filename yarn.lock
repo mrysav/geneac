@@ -2599,7 +2599,7 @@ fsevents@~2.3.2:
     nodemon: ^3.1.9
     postcss: ^8.5.3
     postcss-cli: ^11.0.0
-    prettier: ^3.5.1
+    prettier: ^3.5.2
     sass: ^1.85.0
     trix: ^2.1.12
   languageName: unknown
@@ -4185,12 +4185,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.1":
-  version: 3.5.1
-  resolution: "prettier@npm:3.5.1"
+"prettier@npm:^3.5.2":
+  version: 3.5.2
+  resolution: "prettier@npm:3.5.2"
   bin:
     prettier: bin/prettier.cjs
-  checksum: d10096102770ad634d4c1363e173e1c4421b7499c188a1802ae664ced842e923e638222c07a031d030309b1eacda04c751d45b8f3aa829803d275fdeab29afe4
+  checksum: 3c82153ab7dfa18717021af7e3d400cbb09328b3f36f78b059934a6e83c92ce0f5df39915d1c1f1d1c929e60677d614ceb58344da47743a7e1dbecf554ca650d
   languageName: node
   linkType: hard
 
