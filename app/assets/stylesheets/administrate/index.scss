@@ -2,4 +2,11 @@
 
 @import 'trix';
 @import "../actiontext";
-@import '**/*';
+
+@import "./fields/advanced_date_field.scss";
+@import "./fields/person_field.scss";
+@import "./fields/person_tag_list_field.scss";
+@import "./fields/rich_text_area_field.scss";
+@import "./fields/tag_list_field.scss";
+@import "./images.scss";
+@import "./text_fields.scss";
