@@ -940,21 +940,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.20":
-  version: 10.4.20
-  resolution: "autoprefixer@npm:10.4.20"
+"autoprefixer@npm:^10.4.21":
+  version: 10.4.21
+  resolution: "autoprefixer@npm:10.4.21"
   dependencies:
-    browserslist: ^4.23.3
-    caniuse-lite: ^1.0.30001646
+    browserslist: ^4.24.4
+    caniuse-lite: ^1.0.30001702
     fraction.js: ^4.3.7
     normalize-range: ^0.1.2
-    picocolors: ^1.0.1
+    picocolors: ^1.1.1
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: f9edf8a6869abfe434fcc8a3c3913d8e774fd52884b22c0b4e5ca814a78e62a264501c7989ef889024dc0890ea48dea43285808284e5d88ff71f9564194ca9c7
+  checksum: 8d5aabefd10dd53df662ef6331623199fea434b7105c291ec035b4d578a786f8070d1edb96808f4093b9272df119ded991410c67dd40fd50615137012c874aca
   languageName: node
   linkType: hard
 
@@ -1048,17 +1048,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:4.24.2, browserslist@npm:^4.23.3":
-  version: 4.24.2
-  resolution: "browserslist@npm:4.24.2"
+"browserslist@npm:4.24.4, browserslist@npm:^4.24.4":
+  version: 4.24.4
+  resolution: "browserslist@npm:4.24.4"
   dependencies:
-    caniuse-lite: ^1.0.30001669
-    electron-to-chromium: ^1.5.41
-    node-releases: ^2.0.18
+    caniuse-lite: ^1.0.30001688
+    electron-to-chromium: ^1.5.73
+    node-releases: ^2.0.19
     update-browserslist-db: ^1.1.1
   bin:
     browserslist: cli.js
-  checksum: b1625a0333986877885e7d8289871344c51826100c47b6578cda2a39d5f0c99fdb2e8d8af19de9ccc3a22562c6bbac62190129731619d72c86efb9e8b2e0f700
+  checksum: 73d3d525dab3077eb02d7bf5bf2c3104c4a91ead7432a76dac5a5b3b32d7de7369e9c6d5f5d5a25d3a287d5e3d80e87cefdb66b7fa11c7f0852af923e3c84287
   languageName: node
   linkType: hard
 
@@ -1138,10 +1138,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001669":
-  version: 1.0.30001687
-  resolution: "caniuse-lite@npm:1.0.30001687"
-  checksum: cf6ca8e63ffd9622f55b3abe64591ed120aa12103267848eee82ba45298771af39c0f39843fa7904daa92417914b52838c86a7a9399bee4e92ea64ff30dab150
+"caniuse-lite@npm:^1.0.30001688, caniuse-lite@npm:^1.0.30001702":
+  version: 1.0.30001703
+  resolution: "caniuse-lite@npm:1.0.30001703"
+  checksum: 7569d5b629d767eb4839a3a45d43787395a8f27a5dd86e61097f92bddbd0c206d28c4e297f66c83ae78ae23b4faf376148c1cff9b0fb68205cf7c8cd6fdb6ec7
   languageName: node
   linkType: hard
 
@@ -1780,10 +1780,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.5.41":
-  version: 1.5.72
-  resolution: "electron-to-chromium@npm:1.5.72"
-  checksum: 359489b4e3d9ce8ba268b9240c484f417d0176dced810a0139e5f64689377d7d96fe038daf4cbc42cfead0e2660b1b2d803df2751821074e2670c8ee18a7b5e1
+"electron-to-chromium@npm:^1.5.73":
+  version: 1.5.114
+  resolution: "electron-to-chromium@npm:1.5.114"
+  checksum: 60d922f161d391cc5c22da052e880bc82bec77ec8d94dd9769821028643a55abda11c82406ccbf5e3531792009d1a692c7380ce48e4c763065c8177b5407308c
   languageName: node
   linkType: hard
 
@@ -2654,7 +2654,7 @@ fsevents@~2.3.2:
     "@rails/activestorage": ^8.0.100
     "@types/eslint": ^9.6.1
     "@types/eslint-config-prettier": ^6.11.3
-    autoprefixer: ^10.4.20
+    autoprefixer: ^10.4.21
     awesomplete: ^1.1.7
     bootstrap: ^5.3.3
     bootstrap-icons: ^1.11.3
@@ -3890,7 +3890,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"node-releases@npm:^2.0.18":
+"node-releases@npm:^2.0.19":
   version: 2.0.19
   resolution: "node-releases@npm:2.0.19"
   checksum: f107a41a436e63dd8d99e2c21cb2164efbb04b7c39457ef683ca007de745e0c12ce9be9bc51846032c75c2375d76e15a0b0b9fb0a566c8c79c598eef5edc49fb
@@ -4152,7 +4152,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.1, picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
+"picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: d4d3ac853d52262f6fd97c99526a1fcbc526fb9cab33472c7c57a8dc9685c5b4ab854577455dbd1a417f44412a7c0a29bfc94d246c64cf1973fc35024cade97f
