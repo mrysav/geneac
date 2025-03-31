@@ -558,10 +558,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rails/actioncable@npm:^8.0.100":
-  version: 8.0.100
-  resolution: "@rails/actioncable@npm:8.0.100"
-  checksum: 882e1e6e60890e02ac914528c50398eb844c85d0e18be5cc2f90fd39b6080db6ed89b08af928e27b85d4ddb73aab3c9fbf30bfc2aa2caafe9a13d31dcded096f
+"@rails/actioncable@npm:^8.0.200":
+  version: 8.0.200
+  resolution: "@rails/actioncable@npm:8.0.200"
+  checksum: d1465f41be99e59d55fd4056a816639727a9f2cb31b209e5e32c4851c6364b64c9c9b6a29af7f930f2d349c5512f56734e74a5b23385e0c3656d75929a81d254
   languageName: node
   linkType: hard
 
@@ -2575,7 +2575,7 @@ fsevents@~2.3.2:
     "@hotwired/stimulus": ^3.2.2
     "@hotwired/turbo-rails": ^8.0.13
     "@popperjs/core": ^2.11.8
-    "@rails/actioncable": ^8.0.100
+    "@rails/actioncable": ^8.0.200
     "@rails/actiontext": ^8.0.100
     "@rails/activestorage": ^8.0.100
     "@types/eslint": ^9.6.1
