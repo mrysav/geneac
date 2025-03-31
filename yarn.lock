@@ -198,7 +198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint-community/eslint-utils@npm:^4.4.0, @eslint-community/eslint-utils@npm:^4.4.1":
+"@eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.4.1
   resolution: "@eslint-community/eslint-utils@npm:4.4.1"
   dependencies:
@@ -206,6 +206,17 @@ __metadata:
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
   checksum: 6c1a9088b6028931be710e56ae26169f25b9aabec95cdcc9283f0efb3cd33c688494fb3ea85a92b088df262a5fc0166add1f501711ed15e29293453b25a2c70d
+  languageName: node
+  linkType: hard
+
+"@eslint-community/eslint-utils@npm:^4.5.0":
+  version: 4.5.1
+  resolution: "@eslint-community/eslint-utils@npm:4.5.1"
+  dependencies:
+    eslint-visitor-keys: ^3.4.3
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
+  checksum: 19cfdadfafdd3c7597757017f3bd89cbd243f077dc5f8d9401c7ada435e88125b56a8d9466680c280255e9552dbfc5a95e2a0153669060fd3684f55816ec900f
   languageName: node
   linkType: hard
 
@@ -2148,11 +2159,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-n@npm:^17.16.2":
-  version: 17.16.2
-  resolution: "eslint-plugin-n@npm:17.16.2"
+"eslint-plugin-n@npm:^17.17.0":
+  version: 17.17.0
+  resolution: "eslint-plugin-n@npm:17.17.0"
   dependencies:
-    "@eslint-community/eslint-utils": ^4.4.1
+    "@eslint-community/eslint-utils": ^4.5.0
     enhanced-resolve: ^5.17.1
     eslint-plugin-es-x: ^7.8.0
     get-tsconfig: ^4.8.1
@@ -2162,7 +2173,7 @@ __metadata:
     semver: ^7.6.3
   peerDependencies:
     eslint: ">=8.23.0"
-  checksum: 238fa26cea1b3be22277472e693b188b6ee953701ccc824e78a89957a656cdc4f8c56bfd4e09001d7fd2cd770708e0c9470bc8a700f9176415976775058524ff
+  checksum: 3a2bc12ecb372d20a5df267202128f352293fdd7c785c305abd8175df0a80f1374db36405690047afdbbdcc81171341126c9cb0eb435c17620ce4c019ec70958
   languageName: node
   linkType: hard
 
@@ -2590,7 +2601,7 @@ fsevents@~2.3.2:
     eslint-config-prettier: ^10.1.1
     eslint-config-standard: ^17.1.0
     eslint-plugin-import: ^2.31.0
-    eslint-plugin-n: ^17.16.2
+    eslint-plugin-n: ^17.17.0
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^5.2.3
     eslint-plugin-promise: ^7.2.1
