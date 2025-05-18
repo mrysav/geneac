@@ -1685,15 +1685,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "dompurify@npm:3.2.3"
+"dompurify@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "dompurify@npm:3.2.5"
   dependencies:
     "@types/trusted-types": ^2.0.7
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 5ea9d20ed28bf721c151fb55fa0afe20faa445595b9207404a1b786682c04ebafc9ad48420540cc4d7c9d368fc78d414bb67c8dc8a2912b303fe65f4dc948b77
+  checksum: 6dd1dde3ae4d9bb15ad687d9b5eaeaef516ce026013fd806faf6550ce0cd5743615d4e6d5c97e2996ee0e43023fedaa795370a913800e4d369add9eb2c9f89e9
   languageName: node
   linkType: hard
 
@@ -2601,7 +2601,7 @@ fsevents@~2.3.2:
     postcss-cli: ^11.0.0
     prettier: ^3.5.3
     sass: ^1.85.1
-    trix: ^2.1.13
+    trix: ^2.1.15
   languageName: unknown
   linkType: soft
 
@@ -4925,12 +4925,12 @@ resolve@^1.22.4:
   languageName: node
   linkType: hard
 
-"trix@npm:^2.1.13":
-  version: 2.1.13
-  resolution: "trix@npm:2.1.13"
+"trix@npm:^2.1.15":
+  version: 2.1.15
+  resolution: "trix@npm:2.1.15"
   dependencies:
-    dompurify: ^3.2.3
-  checksum: b4032984573353d60606b13786354b853595cccf1ddf4f12e75305895f8e82952a454e588b64b5117b520324091b962f3abba328a2875b7e809c481a11742e47
+    dompurify: ^3.2.5
+  checksum: aab3f87fe6cb4f1fd7bd1aa66fee06472b6f7575b80919a571c2945cee2dd1d67206e2eb49a51ac7a24808a720c4437a44a336154128e3456b09462bc7e91c3c
   languageName: node
   linkType: hard
 
