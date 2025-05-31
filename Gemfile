@@ -69,7 +69,6 @@ group :development do
 
   # Linters and other tools
   gem "erb_lint", require: false
-  gem "haml_lint", require: false
   gem "rubocop", require: false
   gem "rubocop-capybara", require: false
   gem "rubocop-factory_bot", require: false

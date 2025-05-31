@@ -9,7 +9,6 @@ untracked_files = `git ls-files --others --exclude-standard`.lines
 files_to_lint = changed_files + untracked_files
 
 ERB = /\.erb$/.freeze
-HAML = /\.haml$/.freeze
 MARKDOWN = /\.md/.freeze
 RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/.freeze
 
@@ -31,8 +30,6 @@ files_to_lint.each do |f|
     command, success, output = run_linter("rubocop", f)
   elsif MARKDOWN.match(f)
     command, success, output = run_linter("markdownlint", f)
-  elsif HAML.match(f)
-    command, success, output = run_linter("haml-lint", f)
   elsif ERB.match(f)
     command, success, output = run_linter("erblint", f)
   else
