@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.3.6"
+# This is probably not a best practice,
+# but this is a one-man operation here...
+ruby `cat .ruby-version`
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "8.0.2"
