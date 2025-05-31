@@ -36,7 +36,7 @@ jobs:
           bundler-cache: true
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/yarn npm audit
+        run: bin/yarn audit
 
   lint_rb:
     runs-on: ubuntu-latest
