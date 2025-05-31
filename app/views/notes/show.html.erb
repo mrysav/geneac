@@ -1,0 +1,18 @@
+<%
+  @title = @note.title
+  @edit_link = edit_admin_note_url(@note.id)
+%>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8.offset-lg-2.col-sm-12">
+      <h2 class="text-center pt-4"><%= @note.title %></h2>
+      <hr>
+      <div class="note_content serif mb-2">
+        <%= @note.rich_content %>
+      </div>
+      <%= render @note.citation if @note.citation %>
+      <%= render partial: 'shared/tag_list', locals: { list: @note.tag_list, class_list: 'mt-5' } %>
+      <%= render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: 'mt-3' } %>
+    </div>
+  </div>
+</div>
