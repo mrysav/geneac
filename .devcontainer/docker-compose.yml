@@ -5,9 +5,9 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
     # Runs app on the same network as the database container,
     # allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:valkey
+    network_mode: service:redis
     depends_on:
-      - valkey
+      - redis
     volumes:
       # Mounts the project folder to '/workspaces/geneac'. The target path inside the container
       # should match what your application expects. In this case, the compose file is
@@ -18,14 +18,7 @@ services:
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
-  valkey:
-    image: valkey/valkey:8-alpine
-    command: valkey-server --save 60 1 --loglevel warning
+  redis:
+    image: redis/redis:8-alpine
+    command: redis-server --save 60 1 --loglevel warning
     restart: unless-stopped
-    volumes:
-      - valkey-data:/data
-    environment:
-      MYSQL_ROOT_PASSWORD: blis123
-
-volumes:
-  valkey-data:
