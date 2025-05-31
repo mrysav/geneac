@@ -1,0 +1,44 @@
+<% @nav_hide_search = true %>
+<div class="page-background" />
+<div class="container mt-4">
+  <div class="row">
+    <div class="py-5 mx-auto text-center">
+      <h1 class="display-4"><%= setting(:site_title) %></h1>
+      <% if setting(:site_tagline) %>
+        <i class="lead"><%= setting(:site_tagline) %></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="row search-bar-opacity">
+    <form class="py-5 col-md-8 offset-md-2 col-sm-12" action="/search">
+      <div class="input-group">
+        <input class="form-control" autocomplete="off" type="search" aria-label="<%= t('nav.search') %>" name="s" id="s">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit"><%= t('nav.search') %></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mb-4">
+    <% if setting(:show_recent_updates) && @recent_updates.present? %>
+      <div class="col-sm-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="frosted-background p-4">
+          <h2 class="text-center"><%= t('home.recent_updates') %></h2>
+          <% @recent_updates.each do |recent_update| %>
+            <%= render partial: 'shared/search_doc', locals: { doc: recent_update } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% if setting(:show_recent_birthdays) && @recent_birthdays.present? %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="frosted-background p-4">
+          <h2 class="text-center"><%= t('home.recent_birthdays') %></h2>
+          <% @recent_birthdays.each do |recent_birthday| %>
+            <%= render partial: 'shared/birthday', locals: { birthday: recent_birthday } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

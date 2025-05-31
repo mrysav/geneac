@@ -1,0 +1,33 @@
+<%
+  @title = person.full_name
+  @edit_link = edit_admin_person_url(person.id)
+%>
+<div class="person-cover-image"></div>
+<div class="container person-container mb-2">
+  <div class="<%= [(:photo if person.profile_photo)] %> row name-header">
+    <% if person.profile_photo %>
+      <div class="col-sm-12">
+        <%= image_tag(person.profile_photo.image.variant(resize_to_limit: [200, 200]),
+          class: 'img-fluid mx-auto main-photo') %>
+      </div>
+    <% end %>
+    <h2 class="col-lg-8 offset-lg-2 col-md-12 mt-3">
+      <%= person.full_name %>
+    </h2>
+  </div>
+  <div class="row mt-3 person-nav">
+    <div class="col-4 col-lg-2 offset-lg-3 text-center">
+      <%= link_to(t('people.bio'), person_path(person.friendly_url),
+        { class: ['person-top-link', (:active if tab == :bio)] }) %>
+    </div>
+    <div class="col-4 col-lg-2 text-center">
+      <%= link_to(t('people.family'), person_family_path(person.friendly_url),
+        { class: ['person-top-link', (:active if tab == :family)] }) %>
+    </div>
+    <div class="col-4 col-lg-2 text-center">
+      <%= link_to(t('people.gallery'), person_gallery_path(person.friendly_url),
+        { class: ['person-top-link', (:active if tab == :gallery)] }) %>
+    </div>
+  </div>
+  <hr class="row">
+</div>

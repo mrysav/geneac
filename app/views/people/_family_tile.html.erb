@@ -1,0 +1,17 @@
+<div class="family-tile text-center">
+  <div class="photo">
+    <% if person.profile_photo %>
+      <%= image_tag person.profile_photo.image.variant(resize_to_limit: [100, 100]), class: 'img-fluid' %>
+    <% else %>
+      <%= image_tag 'lincoln_stock_photo.jpg', class: 'img-fluid' %>
+    <% end %>
+  </div>
+  <div class="name">
+    <p>
+      <%= link_to person.full_name, person.url_path %>
+    </p>
+    <p>
+      <%= person.lifespan %>
+    </p>
+  </div>
+</div>

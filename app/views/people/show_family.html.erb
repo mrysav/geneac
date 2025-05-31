@@ -1,0 +1,100 @@
+<%= render partial: 'header', locals: { person: @person, tab: :family } %>
+<div class="container person-container">
+  <% if Setting.enable_family_tree %>
+    <%= render partial: 'tree', locals: { person: @person } %>
+  <% end %>
+  <% if @person.father_id || @person.mother_id %>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h4 class="text-center mt-2">
+          <%= t('people.parents') %>
+        </h4>
+        <div class="thumbnail-grid d-flex justify-content-center flex-wrap">
+          <%= render partial: 'family_tile', locals: { person: @person.mother } if @person.mother_id %>
+          <%= render partial: 'family_tile', locals: { person: @person.father } if @person.father_id %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @siblings.count.positive? %>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h4 class="text-center mt-2">
+          <%= t('people.siblings') %>
+        </h4>
+        <div class="thumbnail-grid d-flex justify-content-center flex-wrap">
+          <% last_mother_id, last_father_id = -1 %>
+          <% @siblings.each do |sibling| %>
+            <% if sibling.mother_id != last_mother_id || sibling.father_id != last_father_id
+                p1 = if sibling.mother
+                      link_to sibling.mother&.full_name, sibling.mother.url_path
+                    else
+                      t('people.unknown')
+                    end
+
+                p2 = if sibling.father
+                      link_to sibling.father&.full_name, sibling.father.url_path
+                    else
+                      t('people.unknown')
+                    end %>
+              <h5 class="text-center w-100">
+                <%= t('people.with_and', p1: p1, p2: p2).html_safe %>
+              </h5>
+            <% end %>
+            <%= render partial: 'family_tile', locals: { person: sibling } %>
+            <% last_mother_id = sibling.mother_id %>
+            <% last_father_id = sibling.father_id %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @current_spouse %>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h4 class="text-center">
+          <%= t('people.marriages') %>
+        </h4>
+        <div class="d-flex justify-content-center">
+          <%= render partial: 'family_tile', locals: { person: @current_spouse } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @children.count.positive? %>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h4 class="text-center mt-2">
+          <%= t('people.children') %>
+        </h4>
+        <div class="thumbnail-grid d-flex justify-content-center flex-wrap">
+          <% last_spouse_id = -1 %>
+          <% @children.each do |child| %>
+            <% if child.mother_id == @person.id && child.father_id != last_spouse_id %>
+              <h5 class="text-center w-100">
+                <%= t('people.with') %>
+                <% if child.father %>
+                  <%= link_to child.father.full_name, child.father.url_path %>
+                <% else %>
+                  <%= t('people.unknown') %>
+                <% end %>
+              </h5>
+              <% last_spouse_id = child.father_id %>
+            <% elsif child.father_id == @person.id && child.mother_id != last_spouse_id %>
+              <h5 class="text-center w-100">
+                <%= t('people.with') %>
+                <% if child.mother %>
+                  <%= link_to child.mother.full_name, child.mother.url_path %>
+                <% else %>
+                  <%= t('people.unknown') %>
+                <% end %>
+              </h5>
+              <% last_spouse_id = child.mother_id %>
+            <% end %>
+            <%= render partial: 'family_tile', locals: { person: child } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

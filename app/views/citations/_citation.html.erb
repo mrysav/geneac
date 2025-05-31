@@ -1,0 +1,12 @@
+<% if citation&.text.present? %>
+  <div class="mt-4">
+    <div class="card">
+      <div class="card-header font-weight-bold">
+        <%= t('content.citation_header') %>
+      </div>
+      <div class="card-body">
+        <%= sanitize render_citation(citation) %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -126,9 +126,5 @@ gem "pagy"
 # Backup/restore with zip file
 gem "rubyzip", "~> 2.4"
 
-# Haml templating
-gem "haml", "< 7"
-gem "haml-rails"
-
 # Parses links out of strings
 gem "linkify-it-rb", "~> 4.0"

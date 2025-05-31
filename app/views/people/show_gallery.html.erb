@@ -1,0 +1,25 @@
+<%= render partial: 'header', locals: { person: @person, tab: :gallery } %>
+<div class="container person-container">
+  <% if @notes.count > 0 %>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h3 class="text-center">
+          <%= t('people.notes') %>
+        </h3>
+        <% for note in @notes %>
+          <%= render partial: 'shared/search_doc', locals: { doc: note } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% if @photos.count > 0 %>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h3 class="text-center">
+          <%= t('people.photos') %>
+        </h3>
+        <%= render partial: 'photos/thumbnail_grid', locals: { photos: @photos } %>
+      </div>
+    </div>
+  <% end %>
+</div>

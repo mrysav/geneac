@@ -1,0 +1,18 @@
+<%= render partial: 'header', locals: { person: @person, tab: :bio } %>
+<div class="container person-container">
+  <% if @person.bio.present? %>
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2 serif my-4">
+        <div class="person-bio border rounded p-2 bg-light">
+          <h4 class="mb-4">
+            <%= t('people.bio') %>
+          </h4>
+          <%= @person.bio %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% @events.each_with_index do |event, idx| %>
+    <%= render partial: 'event', locals: { event: event, event_id: idx } %>
+  <% end %>
+</div>

@@ -1,0 +1,49 @@
+<div class="container mt-3">
+  <div class="row col-lg-8 offset-lg-2 col-sm-12 text-center">
+    <h2 class="mx-auto">
+      <%= t('settings.title') %>
+    </h2>
+    <hr class="col-sm-12">
+  </div>
+  <div class="row">
+    <%= form_for(Setting.new, url: settings_path, html: { class: 'mx-auto' }, data: { turbo: false }) do |f| %>
+      <% Setting.keys.each do |key| %>
+        <% field = Setting.get_field(key) %>
+        <% if field[:type] == :boolean %>
+          <div class="form-check">
+            <%= f.check_box field[:key], { checked: Setting.send(field[:key]), class: 'form-check-input' } %>
+            <%= f.label field[:key], t("settings.attributes.#{field[:key]}.name"), class: 'form-check-label' %>
+          </div>
+        <% else %>
+          <div class="form-group">
+            <%= f.label field[:key], t("settings.attributes.#{field[:key]}.name") %>
+            <%= f.text_field field[:key], value: Setting.send(field[:key]),
+              placeholder: field.default, class: 'form-control mb-2' %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="text-center mt-3">
+        <%= f.submit t('settings.update'), class: 'btn btn-primary mx-auto' %>
+      </div>
+    <% end %>
+    <hr class="my-3">
+  </div>
+  <div class="row col-12 text-center">
+    <h3 class="mx-auto">
+      <%= t('settings.env_vars.title') %>
+    </h3>
+  </div>
+  <div class="row">
+    <p>
+      <%= t('settings.env_vars.disclaimer') %>
+    </p>
+    <% @env_vars.each do |env| %>
+      <div class="env_var">
+        <label class="form-label" for="env_<%= env %>">
+          <%= t("settings.env_vars.#{env}.name") %>
+        </label>
+        <input autocomplete="off" class="form-control mb-2" id="env_<%= env %>" placeholder="<%= env %>" type="text" value="<%= ENV.fetch(env, '') %>"><input>
+      </div>
+    <% end %>
+  </div>
+</div>

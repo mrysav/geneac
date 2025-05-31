@@ -97,7 +97,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.2.0)
+    bigdecimal (3.2.1)
     bindex (0.8.1)
     bootsnap (1.18.6)
       msgpack (~> 1.2)
@@ -117,10 +117,10 @@ GEM
     cocoon (1.2.15)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.3)
-    countries (7.1.1)
+    countries (8.0.1)
       unaccent (~> 0.3)
-    country_select (10.0.1)
-      countries (> 5.0, < 8.0)
+    country_select (11.0.0)
+      countries (> 6.0, < 9.0)
     crass (1.0.6)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
@@ -163,15 +163,6 @@ GEM
     flamegraph (0.9.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    haml (6.3.0)
-      temple (>= 0.8.2)
-      thor
-      tilt
-    haml-rails (2.1.0)
-      actionpack (>= 5.1)
-      activesupport (>= 5.1)
-      haml (>= 4.0.6)
-      railties (>= 5.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     image_processing (1.14.0)
@@ -469,7 +460,6 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
-    temple (0.10.3)
     thor (1.3.2)
     thruster (0.1.13)
     thruster (0.1.13-aarch64-linux)
@@ -533,8 +523,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   flamegraph
-  haml (< 7)
-  haml-rails
   image_processing (~> 1.12)
   jbuilder
   jsbundling-rails

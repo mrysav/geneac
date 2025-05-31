@@ -1,0 +1,77 @@
+<div class="row border-bottom">
+  <div class="col-sm-4 col-md-2 offset-md-2 text-right py-2">
+    <i><%= event.date_string %></i>
+  </div>
+  <div class="col-sm-8 col-md-6 pl-4 py-2">
+    <% if event.preview_photo_attachment %>
+      <div class="media">
+        <%= image_tag(event.preview_photo_attachment.variant(resize_to_limit: [100, 100]),
+                      class: 'img-fluid border rounded mr-2') %>
+        <div class="media-body">
+          <h5 class "mt-0"><%= event.title %></h5>
+          <%= event.location %>
+          <% if event.title_link %>
+            <div class="mb-0 align-text-bottom">
+              <%= link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener' %>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% elsif event.title_link %>
+      <h5 class="mt-0"><%= event.title %></h5>
+      <%= event.location %>
+      <div class="mb-0 align-text-bottom">
+        <%= link_to t('people.view'), event.title_link, target: '_blank', rel: 'noopener' %>
+        <i class="bi bi-box-arrow-up-right"></i>
+      </div>
+    <% else %>
+      <%
+        tagged_people = policy_scope(event.tagged_people)
+        citation_count = event.citations&.count
+        show_collapsible = event.description.presence || tagged_people.count.positive? || citation_count.positive?
+      %>
+      <div>
+        <% if show_collapsible %>
+          <button class="btn btn-link float-end"
+              data-bs-toggle="collapse"
+              data-bs-target="<%= "#extra-#{event_id}" %>"
+              aria-expanded="false"
+              aria-controls="<%= "extra-#{event_id}" %>"><%= t('people.show_more') %></button>
+        <% end %>
+        <h5 class="mt-0"><%= event.title %></h5>
+        <%= event.location %>
+        <% if show_collapsible %>
+          <div class="collapse" id="<%= "extra-#{event_id}" %>">
+            <div class="card card-body">
+              <% if event.description.presence %>
+                <div class="mb-2 pb-2 border-bottom"><%= event.description %></div>
+              <% end %>
+              <% if tagged_people.count.positive? %>
+                <div class="mb-2">
+                  <strong><%= t('people.tagged_people') %></strong>
+                  <% tagged_people.each do |p| %>
+                    <div>
+                      <%= link_to p.title, p.friendly_url, target: '_blank', rel: 'noopener' %>
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+              <% if citation_count.positive? %>
+                <div class="mb-2">
+                  <strong><%= t('people.citations') %></strong>
+                  <ol>
+                    <% event.citations&.each do |c| %>
+                      <li><%= sanitize render_citation(c) %></li>
+                    <% end %>
+                  </ol>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

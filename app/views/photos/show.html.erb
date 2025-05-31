@@ -1,0 +1,28 @@
+<%
+  @title = @photo.title
+  @edit_link = edit_admin_photo_url(@photo.id)
+%>
+<div class="container show-photo">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-sm-12 text-center">
+      <h2 class="text-center"><%= @photo.title %></h2>
+      <hr>
+      <a href="<%= url_for(@photo.image) %>" target="_blank">
+        <%= image_tag @photo.image, class: 'img-fluid photo-image border rounded p-1' %>
+      </a>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-8 offset-lg-2 col-sm-12">
+      <% if @photo.description.present? %>
+      <p><%= @photo.description %></p>
+      <% end %>
+
+      <%= render @photo.citation if @photo.citation %>
+
+      <%= render partial: 'shared/tag_list', locals: { list: @photo.tag_list, class_list: 'mt-5' } %>
+      <%= render partial: 'shared/person_tag_list', locals: { list: @tagged_people, class_list: 'mt-3' } %>
+    </div>
+  </div>
+</div>
