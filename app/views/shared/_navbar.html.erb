@@ -50,7 +50,7 @@
     <% if show_search_bar %>
     <form class="form-inline" action="/search">
       <div class="input-group">
-      <input class="form-control" type="search" placeholder="<%= t('nav.search') %>" aria-label="<%= t('nav.search') %>" name="s" id="s" value="<%= params[:s] %>">
+      <input class="form-control" autocomplete="off" type="search" placeholder="<%= t('nav.search') %>" aria-label="<%= t('nav.search') %>" name="s" id="s" value="<%= params[:s] %>">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
       </div>
