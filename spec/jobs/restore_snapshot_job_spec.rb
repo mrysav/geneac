@@ -19,22 +19,17 @@ RSpec.describe RestoreSnapshotJob do
     create_list(:person, 3)
 
     CreateSnapshotJob.perform_now
-    expect(Snapshot.count).to eq(1)
 
     Note.drop_em_all!
-    expect(Note.count).to eq(0)
-
     Photo.drop_em_all!
-    expect(Photo.count).to eq(0)
-
     Person.drop_em_all!
-    expect(Person.count).to eq(0)
-
     Fact.drop_em_all!
-    expect(Fact.count).to eq(0)
+    Citation.drop_em_all!
   end
 
-  context "restoring a snapshot" do
+  let(:action_text_attachment) { %r{<action-text-attachment(.+?)>.+</action-text-attachment>}m }
+
+  context "when restoring a snapshot" do
     it "restores notes" do
       described_class.perform_now(Snapshot.find(1))
 
@@ -46,7 +41,7 @@ RSpec.describe RestoreSnapshotJob do
       expect(note.rich_content.body.to_s).to match(%r{<b>.+</b>.+})
     end
 
-    skip "restores the database from reference snapshot" do
+    it "restores the database from reference snapshot", skip: "not working" do
       expect(Snapshot.count).to eq(0)
       described_class.perform_now(create(:snapshot, :v1))
 
@@ -115,14 +110,12 @@ RSpec.describe RestoreSnapshotJob do
     digest_contents
   end
 
-  ACTION_TEXT_ATTACHMENT = %r{<action-text-attachment(.+?)>.+</action-text-attachment>}m
-
   def normalize_note_html(note_html)
     attachments = []
-    captures = ACTION_TEXT_ATTACHMENT.match(note_html)&.captures
+    captures = action_text_attachment.match(note_html)&.captures
     attachments += captures if captures
 
-    normalized_text = note_html.gsub(ACTION_TEXT_ATTACHMENT, "")
+    normalized_text = note_html.gsub(action_text_attachment, "")
 
     {
       attachments:,

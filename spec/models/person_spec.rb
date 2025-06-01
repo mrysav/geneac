@@ -109,13 +109,13 @@ RSpec.describe Person do
       expect(person.probably_dead?).to be true
     end
 
-    it "and a death date is dead" do
+    it "with a death date is dead" do
       person = create_person(create(:fact, fact_type: "death"))
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true
     end
 
-    it "and a death date is dead" do
+    it "with no death date is assumed dead" do
       person = create(:person)
       expect(person.probably_alive?).to be false
       expect(person.probably_dead?).to be true

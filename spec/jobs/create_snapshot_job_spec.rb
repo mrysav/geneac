@@ -11,7 +11,7 @@ RSpec.describe CreateSnapshotJob do
     create_list(:person, 10)
   end
 
-  context "creating snapshot" do
+  context "when creating snapshot" do
     it "creates a backup of the entire database" do
       expect(Snapshot.count).to eq(0)
       described_class.perform_now

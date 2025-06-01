@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
+ActiveRecord::Schema[8.0].define(version: 20_240_925_211_712) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -18,7 +18,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
     t.bigint "record_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+    t.index %w[record_type record_id name], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -28,7 +28,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
     t.bigint "blob_id", null: false
     t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+    t.index %w[record_type record_id name blob_id], name: "index_active_storage_attachments_uniqueness",
+                                                    unique: true
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
@@ -46,7 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+    t.index %w[blob_id variation_digest], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "citations", force: :cascade do |t|
@@ -126,7 +127,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
     t.datetime "updated_at", null: false
     t.integer "privacy_scope", default: 0, null: false
     t.index ["key"], name: "index_search_documents_on_key"
-    t.index ["searchable_type", "searchable_id"], name: "index_search_documents_on_searchable_type_and_searchable_id"
+    t.index %w[searchable_type searchable_id], name: "index_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -136,7 +137,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
     t.string "thing_type", limit: 30
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-    t.index ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
+    t.index %w[thing_type thing_id var], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
   end
 
   create_table "snapshots", force: :cascade do |t|
@@ -154,13 +155,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
     t.datetime "created_at", precision: nil
     t.string "tenant", limit: 128
     t.index ["context"], name: "index_taggings_on_context"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index %w[tag_id taggable_id taggable_type context tagger_id tagger_type], name: "taggings_idx",
+                                                                                unique: true
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
-    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
-    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index %w[taggable_id taggable_type context],
+            name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index %w[taggable_id taggable_type tagger_id context], name: "taggings_idy"
     t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
     t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
-    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index %w[tagger_id tagger_type], name: "index_taggings_on_tagger_id_and_tagger_type"
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
     t.index ["tenant"], name: "index_taggings_on_tenant"
   end
@@ -196,5 +199,5 @@ ActiveRecord::Schema[8.0].define(version: 2024_09_25_211712) do
 
   # Virtual tables defined in this database.
   # Note that virtual tables may not work with other database engines. Be careful if changing database.
-  create_virtual_table "fts_search_documents", "fts5", ["content", "key"]
+  create_virtual_table "fts_search_documents", "fts5", %w[content key]
 end

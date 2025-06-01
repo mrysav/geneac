@@ -8,11 +8,11 @@ untracked_files = `git ls-files --others --exclude-standard`.lines
 
 files_to_lint = changed_files + untracked_files
 
-ERB = /\.erb$/.freeze
-MARKDOWN = /\.md/.freeze
-RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/.freeze
+ERB = /\.erb$/
+MARKDOWN = /\.md/
+RUBY = /\.ruby|\.rake|\.rb$|^Gemfile$/
 
-VENDOR = %r{vendor/}.freeze
+VENDOR = %r{vendor/}
 
 unchecked_files = []
 all_pass = true

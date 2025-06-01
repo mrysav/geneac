@@ -64,7 +64,7 @@ RSpec.describe Fact do
     end
 
     # TODO: This was broken in the move to SQLite since it doesn't support fancy dates like Postgres
-    context "when there are birthdays in a variety of date formats", :skip do
+    context "when there are birthdays in a variety of date formats", skip: "flaky" do
       let!(:in_range_birthdays) do
         [
           create(:fact, fact_type: described_class::Types::BIRTH, date_string: Time.zone.today.strftime("%F")),

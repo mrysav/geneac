@@ -1,11 +1,11 @@
-require:
+plugins:
   - rubocop-capybara
+  - rubocop-factory_bot
   - rubocop-performance
-  - rubocop-rake
   - rubocop-rails
+  - rubocop-rake
   - rubocop-rspec
   - rubocop-rspec_rails
-  - rubocop-factory_bot
 
 AllCops:
   NewCops: enable
@@ -30,6 +30,15 @@ Metrics/MethodLength:
   Enabled: false
 
 Metrics/BlockLength:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
   Enabled: false
 
 Style/StringLiterals:
