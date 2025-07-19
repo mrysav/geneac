@@ -40,7 +40,7 @@ class CreateSnapshotJob < ApplicationJob
   end
 
   def add_photos(zio)
-    return if Photo.count.zero?
+    return if Photo.none?
 
     zio.put_next_entry("Photo.json")
     zio.write(Photo.all.to_json)
@@ -52,7 +52,7 @@ class CreateSnapshotJob < ApplicationJob
   end
 
   def add_notes(zio)
-    return if Note.count.zero?
+    return if Note.none?
 
     zio.put_next_entry("Note.json")
     zio.write(Note.all.to_json)
@@ -63,21 +63,21 @@ class CreateSnapshotJob < ApplicationJob
   end
 
   def add_people(zio)
-    return if Person.count.zero?
+    return if Person.none?
 
     zio.put_next_entry("Person.json")
     zio.write(Person.all.to_json)
   end
 
   def add_facts(zio)
-    return if Fact.count.zero?
+    return if Fact.none?
 
     zio.put_next_entry("Fact.json")
     zio.write(Fact.all.to_json)
   end
 
   def add_citations(zio)
-    return if Citation.count.zero?
+    return if Citation.none?
 
     zio.put_next_entry("Citation.json")
     zio.write(Citation.all.to_json)

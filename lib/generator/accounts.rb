@@ -4,7 +4,7 @@ module Generator
   # Defines a method that can be used in rake tasks to generate user accounts.
   module Accounts
     def self.create_account(name, email, password, admin: false)
-      if User.where(email:).count.positive?
+      if User.where(email:).any?
         Rails.logger.info "Account #{email} already exists."
         return
       end

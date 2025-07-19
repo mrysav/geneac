@@ -19,6 +19,6 @@ class SettingsController < ApplicationController
   private
 
   def setting_params
-    params.require(:setting).permit(*Setting.keys)
+    params.expect(setting: [*Setting.keys])
   end
 end
