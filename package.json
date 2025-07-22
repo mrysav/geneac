@@ -24,7 +24,7 @@
   "devDependencies": {
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-prettier": "^5.5.3",
     "prettier": "^3.5.3"
   },
   "browserslist": [
