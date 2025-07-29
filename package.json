@@ -22,7 +22,7 @@
     "trix": "^2.1.15"
   },
   "devDependencies": {
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.3",
     "prettier": "^3.5.3"
