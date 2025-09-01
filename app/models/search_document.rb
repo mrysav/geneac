@@ -37,7 +37,7 @@ class SearchDocument < ApplicationRecord
       .from("fts_search_documents")
       .joins("LEFT JOIN search_documents s ON fts_search_documents.key = s.key")
       .where("fts_search_documents MATCH ? AND s.privacy_scope >= ?", search_query, privacy_scope)
-      .order("rank")
+      .order(:rank)
   end
 
   private
