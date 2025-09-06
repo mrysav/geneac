@@ -124,7 +124,7 @@ gem "rails-settings-cached", "~> 2.9"
 gem "pagy"
 
 # Backup/restore with zip file
-gem "rubyzip", "~> 2.4"
+gem "rubyzip", "~> 3.0"
 
 # Parses links out of strings
 gem "linkify-it-rb", "~> 4.0"
