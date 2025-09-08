@@ -10,7 +10,7 @@
     "@rails/activestorage": "^8.0.201",
     "autoprefixer": "^10.4.21",
     "awesomplete": "^1.1.7",
-    "bootstrap": "^5.3.6",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "d3": "^7.0.0",
     "esbuild": "^0.25.9",
