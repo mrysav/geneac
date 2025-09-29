@@ -413,7 +413,7 @@ GEM
       ffi (~> 1.12)
       logger
     ruby2_keywords (0.0.5)
-    rubyzip (3.1.0)
+    rubyzip (3.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     securerandom (0.4.1)
@@ -548,7 +548,7 @@ DEPENDENCIES
   rubocop-rspec
   rubocop-rspec_rails
   ruby-vips
-  rubyzip (~> 3.0)
+  rubyzip (~> 3.1)
   sassc (= 2.4.0)
   selenium-webdriver
   simple_form (~> 5.2)
