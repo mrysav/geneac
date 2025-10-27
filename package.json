@@ -7,7 +7,7 @@
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^8.0.300",
     "@rails/actiontext": "^8.0.300",
-    "@rails/activestorage": "^8.0.300",
+    "@rails/activestorage": "^8.1.0",
     "autoprefixer": "^10.4.21",
     "awesomplete": "^1.1.7",
     "bootstrap": "^5.3.6",
