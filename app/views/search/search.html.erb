@@ -7,7 +7,7 @@
     <%= render partial: 'shared/search_doc', locals: { doc: doc } %>
   <% end %>
 
-  <%== pagy_bootstrap_nav(@pagy) %>
+  <%== @pagy.series_nav(:bootstrap) %>
 
   <div class="total-results">
     <i><%= t('search.total_results', total: @total_results) %></i>

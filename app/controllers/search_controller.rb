@@ -20,7 +20,7 @@ class SearchController < ApplicationController
 
     search_results = SearchDocument.search(params[:s], privacy_scope)
     @total_results = search_results.count("s.id")
-    @pagy, @results = pagy_arel(search_results, limit: 10)
+    @pagy, @results = pagy(:offset, search_results, count_over: true, limit: 10)
   end
 
   def tagged
@@ -38,7 +38,7 @@ class SearchController < ApplicationController
                end
 
     @total_results = taggings.count
-    @pagy, @results = pagy_array(taggings, limit: 10)
+    @pagy, @results = pagy(:offset, taggings, limit: 10)
 
     render "search"
   end

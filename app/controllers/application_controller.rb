@@ -2,7 +2,7 @@
 
 # Parent controller
 class ApplicationController < ActionController::Base
-  include Pagy::Backend
+  include Pagy::Method
   include Pundit::Authorization
 
   # @todo disable this if necessary
