@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.18",
+    "@hotwired/turbo-rails": "^8.0.20",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^8.1.100",
     "@rails/actiontext": "^8.1.100",
