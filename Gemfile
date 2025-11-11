@@ -112,7 +112,7 @@ gem "administrate-field-nested_has_many", "~> 2.1"
 gem "sassc", "= 2.4.0"
 
 # For content tagging
-gem "acts-as-taggable-on", "~> 12.0"
+gem "acts-as-taggable-on", "~> 13.0"
 
 # Date parsing
 gem "chronic"
