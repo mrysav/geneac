@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.18",
+    "@hotwired/turbo-rails": "^8.0.20",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^8.1.100",
     "@rails/actiontext": "^8.1.100",
@@ -13,12 +13,12 @@
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
     "d3": "^7.0.0",
-    "esbuild": "^0.25.11",
+    "esbuild": "^0.27.0",
     "lodash": "^4.0.0",
     "nodemon": "^3.1.9",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.93.2",
+    "sass": "^1.93.3",
     "trix": "^2.1.15"
   },
   "devDependencies": {
