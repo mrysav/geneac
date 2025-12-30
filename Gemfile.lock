@@ -211,6 +211,7 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
+    mini_portile2 (2.8.9)
     minitest (5.26.2)
     mono_logger (1.1.2)
     msgpack (1.8.0)
@@ -227,6 +228,9 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
+    nokogiri (1.18.10)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.18.10-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.10-aarch64-linux-musl)
@@ -438,6 +442,8 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (2.8.1)
+      mini_portile2 (~> 2.8.0)
     sqlite3 (2.8.1-aarch64-linux-gnu)
     sqlite3 (2.8.1-aarch64-linux-musl)
     sqlite3 (2.8.1-arm-linux-gnu)
@@ -555,7 +561,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
 
 RUBY VERSION
-   ruby 3.4.8p72
+   ruby 4.0.0p0
 
 BUNDLED WITH
    2.6.9
