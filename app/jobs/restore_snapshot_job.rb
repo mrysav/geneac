@@ -102,18 +102,18 @@ class RestoreSnapshotJob < ApplicationJob
       # See the create_snapshot_job for the duplicate file/filename problem
       inner_html.css("action-text-attachment[filename='#{fname}']")
                 .each do |attachment|
-        content_type = attachment["content-type"]
-        blob = ActiveStorage::Blob.create_and_upload!(
-          io: StringIO.new(io.read),
-          filename: fname,
-          content_type:
-        )
-        sgid = blob.to_sgid(expires_in: nil, for: "attachable")
-        url = rails_blob_path(blob, disposition: :attachment, only_path: true)
+                  content_type = attachment["content-type"]
+                  blob = ActiveStorage::Blob.create_and_upload!(
+                    io: StringIO.new(io.read),
+                    filename: fname,
+                    content_type:
+                  )
+                  sgid = blob.to_sgid(expires_in: nil, for: "attachable")
+                  url = rails_blob_path(blob, disposition: :attachment, only_path: true)
 
-        attachment["sgid"] = sgid
-        attachment["url"] = url
-        attachment.inner_html = ""
+                  attachment["sgid"] = sgid
+                  attachment["url"] = url
+                  attachment.inner_html = ""
       end
 
       notes_buffer[note_id] = inner_html.to_s
