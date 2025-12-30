@@ -77,6 +77,10 @@ group :development do
   gem "rubocop-rake", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-rspec_rails", require: false
+
+  # ruby-lsp support for RSpec
+  gem "ruby-lsp", require: false
+  gem "ruby-lsp-rspec", require: false
 end
 
 group :test do

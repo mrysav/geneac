@@ -22,15 +22,13 @@ class Fact < ApplicationRecord
 
   scope :birth_dates, -> { where(fact_type: Types::BIRTH) }
   scope :birthdays_in_range, lambda { |start_date, end_date, limit|
-    monthday_start = start_date.strftime("%m%d")
-    monthday_end = end_date.strftime("%m%d")
+    all_bdays = (start_date..end_date).map do |d|
+      d.strftime("%m%d")
+    end
 
     includes(:factable)
       .birth_dates
-      .where(
-        "strftime('%m%d',date_string) >= ? AND strftime('%m%d',date_string) <= ?",
-        monthday_start, monthday_end
-      )
+      .where("strftime('%m%d',date_string) IN (?)", all_bdays)
       .order(Arel.sql("date(date_string) ASC"))
       .limit(limit)
   }
