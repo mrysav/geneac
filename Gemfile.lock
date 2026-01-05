@@ -419,7 +419,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    simple_form (5.4.0)
+    simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
     sinatra (4.2.1)
@@ -543,7 +543,7 @@ DEPENDENCIES
   rubyzip (~> 3.1)
   sassc (= 2.4.0)
   selenium-webdriver
-  simple_form (~> 5.2)
+  simple_form (~> 5.4)
   sprockets-rails
   sqlite3 (>= 2.1)
   stackprof
