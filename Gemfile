@@ -106,7 +106,7 @@ gem "pundit"
 
 # simple_form and country_select for easier forms
 gem "country_select"
-gem "simple_form", "~> 5.2"
+gem "simple_form", "~> 5.4"
 
 # administrate for content management
 gem "administrate", "~> 1.0.0.beta.3"
