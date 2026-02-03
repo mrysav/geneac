@@ -32,7 +32,7 @@ class SearchController < ApplicationController
     tag_name = params[:tag]
     taggings = ActsAsTaggableOn::Tagging
                .where(tag_id: ActsAsTaggableOn::Tag
-                 .where("LOWER(name) LIKE ? ESCAPE '!'", tag_name))
+                              .where("LOWER(name) LIKE ? ESCAPE '!'", tag_name))
                .filter do |tag|
                  policy(tag.taggable).show?
                end
