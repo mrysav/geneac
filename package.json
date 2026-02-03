@@ -8,7 +8,7 @@
     "@rails/actioncable": "^8.1.200",
     "@rails/actiontext": "^8.1.200",
     "@rails/activestorage": "^8.1.200",
-    "autoprefixer": "^10.4.23",
+    "autoprefixer": "^10.4.24",
     "awesomplete": "^1.1.7",
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
