@@ -244,8 +244,9 @@ GEM
       time
       uri
     orm_adapter (0.5.0)
-    pagy (43.2.9)
+    pagy (43.3.0)
       json
+      uri
       yaml
     parallel (1.27.0)
     parser (3.3.10.1)
