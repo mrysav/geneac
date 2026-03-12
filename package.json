@@ -19,7 +19,7 @@
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.0",
     "sass": "^1.97.3",
-    "trix": "^2.1.16"
+    "trix": "^2.1.17"
   },
   "devDependencies": {
     "eslint": "^10.0.3",
