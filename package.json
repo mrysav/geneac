@@ -6,7 +6,7 @@
     "@hotwired/turbo-rails": "^8.0.21",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^8.1.201",
-    "@rails/actiontext": "^8.1.200",
+    "@rails/actiontext": "^8.1.201",
     "@rails/activestorage": "^8.1.201",
     "autoprefixer": "^10.4.23",
     "awesomplete": "^1.1.7",
