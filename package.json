@@ -14,7 +14,7 @@
     "bootstrap-icons": "^1.13.1",
     "d3": "^7.0.0",
     "esbuild": "^0.27.4",
-    "lodash": "^4.17.23",
+    "lodash": "^4.18.1",
     "nodemon": "^3.1.9",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.0",
