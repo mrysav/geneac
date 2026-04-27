@@ -245,7 +245,7 @@ GEM
       time
       uri
     orm_adapter (0.5.0)
-    pagy (43.5.2)
+    pagy (43.5.3)
       json
       uri
       yaml
