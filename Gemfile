@@ -99,7 +99,7 @@ gem "resque"
 gem "faker"
 
 # Use Devise for authentication
-gem "devise", "~> 5.0.3"
+gem "devise", "~> 5.0.4"
 
 # Pundit for policies
 gem "pundit"
