@@ -7,7 +7,7 @@ module Admin
     end
 
     def restore
-      RestoreSnapshotJob.perform_later(Snapshot.find(params[:snapshot_id]))
+      RestoreSnapshotJob.perform_later(Snapshot.find(params.expect(:snapshot_id)))
       flash[:notice] = I18n.t "administrate.snapshot.restore_initiated"
       redirect_to admin_snapshot_path(params[:snapshot_id])
     end

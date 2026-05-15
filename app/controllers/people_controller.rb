@@ -93,7 +93,7 @@ class PeopleController < ApplicationController
     return unless current_user&.admin?
     return unless person_id? params[:friendly_url]
 
-    @person = Person.find(params[:friendly_url])
+    @person = Person.find(params.expect(:friendly_url))
     authorize @person
     redirect_to person_path(@person.friendly_url)
   end
