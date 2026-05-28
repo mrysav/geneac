@@ -1,7 +1,7 @@
 #!/bin/bash
 
 nodenv install -s
-npm install -g yarn
+npm install -g pnpm
 
 rbenv install -s
 

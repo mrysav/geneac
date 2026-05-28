@@ -35,8 +35,16 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: 'pnpm'
+
       - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/yarn audit
+        run: bin/pnpm audit
 
   lint_rb:
     runs-on: ubuntu-latest
@@ -95,17 +103,15 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
       - uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
+          cache: 'pnpm'
 
-      - uses: actions/cache@v5
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install NPM modules
-        run: bin/yarn install
+      - run: pnpm install --frozen-lockfile
 
       - name: Build App
         run: bin/rails db:setup

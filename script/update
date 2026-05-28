@@ -5,6 +5,6 @@ rbenv install -s
 
 bin/bundle install
 
-bin/yarn install
+bin/pnpm install --frozen-lockfile
 
 bin/rails db:migrate
