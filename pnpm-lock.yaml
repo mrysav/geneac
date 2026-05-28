@@ -12,19 +12,19 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2
       '@hotwired/turbo-rails':
-        specifier: ^8.0.21
+        specifier: ^8.0.23
         version: 8.0.23
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
       '@rails/actioncable':
-        specifier: ^8.1.201
+        specifier: ^8.1.300
         version: 8.1.300
       '@rails/actiontext':
-        specifier: ^8.1.201
+        specifier: ^8.1.300
         version: 8.1.300(trix@2.1.19)
       '@rails/activestorage':
-        specifier: ^8.1.201
+        specifier: ^8.1.300
         version: 8.1.300
       autoprefixer:
         specifier: ^10.5.0
@@ -33,13 +33,13 @@ importers:
         specifier: ^1.1.7
         version: 1.1.7
       bootstrap:
-        specifier: ^5.3.6
+        specifier: ^5.3.8
         version: 5.3.8(@popperjs/core@2.11.8)
       bootstrap-icons:
         specifier: ^1.13.1
         version: 1.13.1
       d3:
-        specifier: ^7.0.0
+        specifier: ^7.9.0
         version: 7.9.0
       esbuild:
         specifier: ^0.28.0
@@ -48,23 +48,23 @@ importers:
         specifier: ^4.18.1
         version: 4.18.1
       nodemon:
-        specifier: ^3.1.9
+        specifier: ^3.1.14
         version: 3.1.14
       postcss:
-        specifier: ^8.5.14
+        specifier: ^8.5.15
         version: 8.5.15
       postcss-cli:
-        specifier: ^11.0.0
+        specifier: ^11.0.1
         version: 11.0.1(postcss@8.5.15)
       sass:
-        specifier: ^1.98.0
+        specifier: ^1.100.0
         version: 1.100.0
       trix:
         specifier: ^2.1.19
         version: 2.1.19
     devDependencies:
       eslint:
-        specifier: ^10.1.0
+        specifier: ^10.4.0
         version: 10.4.0
       eslint-config-prettier:
         specifier: ^10.1.8
@@ -73,7 +73,7 @@ importers:
         specifier: ^5.5.5
         version: 5.5.5(eslint-config-prettier@10.1.8(eslint@10.4.0))(eslint@10.4.0)(prettier@3.8.3)
       prettier:
-        specifier: ^3.8.1
+        specifier: ^3.8.3
         version: 3.8.3
 
 packages:
