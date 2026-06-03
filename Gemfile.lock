@@ -415,7 +415,7 @@ GEM
     ruby-vips (2.3.0)
       ffi (~> 1.12)
       logger
-    rubyzip (3.3.0)
+    rubyzip (3.3.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     securerandom (0.4.1)
@@ -545,7 +545,7 @@ DEPENDENCIES
   ruby-lsp
   ruby-lsp-rspec
   ruby-vips
-  rubyzip (~> 3.1)
+  rubyzip (~> 3.3)
   sassc (= 2.4.0)
   selenium-webdriver
   simple_form (~> 5.4)
