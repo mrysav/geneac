@@ -21,8 +21,8 @@ importers:
         specifier: ^8.1.300
         version: 8.1.300
       '@rails/actiontext':
-        specifier: ^8.1.300
-        version: 8.1.300(trix@2.1.19)
+        specifier: ^8.1.301
+        version: 8.1.301(trix@2.1.19)
       '@rails/activestorage':
         specifier: ^8.1.301
         version: 8.1.301
@@ -392,8 +392,8 @@ packages:
   '@rails/actioncable@8.1.300':
     resolution: {integrity: sha512-zOENQsq3NM2jyBY6Z2qtZa3V/R/6OEqA+LGKixQbBMl7kk/J3FXDRcszPe74LsHNgB01jCl/DXu/xA8sHt4I/g==}
 
-  '@rails/actiontext@8.1.300':
-    resolution: {integrity: sha512-KPbLfZTt6aFKbdeTlU7ZzmX0uSSNhhfZx3G+2lfa6HltQ/r23HDcJnJOEVt72WKJo13IS5C5HK0sYwplVMCdNw==}
+  '@rails/actiontext@8.1.301':
+    resolution: {integrity: sha512-v8anL1G27LqjO42aTN+xuPw8JYGuk3xF29MsBAoBIX0VJ3ALU3ceJOEudFSjbRqjfRJqESxfBlypeC3Udqibmw==}
     peerDependencies:
       trix: ^2.0.0
 
@@ -1372,7 +1372,7 @@ snapshots:
 
   '@rails/actioncable@8.1.300': {}
 
-  '@rails/actiontext@8.1.300(trix@2.1.19)':
+  '@rails/actiontext@8.1.301(trix@2.1.19)':
     dependencies:
       '@rails/activestorage': 8.1.301
       trix: 2.1.19
