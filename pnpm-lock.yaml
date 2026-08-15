@@ -24,8 +24,8 @@ importers:
         specifier: ^8.1.300
         version: 8.1.300(trix@2.1.19)
       '@rails/activestorage':
-        specifier: ^8.1.300
-        version: 8.1.300
+        specifier: ^8.1.301
+        version: 8.1.301
       autoprefixer:
         specifier: ^10.5.4
         version: 10.5.4(postcss@8.5.26)
@@ -65,13 +65,13 @@ importers:
     devDependencies:
       eslint:
         specifier: ^10.8.0
-        version: 10.8.0
+        version: 10.8.0(supports-color@5.5.0)
       eslint-config-prettier:
         specifier: ^10.1.8
-        version: 10.1.8(eslint@10.8.0)
+        version: 10.1.8(eslint@10.8.0(supports-color@5.5.0))
       eslint-plugin-prettier:
         specifier: ^5.5.6
-        version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.8.0))(eslint@10.8.0)(prettier@3.9.5)
+        version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.8.0(supports-color@5.5.0)))(eslint@10.8.0(supports-color@5.5.0))(prettier@3.9.5)
       prettier:
         specifier: ^3.9.5
         version: 3.9.5
@@ -397,8 +397,8 @@ packages:
     peerDependencies:
       trix: ^2.0.0
 
-  '@rails/activestorage@8.1.300':
-    resolution: {integrity: sha512-AOv3zZrTJjQlzm4L9uzOQtCz6zaM4IqUyux6yzSqmS+PZ8EzwD1F2JAc4LlJNJAv4MSyNYriG+CaCm1QbQTjsA==}
+  '@rails/activestorage@8.1.301':
+    resolution: {integrity: sha512-o+gxhV96Wa/NpVdTWib9iR9RWlqWjjsylPv16muSFUjIhI6usZJBjM1y93h9cjwWfuW/FxI5QONeH3EFv3+cbg==}
 
   '@types/esrecurse@4.3.1':
     resolution: {integrity: sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==}
@@ -1250,14 +1250,14 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
-  '@eslint-community/eslint-utils@4.10.1(eslint@10.8.0)':
+  '@eslint-community/eslint-utils@4.10.1(eslint@10.8.0(supports-color@5.5.0))':
     dependencies:
-      eslint: 10.8.0
+      eslint: 10.8.0(supports-color@5.5.0)
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/config-array@0.23.5':
+  '@eslint/config-array@0.23.5(supports-color@5.5.0)':
     dependencies:
       '@eslint/object-schema': 3.0.5
       debug: 4.4.3(supports-color@5.5.0)
@@ -1374,10 +1374,10 @@ snapshots:
 
   '@rails/actiontext@8.1.300(trix@2.1.19)':
     dependencies:
-      '@rails/activestorage': 8.1.300
+      '@rails/activestorage': 8.1.301
       trix: 2.1.19
 
-  '@rails/activestorage@8.1.300':
+  '@rails/activestorage@8.1.301':
     dependencies:
       spark-md5: 3.0.2
 
@@ -1705,18 +1705,18 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-prettier@10.1.8(eslint@10.8.0):
+  eslint-config-prettier@10.1.8(eslint@10.8.0(supports-color@5.5.0)):
     dependencies:
-      eslint: 10.8.0
+      eslint: 10.8.0(supports-color@5.5.0)
 
-  eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8(eslint@10.8.0))(eslint@10.8.0)(prettier@3.9.5):
+  eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8(eslint@10.8.0(supports-color@5.5.0)))(eslint@10.8.0(supports-color@5.5.0))(prettier@3.9.5):
     dependencies:
-      eslint: 10.8.0
+      eslint: 10.8.0(supports-color@5.5.0)
       prettier: 3.9.5
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
-      eslint-config-prettier: 10.1.8(eslint@10.8.0)
+      eslint-config-prettier: 10.1.8(eslint@10.8.0(supports-color@5.5.0))
 
   eslint-scope@9.1.2:
     dependencies:
@@ -1729,11 +1729,11 @@ snapshots:
 
   eslint-visitor-keys@5.0.1: {}
 
-  eslint@10.8.0:
+  eslint@10.8.0(supports-color@5.5.0):
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.8.0)
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.8.0(supports-color@5.5.0))
       '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.23.5
+      '@eslint/config-array': 0.23.5(supports-color@5.5.0)
       '@eslint/config-helpers': 0.7.0
       '@eslint/core': 1.2.1
       '@eslint/plugin-kit': 0.7.2
