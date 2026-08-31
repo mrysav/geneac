@@ -64,14 +64,14 @@ importers:
         version: 2.1.19
     devDependencies:
       eslint:
-        specifier: ^10.8.1
-        version: 10.8.1(supports-color@5.5.0)
+        specifier: ^10.9.1
+        version: 10.9.1(supports-color@5.5.0)
       eslint-config-prettier:
         specifier: ^10.1.8
-        version: 10.1.8(eslint@10.8.1(supports-color@5.5.0))
+        version: 10.1.8(eslint@10.9.1(supports-color@5.5.0))
       eslint-plugin-prettier:
         specifier: ^5.5.6
-        version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.8.1(supports-color@5.5.0)))(eslint@10.8.1(supports-color@5.5.0))(prettier@3.9.6)
+        version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.9.1(supports-color@5.5.0)))(eslint@10.9.1(supports-color@5.5.0))(prettier@3.9.6)
       prettier:
         specifier: ^3.9.6
         version: 3.9.6
@@ -709,8 +709,8 @@ packages:
     resolution: {integrity: sha512-tD40eHxA35h0PEIZNeIjkHoDR4YjjJp34biM0mDvplBe//mB+IHCqHDGV7pxF+7MklTvighcCPPZC7ynWyjdTA==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  eslint@10.8.1:
-    resolution: {integrity: sha512-wqA7W2jbsC/BnV9Iv1UZpKVFkO1AdNoSmYW8NWG4HNOBbkAMvIqDZ27pI2f07dqn583NcIC44ckjAcOXDL1QbQ==}
+  eslint@10.9.1:
+    resolution: {integrity: sha512-9VaAkDURekixUQJy0oJYl2DcN6oKMfxay7XzaGYAWQwsb6qfKf+x76R2k1L8kb1boc+FyCAaTA9GmiKaaiaF+A==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
     hasBin: true
     peerDependencies:
@@ -1236,9 +1236,9 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@eslint-community/eslint-utils@4.10.1(eslint@10.8.1(supports-color@5.5.0))':
+  '@eslint-community/eslint-utils@4.10.1(eslint@10.9.1(supports-color@5.5.0))':
     dependencies:
-      eslint: 10.8.1(supports-color@5.5.0)
+      eslint: 10.9.1(supports-color@5.5.0)
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
@@ -1683,18 +1683,18 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-prettier@10.1.8(eslint@10.8.1(supports-color@5.5.0)):
+  eslint-config-prettier@10.1.8(eslint@10.9.1(supports-color@5.5.0)):
     dependencies:
-      eslint: 10.8.1(supports-color@5.5.0)
+      eslint: 10.9.1(supports-color@5.5.0)
 
-  eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8(eslint@10.8.1(supports-color@5.5.0)))(eslint@10.8.1(supports-color@5.5.0))(prettier@3.9.6):
+  eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8(eslint@10.9.1(supports-color@5.5.0)))(eslint@10.9.1(supports-color@5.5.0))(prettier@3.9.6):
     dependencies:
-      eslint: 10.8.1(supports-color@5.5.0)
+      eslint: 10.9.1(supports-color@5.5.0)
       prettier: 3.9.6
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
-      eslint-config-prettier: 10.1.8(eslint@10.8.1(supports-color@5.5.0))
+      eslint-config-prettier: 10.1.8(eslint@10.9.1(supports-color@5.5.0))
 
   eslint-scope@9.1.2:
     dependencies:
@@ -1707,9 +1707,9 @@ snapshots:
 
   eslint-visitor-keys@5.0.1: {}
 
-  eslint@10.8.1(supports-color@5.5.0):
+  eslint@10.9.1(supports-color@5.5.0):
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.8.1(supports-color@5.5.0))
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.9.1(supports-color@5.5.0))
       '@eslint-community/regexpp': 4.12.2
       '@eslint/config-array': 0.23.5(supports-color@5.5.0)
       '@eslint/config-helpers': 0.7.0
