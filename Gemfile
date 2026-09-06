@@ -109,9 +109,10 @@ gem "country_select"
 gem "simple_form", "~> 5.4"
 
 # administrate for content management
-gem "administrate", "~> 1.0.0.beta.3"
+gem "administrate", "~> 1.0.0"
 # administrate plugins
-gem "administrate-field-nested_has_many", "~> 2.1"
+gem "administrate-field-nested_has_many",
+    github: "whoisahmed/administrate-field-nested_has_many", ref: "97de8aa2014c5cc908ecc98b6b821c42953d07c5"
 # we don't want this here, but this is where we're at for now
 gem "sassc", "= 2.4.0"
 

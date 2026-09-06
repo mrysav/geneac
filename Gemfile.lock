@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/whoisahmed/administrate-field-nested_has_many.git
+  revision: 97de8aa2014c5cc908ecc98b6b821c42953d07c5
+  ref: 97de8aa2014c5cc908ecc98b6b821c42953d07c5
+  specs:
+    administrate-field-nested_has_many (2.1.0)
+      administrate (>= 0.19, <= 1)
+      cocoon (~> 1.2, >= 1.2.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,14 +89,11 @@ GEM
       zeitwerk (>= 2.4, < 3.0)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    administrate (1.0.0.beta3)
+    administrate (1.0.0)
       actionpack (>= 6.0, < 9.0)
       actionview (>= 6.0, < 9.0)
       activerecord (>= 6.0, < 9.0)
       kaminari (~> 1.2.2)
-    administrate-field-nested_has_many (2.1.0)
-      administrate (>= 0.19, < 1)
-      cocoon (~> 1.2, >= 1.2.11)
     ast (2.4.3)
     base64 (0.3.0)
     bcrypt (3.1.22)
@@ -498,8 +504,8 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 13.0)
-  administrate (~> 1.0.0.beta.3)
-  administrate-field-nested_has_many (~> 2.1)
+  administrate (~> 1.0.0)
+  administrate-field-nested_has_many!
   bcrypt (~> 3.1.22)
   bootsnap
   brakeman
