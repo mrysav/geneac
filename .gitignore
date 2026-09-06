@@ -73,4 +73,6 @@ spec/examples.txt
 !/app/assets/builds/.keep
 
 /config/deploy.yml
-/.kamal/secrets
+/.kamal/secrets/
+
+/sorbet/rbi/

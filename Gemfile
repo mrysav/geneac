@@ -43,6 +43,9 @@ gem "ruby-vips"
 # Ruby core maintained gems
 gem "open-uri"
 
+# Sorbet type-checking runtime
+gem "sorbet-runtime"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
@@ -54,6 +57,8 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 8.0"
   gem "timecop"
+
+  gem "tapioca", require: false, group: %i[development test]
 end
 
 group :development do
@@ -81,6 +86,7 @@ group :development do
   # ruby-lsp support for RSpec
   gem "ruby-lsp", require: false
   gem "ruby-lsp-rspec", require: false
+  gem "sorbet", require: false
 end
 
 group :test do
