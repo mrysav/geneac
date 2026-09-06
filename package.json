@@ -8,7 +8,7 @@
     "@rails/actioncable": "^8.1.301",
     "@rails/actiontext": "^8.1.301",
     "@rails/activestorage": "^8.1.301",
-    "autoprefixer": "^10.5.4",
+    "autoprefixer": "^10.5.5",
     "awesomplete": "^1.1.7",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
@@ -16,13 +16,13 @@
     "esbuild": "^0.28.2",
     "lodash": "^4.18.1",
     "nodemon": "^3.1.14",
-    "postcss": "^8.5.26",
+    "postcss": "^8.5.28",
     "postcss-cli": "^11.0.1",
-    "sass": "^1.103.1",
+    "sass": "^1.104.0",
     "trix": "^2.1.19"
   },
   "devDependencies": {
-    "eslint": "^10.9.1",
+    "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
     "prettier": "^3.9.6"
@@ -30,7 +30,7 @@
   "browserslist": [
     "defaults"
   ],
-  "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621",
+  "packageManager": "pnpm@12.3.4+sha512.961aa41fb077da3a04a441d9f8e15ebc0c96da8ef710b2eb67bf9ee7cb0610eabd48f1fd85f51cffe73846785fa0f87c56a3a872a1d893f8446741b5cce45457",
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
