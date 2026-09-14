@@ -162,8 +162,6 @@ GEM
       i18n (>= 1.8.11, < 2)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
-    ffi (1.17.4-arm-linux-gnu)
-    ffi (1.17.4-arm-linux-musl)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
     flamegraph (0.9.5)
@@ -235,10 +233,6 @@ GEM
     nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.4-aarch64-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.19.4-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.19.4-arm-linux-musl)
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -446,14 +440,14 @@ GEM
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
     smart_properties (1.17.0)
-    sorbet (0.6.13486)
-      sorbet-static (= 0.6.13486)
-    sorbet-runtime (0.6.13486)
-    sorbet-static (0.6.13486-aarch64-linux)
-    sorbet-static (0.6.13486-x86_64-linux)
-    sorbet-static-and-runtime (0.6.13486)
-      sorbet (= 0.6.13486)
-      sorbet-runtime (= 0.6.13486)
+    sorbet (0.6.13497)
+      sorbet-static (= 0.6.13497)
+    sorbet-runtime (0.6.13497)
+    sorbet-static (0.6.13497-aarch64-linux)
+    sorbet-static (0.6.13497-x86_64-linux)
+    sorbet-static-and-runtime (0.6.13497)
+      sorbet (= 0.6.13497)
+      sorbet-runtime (= 0.6.13497)
     spoom (1.8.7)
       erubi (>= 1.10.0)
       prism (>= 0.28.0)
@@ -472,8 +466,6 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (2.9.6-aarch64-linux-gnu)
     sqlite3 (2.9.6-aarch64-linux-musl)
-    sqlite3 (2.9.6-arm-linux-gnu)
-    sqlite3 (2.9.6-arm-linux-musl)
     sqlite3 (2.9.6-x86_64-linux-gnu)
     sqlite3 (2.9.6-x86_64-linux-musl)
     stackprof (0.2.28)
@@ -534,8 +526,6 @@ PLATFORMS
   aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux-gnu
-  arm-linux-musl
   x86_64-linux-gnu
   x86_64-linux-musl
 
