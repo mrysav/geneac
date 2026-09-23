@@ -74,5 +74,3 @@ spec/examples.txt
 
 /config/deploy.yml
 /.kamal/secrets/
-
-/sorbet/rbi/

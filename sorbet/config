@@ -1,5 +1,0 @@
---dir=.
---ignore=/bin
---ignore=/db
---ignore=/storage
---ignore=/vendor
