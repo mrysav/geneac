@@ -206,7 +206,7 @@ GEM
       prism (~> 1.5)
     mono_logger (1.1.2)
     msgpack (1.8.4)
-    multi_json (1.21.1)
+    multi_json (1.21.2)
     mustermann (3.1.1)
     net-imap (0.6.6)
       date
@@ -326,7 +326,7 @@ GEM
     responders (3.2.1)
       actionpack (>= 7.0)
       railties (>= 7.0)
-    resque (3.0.2)
+    resque (3.1.0)
       base64 (~> 0.1)
       logger
       mono_logger (~> 1)
