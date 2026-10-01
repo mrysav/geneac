@@ -122,7 +122,7 @@ gem "acts-as-taggable-on", "~> 13.0"
 gem "chronic"
 
 # Settings
-gem "rails-settings-cached", "~> 2.9"
+gem "rails-settings-cached", "~> 2.10"
 
 # Pagination
 gem "pagy"

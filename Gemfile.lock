@@ -288,9 +288,9 @@ GEM
     rails-html-sanitizer (1.7.1)
       loofah (~> 2.25, >= 2.25.2)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
-    rails-settings-cached (2.9.6)
-      activerecord (>= 5.0.0)
-      railties (>= 5.0.0)
+    rails-settings-cached (2.10.0)
+      activerecord (>= 7.0.0)
+      railties (>= 7.0.0)
     railties (8.1.4)
       actionpack (= 8.1.4)
       activesupport (= 8.1.4)
@@ -500,7 +500,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 5.0)
   rails (= 8.1.4)
   rails-controller-testing
-  rails-settings-cached (~> 2.9)
+  rails-settings-cached (~> 2.10)
   redis (>= 5.0)
   resque
   rspec-rails (~> 8.0)
