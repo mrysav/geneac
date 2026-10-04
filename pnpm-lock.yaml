@@ -148,9 +148,6 @@ importers:
       lodash:
         specifier: ^4.18.1
         version: 4.18.1
-      nodemon:
-        specifier: ^3.1.14
-        version: 3.1.14
       postcss:
         specifier: ^8.5.28
         version: 8.5.28
@@ -173,6 +170,9 @@ importers:
       eslint-plugin-prettier:
         specifier: ^5.5.6
         version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.12.0(supports-color@5.5.0)))(eslint@10.12.0(supports-color@5.5.0))(prettier@3.9.9)
+      nodemon:
+        specifier: ^3.1.14
+        version: 3.1.14
       prettier:
         specifier: ^3.9.9
         version: 3.9.9
