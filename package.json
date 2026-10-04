@@ -5,9 +5,9 @@
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.23",
     "@popperjs/core": "^2.11.8",
-    "@rails/actioncable": "^8.1.301",
-    "@rails/actiontext": "^8.1.301",
-    "@rails/activestorage": "^8.1.301",
+    "@rails/actioncable": "^8.1.400",
+    "@rails/actiontext": "^8.1.400",
+    "@rails/activestorage": "^8.1.400",
     "autoprefixer": "^10.6.1",
     "awesomplete": "^1.1.7",
     "bootstrap": "^5.3.8",
@@ -18,14 +18,14 @@
     "nodemon": "^3.1.14",
     "postcss": "^8.5.28",
     "postcss-cli": "^12.0.0",
-    "sass": "^1.104.1",
+    "sass": "^1.105.1",
     "trix": "^2.1.19"
   },
   "devDependencies": {
-    "eslint": "^10.11.0",
+    "eslint": "^10.12.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
-    "prettier": "^3.9.8"
+    "prettier": "^3.9.9"
   },
   "browserslist": [
     "defaults"
