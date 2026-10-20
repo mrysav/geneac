@@ -44,7 +44,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/pnpm audit
+        run: bin/pnpm audit --prod
 
   lint_rb:
     runs-on: ubuntu-latest
