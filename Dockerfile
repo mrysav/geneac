@@ -30,8 +30,8 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install JavaScript dependencies
-ARG NODE_VERSION=24.16.0
-ARG PNPM_VERSION=12.3.4
+ARG NODE_VERSION=26.12.0
+ARG PNPM_VERSION=12.14.0
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" --verbose /usr/local/node && \
