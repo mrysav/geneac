@@ -182,8 +182,8 @@ importers:
         specifier: ^8.1.400
         version: 8.1.400(trix@2.1.19)
       '@rails/activestorage':
-        specifier: ^8.1.400
-        version: 8.1.400
+        specifier: ^8.1.401
+        version: 8.1.401
       autoprefixer:
         specifier: ^10.6.1
         version: 10.6.1(postcss@8.5.31)
@@ -567,8 +567,8 @@ packages:
     peerDependencies:
       trix: ^2.0.0
 
-  '@rails/activestorage@8.1.400':
-    resolution: {integrity: sha512-ScpkkHXTQ7QByvzLbnrnubpsWRKhlu08kXyRhSV+Hh1s1X43lv5T0PFLhXAvmqrIcq8nQ2up8iyuCmIzacPDDw==}
+  '@rails/activestorage@8.1.401':
+    resolution: {integrity: sha512-PjUMgsCbXrKAhZj6mjvx5U7B/Nmtofe/drucyu8twMlLJkG+Ke1iLQGr8FDl2dOfJ+T5fUEXUpJQUbPZjSzkQw==}
 
   '@types/esrecurse@4.3.1':
     resolution: {integrity: sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==}
@@ -1539,10 +1539,10 @@ snapshots:
 
   '@rails/actiontext@8.1.400(trix@2.1.19)':
     dependencies:
-      '@rails/activestorage': 8.1.400
+      '@rails/activestorage': 8.1.401
       trix: 2.1.19
 
-  '@rails/activestorage@8.1.400':
+  '@rails/activestorage@8.1.401':
     dependencies:
       spark-md5: 3.0.2
 
