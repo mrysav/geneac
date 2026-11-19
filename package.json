@@ -15,13 +15,13 @@
     "d3": "^7.9.2",
     "esbuild": "^0.28.2",
     "lodash": "^4.18.1",
-    "postcss": "^8.5.32",
+    "postcss": "^8.5.33",
     "postcss-cli": "^12.0.0",
     "sass": "^1.108.2",
     "trix": "^2.1.19"
   },
   "devDependencies": {
-    "eslint": "^10.14.0",
+    "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
     "nodemon": "^3.1.14",
@@ -30,7 +30,7 @@
   "browserslist": [
     "defaults"
   ],
-  "packageManager": "pnpm@12.14.0",
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
