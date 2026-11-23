@@ -194,8 +194,8 @@ importers:
         specifier: ^8.1.401
         version: 8.1.401
       autoprefixer:
-        specifier: ^10.6.2
-        version: 10.6.2(postcss@8.5.33)
+        specifier: ^10.7.0
+        version: 10.7.0(postcss@8.5.33)
       awesomplete:
         specifier: ^1.1.7
         version: 1.1.7
@@ -619,8 +619,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  autoprefixer@10.6.2:
-    resolution: {integrity: sha512-VOw9/yGTGwPPgzFcODtcv6zhEPIeIWkRSe10L2ri2f5vZ7ID7lCt6jZzRF5/ubgOZ+szYydmEF5AYsA5jxX1tA==}
+  autoprefixer@10.7.0:
+    resolution: {integrity: sha512-M4rWhYFPp8YSAfqLDT/wRN9trfe/Z/aZLPxrLQJUQRTPrChss2T+hmgaV5770J52bLuGOMzt6Hjl8tEb6YWv5Q==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -1595,7 +1595,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.2
 
-  autoprefixer@10.6.2(postcss@8.5.33):
+  autoprefixer@10.7.0(postcss@8.5.33):
     dependencies:
       browserslist: 4.29.6
       caniuse-lite: 1.0.30001826
